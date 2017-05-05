@@ -48,7 +48,8 @@ RUN git clone https://github.com/ugo-nama-kun/gym_torcs.git && \
 RUN git clone https://github.com/yanpanlau/DDPG-Keras-Torcs.git && \
     cd DDPG-Keras-Torcs && \
     cp *.* ../gym_torcs && \
-    cd ..
+    cd .. && \
+    xhost +local:docker
     
 WORKDIR gym_torcs/
 
