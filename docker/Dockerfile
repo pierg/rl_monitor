@@ -32,7 +32,8 @@ RUN apt-get install -y xautomation \
     libxrandr-dev \
     libpng12-dev && \
     pip install gym && \
-    pip install numpy
+    pip install numpy && \
+    pip install h5py
    
 #Install gym_torcs
 RUN git clone https://github.com/ugo-nama-kun/gym_torcs.git && \
@@ -44,9 +45,10 @@ RUN git clone https://github.com/ugo-nama-kun/gym_torcs.git && \
     cd ../..
     
 #DDPG Keras Torcs
-RUN git clone https://github.com/yanpanlau/DDPG-Keras-Torcs.git
-    
-COPY DDPG-Keras-Torcs/*.* gym_torcs/
+RUN git clone https://github.com/yanpanlau/DDPG-Keras-Torcs.git && \
+    cd DDPG-Keras-Torcs && \
+    cp *.* ../gym_torcs && \
+    cd ..
     
 WORKDIR gym_torcs/
 
