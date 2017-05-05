@@ -43,3 +43,9 @@ RUN git clone https://github.com/ugo-nama-kun/gym_torcs.git && \
     make datainstall && \
     cd ../..
     
+#DDPG Keras Torcs
+RUN git clone https://github.com/yanpanlau/DDPG-Keras-Torcs.git
+    
+COPY DDPG-Keras-Torcs/*.* gym_torcs
+    
+WORKDIR gym_torcs
