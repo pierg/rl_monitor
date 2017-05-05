@@ -52,5 +52,3 @@ RUN git clone https://github.com/yanpanlau/DDPG-Keras-Torcs.git && \
     xhost +local:docker
     
 WORKDIR gym_torcs/
-
-CMD ["python", "ddpg.py"]
