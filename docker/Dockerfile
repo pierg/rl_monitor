@@ -46,6 +46,8 @@ RUN git clone https://github.com/ugo-nama-kun/gym_torcs.git && \
 #DDPG Keras Torcs
 RUN git clone https://github.com/yanpanlau/DDPG-Keras-Torcs.git
     
-COPY DDPG-Keras-Torcs/*.* gym_torcs
+COPY DDPG-Keras-Torcs/*.* gym_torcs/
     
-WORKDIR gym_torcs
+WORKDIR gym_torcs/
+
+CMD ["python", "ddpg.py"]
