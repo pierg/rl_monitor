@@ -8,6 +8,8 @@ import copy
 import collections as col
 import os
 import time
+from socket import * # Socket library
+
 
 
 class TorcsEnv:
@@ -133,6 +135,7 @@ class TorcsEnv:
         trackPos = np.array(obs['trackPos'])
         damage = np.array(obs['damage'])
         rpm = np.array(obs['rpm'])
+
 
         # Termination judgement #########################
         episode_terminate = False
