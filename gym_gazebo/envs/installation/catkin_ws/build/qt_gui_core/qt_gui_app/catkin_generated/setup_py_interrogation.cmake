@@ -1,0 +1,6 @@
+set(qt_gui_app_SETUP_PY_VERSION "0.2.32")
+set(qt_gui_app_SETUP_PY_SCRIPTS "")
+set(qt_gui_app_SETUP_PY_PACKAGES "")
+set(qt_gui_app_SETUP_PY_PACKAGE_DIRS "")
+set(qt_gui_app_SETUP_PY_MODULES "")
+set(qt_gui_app_SETUP_PY_MODULE_DIRS "")

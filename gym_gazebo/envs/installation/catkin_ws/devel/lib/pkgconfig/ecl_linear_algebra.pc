@@ -1,0 +1,8 @@
+prefix=/home/mxb/gym-gazebo/gym_gazebo/envs/installation/catkin_ws/devel
+
+Name: ecl_linear_algebra
+Description: Description of ecl_linear_algebra
+Version: 0.61.17
+Cflags: -I/home/mxb/gym-gazebo/gym_gazebo/envs/installation/catkin_ws/src/ecl_core/ecl_linear_algebra/include -I/usr/local/share/sophus/../../include -I/usr/include/eigen3
+Libs: -L/home/mxb/gym-gazebo/gym_gazebo/envs/installation/catkin_ws/devel/lib -lecl_linear_algebra
+Requires: ecl_build ecl_eigen ecl_exceptions ecl_formatters ecl_math

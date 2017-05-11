@@ -1,0 +1,8 @@
+prefix=/home/mxb/gym-gazebo/gym_gazebo/envs/installation/catkin_ws/devel
+
+Name: ecl_mpl
+Description: Description of ecl_mpl
+Version: 0.61.17
+Cflags: -I/home/mxb/gym-gazebo/gym_gazebo/envs/installation/catkin_ws/src/ecl_core/ecl_mpl/include
+Libs: -L/home/mxb/gym-gazebo/gym_gazebo/envs/installation/catkin_ws/devel/lib 
+Requires: 

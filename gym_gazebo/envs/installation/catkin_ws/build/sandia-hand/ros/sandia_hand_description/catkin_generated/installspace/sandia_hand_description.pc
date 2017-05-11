@@ -1,0 +1,8 @@
+prefix=/home/mxb/gym-gazebo/gym_gazebo/envs/installation/catkin_ws/install
+
+Name: sandia_hand_description
+Description: Description of sandia_hand_description
+Version: 5.1.15
+Cflags: 
+Libs: -L/home/mxb/gym-gazebo/gym_gazebo/envs/installation/catkin_ws/install/lib 
+Requires: 

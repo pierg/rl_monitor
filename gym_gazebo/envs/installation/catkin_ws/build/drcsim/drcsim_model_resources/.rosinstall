@@ -1,0 +1,10 @@
+- other:
+    local-name: /opt/ros/indigo/share/ros
+- other:
+    local-name: /opt/ros/indigo/share
+- other:
+    local-name: /opt/ros/indigo/stacks
+- setup-file:
+    local-name: /opt/ros/indigo/setup.sh
+- setup-file:
+    local-name: /home/mxb/gym-gazebo/gym_gazebo/envs/installation/catkin_ws/install/share/drcsim_model_resources-/setup.sh

@@ -1,0 +1,8 @@
+prefix=/home/mxb/gym-gazebo/gym_gazebo/envs/installation/catkin_ws/install
+
+Name: rqt_gui
+Description: Description of rqt_gui
+Version: 0.4.8
+Cflags: 
+Libs: -L/home/mxb/gym-gazebo/gym_gazebo/envs/installation/catkin_ws/install/lib 
+Requires: 

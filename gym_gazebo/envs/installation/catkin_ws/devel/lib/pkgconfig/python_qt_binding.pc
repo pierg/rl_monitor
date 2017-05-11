@@ -1,0 +1,8 @@
+prefix=/home/mxb/gym-gazebo/gym_gazebo/envs/installation/catkin_ws/devel
+
+Name: python_qt_binding
+Description: Description of python_qt_binding
+Version: 0.2.19
+Cflags: 
+Libs: -L/home/mxb/gym-gazebo/gym_gazebo/envs/installation/catkin_ws/devel/lib 
+Requires: 

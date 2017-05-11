@@ -1,0 +1,8 @@
+prefix=/home/mxb/gym-gazebo/gym_gazebo/envs/installation/catkin_ws/devel
+
+Name: ecl_eigen
+Description: Description of ecl_eigen
+Version: 0.61.17
+Cflags: -I/home/mxb/gym-gazebo/gym_gazebo/envs/installation/catkin_ws/src/ecl_core/ecl_eigen/include -I/home/mxb/gym-gazebo/gym_gazebo/envs/installation/catkin_ws/devel/include -I/usr/include/eigen3
+Libs: -L/home/mxb/gym-gazebo/gym_gazebo/envs/installation/catkin_ws/devel/lib 
+Requires: 

@@ -1,0 +1,8 @@
+prefix=/home/mxb/gym-gazebo/gym_gazebo/envs/installation/catkin_ws/install
+
+Name: qt_gui_cpp
+Description: Description of qt_gui_cpp
+Version: 0.2.32
+Cflags: -I/home/mxb/gym-gazebo/gym_gazebo/envs/installation/catkin_ws/install/include -I/usr/include
+Libs: -L/home/mxb/gym-gazebo/gym_gazebo/envs/installation/catkin_ws/install/lib -lqt_gui_cpp -l:/usr/lib/x86_64-linux-gnu/libboost_filesystem.so -l:/usr/lib/x86_64-linux-gnu/libboost_system.so
+Requires: pluginlib

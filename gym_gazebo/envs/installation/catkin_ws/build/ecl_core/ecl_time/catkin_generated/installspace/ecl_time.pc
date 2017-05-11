@@ -1,0 +1,8 @@
+prefix=/home/mxb/gym-gazebo/gym_gazebo/envs/installation/catkin_ws/install
+
+Name: ecl_time
+Description: Description of ecl_time
+Version: 0.61.17
+Cflags: -I/home/mxb/gym-gazebo/gym_gazebo/envs/installation/catkin_ws/install/include
+Libs: -L/home/mxb/gym-gazebo/gym_gazebo/envs/installation/catkin_ws/install/lib -lecl_time
+Requires: ecl_build ecl_config ecl_errors ecl_exceptions ecl_time_lite

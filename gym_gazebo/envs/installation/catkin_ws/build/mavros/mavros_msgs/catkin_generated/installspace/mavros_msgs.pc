@@ -1,0 +1,8 @@
+prefix=/home/mxb/gym-gazebo/gym_gazebo/envs/installation/catkin_ws/install
+
+Name: mavros_msgs
+Description: Description of mavros_msgs
+Version: 0.17.3
+Cflags: -I/home/mxb/gym-gazebo/gym_gazebo/envs/installation/catkin_ws/install/include
+Libs: -L/home/mxb/gym-gazebo/gym_gazebo/envs/installation/catkin_ws/install/lib 
+Requires: geometry_msgs message_runtime std_msgs
