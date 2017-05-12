@@ -8,6 +8,7 @@ import copy
 import collections as col
 import os
 import time
+import json
 
 from larva import *
 
@@ -22,9 +23,10 @@ def reward(obs, obs_pre):
 	if obs['damage'] - obs_pre['damage'] > 0:
 		reward = -1
 
+	message = str(sp) + ":" + str(obs['angle']) + ":" + str(obs['trackPos']) + ":" + str(obs['damage']) + ":" + str(obs_pre['damage'])
 
 	# Talk to LARVA
-	print "[LARVA ANSWER]: " + send_message_to_monitor("test")
+	print "[LARVA ANSWER]: " + send_message_to_monitor(message)
 
 	return reward
 

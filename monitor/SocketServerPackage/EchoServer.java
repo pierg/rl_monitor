@@ -63,6 +63,24 @@ public class EchoServer {
             // socket.
             while ((inputLine = in.readLine()) != null) {
               System.out.println("Message receive: " + inputLine);
+
+              //progress = sp*np.cos(obs['angle']) - np.abs(sp*np.sin(obs['angle'])) - sp * np.abs(obs['trackPos'])
+              
+              String[] parts = inputLine.split(":");
+              double sp = Double.parseDouble(parts[0]);
+              double angle = Double.parseDouble(parts[1]);
+              double trackPos = Double.parseDouble(parts[2]);
+              double damage = Double.parseDouble(parts[3]);
+              double lastDamage = Double.parseDouble(parts[4]);
+              
+              double reward = sp*Math.cos(angle) - Math.abs(sp*Math.sin(angle)) - sp * Math.abs(trackPos);
+
+              if (damage - lastDamage > 0){
+                reward = -1;
+              }
+              
+              System.out.println("reward : " + reward);
+
               // Structure of the message 'diaspora;<user_id>;<action>'
               List<String> list = new ArrayList<String>(Arrays.asList(inputLine.split(";")));
               EchoServer a = new EchoServer();
