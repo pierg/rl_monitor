@@ -1,8 +1,8 @@
-prefix=/home/mxb/gym-gazebo/gym_gazebo/envs/installation/catkin_ws/install
+prefix=/home/chalmers/gym-gazebo/gym_gazebo/envs/installation/catkin_ws/install
 
 Name: ecl_config
 Description: Description of ecl_config
 Version: 0.61.6
-Cflags: -I/home/mxb/gym-gazebo/gym_gazebo/envs/installation/catkin_ws/install/include
-Libs: -L/home/mxb/gym-gazebo/gym_gazebo/envs/installation/catkin_ws/install/lib 
+Cflags: -I/home/chalmers/gym-gazebo/gym_gazebo/envs/installation/catkin_ws/install/include
+Libs: -L/home/chalmers/gym-gazebo/gym_gazebo/envs/installation/catkin_ws/install/lib 
 Requires: 

@@ -1,8 +1,8 @@
-prefix=/home/mxb/gym-gazebo/gym_gazebo/envs/installation/catkin_ws/devel
+prefix=/home/chalmers/gym-gazebo/gym_gazebo/envs/installation/catkin_ws/devel
 
 Name: ecl_core_apps
 Description: Description of ecl_core_apps
 Version: 0.61.17
 Cflags: 
-Libs: -L/home/mxb/gym-gazebo/gym_gazebo/envs/installation/catkin_ws/devel/lib 
+Libs: -L/home/chalmers/gym-gazebo/gym_gazebo/envs/installation/catkin_ws/devel/lib 
 Requires: 

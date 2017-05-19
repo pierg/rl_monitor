@@ -1,0 +1,8 @@
+prefix=/home/chalmers/gym-gazebo/gym_gazebo/envs/installation/catkin_ws/install
+
+Name: realtime_tools
+Description: Description of realtime_tools
+Version: 1.9.1
+Cflags: -I/home/chalmers/gym-gazebo/gym_gazebo/envs/installation/catkin_ws/install/include
+Libs: -L/home/chalmers/gym-gazebo/gym_gazebo/envs/installation/catkin_ws/install/lib -lrealtime_tools
+Requires: roscpp rospy

@@ -7,7 +7,7 @@ from sys import path as sys_path
 
 from pkgutil import extend_path
 
-__extended_path = "/home/mxb/gym-gazebo/gym_gazebo/envs/installation/catkin_ws/src/python_qt_binding/src".split(";")
+__extended_path = "/home/chalmers/gym-gazebo/gym_gazebo/envs/installation/catkin_ws/src/python_qt_binding/src".split(";")
 for p in reversed(__extended_path):
     sys_path.insert(0, p)
     del p

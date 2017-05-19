@@ -1,0 +1,42 @@
+FILE(REMOVE_RECURSE
+  "CMakeFiles/atlas_msgs_generate_messages_cpp"
+  "/home/chalmers/gym-gazebo/gym_gazebo/envs/installation/catkin_ws/devel/include/atlas_msgs/WalkDemoActionResult.h"
+  "/home/chalmers/gym-gazebo/gym_gazebo/envs/installation/catkin_ws/devel/include/atlas_msgs/AtlasBehaviorWalkFeedback.h"
+  "/home/chalmers/gym-gazebo/gym_gazebo/envs/installation/catkin_ws/devel/include/atlas_msgs/AtlasBehaviorStandFeedback.h"
+  "/home/chalmers/gym-gazebo/gym_gazebo/envs/installation/catkin_ws/devel/include/atlas_msgs/WalkDemoActionFeedback.h"
+  "/home/chalmers/gym-gazebo/gym_gazebo/envs/installation/catkin_ws/devel/include/atlas_msgs/WalkDemoActionGoal.h"
+  "/home/chalmers/gym-gazebo/gym_gazebo/envs/installation/catkin_ws/devel/include/atlas_msgs/AtlasBehaviorWalkParams.h"
+  "/home/chalmers/gym-gazebo/gym_gazebo/envs/installation/catkin_ws/devel/include/atlas_msgs/AtlasCommand.h"
+  "/home/chalmers/gym-gazebo/gym_gazebo/envs/installation/catkin_ws/devel/include/atlas_msgs/SModelRobotOutput.h"
+  "/home/chalmers/gym-gazebo/gym_gazebo/envs/installation/catkin_ws/devel/include/atlas_msgs/AtlasSimInterfaceState.h"
+  "/home/chalmers/gym-gazebo/gym_gazebo/envs/installation/catkin_ws/devel/include/atlas_msgs/AtlasBehaviorManipulateParams.h"
+  "/home/chalmers/gym-gazebo/gym_gazebo/envs/installation/catkin_ws/devel/include/atlas_msgs/WalkDemoResult.h"
+  "/home/chalmers/gym-gazebo/gym_gazebo/envs/installation/catkin_ws/devel/include/atlas_msgs/AtlasSimInterfaceCommand.h"
+  "/home/chalmers/gym-gazebo/gym_gazebo/envs/installation/catkin_ws/devel/include/atlas_msgs/AtlasBehaviorFeedback.h"
+  "/home/chalmers/gym-gazebo/gym_gazebo/envs/installation/catkin_ws/devel/include/atlas_msgs/WalkDemoAction.h"
+  "/home/chalmers/gym-gazebo/gym_gazebo/envs/installation/catkin_ws/devel/include/atlas_msgs/AtlasBehaviorStepData.h"
+  "/home/chalmers/gym-gazebo/gym_gazebo/envs/installation/catkin_ws/devel/include/atlas_msgs/WalkDemoFeedback.h"
+  "/home/chalmers/gym-gazebo/gym_gazebo/envs/installation/catkin_ws/devel/include/atlas_msgs/AtlasBehaviorStepFeedback.h"
+  "/home/chalmers/gym-gazebo/gym_gazebo/envs/installation/catkin_ws/devel/include/atlas_msgs/WalkDemoGoal.h"
+  "/home/chalmers/gym-gazebo/gym_gazebo/envs/installation/catkin_ws/devel/include/atlas_msgs/Test.h"
+  "/home/chalmers/gym-gazebo/gym_gazebo/envs/installation/catkin_ws/devel/include/atlas_msgs/SynchronizationStatistics.h"
+  "/home/chalmers/gym-gazebo/gym_gazebo/envs/installation/catkin_ws/devel/include/atlas_msgs/AtlasBehaviorStandParams.h"
+  "/home/chalmers/gym-gazebo/gym_gazebo/envs/installation/catkin_ws/devel/include/atlas_msgs/ControllerStatistics.h"
+  "/home/chalmers/gym-gazebo/gym_gazebo/envs/installation/catkin_ws/devel/include/atlas_msgs/SModelRobotInput.h"
+  "/home/chalmers/gym-gazebo/gym_gazebo/envs/installation/catkin_ws/devel/include/atlas_msgs/AtlasBehaviorManipulateFeedback.h"
+  "/home/chalmers/gym-gazebo/gym_gazebo/envs/installation/catkin_ws/devel/include/atlas_msgs/AtlasBehaviorStepParams.h"
+  "/home/chalmers/gym-gazebo/gym_gazebo/envs/installation/catkin_ws/devel/include/atlas_msgs/AtlasBehaviorPelvisServoParams.h"
+  "/home/chalmers/gym-gazebo/gym_gazebo/envs/installation/catkin_ws/devel/include/atlas_msgs/AtlasState.h"
+  "/home/chalmers/gym-gazebo/gym_gazebo/envs/installation/catkin_ws/devel/include/atlas_msgs/AtlasPositionData.h"
+  "/home/chalmers/gym-gazebo/gym_gazebo/envs/installation/catkin_ws/devel/include/atlas_msgs/VRCScore.h"
+  "/home/chalmers/gym-gazebo/gym_gazebo/envs/installation/catkin_ws/devel/include/atlas_msgs/ForceTorqueSensors.h"
+  "/home/chalmers/gym-gazebo/gym_gazebo/envs/installation/catkin_ws/devel/include/atlas_msgs/SetJointDamping.h"
+  "/home/chalmers/gym-gazebo/gym_gazebo/envs/installation/catkin_ws/devel/include/atlas_msgs/ResetControls.h"
+  "/home/chalmers/gym-gazebo/gym_gazebo/envs/installation/catkin_ws/devel/include/atlas_msgs/AtlasFilters.h"
+  "/home/chalmers/gym-gazebo/gym_gazebo/envs/installation/catkin_ws/devel/include/atlas_msgs/GetJointDamping.h"
+)
+
+# Per-language clean rules from dependency scanning.
+FOREACH(lang)
+  INCLUDE(CMakeFiles/atlas_msgs_generate_messages_cpp.dir/cmake_clean_${lang}.cmake OPTIONAL)
+ENDFOREACH(lang)

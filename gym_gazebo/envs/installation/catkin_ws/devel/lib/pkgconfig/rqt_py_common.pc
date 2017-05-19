@@ -1,8 +1,8 @@
-prefix=/home/mxb/gym-gazebo/gym_gazebo/envs/installation/catkin_ws/devel
+prefix=/home/chalmers/gym-gazebo/gym_gazebo/envs/installation/catkin_ws/devel
 
 Name: rqt_py_common
 Description: Description of rqt_py_common
 Version: 0.4.8
-Cflags: -I/home/mxb/gym-gazebo/gym_gazebo/envs/installation/catkin_ws/devel/include
-Libs: -L/home/mxb/gym-gazebo/gym_gazebo/envs/installation/catkin_ws/devel/lib 
+Cflags: -I/home/chalmers/gym-gazebo/gym_gazebo/envs/installation/catkin_ws/devel/include
+Libs: -L/home/chalmers/gym-gazebo/gym_gazebo/envs/installation/catkin_ws/devel/lib 
 Requires: 

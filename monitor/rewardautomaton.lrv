@@ -1,0 +1,28 @@
+Imports
+{
+import SocketServerPackage.EchoServer;
+}
+
+Global{
+
+Variables{
+int counter = 0;
+}
+
+Events{
+rlevent(obs, preobs) = {Echoserver.rlevent(String o, String preo)}
+}
+
+Property reward{
+
+States{
+Starting{start}
+}
+
+Transitions{
+start->start[rlevent\\EchoServer.response();counter++;]
+}
+
+}
+
+}

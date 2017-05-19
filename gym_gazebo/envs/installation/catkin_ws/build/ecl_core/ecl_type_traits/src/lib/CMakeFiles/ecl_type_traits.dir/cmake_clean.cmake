@@ -1,0 +1,10 @@
+FILE(REMOVE_RECURSE
+  "CMakeFiles/ecl_type_traits.dir/numeric_limits.cpp.o"
+  "/home/chalmers/gym-gazebo/gym_gazebo/envs/installation/catkin_ws/devel/lib/libecl_type_traits.pdb"
+  "/home/chalmers/gym-gazebo/gym_gazebo/envs/installation/catkin_ws/devel/lib/libecl_type_traits.so"
+)
+
+# Per-language clean rules from dependency scanning.
+FOREACH(lang CXX)
+  INCLUDE(CMakeFiles/ecl_type_traits.dir/cmake_clean_${lang}.cmake OPTIONAL)
+ENDFOREACH(lang)

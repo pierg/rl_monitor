@@ -1,6 +1,6 @@
 message(STATUS "downloading...
      src='https://github.com/google/glog/archive/v0.3.4.zip'
-     dst='/home/mxb/gym-gazebo/gym_gazebo/envs/installation/catkin_ws/build/glog_catkin/glog_src-prefix/src/v0.3.4.zip'
+     dst='/home/chalmers/gym-gazebo/gym_gazebo/envs/installation/catkin_ws/build/glog_catkin/glog_src-prefix/src/v0.3.4.zip'
      timeout='none'")
 
 
@@ -8,7 +8,7 @@ message(STATUS "downloading...
 
 file(DOWNLOAD
   "https://github.com/google/glog/archive/v0.3.4.zip"
-  "/home/mxb/gym-gazebo/gym_gazebo/envs/installation/catkin_ws/build/glog_catkin/glog_src-prefix/src/v0.3.4.zip"
+  "/home/chalmers/gym-gazebo/gym_gazebo/envs/installation/catkin_ws/build/glog_catkin/glog_src-prefix/src/v0.3.4.zip"
   SHOW_PROGRESS
   # no EXPECTED_HASH
   # no TIMEOUT

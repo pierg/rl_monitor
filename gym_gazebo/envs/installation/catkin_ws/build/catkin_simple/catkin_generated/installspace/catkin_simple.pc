@@ -1,8 +1,8 @@
-prefix=/home/mxb/gym-gazebo/gym_gazebo/envs/installation/catkin_ws/install
+prefix=/home/chalmers/gym-gazebo/gym_gazebo/envs/installation/catkin_ws/install
 
 Name: catkin_simple
 Description: Description of catkin_simple
 Version: 0.1.1
 Cflags: 
-Libs: -L/home/mxb/gym-gazebo/gym_gazebo/envs/installation/catkin_ws/install/lib 
+Libs: -L/home/chalmers/gym-gazebo/gym_gazebo/envs/installation/catkin_ws/install/lib 
 Requires: catkin

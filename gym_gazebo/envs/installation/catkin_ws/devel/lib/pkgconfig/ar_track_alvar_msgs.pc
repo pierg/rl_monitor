@@ -1,8 +1,8 @@
-prefix=/home/mxb/gym-gazebo/gym_gazebo/envs/installation/catkin_ws/devel
+prefix=/home/chalmers/gym-gazebo/gym_gazebo/envs/installation/catkin_ws/devel
 
 Name: ar_track_alvar_msgs
 Description: Description of ar_track_alvar_msgs
 Version: 0.5.2
-Cflags: -I/home/mxb/gym-gazebo/gym_gazebo/envs/installation/catkin_ws/devel/include
-Libs: -L/home/mxb/gym-gazebo/gym_gazebo/envs/installation/catkin_ws/devel/lib 
+Cflags: -I/home/chalmers/gym-gazebo/gym_gazebo/envs/installation/catkin_ws/devel/include
+Libs: -L/home/chalmers/gym-gazebo/gym_gazebo/envs/installation/catkin_ws/devel/lib 
 Requires: message_runtime std_msgs geometry_msgs

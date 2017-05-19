@@ -2,7 +2,7 @@
 DEVELSPACE = 'FALSE' == 'TRUE'
 INSTALLSPACE = 'TRUE' == 'TRUE'
 
-CATKIN_DEVEL_PREFIX = '/home/mxb/gym-gazebo/gym_gazebo/envs/installation/catkin_ws/devel'
+CATKIN_DEVEL_PREFIX = '/home/chalmers/gym-gazebo/gym_gazebo/envs/installation/catkin_ws/devel'
 
 CATKIN_GLOBAL_BIN_DESTINATION = 'bin'
 CATKIN_GLOBAL_ETC_DESTINATION = 'etc'
@@ -20,14 +20,14 @@ CATKIN_PACKAGE_LIBEXEC_DESTINATION = ''
 CATKIN_PACKAGE_PYTHON_DESTINATION = 'lib/python2.7/dist-packages/python_qt_binding'
 CATKIN_PACKAGE_SHARE_DESTINATION = 'share/python_qt_binding'
 
-CMAKE_BINARY_DIR = '/home/mxb/gym-gazebo/gym_gazebo/envs/installation/catkin_ws/build'
-CMAKE_CURRENT_BINARY_DIR = '/home/mxb/gym-gazebo/gym_gazebo/envs/installation/catkin_ws/build/python_qt_binding'
-CMAKE_CURRENT_SOURCE_DIR = '/home/mxb/gym-gazebo/gym_gazebo/envs/installation/catkin_ws/src/python_qt_binding'
-CMAKE_INSTALL_PREFIX = '/home/mxb/gym-gazebo/gym_gazebo/envs/installation/catkin_ws/install'
-CMAKE_SOURCE_DIR = '/home/mxb/gym-gazebo/gym_gazebo/envs/installation/catkin_ws/src'
+CMAKE_BINARY_DIR = '/home/chalmers/gym-gazebo/gym_gazebo/envs/installation/catkin_ws/build'
+CMAKE_CURRENT_BINARY_DIR = '/home/chalmers/gym-gazebo/gym_gazebo/envs/installation/catkin_ws/build/python_qt_binding'
+CMAKE_CURRENT_SOURCE_DIR = '/home/chalmers/gym-gazebo/gym_gazebo/envs/installation/catkin_ws/src/python_qt_binding'
+CMAKE_INSTALL_PREFIX = '/home/chalmers/gym-gazebo/gym_gazebo/envs/installation/catkin_ws/install'
+CMAKE_SOURCE_DIR = '/home/chalmers/gym-gazebo/gym_gazebo/envs/installation/catkin_ws/src'
 
 PKG_CMAKE_DIR = '${python_qt_binding_DIR}'
 
 PROJECT_NAME = 'python_qt_binding'
-PROJECT_BINARY_DIR = '/home/mxb/gym-gazebo/gym_gazebo/envs/installation/catkin_ws/build/python_qt_binding'
-PROJECT_SOURCE_DIR = '/home/mxb/gym-gazebo/gym_gazebo/envs/installation/catkin_ws/src/python_qt_binding'
+PROJECT_BINARY_DIR = '/home/chalmers/gym-gazebo/gym_gazebo/envs/installation/catkin_ws/build/python_qt_binding'
+PROJECT_SOURCE_DIR = '/home/chalmers/gym-gazebo/gym_gazebo/envs/installation/catkin_ws/src/python_qt_binding'

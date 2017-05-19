@@ -1,0 +1,8 @@
+prefix=/home/chalmers/gym-gazebo/gym_gazebo/envs/installation/catkin_ws/devel
+
+Name: drcsim_gazebo
+Description: Description of drcsim_gazebo
+Version: 3.1.0
+Cflags: 
+Libs: -L/home/chalmers/gym-gazebo/gym_gazebo/envs/installation/catkin_ws/devel/lib 
+Requires: atlas_description drcsim_gazebo_plugins atlas_msgs drcsim_gazebo_ros_plugins drcsim_model_resources irobot_hand_description multisense_sl_description sandia_hand_description

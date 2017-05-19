@@ -1,0 +1,8 @@
+prefix=/home/chalmers/gym-gazebo/gym_gazebo/envs/installation/catkin_ws/install
+
+Name: sandia_hand_driver
+Description: Description of sandia_hand_driver
+Version: 5.1.15
+Cflags: 
+Libs: -L/home/chalmers/gym-gazebo/gym_gazebo/envs/installation/catkin_ws/install/lib 
+Requires: camera_info_manager image_transport osrf_msgs roscpp sandia_hand_msgs

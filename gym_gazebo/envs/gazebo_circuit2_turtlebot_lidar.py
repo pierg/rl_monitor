@@ -13,6 +13,8 @@ from sensor_msgs.msg import LaserScan
 
 from gym.utils import seeding
 
+from socket import * #Socket library
+
 class GazeboCircuit2TurtlebotLidarEnv(gazebo_env.GazeboEnv):
 
     def __init__(self):
@@ -27,6 +29,27 @@ class GazeboCircuit2TurtlebotLidarEnv(gazebo_env.GazeboEnv):
         self.reward_range = (-np.inf, np.inf)
 
         self._seed()
+
+    def send_message_to_monitor(self, message):
+        host = "127.0.0.1" # Set to IP address of target machine
+        port = 8800 # Port in the target machine
+        addr = (host, port) # Tuple with the address
+        s = socket(AF_INET, SOCK_STREAM) # Create a stream socket
+
+        # Now we connect to the specified address
+        s.connect(addr)
+        # We send the message intruced as parameter
+        s.sendall(message)
+        # Finally we shutdown this communication (the socket stays connected)
+        s.shutdown(1)
+
+        # We wait for the answer from the monitor (we read 1024 bytes, can be extended if needed)
+        answer = s.recv(1024)
+        # Close the socket
+        s.close()
+
+        # Return the answer from the monitor
+        return repr(answer)
 
     def discretize_observation(self,data,new_ranges):
         discretized_ranges = []
@@ -89,13 +112,18 @@ class GazeboCircuit2TurtlebotLidarEnv(gazebo_env.GazeboEnv):
 
         state,done = self.discretize_observation(data,5)
 
-        if not done:
-            if action == 0:
-                reward = 5
-            else:
-                reward = 1
-        else:
+        #We build a string with the informations LARVA needs to compute the reward
+        string = "{};{}".format(done,action)
+
+        #We send the informations to LARVA and we wait the answer
+        response = self.send_message_to_monitor(string)
+
+        #If the answer is a negative number the reward is -200
+        if(response[1] == "-") :
             reward = -200
+        
+        else :
+            reward = int(response[1])
 
         return state, reward, done, {}
 

@@ -1,8 +1,8 @@
-prefix=/home/mxb/gym-gazebo/gym_gazebo/envs/installation/catkin_ws/devel
+prefix=/home/chalmers/gym-gazebo/gym_gazebo/envs/installation/catkin_ws/devel
 
 Name: ecl_command_line
 Description: Description of ecl_command_line
 Version: 0.61.17
-Cflags: -I/home/mxb/gym-gazebo/gym_gazebo/envs/installation/catkin_ws/src/ecl_core/ecl_command_line/include
-Libs: -L/home/mxb/gym-gazebo/gym_gazebo/envs/installation/catkin_ws/devel/lib 
+Cflags: -I/home/chalmers/gym-gazebo/gym_gazebo/envs/installation/catkin_ws/src/ecl_core/ecl_command_line/include
+Libs: -L/home/chalmers/gym-gazebo/gym_gazebo/envs/installation/catkin_ws/devel/lib 
 Requires: 

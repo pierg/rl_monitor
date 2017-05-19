@@ -1,8 +1,8 @@
-prefix=/home/mxb/gym-gazebo/gym_gazebo/envs/installation/catkin_ws/install
+prefix=/home/chalmers/gym-gazebo/gym_gazebo/envs/installation/catkin_ws/install
 
 Name: multisense_sl_description
 Description: Description of multisense_sl_description
 Version: 3.1.0
 Cflags: 
-Libs: -L/home/mxb/gym-gazebo/gym_gazebo/envs/installation/catkin_ws/install/lib 
+Libs: -L/home/chalmers/gym-gazebo/gym_gazebo/envs/installation/catkin_ws/install/lib 
 Requires: 

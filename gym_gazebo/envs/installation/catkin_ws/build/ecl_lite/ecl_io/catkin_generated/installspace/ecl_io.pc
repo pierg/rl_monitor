@@ -1,8 +1,8 @@
-prefix=/home/mxb/gym-gazebo/gym_gazebo/envs/installation/catkin_ws/install
+prefix=/home/chalmers/gym-gazebo/gym_gazebo/envs/installation/catkin_ws/install
 
 Name: ecl_io
 Description: Description of ecl_io
 Version: 0.61.6
-Cflags: -I/home/mxb/gym-gazebo/gym_gazebo/envs/installation/catkin_ws/install/include
-Libs: -L/home/mxb/gym-gazebo/gym_gazebo/envs/installation/catkin_ws/install/lib -lecl_io
+Cflags: -I/home/chalmers/gym-gazebo/gym_gazebo/envs/installation/catkin_ws/install/include
+Libs: -L/home/chalmers/gym-gazebo/gym_gazebo/envs/installation/catkin_ws/install/lib -lecl_io
 Requires: 

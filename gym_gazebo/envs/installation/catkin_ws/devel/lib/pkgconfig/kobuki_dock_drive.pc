@@ -1,8 +1,8 @@
-prefix=/home/mxb/gym-gazebo/gym_gazebo/envs/installation/catkin_ws/devel
+prefix=/home/chalmers/gym-gazebo/gym_gazebo/envs/installation/catkin_ws/devel
 
 Name: kobuki_dock_drive
 Description: Description of kobuki_dock_drive
 Version: 0.6.5
-Cflags: -I/home/mxb/gym-gazebo/gym_gazebo/envs/installation/catkin_ws/src/kobuki_core/kobuki_dock_drive/include
-Libs: -L/home/mxb/gym-gazebo/gym_gazebo/envs/installation/catkin_ws/devel/lib -lkobuki_dock_drive
+Cflags: -I/home/chalmers/gym-gazebo/gym_gazebo/envs/installation/catkin_ws/src/kobuki_core/kobuki_dock_drive/include
+Libs: -L/home/chalmers/gym-gazebo/gym_gazebo/envs/installation/catkin_ws/devel/lib -lkobuki_dock_drive
 Requires: ecl_threads ecl_geometry ecl_linear_algebra

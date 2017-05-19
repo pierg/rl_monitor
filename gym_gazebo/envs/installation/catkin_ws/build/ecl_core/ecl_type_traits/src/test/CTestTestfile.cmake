@@ -1,0 +1,8 @@
+# CMake generated Testfile for 
+# Source directory: /home/chalmers/gym-gazebo/gym_gazebo/envs/installation/catkin_ws/src/ecl_core/ecl_type_traits/src/test
+# Build directory: /home/chalmers/gym-gazebo/gym_gazebo/envs/installation/catkin_ws/build/ecl_core/ecl_type_traits/src/test
+# 
+# This file includes the relevant testing commands required for 
+# testing this directory and lists subdirectories to be tested as well.
+ADD_TEST(_ctest_ecl_type_traits_gtest_test_numeric_limits "/home/chalmers/gym-gazebo/gym_gazebo/envs/installation/catkin_ws/build/catkin_generated/env_cached.sh" "/usr/bin/python" "/opt/ros/indigo/share/catkin/cmake/test/run_tests.py" "/home/chalmers/gym-gazebo/gym_gazebo/envs/installation/catkin_ws/build/test_results/ecl_type_traits/gtest-test_numeric_limits.xml" "--return-code" "/home/chalmers/gym-gazebo/gym_gazebo/envs/installation/catkin_ws/devel/lib/ecl_type_traits/test_numeric_limits --gtest_output=xml:/home/chalmers/gym-gazebo/gym_gazebo/envs/installation/catkin_ws/build/test_results/ecl_type_traits/gtest-test_numeric_limits.xml")
+ADD_TEST(_ctest_ecl_type_traits_gtest_test_fundamental_types "/home/chalmers/gym-gazebo/gym_gazebo/envs/installation/catkin_ws/build/catkin_generated/env_cached.sh" "/usr/bin/python" "/opt/ros/indigo/share/catkin/cmake/test/run_tests.py" "/home/chalmers/gym-gazebo/gym_gazebo/envs/installation/catkin_ws/build/test_results/ecl_type_traits/gtest-test_fundamental_types.xml" "--return-code" "/home/chalmers/gym-gazebo/gym_gazebo/envs/installation/catkin_ws/devel/lib/ecl_type_traits/test_fundamental_types --gtest_output=xml:/home/chalmers/gym-gazebo/gym_gazebo/envs/installation/catkin_ws/build/test_results/ecl_type_traits/gtest-test_fundamental_types.xml")

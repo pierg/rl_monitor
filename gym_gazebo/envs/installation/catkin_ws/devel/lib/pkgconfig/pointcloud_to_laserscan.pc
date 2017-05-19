@@ -1,0 +1,8 @@
+prefix=/home/chalmers/gym-gazebo/gym_gazebo/envs/installation/catkin_ws/devel
+
+Name: pointcloud_to_laserscan
+Description: Description of pointcloud_to_laserscan
+Version: 1.2.7
+Cflags: -I/home/chalmers/gym-gazebo/gym_gazebo/envs/installation/catkin_ws/src/pcl_ros/pointcloud_to_laserscan/include
+Libs: -L/home/chalmers/gym-gazebo/gym_gazebo/envs/installation/catkin_ws/devel/lib -lpointcloud_to_laserscan
+Requires: roscpp message_filters nodelet sensor_msgs tf2 tf2_ros

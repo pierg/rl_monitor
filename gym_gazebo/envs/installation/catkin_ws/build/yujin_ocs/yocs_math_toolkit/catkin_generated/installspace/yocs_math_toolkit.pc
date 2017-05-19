@@ -1,0 +1,8 @@
+prefix=/home/chalmers/gym-gazebo/gym_gazebo/envs/installation/catkin_ws/install
+
+Name: yocs_math_toolkit
+Description: Description of yocs_math_toolkit
+Version: 0.6.4
+Cflags: -I/home/chalmers/gym-gazebo/gym_gazebo/envs/installation/catkin_ws/install/include
+Libs: -L/home/chalmers/gym-gazebo/gym_gazebo/envs/installation/catkin_ws/install/lib -lyocs_math_toolkit
+Requires: tf roscpp geometry_msgs

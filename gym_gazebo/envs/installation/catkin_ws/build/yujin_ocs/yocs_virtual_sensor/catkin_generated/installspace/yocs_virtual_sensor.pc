@@ -1,0 +1,8 @@
+prefix=/home/chalmers/gym-gazebo/gym_gazebo/envs/installation/catkin_ws/install
+
+Name: yocs_virtual_sensor
+Description: Description of yocs_virtual_sensor
+Version: 0.6.4
+Cflags: -I/home/chalmers/gym-gazebo/gym_gazebo/envs/installation/catkin_ws/install/include -I/usr/include
+Libs: -L/home/chalmers/gym-gazebo/gym_gazebo/envs/installation/catkin_ws/install/lib -l:/usr/lib/x86_64-linux-gnu/libboost_system.so
+Requires: tf roscpp sensor_msgs geometry_msgs yocs_msgs yocs_math_toolkit

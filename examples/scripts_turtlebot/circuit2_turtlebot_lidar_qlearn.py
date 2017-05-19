@@ -20,12 +20,14 @@ def render():
     elif ((x-render_episodes)%render_interval == 0) and (x != 0) and (x > render_skip) and (render_episodes < x):
         env.render(close=True)
 
+
 if __name__ == '__main__':
 
     env = gym.make('GazeboCircuit2TurtlebotLidar-v0')
 
     outdir = '/tmp/gazebo_gym_experiments'
-    env.monitor.start(outdir, force=True, seed=None)
+    #env.monitor.start(outdir, force=True, seed=None) #This function raises an exception
+    env = gym.wrappers.Monitor(env,outdir,force=True)
     #plotter = LivePlot(outdir)
 
     last_time_steps = numpy.ndarray(0)
@@ -71,7 +73,7 @@ if __name__ == '__main__':
 
             qlearn.learn(state, action, reward, nextState)
 
-            env.monitor.flush(force=True)
+            #env.monitor.flush(force=True) #This function raises an exception
 
             if not(done):
                 state = nextState

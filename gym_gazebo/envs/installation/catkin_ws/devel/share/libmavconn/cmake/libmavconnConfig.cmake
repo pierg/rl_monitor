@@ -67,14 +67,14 @@ set(libmavconn_CONFIG_INCLUDED TRUE)
 
 # set variables for source/devel/install prefixes
 if("TRUE" STREQUAL "TRUE")
-  set(libmavconn_SOURCE_PREFIX /home/mxb/gym-gazebo/gym_gazebo/envs/installation/catkin_ws/src/mavros/libmavconn)
-  set(libmavconn_DEVEL_PREFIX /home/mxb/gym-gazebo/gym_gazebo/envs/installation/catkin_ws/devel)
+  set(libmavconn_SOURCE_PREFIX /home/chalmers/gym-gazebo/gym_gazebo/envs/installation/catkin_ws/src/mavros/libmavconn)
+  set(libmavconn_DEVEL_PREFIX /home/chalmers/gym-gazebo/gym_gazebo/envs/installation/catkin_ws/devel)
   set(libmavconn_INSTALL_PREFIX "")
   set(libmavconn_PREFIX ${libmavconn_DEVEL_PREFIX})
 else()
   set(libmavconn_SOURCE_PREFIX "")
   set(libmavconn_DEVEL_PREFIX "")
-  set(libmavconn_INSTALL_PREFIX /home/mxb/gym-gazebo/gym_gazebo/envs/installation/catkin_ws/install)
+  set(libmavconn_INSTALL_PREFIX /home/chalmers/gym-gazebo/gym_gazebo/envs/installation/catkin_ws/install)
   set(libmavconn_PREFIX ${libmavconn_INSTALL_PREFIX})
 endif()
 
@@ -91,9 +91,9 @@ endif()
 # flag project as catkin-based to distinguish if a find_package()-ed project is a catkin project
 set(libmavconn_FOUND_CATKIN_PROJECT TRUE)
 
-if(NOT "/home/mxb/gym-gazebo/gym_gazebo/envs/installation/catkin_ws/src/mavros/libmavconn/include;/usr/include;/opt/ros/indigo/include " STREQUAL " ")
+if(NOT "/home/chalmers/gym-gazebo/gym_gazebo/envs/installation/catkin_ws/src/mavros/libmavconn/include;/usr/include;/opt/ros/indigo/include " STREQUAL " ")
   set(libmavconn_INCLUDE_DIRS "")
-  set(_include_dirs "/home/mxb/gym-gazebo/gym_gazebo/envs/installation/catkin_ws/src/mavros/libmavconn/include;/usr/include;/opt/ros/indigo/include")
+  set(_include_dirs "/home/chalmers/gym-gazebo/gym_gazebo/envs/installation/catkin_ws/src/mavros/libmavconn/include;/usr/include;/opt/ros/indigo/include")
   foreach(idir ${_include_dirs})
     if(IS_ABSOLUTE ${idir} AND IS_DIRECTORY ${idir})
       set(include ${idir})
@@ -103,7 +103,7 @@ if(NOT "/home/mxb/gym-gazebo/gym_gazebo/envs/installation/catkin_ws/src/mavros/l
         message(FATAL_ERROR "Project 'libmavconn' specifies '${idir}' as an include dir, which is not found.  It does not exist in '${include}'.  Ask the maintainer 'Vladimir Ermakov <vooon341@gmail.com>' to fix it.")
       endif()
     else()
-      message(FATAL_ERROR "Project 'libmavconn' specifies '${idir}' as an include dir, which is not found.  It does neither exist as an absolute directory nor in '/home/mxb/gym-gazebo/gym_gazebo/envs/installation/catkin_ws/src/mavros/libmavconn/${idir}'.  Ask the maintainer 'Vladimir Ermakov <vooon341@gmail.com>' to fix it.")
+      message(FATAL_ERROR "Project 'libmavconn' specifies '${idir}' as an include dir, which is not found.  It does neither exist as an absolute directory nor in '/home/chalmers/gym-gazebo/gym_gazebo/envs/installation/catkin_ws/src/mavros/libmavconn/${idir}'.  Ask the maintainer 'Vladimir Ermakov <vooon341@gmail.com>' to fix it.")
     endif()
     _list_append_unique(libmavconn_INCLUDE_DIRS ${include})
   endforeach()
@@ -122,7 +122,7 @@ foreach(library ${libraries})
     set(lib_path "")
     set(lib "${library}-NOTFOUND")
     # since the path where the library is found is returned we have to iterate over the paths manually
-    foreach(path /home/mxb/gym-gazebo/gym_gazebo/envs/installation/catkin_ws/devel/lib;/home/mxb/gym-gazebo/gym_gazebo/envs/installation/catkin_ws/devel/lib;/opt/ros/indigo/lib)
+    foreach(path /home/chalmers/gym-gazebo/gym_gazebo/envs/installation/catkin_ws/devel/lib;/opt/ros/indigo/lib)
       find_library(lib ${library}
         PATHS ${path}
         NO_DEFAULT_PATH NO_CMAKE_FIND_ROOT_PATH)

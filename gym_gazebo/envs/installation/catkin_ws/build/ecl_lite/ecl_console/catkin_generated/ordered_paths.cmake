@@ -1,1 +1,1 @@
-set(ORDERED_PATHS "/home/mxb/gym-gazebo/gym_gazebo/envs/installation/catkin_ws/devel/include;/home/mxb/gym-gazebo/gym_gazebo/envs/installation/catkin_ws/src/ecl_lite/ecl_config/include")
+set(ORDERED_PATHS "/home/chalmers/gym-gazebo/gym_gazebo/envs/installation/catkin_ws/devel/include;/home/chalmers/gym-gazebo/gym_gazebo/envs/installation/catkin_ws/src/ecl_lite/ecl_config/include")

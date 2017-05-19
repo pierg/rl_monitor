@@ -1,7 +1,7 @@
 # Make file names absolute:
 #
-get_filename_component(filename "/home/mxb/gym-gazebo/gym_gazebo/envs/installation/catkin_ws/build/glog_catkin/glog_src-prefix/src/v0.3.4.zip" ABSOLUTE)
-get_filename_component(directory "/home/mxb/gym-gazebo/gym_gazebo/envs/installation/catkin_ws/build/glog_catkin/glog_src-prefix/src/glog_src" ABSOLUTE)
+get_filename_component(filename "/home/chalmers/gym-gazebo/gym_gazebo/envs/installation/catkin_ws/build/glog_catkin/glog_src-prefix/src/v0.3.4.zip" ABSOLUTE)
+get_filename_component(directory "/home/chalmers/gym-gazebo/gym_gazebo/envs/installation/catkin_ws/build/glog_catkin/glog_src-prefix/src/glog_src" ABSOLUTE)
 
 message(STATUS "extracting...
      src='${filename}'
