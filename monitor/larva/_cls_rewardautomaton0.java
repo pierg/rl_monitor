@@ -97,7 +97,7 @@ if (0==1){}
 else if (_state_id_reward==0){
 		if (1==0){}
 		else if ((_occurredEvent(_event,0/*rlevent*/))){
-		EchoServer .response ("nothing");
+		EchoServer .response ();
 counter ++;
 
 		_state_id_reward = 0;//moving to state start

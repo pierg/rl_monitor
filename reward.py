@@ -16,17 +16,21 @@ def reward(obs, obs_pre):
 
 	sp = np.array(obs['speedX'])
 
-	progress = sp*np.cos(obs['angle']) - np.abs(sp*np.sin(obs['angle'])) - sp * np.abs(obs['trackPos'])
-	reward = progress
+	#progress = sp*np.cos(obs['angle']) - np.abs(sp*np.sin(obs['angle'])) - sp * np.abs(obs['trackPos'])
+	#reward = progress
 
 	# collision detection
-	if obs['damage'] - obs_pre['damage'] > 0:
-		reward = -1
+	#if obs['damage'] - obs_pre['damage'] > 0:
+	#	reward = -1
+
+	#print obs
 
 	message = str(sp) + ":" + str(obs['angle']) + ":" + str(obs['trackPos']) + ":" + str(obs['damage']) + ":" + str(obs_pre['damage'])
 
-	# Talk to LARVA
-	print "[LARVA ANSWER]: " + send_message_to_monitor(message)
+	reward = send_message_to_monitor(message).replace('n', '').replace('\\', '').replace('\'', '')
 
-	return reward
+	# Talk to LARVA
+	print "[LARVA ANSWER]: " + reward
+
+	return float(reward)
 
