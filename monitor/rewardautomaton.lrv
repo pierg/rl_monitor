@@ -20,7 +20,7 @@ Starting{start}
 }
 
 Transitions{
-start->start[rlevent\\EchoServer.response("nothing");counter++;]
+start->start[rlevent\\EchoServer.response();counter++;]
 }
 
 }

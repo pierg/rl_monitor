@@ -34,9 +34,11 @@ package SocketServerPackage;
 import java.net.*;
 import java.io.*;
 import java.util.*;
+//import org.json.simple.*;
 
 public class EchoServer {
     static PrintWriter out;
+    static double reward;
     public static void main(String[] args) throws IOException {
 
         if (args.length != 1) {
@@ -73,12 +75,12 @@ public class EchoServer {
               double damage = Double.parseDouble(parts[3]);
               double lastDamage = Double.parseDouble(parts[4]);
               
-              double reward = sp*Math.cos(angle) - Math.abs(sp*Math.sin(angle)) - sp * Math.abs(trackPos);
+              reward = sp*Math.cos(angle) - Math.abs(sp*Math.sin(angle)) - sp * Math.abs(trackPos);
 
               if (damage - lastDamage > 0){
                 reward = -1;
               }
-              
+
               System.out.println("reward : " + reward);
 
               // Structure of the message 'diaspora;<user_id>;<action>'
@@ -110,8 +112,8 @@ public class EchoServer {
     // public void monday(String u, String s) {}
     // public void friday(String u, String s) {}
 
-    public static void response(String s){
-      out.println(s);
+    public static void response(){
+      out.println(reward);
     }
     //
     // public static void timer_handler(String m){
