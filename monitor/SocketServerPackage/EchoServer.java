@@ -39,6 +39,12 @@ import java.util.*;
 public class EchoServer {
   static PrintWriter out;
   static double reward;
+  public static double sp;
+  public static double angle;
+  public static double trackPos;
+  public static double damage;
+  public static double lastDamage;
+
   public static void main(String[] args) throws IOException {
 
     if (args.length != 1) {
@@ -70,7 +76,7 @@ public class EchoServer {
 
           prepareResponse(inputLine);
 
-          System.out.println("reward : " + reward);
+          //System.out.println("reward : " + reward);
 
               // Structure of the message 'diaspora;<user_id>;<action>'
           List<String> list = new ArrayList<String>(Arrays.asList(inputLine.split(";")));
@@ -96,15 +102,66 @@ public class EchoServer {
     }
   }
 
-  public void prepareResponse(String message){
+  public static void prepareResponse(String message){
     String[] parts = message.split(":");
-    double sp = Double.parseDouble(parts[0]);
-    double angle = Double.parseDouble(parts[1]);
-    double trackPos = Double.parseDouble(parts[2]);
-    double damage = Double.parseDouble(parts[3]);
-    double lastDamage = Double.parseDouble(parts[4]);
+    sp = Double.parseDouble(parts[0]);
+    angle = Double.parseDouble(parts[1]);
+    trackPos = Double.parseDouble(parts[2]);
+    damage = Double.parseDouble(parts[3]);
+    lastDamage = Double.parseDouble(parts[4]);
+  }
 
+  public static void setReward(){
     reward = sp*Math.cos(angle) - Math.abs(sp*Math.sin(angle)) - sp * Math.abs(trackPos);
+
+    System.out.println("normal");
+
+    if (damage - lastDamage > 0){
+      reward = -1;
+    }
+  }
+
+  public static void setRewardOffRoadToForward(){
+    reward = sp*Math.cos(angle) - Math.abs(sp*Math.sin(angle)) - sp * Math.abs(trackPos);
+
+    System.out.println("offRoad");
+
+    reward = 1;
+
+    if (damage - lastDamage > 0){
+      reward = -1;
+    }
+  }
+
+
+  public static void setRewardForwardToOffRoad(){
+    reward = sp*Math.cos(angle) - Math.abs(sp*Math.sin(angle)) - sp * Math.abs(trackPos);
+
+    System.out.println("offRoad");
+
+    reward -= 0.5;
+
+    if (damage - lastDamage > 0){
+      reward = -1;
+    }
+  }
+
+  public static void setRewardOffRoad(){
+    reward = sp*Math.cos(angle) - Math.abs(sp*Math.sin(angle)) - sp * Math.abs(trackPos);
+
+    System.out.println("offRoad");
+
+    reward -= 1;
+
+    if (damage - lastDamage > 0){
+      reward = -1;
+    }
+  }
+
+  public static void setRewardForward(){
+    reward = sp*Math.cos(angle) - Math.abs(sp*Math.sin(angle)) - sp * Math.abs(trackPos);
+
+    System.out.println(trackPos + " forward");
 
     if (damage - lastDamage > 0){
       reward = -1;

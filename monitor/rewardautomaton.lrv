@@ -1,28 +1,38 @@
 Imports
 {
-import SocketServerPackage.EchoServer;
+	import SocketServerPackage.EchoServer;
 }
 
 Global{
 
-Variables{
-int counter = 0;
-}
+	Variables{
+		int counter = 0;
+	}
 
-Events{
-rlevent(obs, preobs) = {Echoserver.rlevent(String o, String preo)}
-}
+	Events{
+		rlevent(obs, preobs) = {EchoServer.rlevent(String o, String preo)}
+	}
 
-Property reward{
+	Property reward{
 
-States{
-Starting{start}
-}
+		States{
+			Bad{offRoad}
+			Normal{forward}
+			Starting{start}
+		}
 
-Transitions{
-start->start[rlevent\\EchoServer.response();counter++;]
-}
+		Transitions{
+			start->forward[rlevent\\EchoServer.setReward();EchoServer.response();counter++;]
 
-}
+			forward->forward[rlevent\EchoServer.trackPos > -1 && EchoServer.trackPos < 1\EchoServer.setRewardForward();EchoServer.response();counter++;]
+
+			forward->offRoad[rlevent\EchoServer.trackPos <= -1 || EchoServer.trackPos >= 1\EchoServer.setRewardForwardToOffRoad();EchoServer.response();counter++;]
+
+			offRoad->forward[rlevent\EchoServer.trackPos > -1 && EchoServer.trackPos < 1\EchoServer.setRewardOffRoadToForward();EchoServer.response();counter++;]
+
+			offRoad->offRoad[rlevent\EchoServer.trackPos <= -1 || EchoServer.trackPos >= 1\EchoServer.setRewardOffRoad();EchoServer.response();counter++;]
+		}
+
+	}
 
 }

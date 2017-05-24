@@ -23,7 +23,7 @@ def reward(obs, obs_pre):
 	#if obs['damage'] - obs_pre['damage'] > 0:
 	#	reward = -1
 
-	#print obs
+	print obs
 
 	message = str(sp) + ":" + str(obs['angle']) + ":" + str(obs['trackPos']) + ":" + str(obs['damage']) + ":" + str(obs_pre['damage'])
 

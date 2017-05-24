@@ -86,7 +86,7 @@ else if (no_automata < 0)
 }catch(Exception ex){ex.printStackTrace();}
 }
 
-int _state_id_reward = 0;
+int _state_id_reward = 2;
 
 public void _performLogic_reward(String _info, int... _event) {
 
@@ -94,13 +94,52 @@ _cls_rewardautomaton0.pw.println("[reward]AUTOMATON::> reward("+") STATE::>"+ _s
 _cls_rewardautomaton0.pw.flush();
 
 if (0==1){}
-else if (_state_id_reward==0){
+else if (_state_id_reward==1){
 		if (1==0){}
-		else if ((_occurredEvent(_event,0/*rlevent*/))){
-		EchoServer .response ();
+		else if ((_occurredEvent(_event,0/*rlevent*/)) && (EchoServer .trackPos >-1 &&EchoServer .trackPos <1 )){
+		EchoServer .setRewardForward ();
+EchoServer .response ();
 counter ++;
 
-		_state_id_reward = 0;//moving to state start
+		_state_id_reward = 1;//moving to state forward
+		_goto_reward(_info);
+		}
+		else if ((_occurredEvent(_event,0/*rlevent*/)) && (EchoServer .trackPos <=-1 ||EchoServer .trackPos >=1 )){
+		EchoServer .setRewardForwardToOffRoad ();
+EchoServer .response ();
+counter ++;
+
+		_state_id_reward = 0;//moving to state offRoad
+		_goto_reward(_info);
+		}
+}
+else if (_state_id_reward==2){
+		if (1==0){}
+		else if ((_occurredEvent(_event,0/*rlevent*/))){
+		EchoServer .setReward ();
+EchoServer .response ();
+counter ++;
+
+		_state_id_reward = 1;//moving to state forward
+		_goto_reward(_info);
+		}
+}
+else if (_state_id_reward==0){
+		if (1==0){}
+		else if ((_occurredEvent(_event,0/*rlevent*/)) && (EchoServer .trackPos >-1 &&EchoServer .trackPos <1 )){
+		EchoServer .setRewardOffRoadToForward ();
+EchoServer .response ();
+counter ++;
+
+		_state_id_reward = 1;//moving to state forward
+		_goto_reward(_info);
+		}
+		else if ((_occurredEvent(_event,0/*rlevent*/)) && (EchoServer .trackPos <=-1 ||EchoServer .trackPos >=1 )){
+		EchoServer .setRewardOffRoad ();
+EchoServer .response ();
+counter ++;
+
+		_state_id_reward = 0;//moving to state offRoad
 		_goto_reward(_info);
 		}
 }
@@ -113,7 +152,9 @@ _cls_rewardautomaton0.pw.flush();
 
 public String _string_reward(int _state_id, int _mode){
 switch(_state_id){
-case 0: if (_mode == 0) return "start"; else return "start";
+case 1: if (_mode == 0) return "forward"; else return "forward";
+case 2: if (_mode == 0) return "start"; else return "start";
+case 0: if (_mode == 0) return "offRoad"; else return "!!!SYSTEM REACHED BAD STATE!!! offRoad "+new _BadStateExceptionrewardautomaton().toString()+" ";
 default: return "!!!SYSTEM REACHED AN UNKNOWN STATE!!!";
 }
 }
