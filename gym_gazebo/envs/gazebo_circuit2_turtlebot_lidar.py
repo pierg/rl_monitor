@@ -125,6 +125,8 @@ class GazeboCircuit2TurtlebotLidarEnv(gazebo_env.GazeboEnv):
         else :
             reward = int(response[1])
 
+        #print "STATE : "
+        #print state
         return state, reward, done, {}
 
     def _reset(self):

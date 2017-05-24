@@ -1,28 +1,36 @@
 Imports
 {
-import SocketServerPackage.EchoServer;
+	import SocketServerPackage.EchoServer;
 }
 
 Global{
 
-Variables{
-int counter = 0;
-}
+	Variables{
+		int counter = 0;
+	}
 
-Events{
-rlevent(obs, preobs) = {Echoserver.rlevent(String o, String preo)}
-}
+	Events{
+		rlevent(obs, preobs) = {Echoserver.rlevent(String o, String preo)}
+	}
 
-Property reward{
+	Property reward{
 
-States{
-Starting{start}
-}
+		States{
+			Normal{ forward turn}
+			Starting{start}
+		}
 
-Transitions{
-start->start[rlevent\\EchoServer.response();counter++;]
-}
+		Transitions{
+			start->forward[rlevent\EchoServer._action == 0 && EchoServer._done == 0\EchoServer.forwardReward();]
+			start->turn[rlevent\EchoServer._action != 0 && EchoServer._done == 0\EchoServer.turnReward();]
+			forward->forward[rlevent\EchoServer._action == 0 && EchoServer._done == 0\EchoServer.forwardReward();]
+			forward->turn[rlevent\EchoServer._action != 0 && EchoServer._done == 0\EchoServer.turnReward();]
+			turn->turn[rlevent\EchoServer._action != 0 && EchoServer._done == 0\EchoServer.turnReward();]
+			turn->forward[rlevent\EchoServer._action == 0 && EchoServer._done == 0\EchoServer.forwardReward();]
+			forward->start[rlevent\EchoServer._done == 1\EchoServer.crashReward();]
+			turn->start[rlevent\EchoServer._done == 1\EchoServer.crashReward();]
+		}
 
-}
+	}
 
 }

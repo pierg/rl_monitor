@@ -37,7 +37,10 @@ import java.util.*;
 
 public class EchoServer {
     
-    static int _reward;
+    public static int _reward;
+    public static int _done;
+    public static int _action;
+
     static PrintWriter out;
 
     public static void main(String[] args) throws IOException {
@@ -70,17 +73,27 @@ public class EchoServer {
               List<String> list = new ArrayList<String>(Arrays.asList(inputLine.split(";")));
               EchoServer a = new EchoServer();
 
-              boolean done = Boolean.valueOf(list.get(0));
-              int action = Integer.parseInt(list.get(1));
-              if(!done){
-                if(action == 0){
-                  _reward = 5;
-                } else{
-                  _reward = 1;
-                }
-              } else{
-                _reward = -200;
+              if (Boolean.valueOf(list.get(0))){
+                _done = 1;
+              } else {
+                _done = 0;
               }
+
+              System.out.println("Done : " + _done);
+
+              _action = Integer.parseInt(list.get(1));
+
+              System.out.println("Action : " + _action);
+
+              //if(!done){
+                //if(action == 0){
+                  //_reward = 5;
+                //} else{
+                  //_reward = 1;
+                //}
+              //} else{
+                //_reward = -200;
+              //}
 
               a.rlevent("1","2");
               // if(list.get(2).toString().equals("post")){
@@ -107,6 +120,24 @@ public class EchoServer {
     // public void post(String u, String s) {}
     // public void monday(String u, String s) {}
     // public void friday(String u, String s) {}
+
+    public static void forwardReward() {
+      System.out.println("forwardReward");
+      _reward = 5;
+      response();
+    }
+
+    public static void turnReward() {
+      System.out.println("turnReward");
+      _reward = 1;
+      response();
+    } 
+
+    public static void crashReward() {
+      System.out.println("crashReward");
+      _reward = -200;
+      response();
+    }
 
     public static void response(){
       out.println(_reward);
