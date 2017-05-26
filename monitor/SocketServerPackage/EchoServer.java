@@ -111,61 +111,73 @@ public class EchoServer {
     lastDamage = Double.parseDouble(parts[4]);
   }
 
+  private static double basicReward(){
+    return sp*Math.cos(angle) - Math.abs(sp*Math.sin(angle)) - sp * Math.abs(trackPos);
+  }
+
   public static void setReward(){
-    reward = sp*Math.cos(angle) - Math.abs(sp*Math.sin(angle)) - sp * Math.abs(trackPos);
+    reward = basicReward();
 
     System.out.println("normal");
-
-    if (damage - lastDamage > 0){
-      reward = -1;
-    }
   }
 
   public static void setRewardOffRoadToForward(){
-    reward = sp*Math.cos(angle) - Math.abs(sp*Math.sin(angle)) - sp * Math.abs(trackPos);
+    reward = basicReward();
 
-    System.out.println("offRoad");
+    System.out.println(" offRoad");
 
     reward = 1;
-
-    if (damage - lastDamage > 0){
-      reward = -1;
-    }
   }
 
 
   public static void setRewardForwardToOffRoad(){
-    reward = sp*Math.cos(angle) - Math.abs(sp*Math.sin(angle)) - sp * Math.abs(trackPos);
+    reward = basicReward();
 
-    System.out.println("offRoad");
+    System.out.println(" offRoad");
 
     reward -= 0.5;
-
-    if (damage - lastDamage > 0){
-      reward = -1;
-    }
   }
 
   public static void setRewardOffRoad(){
-    reward = sp*Math.cos(angle) - Math.abs(sp*Math.sin(angle)) - sp * Math.abs(trackPos);
+    reward = basicReward();
 
-    System.out.println("offRoad");
+    System.out.println(trackPos + " offRoad");
 
     reward -= 1;
-
-    if (damage - lastDamage > 0){
-      reward = -1;
-    }
   }
 
   public static void setRewardForward(){
-    reward = sp*Math.cos(angle) - Math.abs(sp*Math.sin(angle)) - sp * Math.abs(trackPos);
+    reward = basicReward();
 
     System.out.println(trackPos + " forward");
+  }
 
-    if (damage - lastDamage > 0){
-      reward = -1;
-    }
+  public static void setRewardDamage(){
+    reward = -1;
+
+    System.out.println("damage");
+  }
+
+  public static void setRewardLimitRoad(){
+    reward = -10;
+
+    System.out.println(trackPos + " limitRoad");
+  }
+
+  public static boolean isForward(){
+    return trackPos > -0.5 && trackPos < 0.5;
+  }
+
+  public static boolean isLimitRoad(){
+    return (trackPos <= -0.5 && trackPos > -1) || (trackPos >= 0.5 && trackPos < 1);
+  }
+
+  public static boolean isOffRoad(){
+    return trackPos <= -1 || trackPos >= 1;
+  }
+
+  public static boolean isDamage(){
+    return damage - lastDamage > 0;
   }
 
   public void rlevent(String o, String pre_o) {}
