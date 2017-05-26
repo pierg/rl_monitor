@@ -97,7 +97,7 @@ if (0==1){}
 else if (_state_id_reward==1){
 		if (1==0){}
 		else if ((_occurredEvent(_event,0/*rlevent*/)) && (EchoServer .isForward ())){
-		EchoServer .setRewardOffRoadToForward ();
+		EchoServer .setRewardForward ();
 EchoServer .response ();
 counter ++;
 
@@ -113,7 +113,7 @@ counter ++;
 		_goto_reward(_info);
 		}
 		else if ((_occurredEvent(_event,0/*rlevent*/)) && (EchoServer .isLimitRoad ())){
-		EchoServer .setRewardOffRoad ();
+		EchoServer .setRewardLimitRoad ();
 EchoServer .response ();
 counter ++;
 
@@ -147,14 +147,6 @@ counter ++;
 		_state_id_reward = 3;//moving to state limitRoad
 		_goto_reward(_info);
 		}
-		else if ((_occurredEvent(_event,0/*rlevent*/)) && (EchoServer .isOffRoad ())){
-		EchoServer .setRewardForwardToOffRoad ();
-EchoServer .response ();
-counter ++;
-
-		_state_id_reward = 0;//moving to state offRoad
-		_goto_reward(_info);
-		}
 }
 else if (_state_id_reward==4){
 		if (1==0){}
@@ -177,16 +169,8 @@ counter ++;
 		_state_id_reward = 1;//moving to state damage
 		_goto_reward(_info);
 		}
-		else if ((_occurredEvent(_event,0/*rlevent*/)) && (EchoServer .isForward ())){
-		EchoServer .setRewardOffRoadToForward ();
-EchoServer .response ();
-counter ++;
-
-		_state_id_reward = 2;//moving to state forward
-		_goto_reward(_info);
-		}
 		else if ((_occurredEvent(_event,0/*rlevent*/)) && (EchoServer .isLimitRoad ())){
-		EchoServer .setRewardLimitRoad ();
+		EchoServer .setRewardOffRoadToLimitRoad ();
 EchoServer .response ();
 counter ++;
 
@@ -213,7 +197,7 @@ counter ++;
 		_goto_reward(_info);
 		}
 		else if ((_occurredEvent(_event,0/*rlevent*/)) && (EchoServer .isForward ())){
-		EchoServer .setRewardOffRoadToForward ();
+		EchoServer .setRewardLimitRoadToForward ();
 EchoServer .response ();
 counter ++;
 

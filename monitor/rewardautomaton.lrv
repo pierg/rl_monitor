@@ -31,32 +31,28 @@ Global{
 
 			forward->limitRoad[rlevent\EchoServer.isLimitRoad()\EchoServer.setRewardLimitRoad();EchoServer.response();counter++;]
 
-			forward->offRoad[rlevent\EchoServer.isOffRoad()\EchoServer.setRewardForwardToOffRoad();EchoServer.response();counter++;]
-
 
 			offRoad->damage[rlevent\EchoServer.isDamage()\EchoServer.setRewardDamage();EchoServer.response();counter++;]
 
-			offRoad->forward[rlevent\EchoServer.isForward()\EchoServer.setRewardOffRoadToForward();EchoServer.response();counter++;]
-
-			offRoad->limitRoad[rlevent\EchoServer.isLimitRoad()\EchoServer.setRewardLimitRoad();EchoServer.response();counter++;]
+			offRoad->limitRoad[rlevent\EchoServer.isLimitRoad()\EchoServer.setRewardOffRoadToLimitRoad();EchoServer.response();counter++;]
 
 			offRoad->offRoad[rlevent\EchoServer.isOffRoad()\EchoServer.setRewardOffRoad();EchoServer.response();counter++;]
 
 
 			limitRoad->damage[rlevent\EchoServer.isDamage()\EchoServer.setRewardDamage();EchoServer.response();counter++;]
 
-			limitRoad->forward[rlevent\EchoServer.isForward()\EchoServer.setRewardOffRoadToForward();EchoServer.response();counter++;]
+			limitRoad->forward[rlevent\EchoServer.isForward()\EchoServer.setRewardLimitRoadToForward();EchoServer.response();counter++;]
 
 			limitRoad->limitRoad[rlevent\EchoServer.isLimitRoad()\EchoServer.setRewardLimitRoad();EchoServer.response();counter++;]
 
 			limitRoad->offRoad[rlevent\EchoServer.isOffRoad()\EchoServer.setRewardOffRoad();EchoServer.response();counter++;]
 
 
-			damage->forward[rlevent\EchoServer.isForward()\EchoServer.setRewardOffRoadToForward();EchoServer.response();counter++;]
+			damage->forward[rlevent\EchoServer.isForward()\EchoServer.setRewardForward();EchoServer.response();counter++;]
 
 			damage->offRoad[rlevent\EchoServer.isOffRoad()\EchoServer.setRewardOffRoad();EchoServer.response();counter++;]
 
-			damage->limitRoad[rlevent\EchoServer.isLimitRoad()\EchoServer.setRewardOffRoad();EchoServer.response();counter++;]
+			damage->limitRoad[rlevent\EchoServer.isLimitRoad()\EchoServer.setRewardLimitRoad();EchoServer.response();counter++;]
 
 		}
 

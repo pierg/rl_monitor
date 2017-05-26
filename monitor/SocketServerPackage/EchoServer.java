@@ -121,21 +121,21 @@ public class EchoServer {
     System.out.println("normal");
   }
 
-  public static void setRewardOffRoadToForward(){
+  public static void setRewardLimitRoadToForward(){
     reward = basicReward();
 
-    System.out.println(" offRoad");
+    System.out.println(" limit to forward");
 
-    reward = 1;
+    reward += 1;
   }
 
 
-  public static void setRewardForwardToOffRoad(){
+  public static void setRewardOffRoadToLimitRoad(){
     reward = basicReward();
 
-    System.out.println(" offRoad");
+    System.out.println(" off to limit");
 
-    reward -= 0.5;
+    reward += 0.5;
   }
 
   public static void setRewardOffRoad(){
@@ -153,13 +153,15 @@ public class EchoServer {
   }
 
   public static void setRewardDamage(){
-    reward = -1;
+    reward = basicReward();
+    reward = -10;
 
     System.out.println("damage");
   }
 
   public static void setRewardLimitRoad(){
-    reward = -10;
+    reward = basicReward();
+    reward -= 0.5;
 
     System.out.println(trackPos + " limitRoad");
   }
