@@ -10,7 +10,7 @@ compile:
 	ajc -1.5 -cp aspectjrt.jar:. -outxmlfile ./META-INF/aop.xml ./aspects/*.aj
 
 run:
-	sudo aj5 -cp . SocketServerPackage.EchoServer $(PORT)
+	aj5 -cp . SocketServerPackage.EchoServer $(PORT)
 
 clean:
 	rm -rf META-INF/ larva/ aspects/ output_policy.txt _diag_diaspora.txt

@@ -42,6 +42,7 @@ if __name__ == '__main__':
     start_time = time.time()
     total_episodes = 10000
     highest_reward = 0
+    total_reward = 0
 
     for x in range(total_episodes):
         done = False
@@ -83,7 +84,10 @@ if __name__ == '__main__':
 
         m, s = divmod(int(time.time() - start_time), 60)
         h, m = divmod(m, 60)
+        total_reward += cumulated_reward
         print ("EP: "+str(x+1)+" - [alpha: "+str(round(qlearn.alpha,2))+" - gamma: "+str(round(qlearn.gamma,2))+" - epsilon: "+str(round(qlearn.epsilon,2))+"] - Reward: "+str(cumulated_reward)+"     Time: %d:%02d:%02d" % (h, m, s))
+        print "Moyenne : "
+        print total_reward/(x+1)
 
     #Github table content
     print ("\n|"+str(total_episodes)+"|"+str(qlearn.alpha)+"|"+str(qlearn.gamma)+"|"+str(initial_epsilon)+"*"+str(epsilon_discount)+"|"+str(highest_reward)+"| PICTURE |")

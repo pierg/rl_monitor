@@ -40,7 +40,7 @@ public class EchoServer {
     public static int _reward;
     public static int _done;
     public static int _action;
-
+    public static List<Integer> _state;
     static PrintWriter out;
 
     public static void main(String[] args) throws IOException {
@@ -79,21 +79,9 @@ public class EchoServer {
                 _done = 0;
               }
 
-              System.out.println("Done : " + _done);
-
               _action = Integer.parseInt(list.get(1));
 
-              System.out.println("Action : " + _action);
-
-              //if(!done){
-                //if(action == 0){
-                  //_reward = 5;
-                //} else{
-                  //_reward = 1;
-                //}
-              //} else{
-                //_reward = -200;
-              //}
+              a.stringToList(list.get(2));
 
               a.rlevent("1","2");
               // if(list.get(2).toString().equals("post")){
@@ -122,14 +110,14 @@ public class EchoServer {
     // public void friday(String u, String s) {}
 
     public static void forwardReward() {
-      System.out.println("forwardReward");
-      _reward = 5;
+      _reward = 5 - Math.abs(_state.get(1) - _state.get(3));
+      System.out.println("forwardReward : " + _reward);
       response();
     }
 
     public static void turnReward() {
-      System.out.println("turnReward");
-      _reward = 1;
+      _reward = 1  - Math.abs(_state.get(1) - _state.get(3));
+      System.out.println("turnReward : " + _reward);
       response();
     } 
 
@@ -141,6 +129,15 @@ public class EchoServer {
 
     public static void response(){
       out.println(_reward);
+    }
+    
+    public void stringToList(String numbers){
+        _state = new ArrayList<Integer>();
+        for(int i=0;i<numbers.length();i++){
+            if(Character.getNumericValue(numbers.charAt(i)) >= 0){
+             _state.add(Character.getNumericValue(numbers.charAt(i)));   
+            }
+        }
     }
     //
     // public static void timer_handler(String m){

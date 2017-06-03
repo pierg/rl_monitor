@@ -14,7 +14,7 @@ import json
 import random
 import numpy as np
 from keras.models import Sequential, load_model
-from keras.initializations import normal
+from keras.initializers import normal
 from keras import optimizers
 from keras.optimizers import RMSprop
 from keras.layers import Convolution2D, Flatten, ZeroPadding2D

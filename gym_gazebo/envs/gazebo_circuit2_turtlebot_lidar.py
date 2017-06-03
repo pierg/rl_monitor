@@ -55,7 +55,7 @@ class GazeboCircuit2TurtlebotLidarEnv(gazebo_env.GazeboEnv):
         discretized_ranges = []
         min_range = 0.2
         done = False
-        mod = len(data.ranges)/new_ranges
+        mod = len(data.ranges)/new_ranges #mod = 4
         for i, item in enumerate(data.ranges):
             if (i%mod==0):
                 if data.ranges[i] == float ('Inf') or np.isinf(data.ranges[i]):
@@ -64,8 +64,9 @@ class GazeboCircuit2TurtlebotLidarEnv(gazebo_env.GazeboEnv):
                     discretized_ranges.append(0)
                 else:
                     discretized_ranges.append(int(data.ranges[i]))
-            if (min_range > data.ranges[i] > 0):
+            if (min_range > data.ranges[i] > 0): #if we're closer to an obstacle than the minimal range then we crash
                 done = True
+
         return discretized_ranges,done
 
     def _seed(self, seed=None):
@@ -113,20 +114,13 @@ class GazeboCircuit2TurtlebotLidarEnv(gazebo_env.GazeboEnv):
         state,done = self.discretize_observation(data,5)
 
         #We build a string with the informations LARVA needs to compute the reward
-        string = "{};{}".format(done,action)
+        string = "{};{};{}".format(done,action,state)
 
         #We send the informations to LARVA and we wait the answer
         response = self.send_message_to_monitor(string)
 
-        #If the answer is a negative number the reward is -200
-        if(response[1] == "-") :
-            reward = -200
-        
-        else :
-            reward = int(response[1])
+        reward = int(response[1:len(response)-3])
 
-        #print "STATE : "
-        #print state
         return state, reward, done, {}
 
     def _reset(self):
