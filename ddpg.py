@@ -69,6 +69,7 @@ def playGame(train_indicator=1):    #1 means Train, 0 means simply Run
     file = open("results" + time.strftime("%d-%m-%Y-%H%M%S") + ".txt", "w")
     file.write("Results from simulation. Launch date : " + time.strftime("%d/%m/%Y - %H:%M:%S") + "\n\n")
 
+
     #Now load the weight
     print("Now we load the weight")
     try:
@@ -81,9 +82,12 @@ def playGame(train_indicator=1):    #1 means Train, 0 means simply Run
         print("Cannot find the weight")
 
     print("TORCS Experiment Start.")
+
+    start = time.time()
     for i in range(episode_count):
 
         print("Episode : " + str(i) + " Replay Buffer " + str(buff.count()))
+        startEpisode = time.time()
 
         if np.mod(i, 3) == 0:
             ob = env.reset(relaunch=True)   #relaunch TORCS every 3 episode because of the memory leak error
@@ -168,8 +172,10 @@ def playGame(train_indicator=1):    #1 means Train, 0 means simply Run
                     json.dump(critic.model.to_json(), outfile)
 
 
+        endEpisode = time.time()
         file.write("TOTAL REWARD @ " + str(i) +"-th Episode  : Reward " + str(total_reward) + "\n")
-        file.write("Total Step: " + str(step) + "\n\n")
+        file.write("Total Step: " + str(step) + "\n")
+        file.write("Total Time: " + str(endEpisode - startEpisode) + "\n\n")
 
         print("TOTAL REWARD @ " + str(i) +"-th Episode  : Reward " + str(total_reward))
         print("Total Step: " + str(step))
@@ -177,6 +183,8 @@ def playGame(train_indicator=1):    #1 means Train, 0 means simply Run
 
         if finished:
             break
+
+    end = time.time()
 
     env.end()  # This is for shutting down TORCS
     print("Finish.")

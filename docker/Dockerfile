@@ -34,20 +34,28 @@ RUN apt-get install -y xautomation \
     pip install gym && \
     pip install numpy && \
     pip install h5py
-   
-#Install gym_torcs
-RUN git clone https://github.com/ugo-nama-kun/gym_torcs.git && \
-    cd gym_torcs/vtorcs-RL-color && \
+
+RUN mkdir /root/.ssh/
+
+ADD id_rsa /root/.ssh/id_rsa
+
+RUN touch /root/.ssh/known_hosts
+
+RUN ssh-keyscan github.com >> /root/.ssh/known_hosts
+
+RUN git clone git@github.com:pierg/rl_monitor.git  && \
+    cd vtorcs-RL-color && \
     ./configure && \
     make && \
     make install && \
     make datainstall && \
+    cd ..
+
+RUN apt-get install default-jdk
+
+RUN cd monitor && \
+    make compile && \
     cd ../..
     
-#DDPG Keras Torcs
-RUN git clone https://github.com/yanpanlau/DDPG-Keras-Torcs.git && \
-    cd DDPG-Keras-Torcs && \
-    cp *.* ../gym_torcs && \
-    cd ..
-    
-WORKDIR gym_torcs/
+
+WORKDIR rl_monitor/
