@@ -11,18 +11,26 @@ Global{
 
 	Events{
 		rlevent(obs, preobs) = {EchoServer.rlevent(String o, String preo)}
+		reset() = {EchoServer.reset()}
 	}
 
 	Property reward{
 
 		States{
-			Bad{offRoad damage}
+			Bad{rightOffRoad leftOffRoad damage}
 			Normal{forward limitRoad}
 			Starting{start}
 		}
 
 		Transitions{
-			start->forward[rlevent\\EchoServer.setReward();EchoServer.response();counter++;]
+			start->forward[rlevent\\EchoServer.setRewardForward();EchoServer.response();counter++;]
+
+			start->start[reset()\\EchoServer.reward = 0;EchoServer.response();]
+			forward->start[reset()\\EchoServer.reward = 0;EchoServer.response();]
+			leftOffRoad->start[reset()\\EchoServer.reward = 0;EchoServer.response();]
+			rightOffRoad->start[reset()\\EchoServer.reward = 0;EchoServer.response();]
+			limitRoad->start[reset()\\EchoServer.reward = 0;EchoServer.response();]
+			damage->start[reset()\\EchoServer.reward = 0;EchoServer.response();]
 
 
 			forward->damage[rlevent\EchoServer.isDamage()\EchoServer.setRewardDamage();EchoServer.response();counter++;]
@@ -32,11 +40,18 @@ Global{
 			forward->limitRoad[rlevent\EchoServer.isLimitRoad()\EchoServer.setRewardLimitRoad();EchoServer.response();counter++;]
 
 
-			offRoad->damage[rlevent\EchoServer.isDamage()\EchoServer.setRewardDamage();EchoServer.response();counter++;]
+			rightOffRoad->damage[rlevent\EchoServer.isDamage()\EchoServer.setRewardDamage();EchoServer.response();counter++;]
 
-			offRoad->limitRoad[rlevent\EchoServer.isLimitRoad()\EchoServer.setRewardOffRoadToLimitRoad();EchoServer.response();counter++;]
+			rightOffRoad->limitRoad[rlevent\EchoServer.isLimitRoad()\EchoServer.setRewardOffRoadToLimitRoad();EchoServer.response();counter++;]
 
-			offRoad->offRoad[rlevent\EchoServer.isOffRoad()\EchoServer.setRewardOffRoad();EchoServer.response();counter++;]
+			rightOffRoad->rightOffRoad[rlevent\EchoServer.isRightOffRoad()\EchoServer.setRewardRightOffRoad();EchoServer.response();counter++;]
+
+
+			leftOffRoad->damage[rlevent\EchoServer.isDamage()\EchoServer.setRewardDamage();EchoServer.response();counter++;]
+
+			leftOffRoad->limitRoad[rlevent\EchoServer.isLimitRoad()\EchoServer.setRewardOffRoadToLimitRoad();EchoServer.response();counter++;]
+
+			leftOffRoad->leftOffRoad[rlevent\EchoServer.isLeftOffRoad()\EchoServer.setRewardLeftOffRoad();EchoServer.response();counter++;]
 
 
 			limitRoad->damage[rlevent\EchoServer.isDamage()\EchoServer.setRewardDamage();EchoServer.response();counter++;]
@@ -45,12 +60,16 @@ Global{
 
 			limitRoad->limitRoad[rlevent\EchoServer.isLimitRoad()\EchoServer.setRewardLimitRoad();EchoServer.response();counter++;]
 
-			limitRoad->offRoad[rlevent\EchoServer.isOffRoad()\EchoServer.setRewardOffRoad();EchoServer.response();counter++;]
+			limitRoad->rightOffRoad[rlevent\EchoServer.isRightOffRoad()\EchoServer.setRewardRightOffRoad();EchoServer.response();counter++;]
+
+			limitRoad->leftOffRoad[rlevent\EchoServer.isLeftOffRoad()\EchoServer.setRewardLeftOffRoad();EchoServer.response();counter++;]
 
 
 			damage->forward[rlevent\EchoServer.isForward()\EchoServer.setRewardForward();EchoServer.response();counter++;]
 
-			damage->offRoad[rlevent\EchoServer.isOffRoad()\EchoServer.setRewardOffRoad();EchoServer.response();counter++;]
+			damage->leftOffRoad[rlevent\EchoServer.isLeftOffRoad()\EchoServer.setRewardLeftOffRoad();EchoServer.response();counter++;]
+
+			damage->rightOffRoad[rlevent\EchoServer.isRightOffRoad()\EchoServer.setRewardRightOffRoad();EchoServer.response();counter++;]
 
 			damage->limitRoad[rlevent\EchoServer.isLimitRoad()\EchoServer.setRewardLimitRoad();EchoServer.response();counter++;]
 

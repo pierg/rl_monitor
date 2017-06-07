@@ -15,6 +15,7 @@ from ReplayBuffer import ReplayBuffer
 from ActorNetwork import ActorNetwork
 from CriticNetwork import CriticNetwork
 from OU import OU
+import time
 import timeit
 from reward import reward
 
@@ -65,6 +66,9 @@ def playGame(train_indicator=1):    #1 means Train, 0 means simply Run
     # Generate a Torcs environment
     env = TorcsEnv(reward, vision=vision, throttle=True,gear_change=False)
 
+    file = open("results" + time.strftime("%d-%m-%Y-%H%M%S") + ".txt", "w")
+    file.write("Results from simulation. Launch date : " + time.strftime("%d/%m/%Y - %H:%M:%S") + "\n\n")
+
     #Now load the weight
     print("Now we load the weight")
     try:
@@ -109,7 +113,7 @@ def playGame(train_indicator=1):    #1 means Train, 0 means simply Run
             a_t[0][1] = a_t_original[0][1] + noise_t[0][1]
             a_t[0][2] = a_t_original[0][2] + noise_t[0][2]
 
-            ob, r_t, done, info = env.step(a_t[0])
+            ob, r_t, done, info, finished = env.step(a_t[0])
             
             s_t1 = np.hstack((ob.angle, ob.track, ob.trackPos, ob.speedX, ob.speedY, ob.speedZ, ob.wheelSpinVel/100.0, ob.rpm))
         
@@ -149,6 +153,9 @@ def playGame(train_indicator=1):    #1 means Train, 0 means simply Run
             if done:
                 break
 
+            if finished:
+                break
+
         if np.mod(i, 3) == 0:
             if (train_indicator):
                 print("Now we save model")
@@ -160,9 +167,16 @@ def playGame(train_indicator=1):    #1 means Train, 0 means simply Run
                 with open("criticmodel.json", "w") as outfile:
                     json.dump(critic.model.to_json(), outfile)
 
+
+        file.write("TOTAL REWARD @ " + str(i) +"-th Episode  : Reward " + str(total_reward) + "\n")
+        file.write("Total Step: " + str(step) + "\n\n")
+
         print("TOTAL REWARD @ " + str(i) +"-th Episode  : Reward " + str(total_reward))
         print("Total Step: " + str(step))
         print("")
+
+        if finished:
+            break
 
     env.end()  # This is for shutting down TORCS
     print("Finish.")

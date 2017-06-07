@@ -38,12 +38,14 @@ import java.util.*;
 
 public class EchoServer {
   static PrintWriter out;
-  static double reward;
+  public static double reward;
   public static double sp;
   public static double angle;
   public static double trackPos;
   public static double damage;
   public static double lastDamage;
+  public static double lastAngle;
+  private static double angleCounter = 0;
 
   public static void main(String[] args) throws IOException {
 
@@ -74,13 +76,20 @@ public class EchoServer {
 
               //progress = sp*np.cos(obs['angle']) - np.abs(sp*np.sin(obs['angle'])) - sp * np.abs(obs['trackPos'])
 
+          EchoServer a = new EchoServer();
+
+
+          if(inputLine.equals("reset")){
+            a.reset();
+            continue;
+          }
+
           prepareResponse(inputLine);
 
           //System.out.println("reward : " + reward);
 
               // Structure of the message 'diaspora;<user_id>;<action>'
           List<String> list = new ArrayList<String>(Arrays.asList(inputLine.split(";")));
-          EchoServer a = new EchoServer();
           a.rlevent("1","2");
               // if(list.get(2).toString().equals("post")){
               //   a.post(list.get(1).toString(), "nothing");
@@ -103,22 +112,19 @@ public class EchoServer {
   }
 
   public static void prepareResponse(String message){
+
     String[] parts = message.split(":");
     sp = Double.parseDouble(parts[0]);
     angle = Double.parseDouble(parts[1]);
     trackPos = Double.parseDouble(parts[2]);
     damage = Double.parseDouble(parts[3]);
     lastDamage = Double.parseDouble(parts[4]);
+    lastAngle = Double.parseDouble(parts[5]);
   }
 
   private static double basicReward(){
-    return sp*Math.cos(angle) - Math.abs(sp*Math.sin(angle)) - sp * Math.abs(trackPos);
-  }
-
-  public static void setReward(){
-    reward = basicReward();
-
-    System.out.println("normal");
+    //return sp*Math.cos(angle) - Math.abs(sp*Math.sin(angle)) - sp * Math.abs(trackPos);
+    return 0;
   }
 
   public static void setRewardLimitRoadToForward(){
@@ -126,7 +132,7 @@ public class EchoServer {
 
     System.out.println(" limit to forward");
 
-    reward += 1;
+    reward += 60;
   }
 
 
@@ -135,33 +141,54 @@ public class EchoServer {
 
     System.out.println(" off to limit");
 
-    reward += 0.5;
+    reward += 30;
   }
 
-  public static void setRewardOffRoad(){
+  public static void setRewardRightOffRoad(){
     reward = basicReward();
 
-    System.out.println(trackPos + " offRoad");
+    System.out.println(trackPos + " rightOffRoad");
 
-    reward -= 1;
+    reward -= 20;
+    //if(angle > 0){
+      reward -= 10*angle;
+    //}
+
+    angleCounter = angle > lastAngle ? angleCounter + 10 : 0;
+    reward -= angleCounter;
+  }
+
+  public static void setRewardLeftOffRoad(){
+    reward = basicReward();
+
+    System.out.println(trackPos + " leftOffRoad");
+
+    reward -= 20;
+    //if(angle < 0){
+      reward += 10*angle;
+    //}
+
+    angleCounter = angle < lastAngle ? angleCounter + 10 : 0;
+    reward -= angleCounter;
   }
 
   public static void setRewardForward(){
     reward = basicReward();
+    reward += 50;
 
     System.out.println(trackPos + " forward");
   }
 
   public static void setRewardDamage(){
     reward = basicReward();
-    reward = -10;
+    reward -= 40;
 
     System.out.println("damage");
   }
 
   public static void setRewardLimitRoad(){
     reward = basicReward();
-    reward -= 0.5;
+    reward += 20;
 
     System.out.println(trackPos + " limitRoad");
   }
@@ -171,11 +198,15 @@ public class EchoServer {
   }
 
   public static boolean isLimitRoad(){
-    return (trackPos <= -0.5 && trackPos > -1) || (trackPos >= 0.5 && trackPos < 1);
+    return Math.abs(trackPos) >= 0.5 && Math.abs(trackPos) < 1;
   }
 
-  public static boolean isOffRoad(){
-    return trackPos <= -1 || trackPos >= 1;
+  public static boolean isRightOffRoad(){
+    return trackPos <= -1;
+  }
+
+  public static boolean isLeftOffRoad(){
+    return trackPos >= 1;
   }
 
   public static boolean isDamage(){
@@ -183,6 +214,7 @@ public class EchoServer {
   }
 
   public void rlevent(String o, String pre_o) {}
+  public void reset() {}
     // public void post(String u, String s) {}
     // public void monday(String u, String s) {}
     // public void friday(String u, String s) {}

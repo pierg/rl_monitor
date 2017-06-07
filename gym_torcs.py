@@ -10,7 +10,7 @@ import os
 import time
 from socket import * # Socket library
 
-
+from larva import *
 
 class TorcsEnv:
     terminal_judge_start = 100  # If after 100 timestep still no progress, terminated
@@ -31,9 +31,9 @@ class TorcsEnv:
         os.system('pkill torcs')
         time.sleep(0.5)
         if self.vision is True:
-            os.system('torcs -nofuel -nodamage -nolaptime -vision &')
+            os.system('torcs -nofuel -nodamage -nolaptime -vision -r practice.xml &')
         else:
-            os.system('torcs -nofuel -nolaptime &')
+            os.system('torcs -nofuel -nolaptime -r practice.xml &')
         time.sleep(0.5)
         os.system('sh autostart.sh')
         time.sleep(0.5)
@@ -154,6 +154,10 @@ class TorcsEnv:
             episode_terminate = True
             client.R.d['meta'] = True
 
+        if obs['damage'] > 0: # Episode is terminated if the agent runs in a wall
+            episode_terminate = True
+            client.R.d['meta'] = True
+
 
         if client.R.d['meta'] is True: # Send a reset signal
             self.initial_run = False
@@ -161,7 +165,7 @@ class TorcsEnv:
 
         self.time_step += 1
 
-        return self.get_obs(), self.reward(obs, obs_pre), client.R.d['meta'], {}
+        return self.get_obs(), self.reward(obs, obs_pre), client.R.d['meta'], {}, obs_pre == obs
 
     def reset(self, relaunch=False):
         #print("Reset")
@@ -185,6 +189,9 @@ class TorcsEnv:
         client.get_servers_input()  # Get the initial input from torcs
 
         obs = client.S.d  # Get the current full-observation from torcs
+
+        send_message_to_monitor("reset")
+
         self.observation = self.make_observaton(obs)
 
         self.last_u = None
@@ -203,9 +210,9 @@ class TorcsEnv:
         os.system('pkill torcs')
         time.sleep(0.5)
         if self.vision is True:
-            os.system('torcs -nofuel -nodamage -nolaptime -vision &')
+            os.system('torcs -nofuel -nodamage -nolaptime -vision -r practice.xml &')
         else:
-            os.system('torcs -nofuel -nolaptime &')
+            os.system('torcs -nofuel -nolaptime -r practice.xml &')
         time.sleep(0.5)
         os.system('sh autostart.sh')
         time.sleep(0.5)
