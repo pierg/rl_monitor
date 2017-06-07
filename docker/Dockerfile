@@ -35,17 +35,12 @@ RUN apt-get install -y xautomation \
     pip install numpy && \
     pip install h5py
 
-RUN mkdir /root/.ssh/
-
-ADD id_rsa /root/.ssh/id_rsa
-
-RUN touch /root/.ssh/known_hosts
-
-RUN ssh-keyscan github.com >> /root/.ssh/known_hosts
-
-RUN git clone git@github.com:pierg/rl_monitor.git  && \
-    cd vtorcs-RL-color && \
-    ./configure && \
+RUN git clone --branch gym_torcs --single-branch https://github.com/pierg/rl_monitor.git  && \
+    cd rl_monitor/vtorcs-RL-color && \
+    chmod 777 configure && \
+    ./configure
+  
+RUN cd rl_monitor/vtorcs-RL-color && \
     make && \
     make install && \
     make datainstall && \
