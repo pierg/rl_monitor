@@ -131,10 +131,17 @@ class TorcsEnv:
 
         # Reward setting Here #######################################
         # direction-dependent positive reward
+        #
         track = np.array(obs['track'])
+        # float = 0 center, -1 left edge, +1 right edge
         trackPos = np.array(obs['trackPos'])
+        #
         damage = np.array(obs['damage'])
+        #
         rpm = np.array(obs['rpm'])
+
+        # opponents signals..
+
 
 
         # Termination judgement #########################
