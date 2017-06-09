@@ -47,14 +47,12 @@ RUN cd rl_monitor/vtorcs-RL-color && \
     make && \
     make install && \
     make datainstall && \
-    cd ..
 
 RUN apt-get install -y default-jdk \
     aspectj
 
 RUN cd rl_monitor/monitor && \
     make compile && \
-    cd ../..
     
 
 WORKDIR rl_monitor/

@@ -2044,4 +2044,115 @@ TOTAL REWARD @ 510-th Episode  : Reward -5616.2890994
 Total Step: 34
 Total Time: 10.5605258942
 
-TOTAL RE
+TOTAL REWARD @ 511-th Episode  : Reward -5156.1058441
+Total Step: 32
+Total Time: 7.90043091774
+
+TOTAL REWARD @ 512-th Episode  : Reward -6165.4024139
+Total Step: 32
+Total Time: 7.8751270771
+
+TOTAL REWARD @ 513-th Episode  : Reward -7263.2968775
+Total Step: 37
+Total Time: 11.2547569275
+
+TOTAL REWARD @ 514-th Episode  : Reward -6161.9108637
+Total Step: 39
+Total Time: 9.305986166
+
+TOTAL REWARD @ 515-th Episode  : Reward -5729.1462941
+Total Step: 29
+Total Time: 8.09619808197
+
+TOTAL REWARD @ 516-th Episode  : Reward -5605.9413394
+Total Step: 33
+Total Time: 10.3793039322
+
+TOTAL REWARD @ 517-th Episode  : Reward -5858.14896
+Total Step: 35
+Total Time: 8.48232388496
+
+TOTAL REWARD @ 518-th Episode  : Reward -5565.0519602
+Total Step: 31
+Total Time: 7.6739320755
+
+TOTAL REWARD @ 519-th Episode  : Reward -5331.4888374
+Total Step: 29
+Total Time: 21.4977769852
+
+TOTAL REWARD @ 520-th Episode  : Reward -5558.3112748
+Total Step: 31
+Total Time: 7.68479585648
+
+TOTAL REWARD @ 521-th Episode  : Reward -6429.8593546
+Total Step: 37
+Total Time: 8.87148880959
+
+TOTAL REWARD @ 522-th Episode  : Reward -5556.8404405
+Total Step: 31
+Total Time: 9.97961878777
+
+TOTAL REWARD @ 523-th Episode  : Reward -6349.2632365
+Total Step: 36
+Total Time: 8.66899704933
+
+TOTAL REWARD @ 524-th Episode  : Reward -5935.7933327
+Total Step: 34
+Total Time: 8.26072597504
+
+TOTAL REWARD @ 525-th Episode  : Reward -5612.7567438
+Total Step: 31
+Total Time: 9.99740576744
+
+TOTAL REWARD @ 526-th Episode  : Reward -6162.5330585
+Total Step: 33
+Total Time: 8.04657196999
+
+TOTAL REWARD @ 527-th Episode  : Reward -5545.9750752
+Total Step: 33
+Total Time: 8.06201696396
+
+TOTAL REWARD @ 528-th Episode  : Reward -5007.0754893
+Total Step: 20
+Total Time: 7.752617836
+
+TOTAL REWARD @ 529-th Episode  : Reward -6038.5244639
+Total Step: 40
+Total Time: 11.4748840332
+
+TOTAL REWARD @ 530-th Episode  : Reward -6344.2704246
+Total Step: 32
+Total Time: 7.95407485962
+
+TOTAL REWARD @ 531-th Episode  : Reward -6465.9935465
+Total Step: 37
+Total Time: 11.2023479939
+
+TOTAL REWARD @ 532-th Episode  : Reward -5450.3209368
+Total Step: 29
+Total Time: 7.26072502136
+
+TOTAL REWARD @ 533-th Episode  : Reward -5504.3061819
+Total Step: 31
+Total Time: 7.65888404846
+
+TOTAL REWARD @ 534-th Episode  : Reward -5949.5497195
+Total Step: 34
+Total Time: 10.6584761143
+
+TOTAL REWARD @ 535-th Episode  : Reward -6156.145964
+Total Step: 35
+Total Time: 8.45000600815
+
+TOTAL REWARD @ 536-th Episode  : Reward -5763.468288
+Total Step: 31
+Total Time: 7.65481209755
+
+TOTAL REWARD @ 537-th Episode  : Reward -5424.4949317
+Total Step: 28
+Total Time: 9.36124992371
+
+TOTAL REWARD @ 538-th Episode  : Reward -5546.1442808
+Total Step: 30
+Total Time: 7.46174407005
+
