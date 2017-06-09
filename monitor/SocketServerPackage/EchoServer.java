@@ -34,12 +34,22 @@ package SocketServerPackage;
 import java.net.*;
 import java.io.*;
 import java.util.*;
-//import org.json.simple.*;
+import org.json.*;
 
 public class EchoServer {
   static PrintWriter out;
+
+  // Set the goals to achieve
+  private static int goalSpeed = 50;       // Kmh
+  private static int goalTrackPos = 0;     // middle of the lane
+
+  // Internal parameters
+  private static int fastSpeedPenalityIndex = 2;
+  private static int slowSpeedPenalityIndex = 1;
+  private static int factor = 10;         // multiplication factor for the reward function
+
   public static double reward;
-  public static double sp;
+  public static double speedX;
   public static double angle;
   public static double trackPos;
   public static double damage;
@@ -114,7 +124,7 @@ public class EchoServer {
   public static void prepareResponse(String message){
 
     String[] parts = message.split(":");
-    sp = Double.parseDouble(parts[0]);
+    speedX = Double.parseDouble(parts[0]);
     angle = Double.parseDouble(parts[1]);
     trackPos = Double.parseDouble(parts[2]);
     damage = Double.parseDouble(parts[3]);
@@ -122,78 +132,89 @@ public class EchoServer {
     lastAngle = Double.parseDouble(parts[5]);
   }
 
-  private static double basicReward(){
-    //return sp*Math.cos(angle) - Math.abs(sp*Math.sin(angle)) - sp * Math.abs(trackPos);
-    return 0;
+  // Return a positive value propotional to the error of the speed from the Goal, penalizing if it's too fast
+  private static double errorSpeed()
+  {
+    if (speedX >= goalSpeed)
+    {
+      return (speedX - goalSpeed)*fastSpeedPenalityIndex;
+    }
+    else
+    {
+      return (goalSpeed - speedX)*slowSpeedPenalityIndex;
+    }
   }
 
-  public static void setRewardLimitRoadToForward(){
-    reward = basicReward();
+  // Return a positive value propostional to the error fo the trackPos from the Goal
+  private static double errorTrackPos()
+  {
+    if (trackPos >= goalTrackPos)
+    {
+      return (trackPos - goalTrackPos);
+    }
+    else
+    {
+      return (goalTrackPos - trackPos);
+    }
+  }
 
-    System.out.println(" limit to forward");
+  // Return a positive value propotional to the errors from the Goals
+  private static double eGoals()
+  {
+      return factor*(errorSpeed() + errorTrackPos());
+  }
 
-    reward += 60;
+  public static void setRewardLimitRoadToCenterRoad(){
+
+    System.out.println(eGoals() + " limit to center");
+
+    reward = 60 - eGoals();
   }
 
 
   public static void setRewardOffRoadToLimitRoad(){
-    reward = basicReward();
 
-    System.out.println(" off to limit");
+    System.out.println(eGoals() + " off to limit");
 
-    reward += 30;
+    reward = 30 - eGoals();
   }
 
   public static void setRewardRightOffRoad(){
-    reward = basicReward();
 
-    System.out.println(trackPos + " rightOffRoad");
+    System.out.println(eGoals() + " rightOffRoad");
 
-    reward -= 20;
-    //if(angle > 0){
-      reward -= 10*angle;
+    reward = -20 - 10*angle - eGoals();
     //}
 
-    angleCounter = angle > lastAngle ? angleCounter + 10 : 0;
-    reward -= angleCounter;
+    //angleCounter = angle > lastAngle ? angleCounter + 10 : 0;
+    //reward -= angleCounter;
   }
 
   public static void setRewardLeftOffRoad(){
-    reward = basicReward();
+    System.out.println(eGoals() + " leftOffRoad" + angle);
 
-    System.out.println(trackPos + " leftOffRoad");
-
-    reward -= 20;
-    //if(angle < 0){
-      reward += 10*angle;
-    //}
-
-    angleCounter = angle < lastAngle ? angleCounter + 10 : 0;
-    reward -= angleCounter;
+    reward = -20 + 10*angle - eGoals();
   }
 
-  public static void setRewardForward(){
-    reward = basicReward();
-    reward += 50;
+  public static void setRewardCenterRoad(){
+    reward = 50 - eGoals();
 
-    System.out.println(trackPos + " forward");
+    System.out.println(eGoals() + " center");
   }
 
   public static void setRewardDamage(){
-    reward = basicReward();
-    reward -= 40;
+    reward = -40 - eGoals();
 
-    System.out.println("damage");
+    System.out.println(eGoals() + "damage");
   }
 
   public static void setRewardLimitRoad(){
-    reward = basicReward();
-    reward += 20;
+    reward = 20 - eGoals();
 
-    System.out.println(trackPos + " limitRoad");
+    System.out.println(eGoals() + " limitRoad");
   }
 
-  public static boolean isForward(){
+  public static boolean isCenterRoad(){
     return trackPos > -0.5 && trackPos < 0.5;
   }
 
@@ -210,8 +231,9 @@ public class EchoServer {
   }
 
   public static boolean isDamage(){
-    return damage - lastDamage > 0;
+    return damage > lastDamage;
   }
+
 
   public void rlevent(String o, String pre_o) {}
   public void reset() {}

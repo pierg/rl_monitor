@@ -41,6 +41,9 @@ RUN git clone --branch gym_torcs --single-branch https://github.com/pierg/rl_mon
     ./configure
   
 RUN cd rl_monitor/vtorcs-RL-color && \
+    make clean
+
+RUN cd rl_monitor/vtorcs-RL-color && \
     make && \
     make install && \
     make datainstall && \

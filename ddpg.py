@@ -66,9 +66,16 @@ def playGame(train_indicator=1):    #1 means Train, 0 means simply Run
     # Generate a Torcs environment
     env = TorcsEnv(reward, vision=vision, throttle=True,gear_change=False)
 
+    # Write results in file (human reading)
     file = open("results" + time.strftime("%d-%m-%Y-%H%M%S") + ".txt", "w")
     file.write("Results from simulation. Launch date : " + time.strftime("%d/%m/%Y - %H:%M:%S") + "\n\n")
 
+    # Get the results in a matlab format
+    times = "times = ["
+    steps = "step = ["
+    rewardsPerEpisode = "rewardsPerEpisode = ["
+    rewardsPerStep = "rewardsPerStep = ["
+    lastEpisodeStep = 0
 
     #Now load the weight
     print("Now we load the weight")
@@ -96,7 +103,10 @@ def playGame(train_indicator=1):    #1 means Train, 0 means simply Run
 
         s_t = np.hstack((ob.angle, ob.track, ob.trackPos, ob.speedX, ob.speedY,  ob.speedZ, ob.wheelSpinVel/100.0, ob.rpm))
      
+        # Total per episode
         total_reward = 0.
+
+        # For each step
         for j in range(max_steps):
             loss = 0 
             epsilon -= 1.0 / EXPLORE
@@ -117,6 +127,7 @@ def playGame(train_indicator=1):    #1 means Train, 0 means simply Run
             a_t[0][1] = a_t_original[0][1] + noise_t[0][1]
             a_t[0][2] = a_t_original[0][2] + noise_t[0][2]
 
+            # Do a step -> ob is the state, r_t the reward, done true if episode finished, finished true if simulation done
             ob, r_t, done, info, finished = env.step(a_t[0])
             
             s_t1 = np.hstack((ob.angle, ob.track, ob.trackPos, ob.speedX, ob.speedY, ob.speedZ, ob.wheelSpinVel/100.0, ob.rpm))
@@ -152,6 +163,9 @@ def playGame(train_indicator=1):    #1 means Train, 0 means simply Run
             s_t = s_t1
         
             print("Episode", i, "Step", step, "Action", a_t, "Reward", r_t, "Loss", loss)
+
+            # For Matlab
+            rewardsPerStep += str(r_t) + " "
         
             step += 1
             if done:
@@ -172,10 +186,18 @@ def playGame(train_indicator=1):    #1 means Train, 0 means simply Run
                     json.dump(critic.model.to_json(), outfile)
 
 
+        # Results file
         endEpisode = time.time()
         file.write("TOTAL REWARD @ " + str(i) +"-th Episode  : Reward " + str(total_reward) + "\n")
-        file.write("Total Step: " + str(step) + "\n")
+        file.write("Total Step: " + str(step - lastEpisodeStep) + "\n")
         file.write("Total Time: " + str(endEpisode - startEpisode) + "\n\n")
+
+        # Matlab strings
+        times += str(endEpisode - startEpisode) + " "
+        steps += str(step - lastEpisodeStep) + " "
+        rewardsPerEpisode += str(total_reward) + " "
+
+        lastEpisodeStep = step
 
         print("TOTAL REWARD @ " + str(i) +"-th Episode  : Reward " + str(total_reward))
         print("Total Step: " + str(step))
@@ -183,8 +205,19 @@ def playGame(train_indicator=1):    #1 means Train, 0 means simply Run
 
         if finished:
             break
+        else:
+            rewardsPerStep += "; "
 
     end = time.time()
+
+    times += "]\n"
+    steps += "]\n"
+    rewardsPerStep += "]\n"
+    rewardsPerEpisode += "]\n"
+
+    file = open("results" + time.strftime("%d-%m-%Y-%H%M%S") + ".m", "w")
+
+    file.write(times + steps + rewardsPerEpisode + rewardsPerStep)
 
     env.end()  # This is for shutting down TORCS
     print("Finish.")

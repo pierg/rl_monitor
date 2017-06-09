@@ -103,12 +103,12 @@ EchoServer .response ();
 		_state_id_reward = 5;//moving to state start
 		_goto_reward(_info);
 		}
-		else if ((_occurredEvent(_event,0/*rlevent*/)) && (EchoServer .isForward ())){
-		EchoServer .setRewardForward ();
+		else if ((_occurredEvent(_event,0/*rlevent*/)) && (EchoServer .isCenterRoad ())){
+		EchoServer .setRewardCenterRoad ();
 EchoServer .response ();
 counter ++;
 
-		_state_id_reward = 3;//moving to state forward
+		_state_id_reward = 3;//moving to state centerRoad
 		_goto_reward(_info);
 		}
 		else if ((_occurredEvent(_event,0/*rlevent*/)) && (EchoServer .isLeftOffRoad ())){
@@ -153,12 +153,12 @@ counter ++;
 		_state_id_reward = 2;//moving to state damage
 		_goto_reward(_info);
 		}
-		else if ((_occurredEvent(_event,0/*rlevent*/)) && (EchoServer .isForward ())){
-		EchoServer .setRewardForward ();
+		else if ((_occurredEvent(_event,0/*rlevent*/)) && (EchoServer .isCenterRoad ())){
+		EchoServer .setRewardCenterRoad ();
 EchoServer .response ();
 counter ++;
 
-		_state_id_reward = 3;//moving to state forward
+		_state_id_reward = 3;//moving to state centerRoad
 		_goto_reward(_info);
 		}
 		else if ((_occurredEvent(_event,0/*rlevent*/)) && (EchoServer .isLimitRoad ())){
@@ -173,11 +173,11 @@ counter ++;
 else if (_state_id_reward==5){
 		if (1==0){}
 		else if ((_occurredEvent(_event,0/*rlevent*/))){
-		EchoServer .setRewardForward ();
+		EchoServer .setRewardCenterRoad ();
 EchoServer .response ();
 counter ++;
 
-		_state_id_reward = 3;//moving to state forward
+		_state_id_reward = 3;//moving to state centerRoad
 		_goto_reward(_info);
 		}
 		else if ((_occurredEvent(_event,2/*reset*/))){
@@ -273,12 +273,12 @@ counter ++;
 		_state_id_reward = 2;//moving to state damage
 		_goto_reward(_info);
 		}
-		else if ((_occurredEvent(_event,0/*rlevent*/)) && (EchoServer .isForward ())){
-		EchoServer .setRewardLimitRoadToForward ();
+		else if ((_occurredEvent(_event,0/*rlevent*/)) && (EchoServer .isCenterRoad ())){
+		EchoServer .setRewardLimitRoadToCenterRoad ();
 EchoServer .response ();
 counter ++;
 
-		_state_id_reward = 3;//moving to state forward
+		_state_id_reward = 3;//moving to state centerRoad
 		_goto_reward(_info);
 		}
 		else if ((_occurredEvent(_event,0/*rlevent*/)) && (EchoServer .isLimitRoad ())){
@@ -316,7 +316,7 @@ _cls_rewardautomaton0.pw.flush();
 public String _string_reward(int _state_id, int _mode){
 switch(_state_id){
 case 2: if (_mode == 0) return "damage"; else return "!!!SYSTEM REACHED BAD STATE!!! damage "+new _BadStateExceptionrewardautomaton().toString()+" ";
-case 3: if (_mode == 0) return "forward"; else return "forward";
+case 3: if (_mode == 0) return "centerRoad"; else return "centerRoad";
 case 1: if (_mode == 0) return "leftOffRoad"; else return "!!!SYSTEM REACHED BAD STATE!!! leftOffRoad "+new _BadStateExceptionrewardautomaton().toString()+" ";
 case 5: if (_mode == 0) return "start"; else return "start";
 case 0: if (_mode == 0) return "rightOffRoad"; else return "!!!SYSTEM REACHED BAD STATE!!! rightOffRoad "+new _BadStateExceptionrewardautomaton().toString()+" ";

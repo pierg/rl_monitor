@@ -1,0 +1,270 @@
+Results from simulation. Launch date : 08/06/2017 - 16:18:57
+
+TOTAL REWARD @ 0-th Episode  : Reward 977.58082
+Total Step: 36
+Total Time: 7.82322096825
+
+TOTAL REWARD @ 1-th Episode  : Reward 1138.67877
+Total Step: 66
+Total Time: 7.51865696907
+
+TOTAL REWARD @ 2-th Episode  : Reward 2750.12231
+Total Step: 142
+Total Time: 16.6995220184
+
+TOTAL REWARD @ 3-th Episode  : Reward 2753.432106
+Total Step: 236
+Total Time: 22.7245481014
+
+TOTAL REWARD @ 4-th Episode  : Reward 1230.597512
+Total Step: 276
+Total Time: 9.55102419853
+
+TOTAL REWARD @ 5-th Episode  : Reward 1122.782331
+Total Step: 324
+Total Time: 11.1721110344
+
+TOTAL REWARD @ 6-th Episode  : Reward 4155.29458
+Total Step: 442
+Total Time: 39.4067399502
+
+TOTAL REWARD @ 7-th Episode  : Reward 907.69598
+Total Step: 479
+Total Time: 8.89096307755
+
+TOTAL REWARD @ 8-th Episode  : Reward -11041.5528477
+Total Step: 980
+Total Time: 102.236304998
+
+TOTAL REWARD @ 9-th Episode  : Reward 1670.333928
+Total Step: 1042
+Total Time: 16.2060041428
+
+TOTAL REWARD @ 10-th Episode  : Reward 261.9375788
+Total Step: 1091
+Total Time: 11.2865741253
+
+TOTAL REWARD @ 11-th Episode  : Reward -9680.595314
+Total Step: 1508
+Total Time: 85.2675249577
+
+TOTAL REWARD @ 12-th Episode  : Reward -4729.5599832
+Total Step: 1753
+Total Time: 52.9487421513
+
+TOTAL REWARD @ 13-th Episode  : Reward 5305.114945
+Total Step: 1889
+Total Time: 28.8995168209
+
+TOTAL REWARD @ 14-th Episode  : Reward 1134.78521
+Total Step: 1927
+Total Time: 9.15186214447
+
+TOTAL REWARD @ 15-th Episode  : Reward 2401.11214
+Total Step: 1993
+Total Time: 17.0816378593
+
+TOTAL REWARD @ 16-th Episode  : Reward 5131.68381
+Total Step: 2128
+Total Time: 28.6412789822
+
+TOTAL REWARD @ 17-th Episode  : Reward 2779.84778
+Total Step: 2197
+Total Time: 15.2730250359
+
+TOTAL REWARD @ 18-th Episode  : Reward 1539.147776
+Total Step: 2279
+Total Time: 20.2087390423
+
+TOTAL REWARD @ 19-th Episode  : Reward 2943.73375
+Total Step: 2358
+Total Time: 17.2891871929
+
+TOTAL REWARD @ 20-th Episode  : Reward 2262.326911
+Total Step: 2435
+Total Time: 16.9175388813
+
+TOTAL REWARD @ 21-th Episode  : Reward 955.4395563
+Total Step: 2518
+Total Time: 20.4418590069
+
+TOTAL REWARD @ 22-th Episode  : Reward 7562.10362
+Total Step: 2724
+Total Time: 42.8631830215
+
+TOTAL REWARD @ 23-th Episode  : Reward 3433.9244408
+Total Step: 2832
+Total Time: 23.1437528133
+
+TOTAL REWARD @ 24-th Episode  : Reward 1430.199437
+Total Step: 3095
+Total Time: 56.6610889435
+
+TOTAL REWARD @ 25-th Episode  : Reward 4539.767914
+Total Step: 3209
+Total Time: 24.4241118431
+
+TOTAL REWARD @ 26-th Episode  : Reward 6471.2156686
+Total Step: 3364
+Total Time: 32.676651001
+
+TOTAL REWARD @ 27-th Episode  : Reward 7663.41224
+Total Step: 3533
+Total Time: 49.6003038883
+
+TOTAL REWARD @ 28-th Episode  : Reward 8231.70654
+Total Step: 3721
+Total Time: 39.2358338833
+
+TOTAL REWARD @ 29-th Episode  : Reward 7025.931819
+Total Step: 3883
+Total Time: 34.0350949764
+
+TOTAL REWARD @ 30-th Episode  : Reward 3763.156526
+Total Step: 3979
+Total Time: 34.8964869976
+
+TOTAL REWARD @ 31-th Episode  : Reward 4269.9067156
+Total Step: 4092
+Total Time: 24.1135380268
+
+TOTAL REWARD @ 32-th Episode  : Reward 7273.64447
+Total Step: 4246
+Total Time: 32.3974719048
+
+TOTAL REWARD @ 33-th Episode  : Reward 7337.48103
+Total Step: 4408
+Total Time: 36.2187440395
+
+TOTAL REWARD @ 34-th Episode  : Reward 7819.43377
+Total Step: 4579
+Total Time: 35.8635590076
+
+TOTAL REWARD @ 35-th Episode  : Reward 4165.1453643
+Total Step: 4759
+Total Time: 37.6350491047
+
+TOTAL REWARD @ 36-th Episode  : Reward 1010.0
+Total Step: 4781
+Total Time: 8.42577791214
+
+TOTAL REWARD @ 37-th Episode  : Reward 910.0
+Total Step: 4801
+Total Time: 5.68763589859
+
+TOTAL REWARD @ 38-th Episode  : Reward 960.0
+Total Step: 4822
+Total Time: 5.8502869606
+
+TOTAL REWARD @ 39-th Episode  : Reward 2442.60467
+Total Step: 4883
+Total Time: 15.9940459728
+
+TOTAL REWARD @ 40-th Episode  : Reward 6893.29204
+Total Step: 5041
+Total Time: 33.2312150002
+
+TOTAL REWARD @ 41-th Episode  : Reward 5044.81531
+Total Step: 5153
+Total Time: 24.0496680737
+
+TOTAL REWARD @ 42-th Episode  : Reward 7549.9655
+Total Step: 5323
+Total Time: 37.9890902042
+
+TOTAL REWARD @ 43-th Episode  : Reward 6643.912289
+Total Step: 5487
+Total Time: 34.4576060772
+
+TOTAL REWARD @ 44-th Episode  : Reward 7323.8457642
+Total Step: 5661
+Total Time: 36.4397189617
+
+TOTAL REWARD @ 45-th Episode  : Reward 7824.44284
+Total Step: 5832
+Total Time: 38.1518759727
+
+TOTAL REWARD @ 46-th Episode  : Reward 7004.167363
+Total Step: 6001
+Total Time: 35.4544990063
+
+TOTAL REWARD @ 47-th Episode  : Reward 5881.8139937
+Total Step: 6138
+Total Time: 28.994740963
+
+TOTAL REWARD @ 48-th Episode  : Reward 7614.22966
+Total Step: 6308
+Total Time: 37.9690630436
+
+TOTAL REWARD @ 49-th Episode  : Reward 6212.87172
+Total Step: 6467
+Total Time: 33.4977638721
+
+TOTAL REWARD @ 50-th Episode  : Reward 7853.83083
+Total Step: 6645
+Total Time: 37.2607548237
+
+TOTAL REWARD @ 51-th Episode  : Reward 6637.3563692
+Total Step: 6817
+Total Time: 50.1325540543
+
+TOTAL REWARD @ 52-th Episode  : Reward 6096.3974448
+Total Step: 6971
+Total Time: 32.420473814
+
+TOTAL REWARD @ 53-th Episode  : Reward 6948.68855
+Total Step: 7132
+Total Time: 33.8291430473
+
+TOTAL REWARD @ 54-th Episode  : Reward 6565.756143
+Total Step: 7298
+Total Time: 48.9633290768
+
+TOTAL REWARD @ 55-th Episode  : Reward 8003.253834
+Total Step: 7498
+Total Time: 41.6469900608
+
+TOTAL REWARD @ 56-th Episode  : Reward 5783.06991
+Total Step: 7625
+Total Time: 27.0885000229
+
+TOTAL REWARD @ 57-th Episode  : Reward 7313.706802
+Total Step: 7790
+Total Time: 36.9669849873
+
+TOTAL REWARD @ 58-th Episode  : Reward 5671.892449
+Total Step: 7930
+Total Time: 29.6064040661
+
+TOTAL REWARD @ 59-th Episode  : Reward 10406.2653975
+Total Step: 8242
+Total Time: 64.0091838837
+
+TOTAL REWARD @ 60-th Episode  : Reward 8786.455945
+Total Step: 8465
+Total Time: 60.3740079403
+
+TOTAL REWARD @ 61-th Episode  : Reward 9574.086154
+Total Step: 8705
+Total Time: 49.6954820156
+
+TOTAL REWARD @ 62-th Episode  : Reward 5056.976102
+Total Step: 8838
+Total Time: 28.2407429218
+
+TOTAL REWARD @ 63-th Episode  : Reward 7163.1200176
+Total Step: 9034
+Total Time: 43.1355140209
+
+TOTAL REWARD @ 64-th Episode  : Reward 5882.35692855
+Total Step: 9171
+Total Time: 29.1130619049
+
+TOTAL REWARD @ 65-th Episode  : Reward 5732.1748607
+Total Step: 9331
+Total Time: 33.6176481247
+
+TOTAL REWARD @ 66-th Episode  : Reward 2763.425064
+Total Step: 9414
+Total Time: 20.3921570778
+
