@@ -67,14 +67,15 @@ def playGame(train_indicator=1):    #1 means Train, 0 means simply Run
     env = TorcsEnv(reward, vision=vision, throttle=True,gear_change=False)
 
     # Write results in file (human reading)
-    file = open("results" + time.strftime("%d-%m-%Y-%H%M%S") + ".txt", "w")
+    filename = "results" + time.strftime("%d-%m-%Y-%H%M%S")
+    file = open("results/" + filename + ".txt", "w")
     file.write("Results from simulation. Launch date : " + time.strftime("%d/%m/%Y - %H:%M:%S") + "\n\n")
 
     # Get the results in a matlab format
     times = "times = ["
     steps = "step = ["
     rewardsPerEpisode = "rewardsPerEpisode = ["
-    rewardsPerStep = "rewardsPerStep = ["
+    rewardsPerStep = ""
     lastEpisodeStep = 0
 
     #Now load the weight
@@ -95,6 +96,8 @@ def playGame(train_indicator=1):    #1 means Train, 0 means simply Run
 
         print("Episode : " + str(i) + " Replay Buffer " + str(buff.count()))
         startEpisode = time.time()
+
+        rewardsPerStep += "rewardsPerStep{" + str(i+1) + "} = ["
 
         if np.mod(i, 3) == 0:
             ob = env.reset(relaunch=True)   #relaunch TORCS every 3 episode because of the memory leak error
@@ -206,18 +209,19 @@ def playGame(train_indicator=1):    #1 means Train, 0 means simply Run
         if finished:
             break
         else:
-            rewardsPerStep += "; "
+            rewardsPerStep += "]\n"
 
     end = time.time()
-
+    totalEpisodes = "episodes = " + str(i+1) + "\n"
+    totalTime = "totalTime = " + str(end-start) + "\n"
     times += "]\n"
     steps += "]\n"
     rewardsPerStep += "]\n"
     rewardsPerEpisode += "]\n"
 
-    file = open("results" + time.strftime("%d-%m-%Y-%H%M%S") + ".m", "w")
+    file = open("results/" + filename + ".m", "w")
 
-    file.write(times + steps + rewardsPerEpisode + rewardsPerStep)
+    file.write(totalEpisodes + totalTime + times + steps + rewardsPerEpisode + rewardsPerStep)
 
     env.end()  # This is for shutting down TORCS
     print("Finish.")

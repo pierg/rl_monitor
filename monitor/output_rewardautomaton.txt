@@ -39,10 +39,94 @@
 [reward]AUTOMATON::> reward() STATE::>centerRoad
 [reward]MOVED ON METHODCALL: void SocketServerPackage.EchoServer.rlevent(String, String) TO STATE::> centerRoad
 [reward]AUTOMATON::> reward() STATE::>centerRoad
+[reward]MOVED ON METHODCALL: void SocketServerPackage.EchoServer.rlevent(String, String) TO STATE::> limitRoad
+[reward]AUTOMATON::> reward() STATE::>limitRoad
+[reward]MOVED ON METHODCALL: void SocketServerPackage.EchoServer.rlevent(String, String) TO STATE::> limitRoad
+[reward]AUTOMATON::> reward() STATE::>limitRoad
+[reward]MOVED ON METHODCALL: void SocketServerPackage.EchoServer.rlevent(String, String) TO STATE::> limitRoad
+[reward]AUTOMATON::> reward() STATE::>limitRoad
+[reward]MOVED ON METHODCALL: void SocketServerPackage.EchoServer.rlevent(String, String) TO STATE::> limitRoad
+[reward]AUTOMATON::> reward() STATE::>limitRoad
+[reward]MOVED ON METHODCALL: void SocketServerPackage.EchoServer.rlevent(String, String) TO STATE::> limitRoad
+[reward]AUTOMATON::> reward() STATE::>limitRoad
+[reward]MOVED ON METHODCALL: void SocketServerPackage.EchoServer.rlevent(String, String) TO STATE::> limitRoad
+[reward]AUTOMATON::> reward() STATE::>limitRoad
+[reward]MOVED ON METHODCALL: void SocketServerPackage.EchoServer.rlevent(String, String) TO STATE::> limitRoad
+[reward]AUTOMATON::> reward() STATE::>limitRoad
+[reward]MOVED ON METHODCALL: void SocketServerPackage.EchoServer.rlevent(String, String) TO STATE::> limitRoad
+[reward]AUTOMATON::> reward() STATE::>limitRoad
 [reward]MOVED ON METHODCALL: void SocketServerPackage.EchoServer.rlevent(String, String) TO STATE::> centerRoad
 [reward]AUTOMATON::> reward() STATE::>centerRoad
 [reward]MOVED ON METHODCALL: void SocketServerPackage.EchoServer.rlevent(String, String) TO STATE::> centerRoad
 [reward]AUTOMATON::> reward() STATE::>centerRoad
+[reward]MOVED ON METHODCALL: void SocketServerPackage.EchoServer.rlevent(String, String) TO STATE::> centerRoad
+[reward]AUTOMATON::> reward() STATE::>centerRoad
+[reward]MOVED ON METHODCALL: void SocketServerPackage.EchoServer.rlevent(String, String) TO STATE::> centerRoad
+[reward]AUTOMATON::> reward() STATE::>centerRoad
+[reward]MOVED ON METHODCALL: void SocketServerPackage.EchoServer.rlevent(String, String) TO STATE::> centerRoad
+[reward]AUTOMATON::> reward() STATE::>centerRoad
+[reward]MOVED ON METHODCALL: void SocketServerPackage.EchoServer.rlevent(String, String) TO STATE::> centerRoad
+[reward]AUTOMATON::> reward() STATE::>centerRoad
+[reward]MOVED ON METHODCALL: void SocketServerPackage.EchoServer.rlevent(String, String) TO STATE::> centerRoad
+[reward]AUTOMATON::> reward() STATE::>centerRoad
+[reward]MOVED ON METHODCALL: void SocketServerPackage.EchoServer.rlevent(String, String) TO STATE::> centerRoad
+[reward]AUTOMATON::> reward() STATE::>centerRoad
+[reward]MOVED ON METHODCALL: void SocketServerPackage.EchoServer.rlevent(String, String) TO STATE::> centerRoad
+[reward]AUTOMATON::> reward() STATE::>centerRoad
+[reward]MOVED ON METHODCALL: void SocketServerPackage.EchoServer.rlevent(String, String) TO STATE::> limitRoad
+[reward]AUTOMATON::> reward() STATE::>limitRoad
+[reward]MOVED ON METHODCALL: void SocketServerPackage.EchoServer.rlevent(String, String) TO STATE::> !!!SYSTEM REACHED BAD STATE!!! rightOffRoad 
+aspects._asp_rewardautomaton0.ajc$before$aspects__asp_rewardautomaton0$2$6ab66155(_asp_rewardautomaton0.aj:25)
+SocketServerPackage.EchoServer.main(EchoServer.java:103) 
+[reward]AUTOMATON::> reward() STATE::>rightOffRoad
+[reward]MOVED ON METHODCALL: void SocketServerPackage.EchoServer.rlevent(String, String) TO STATE::> !!!SYSTEM REACHED BAD STATE!!! rightOffRoad 
+aspects._asp_rewardautomaton0.ajc$before$aspects__asp_rewardautomaton0$2$6ab66155(_asp_rewardautomaton0.aj:25)
+SocketServerPackage.EchoServer.main(EchoServer.java:103) 
+[reward]AUTOMATON::> reward() STATE::>rightOffRoad
+[reward]MOVED ON METHODCALL: void SocketServerPackage.EchoServer.rlevent(String, String) TO STATE::> !!!SYSTEM REACHED BAD STATE!!! damage 
+aspects._asp_rewardautomaton0.ajc$before$aspects__asp_rewardautomaton0$2$6ab66155(_asp_rewardautomaton0.aj:25)
+SocketServerPackage.EchoServer.main(EchoServer.java:103) 
+[reward]AUTOMATON::> reward() STATE::>damage
+[reward]MOVED ON METHODCALL: void SocketServerPackage.EchoServer.reset() TO STATE::> start
+[reward]AUTOMATON::> reward() STATE::>start
+[reward]MOVED ON METHODCALL: void SocketServerPackage.EchoServer.rlevent(String, String) TO STATE::> centerRoad
+[reward]AUTOMATON::> reward() STATE::>centerRoad
+[reward]MOVED ON METHODCALL: void SocketServerPackage.EchoServer.rlevent(String, String) TO STATE::> centerRoad
+[reward]AUTOMATON::> reward() STATE::>centerRoad
+[reward]MOVED ON METHODCALL: void SocketServerPackage.EchoServer.rlevent(String, String) TO STATE::> centerRoad
+[reward]AUTOMATON::> reward() STATE::>centerRoad
+[reward]MOVED ON METHODCALL: void SocketServerPackage.EchoServer.rlevent(String, String) TO STATE::> centerRoad
+[reward]AUTOMATON::> reward() STATE::>centerRoad
+[reward]MOVED ON METHODCALL: void SocketServerPackage.EchoServer.rlevent(String, String) TO STATE::> centerRoad
+[reward]AUTOMATON::> reward() STATE::>centerRoad
+[reward]MOVED ON METHODCALL: void SocketServerPackage.EchoServer.rlevent(String, String) TO STATE::> centerRoad
+[reward]AUTOMATON::> reward() STATE::>centerRoad
+[reward]MOVED ON METHODCALL: void SocketServerPackage.EchoServer.rlevent(String, String) TO STATE::> centerRoad
+[reward]AUTOMATON::> reward() STATE::>centerRoad
+[reward]MOVED ON METHODCALL: void SocketServerPackage.EchoServer.rlevent(String, String) TO STATE::> centerRoad
+[reward]AUTOMATON::> reward() STATE::>centerRoad
+[reward]MOVED ON METHODCALL: void SocketServerPackage.EchoServer.rlevent(String, String) TO STATE::> centerRoad
+[reward]AUTOMATON::> reward() STATE::>centerRoad
+[reward]MOVED ON METHODCALL: void SocketServerPackage.EchoServer.rlevent(String, String) TO STATE::> centerRoad
+[reward]AUTOMATON::> reward() STATE::>centerRoad
+[reward]MOVED ON METHODCALL: void SocketServerPackage.EchoServer.rlevent(String, String) TO STATE::> centerRoad
+[reward]AUTOMATON::> reward() STATE::>centerRoad
+[reward]MOVED ON METHODCALL: void SocketServerPackage.EchoServer.rlevent(String, String) TO STATE::> centerRoad
+[reward]AUTOMATON::> reward() STATE::>centerRoad
+[reward]MOVED ON METHODCALL: void SocketServerPackage.EchoServer.rlevent(String, String) TO STATE::> centerRoad
+[reward]AUTOMATON::> reward() STATE::>centerRoad
+[reward]MOVED ON METHODCALL: void SocketServerPackage.EchoServer.rlevent(String, String) TO STATE::> centerRoad
+[reward]AUTOMATON::> reward() STATE::>centerRoad
+[reward]MOVED ON METHODCALL: void SocketServerPackage.EchoServer.rlevent(String, String) TO STATE::> centerRoad
+[reward]AUTOMATON::> reward() STATE::>centerRoad
+[reward]MOVED ON METHODCALL: void SocketServerPackage.EchoServer.rlevent(String, String) TO STATE::> centerRoad
+[reward]AUTOMATON::> reward() STATE::>centerRoad
+[reward]MOVED ON METHODCALL: void SocketServerPackage.EchoServer.rlevent(String, String) TO STATE::> centerRoad
+[reward]AUTOMATON::> reward() STATE::>centerRoad
+[reward]MOVED ON METHODCALL: void SocketServerPackage.EchoServer.rlevent(String, String) TO STATE::> centerRoad
+[reward]AUTOMATON::> reward() STATE::>centerRoad
+[reward]MOVED ON METHODCALL: void SocketServerPackage.EchoServer.rlevent(String, String) TO STATE::> centerRoad
+[reward]AUTOMATON::> reward() STATE::>centerRoad
 [reward]MOVED ON METHODCALL: void SocketServerPackage.EchoServer.rlevent(String, String) TO STATE::> limitRoad
 [reward]AUTOMATON::> reward() STATE::>limitRoad
 [reward]MOVED ON METHODCALL: void SocketServerPackage.EchoServer.rlevent(String, String) TO STATE::> limitRoad
@@ -61,6 +145,194 @@
 [reward]AUTOMATON::> reward() STATE::>limitRoad
 [reward]MOVED ON METHODCALL: void SocketServerPackage.EchoServer.rlevent(String, String) TO STATE::> limitRoad
 [reward]AUTOMATON::> reward() STATE::>limitRoad
+[reward]MOVED ON METHODCALL: void SocketServerPackage.EchoServer.rlevent(String, String) TO STATE::> limitRoad
+[reward]AUTOMATON::> reward() STATE::>limitRoad
+[reward]MOVED ON METHODCALL: void SocketServerPackage.EchoServer.rlevent(String, String) TO STATE::> limitRoad
+[reward]AUTOMATON::> reward() STATE::>limitRoad
+[reward]MOVED ON METHODCALL: void SocketServerPackage.EchoServer.rlevent(String, String) TO STATE::> limitRoad
+[reward]AUTOMATON::> reward() STATE::>limitRoad
+[reward]MOVED ON METHODCALL: void SocketServerPackage.EchoServer.rlevent(String, String) TO STATE::> limitRoad
+[reward]AUTOMATON::> reward() STATE::>limitRoad
+[reward]MOVED ON METHODCALL: void SocketServerPackage.EchoServer.rlevent(String, String) TO STATE::> limitRoad
+[reward]AUTOMATON::> reward() STATE::>limitRoad
+[reward]MOVED ON METHODCALL: void SocketServerPackage.EchoServer.rlevent(String, String) TO STATE::> limitRoad
+[reward]AUTOMATON::> reward() STATE::>limitRoad
+[reward]MOVED ON METHODCALL: void SocketServerPackage.EchoServer.rlevent(String, String) TO STATE::> limitRoad
+[reward]AUTOMATON::> reward() STATE::>limitRoad
+[reward]MOVED ON METHODCALL: void SocketServerPackage.EchoServer.rlevent(String, String) TO STATE::> limitRoad
+[reward]AUTOMATON::> reward() STATE::>limitRoad
+[reward]MOVED ON METHODCALL: void SocketServerPackage.EchoServer.rlevent(String, String) TO STATE::> limitRoad
+[reward]AUTOMATON::> reward() STATE::>limitRoad
+[reward]MOVED ON METHODCALL: void SocketServerPackage.EchoServer.rlevent(String, String) TO STATE::> centerRoad
+[reward]AUTOMATON::> reward() STATE::>centerRoad
+[reward]MOVED ON METHODCALL: void SocketServerPackage.EchoServer.rlevent(String, String) TO STATE::> centerRoad
+[reward]AUTOMATON::> reward() STATE::>centerRoad
+[reward]MOVED ON METHODCALL: void SocketServerPackage.EchoServer.rlevent(String, String) TO STATE::> centerRoad
+[reward]AUTOMATON::> reward() STATE::>centerRoad
+[reward]MOVED ON METHODCALL: void SocketServerPackage.EchoServer.rlevent(String, String) TO STATE::> centerRoad
+[reward]AUTOMATON::> reward() STATE::>centerRoad
+[reward]MOVED ON METHODCALL: void SocketServerPackage.EchoServer.rlevent(String, String) TO STATE::> centerRoad
+[reward]AUTOMATON::> reward() STATE::>centerRoad
+[reward]MOVED ON METHODCALL: void SocketServerPackage.EchoServer.rlevent(String, String) TO STATE::> centerRoad
+[reward]AUTOMATON::> reward() STATE::>centerRoad
+[reward]MOVED ON METHODCALL: void SocketServerPackage.EchoServer.rlevent(String, String) TO STATE::> centerRoad
+[reward]AUTOMATON::> reward() STATE::>centerRoad
+[reward]MOVED ON METHODCALL: void SocketServerPackage.EchoServer.rlevent(String, String) TO STATE::> limitRoad
+[reward]AUTOMATON::> reward() STATE::>limitRoad
+[reward]MOVED ON METHODCALL: void SocketServerPackage.EchoServer.rlevent(String, String) TO STATE::> !!!SYSTEM REACHED BAD STATE!!! rightOffRoad 
+aspects._asp_rewardautomaton0.ajc$before$aspects__asp_rewardautomaton0$2$6ab66155(_asp_rewardautomaton0.aj:25)
+SocketServerPackage.EchoServer.main(EchoServer.java:103) 
+[reward]AUTOMATON::> reward() STATE::>rightOffRoad
+[reward]MOVED ON METHODCALL: void SocketServerPackage.EchoServer.rlevent(String, String) TO STATE::> !!!SYSTEM REACHED BAD STATE!!! rightOffRoad 
+aspects._asp_rewardautomaton0.ajc$before$aspects__asp_rewardautomaton0$2$6ab66155(_asp_rewardautomaton0.aj:25)
+SocketServerPackage.EchoServer.main(EchoServer.java:103) 
+[reward]AUTOMATON::> reward() STATE::>rightOffRoad
+[reward]MOVED ON METHODCALL: void SocketServerPackage.EchoServer.rlevent(String, String) TO STATE::> !!!SYSTEM REACHED BAD STATE!!! damage 
+aspects._asp_rewardautomaton0.ajc$before$aspects__asp_rewardautomaton0$2$6ab66155(_asp_rewardautomaton0.aj:25)
+SocketServerPackage.EchoServer.main(EchoServer.java:103) 
+[reward]AUTOMATON::> reward() STATE::>damage
+[reward]MOVED ON METHODCALL: void SocketServerPackage.EchoServer.reset() TO STATE::> start
+[reward]AUTOMATON::> reward() STATE::>start
+[reward]MOVED ON METHODCALL: void SocketServerPackage.EchoServer.rlevent(String, String) TO STATE::> centerRoad
+[reward]AUTOMATON::> reward() STATE::>centerRoad
+[reward]MOVED ON METHODCALL: void SocketServerPackage.EchoServer.rlevent(String, String) TO STATE::> centerRoad
+[reward]AUTOMATON::> reward() STATE::>centerRoad
+[reward]MOVED ON METHODCALL: void SocketServerPackage.EchoServer.rlevent(String, String) TO STATE::> centerRoad
+[reward]AUTOMATON::> reward() STATE::>centerRoad
+[reward]MOVED ON METHODCALL: void SocketServerPackage.EchoServer.rlevent(String, String) TO STATE::> centerRoad
+[reward]AUTOMATON::> reward() STATE::>centerRoad
+[reward]MOVED ON METHODCALL: void SocketServerPackage.EchoServer.rlevent(String, String) TO STATE::> centerRoad
+[reward]AUTOMATON::> reward() STATE::>centerRoad
+[reward]MOVED ON METHODCALL: void SocketServerPackage.EchoServer.rlevent(String, String) TO STATE::> centerRoad
+[reward]AUTOMATON::> reward() STATE::>centerRoad
+[reward]MOVED ON METHODCALL: void SocketServerPackage.EchoServer.rlevent(String, String) TO STATE::> centerRoad
+[reward]AUTOMATON::> reward() STATE::>centerRoad
+[reward]MOVED ON METHODCALL: void SocketServerPackage.EchoServer.rlevent(String, String) TO STATE::> centerRoad
+[reward]AUTOMATON::> reward() STATE::>centerRoad
+[reward]MOVED ON METHODCALL: void SocketServerPackage.EchoServer.rlevent(String, String) TO STATE::> centerRoad
+[reward]AUTOMATON::> reward() STATE::>centerRoad
+[reward]MOVED ON METHODCALL: void SocketServerPackage.EchoServer.rlevent(String, String) TO STATE::> centerRoad
+[reward]AUTOMATON::> reward() STATE::>centerRoad
+[reward]MOVED ON METHODCALL: void SocketServerPackage.EchoServer.rlevent(String, String) TO STATE::> centerRoad
+[reward]AUTOMATON::> reward() STATE::>centerRoad
+[reward]MOVED ON METHODCALL: void SocketServerPackage.EchoServer.rlevent(String, String) TO STATE::> centerRoad
+[reward]AUTOMATON::> reward() STATE::>centerRoad
+[reward]MOVED ON METHODCALL: void SocketServerPackage.EchoServer.rlevent(String, String) TO STATE::> centerRoad
+[reward]AUTOMATON::> reward() STATE::>centerRoad
+[reward]MOVED ON METHODCALL: void SocketServerPackage.EchoServer.rlevent(String, String) TO STATE::> centerRoad
+[reward]AUTOMATON::> reward() STATE::>centerRoad
+[reward]MOVED ON METHODCALL: void SocketServerPackage.EchoServer.rlevent(String, String) TO STATE::> centerRoad
+[reward]AUTOMATON::> reward() STATE::>centerRoad
+[reward]MOVED ON METHODCALL: void SocketServerPackage.EchoServer.rlevent(String, String) TO STATE::> centerRoad
+[reward]AUTOMATON::> reward() STATE::>centerRoad
+[reward]MOVED ON METHODCALL: void SocketServerPackage.EchoServer.rlevent(String, String) TO STATE::> centerRoad
+[reward]AUTOMATON::> reward() STATE::>centerRoad
+[reward]MOVED ON METHODCALL: void SocketServerPackage.EchoServer.rlevent(String, String) TO STATE::> centerRoad
+[reward]AUTOMATON::> reward() STATE::>centerRoad
+[reward]MOVED ON METHODCALL: void SocketServerPackage.EchoServer.rlevent(String, String) TO STATE::> centerRoad
+[reward]AUTOMATON::> reward() STATE::>centerRoad
+[reward]MOVED ON METHODCALL: void SocketServerPackage.EchoServer.rlevent(String, String) TO STATE::> limitRoad
+[reward]AUTOMATON::> reward() STATE::>limitRoad
+[reward]MOVED ON METHODCALL: void SocketServerPackage.EchoServer.rlevent(String, String) TO STATE::> limitRoad
+[reward]AUTOMATON::> reward() STATE::>limitRoad
+[reward]MOVED ON METHODCALL: void SocketServerPackage.EchoServer.rlevent(String, String) TO STATE::> limitRoad
+[reward]AUTOMATON::> reward() STATE::>limitRoad
+[reward]MOVED ON METHODCALL: void SocketServerPackage.EchoServer.rlevent(String, String) TO STATE::> limitRoad
+[reward]AUTOMATON::> reward() STATE::>limitRoad
+[reward]MOVED ON METHODCALL: void SocketServerPackage.EchoServer.rlevent(String, String) TO STATE::> limitRoad
+[reward]AUTOMATON::> reward() STATE::>limitRoad
+[reward]MOVED ON METHODCALL: void SocketServerPackage.EchoServer.rlevent(String, String) TO STATE::> limitRoad
+[reward]AUTOMATON::> reward() STATE::>limitRoad
+[reward]MOVED ON METHODCALL: void SocketServerPackage.EchoServer.rlevent(String, String) TO STATE::> centerRoad
+[reward]AUTOMATON::> reward() STATE::>centerRoad
+[reward]MOVED ON METHODCALL: void SocketServerPackage.EchoServer.rlevent(String, String) TO STATE::> centerRoad
+[reward]AUTOMATON::> reward() STATE::>centerRoad
+[reward]MOVED ON METHODCALL: void SocketServerPackage.EchoServer.rlevent(String, String) TO STATE::> centerRoad
+[reward]AUTOMATON::> reward() STATE::>centerRoad
+[reward]MOVED ON METHODCALL: void SocketServerPackage.EchoServer.rlevent(String, String) TO STATE::> centerRoad
+[reward]AUTOMATON::> reward() STATE::>centerRoad
+[reward]MOVED ON METHODCALL: void SocketServerPackage.EchoServer.rlevent(String, String) TO STATE::> centerRoad
+[reward]AUTOMATON::> reward() STATE::>centerRoad
+[reward]MOVED ON METHODCALL: void SocketServerPackage.EchoServer.rlevent(String, String) TO STATE::> centerRoad
+[reward]AUTOMATON::> reward() STATE::>centerRoad
+[reward]MOVED ON METHODCALL: void SocketServerPackage.EchoServer.rlevent(String, String) TO STATE::> centerRoad
+[reward]AUTOMATON::> reward() STATE::>centerRoad
+[reward]MOVED ON METHODCALL: void SocketServerPackage.EchoServer.rlevent(String, String) TO STATE::> limitRoad
+[reward]AUTOMATON::> reward() STATE::>limitRoad
+[reward]MOVED ON METHODCALL: void SocketServerPackage.EchoServer.rlevent(String, String) TO STATE::> limitRoad
+[reward]AUTOMATON::> reward() STATE::>limitRoad
+[reward]MOVED ON METHODCALL: void SocketServerPackage.EchoServer.rlevent(String, String) TO STATE::> !!!SYSTEM REACHED BAD STATE!!! rightOffRoad 
+aspects._asp_rewardautomaton0.ajc$before$aspects__asp_rewardautomaton0$2$6ab66155(_asp_rewardautomaton0.aj:25)
+SocketServerPackage.EchoServer.main(EchoServer.java:103) 
+[reward]AUTOMATON::> reward() STATE::>rightOffRoad
+[reward]MOVED ON METHODCALL: void SocketServerPackage.EchoServer.rlevent(String, String) TO STATE::> !!!SYSTEM REACHED BAD STATE!!! damage 
+aspects._asp_rewardautomaton0.ajc$before$aspects__asp_rewardautomaton0$2$6ab66155(_asp_rewardautomaton0.aj:25)
+SocketServerPackage.EchoServer.main(EchoServer.java:103) 
+[reward]AUTOMATON::> reward() STATE::>damage
+[reward]MOVED ON METHODCALL: void SocketServerPackage.EchoServer.reset() TO STATE::> start
+[reward]AUTOMATON::> reward() STATE::>start
+[reward]MOVED ON METHODCALL: void SocketServerPackage.EchoServer.rlevent(String, String) TO STATE::> centerRoad
+[reward]AUTOMATON::> reward() STATE::>centerRoad
+[reward]MOVED ON METHODCALL: void SocketServerPackage.EchoServer.rlevent(String, String) TO STATE::> centerRoad
+[reward]AUTOMATON::> reward() STATE::>centerRoad
+[reward]MOVED ON METHODCALL: void SocketServerPackage.EchoServer.rlevent(String, String) TO STATE::> centerRoad
+[reward]AUTOMATON::> reward() STATE::>centerRoad
+[reward]MOVED ON METHODCALL: void SocketServerPackage.EchoServer.rlevent(String, String) TO STATE::> centerRoad
+[reward]AUTOMATON::> reward() STATE::>centerRoad
+[reward]MOVED ON METHODCALL: void SocketServerPackage.EchoServer.rlevent(String, String) TO STATE::> centerRoad
+[reward]AUTOMATON::> reward() STATE::>centerRoad
+[reward]MOVED ON METHODCALL: void SocketServerPackage.EchoServer.rlevent(String, String) TO STATE::> centerRoad
+[reward]AUTOMATON::> reward() STATE::>centerRoad
+[reward]MOVED ON METHODCALL: void SocketServerPackage.EchoServer.rlevent(String, String) TO STATE::> centerRoad
+[reward]AUTOMATON::> reward() STATE::>centerRoad
+[reward]MOVED ON METHODCALL: void SocketServerPackage.EchoServer.rlevent(String, String) TO STATE::> centerRoad
+[reward]AUTOMATON::> reward() STATE::>centerRoad
+[reward]MOVED ON METHODCALL: void SocketServerPackage.EchoServer.rlevent(String, String) TO STATE::> centerRoad
+[reward]AUTOMATON::> reward() STATE::>centerRoad
+[reward]MOVED ON METHODCALL: void SocketServerPackage.EchoServer.rlevent(String, String) TO STATE::> centerRoad
+[reward]AUTOMATON::> reward() STATE::>centerRoad
+[reward]MOVED ON METHODCALL: void SocketServerPackage.EchoServer.rlevent(String, String) TO STATE::> centerRoad
+[reward]AUTOMATON::> reward() STATE::>centerRoad
+[reward]MOVED ON METHODCALL: void SocketServerPackage.EchoServer.rlevent(String, String) TO STATE::> centerRoad
+[reward]AUTOMATON::> reward() STATE::>centerRoad
+[reward]MOVED ON METHODCALL: void SocketServerPackage.EchoServer.rlevent(String, String) TO STATE::> centerRoad
+[reward]AUTOMATON::> reward() STATE::>centerRoad
+[reward]MOVED ON METHODCALL: void SocketServerPackage.EchoServer.rlevent(String, String) TO STATE::> centerRoad
+[reward]AUTOMATON::> reward() STATE::>centerRoad
+[reward]MOVED ON METHODCALL: void SocketServerPackage.EchoServer.rlevent(String, String) TO STATE::> centerRoad
+[reward]AUTOMATON::> reward() STATE::>centerRoad
+[reward]MOVED ON METHODCALL: void SocketServerPackage.EchoServer.rlevent(String, String) TO STATE::> centerRoad
+[reward]AUTOMATON::> reward() STATE::>centerRoad
+[reward]MOVED ON METHODCALL: void SocketServerPackage.EchoServer.rlevent(String, String) TO STATE::> centerRoad
+[reward]AUTOMATON::> reward() STATE::>centerRoad
+[reward]MOVED ON METHODCALL: void SocketServerPackage.EchoServer.rlevent(String, String) TO STATE::> centerRoad
+[reward]AUTOMATON::> reward() STATE::>centerRoad
+[reward]MOVED ON METHODCALL: void SocketServerPackage.EchoServer.rlevent(String, String) TO STATE::> centerRoad
+[reward]AUTOMATON::> reward() STATE::>centerRoad
+[reward]MOVED ON METHODCALL: void SocketServerPackage.EchoServer.rlevent(String, String) TO STATE::> limitRoad
+[reward]AUTOMATON::> reward() STATE::>limitRoad
+[reward]MOVED ON METHODCALL: void SocketServerPackage.EchoServer.rlevent(String, String) TO STATE::> limitRoad
+[reward]AUTOMATON::> reward() STATE::>limitRoad
+[reward]MOVED ON METHODCALL: void SocketServerPackage.EchoServer.rlevent(String, String) TO STATE::> limitRoad
+[reward]AUTOMATON::> reward() STATE::>limitRoad
+[reward]MOVED ON METHODCALL: void SocketServerPackage.EchoServer.rlevent(String, String) TO STATE::> limitRoad
+[reward]AUTOMATON::> reward() STATE::>limitRoad
+[reward]MOVED ON METHODCALL: void SocketServerPackage.EchoServer.rlevent(String, String) TO STATE::> !!!SYSTEM REACHED BAD STATE!!! leftOffRoad 
+aspects._asp_rewardautomaton0.ajc$before$aspects__asp_rewardautomaton0$2$6ab66155(_asp_rewardautomaton0.aj:25)
+SocketServerPackage.EchoServer.main(EchoServer.java:103) 
+[reward]AUTOMATON::> reward() STATE::>leftOffRoad
+[reward]MOVED ON METHODCALL: void SocketServerPackage.EchoServer.rlevent(String, String) TO STATE::> !!!SYSTEM REACHED BAD STATE!!! leftOffRoad 
+aspects._asp_rewardautomaton0.ajc$before$aspects__asp_rewardautomaton0$2$6ab66155(_asp_rewardautomaton0.aj:25)
+SocketServerPackage.EchoServer.main(EchoServer.java:103) 
+[reward]AUTOMATON::> reward() STATE::>leftOffRoad
+[reward]MOVED ON METHODCALL: void SocketServerPackage.EchoServer.rlevent(String, String) TO STATE::> !!!SYSTEM REACHED BAD STATE!!! leftOffRoad 
+aspects._asp_rewardautomaton0.ajc$before$aspects__asp_rewardautomaton0$2$6ab66155(_asp_rewardautomaton0.aj:25)
+SocketServerPackage.EchoServer.main(EchoServer.java:103) 
+[reward]AUTOMATON::> reward() STATE::>leftOffRoad
+[reward]MOVED ON METHODCALL: void SocketServerPackage.EchoServer.rlevent(String, String) TO STATE::> !!!SYSTEM REACHED BAD STATE!!! leftOffRoad 
+aspects._asp_rewardautomaton0.ajc$before$aspects__asp_rewardautomaton0$2$6ab66155(_asp_rewardautomaton0.aj:25)
+SocketServerPackage.EchoServer.main(EchoServer.java:103) 
+[reward]AUTOMATON::> reward() STATE::>leftOffRoad
 [reward]MOVED ON METHODCALL: void SocketServerPackage.EchoServer.rlevent(String, String) TO STATE::> !!!SYSTEM REACHED BAD STATE!!! leftOffRoad 
 aspects._asp_rewardautomaton0.ajc$before$aspects__asp_rewardautomaton0$2$6ab66155(_asp_rewardautomaton0.aj:25)
 SocketServerPackage.EchoServer.main(EchoServer.java:103) 
@@ -116,3 +388,1283 @@ SocketServerPackage.EchoServer.main(EchoServer.java:103)
 [reward]MOVED ON METHODCALL: void SocketServerPackage.EchoServer.rlevent(String, String) TO STATE::> centerRoad
 [reward]AUTOMATON::> reward() STATE::>centerRoad
 [reward]MOVED ON METHODCALL: void SocketServerPackage.EchoServer.rlevent(String, String) TO STATE::> centerRoad
+[reward]AUTOMATON::> reward() STATE::>centerRoad
+[reward]MOVED ON METHODCALL: void SocketServerPackage.EchoServer.rlevent(String, String) TO STATE::> centerRoad
+[reward]AUTOMATON::> reward() STATE::>centerRoad
+[reward]MOVED ON METHODCALL: void SocketServerPackage.EchoServer.rlevent(String, String) TO STATE::> centerRoad
+[reward]AUTOMATON::> reward() STATE::>centerRoad
+[reward]MOVED ON METHODCALL: void SocketServerPackage.EchoServer.rlevent(String, String) TO STATE::> limitRoad
+[reward]AUTOMATON::> reward() STATE::>limitRoad
+[reward]MOVED ON METHODCALL: void SocketServerPackage.EchoServer.rlevent(String, String) TO STATE::> limitRoad
+[reward]AUTOMATON::> reward() STATE::>limitRoad
+[reward]MOVED ON METHODCALL: void SocketServerPackage.EchoServer.rlevent(String, String) TO STATE::> limitRoad
+[reward]AUTOMATON::> reward() STATE::>limitRoad
+[reward]MOVED ON METHODCALL: void SocketServerPackage.EchoServer.rlevent(String, String) TO STATE::> !!!SYSTEM REACHED BAD STATE!!! rightOffRoad 
+aspects._asp_rewardautomaton0.ajc$before$aspects__asp_rewardautomaton0$2$6ab66155(_asp_rewardautomaton0.aj:25)
+SocketServerPackage.EchoServer.main(EchoServer.java:103) 
+[reward]AUTOMATON::> reward() STATE::>rightOffRoad
+[reward]MOVED ON METHODCALL: void SocketServerPackage.EchoServer.rlevent(String, String) TO STATE::> !!!SYSTEM REACHED BAD STATE!!! rightOffRoad 
+aspects._asp_rewardautomaton0.ajc$before$aspects__asp_rewardautomaton0$2$6ab66155(_asp_rewardautomaton0.aj:25)
+SocketServerPackage.EchoServer.main(EchoServer.java:103) 
+[reward]AUTOMATON::> reward() STATE::>rightOffRoad
+[reward]MOVED ON METHODCALL: void SocketServerPackage.EchoServer.rlevent(String, String) TO STATE::> !!!SYSTEM REACHED BAD STATE!!! rightOffRoad 
+aspects._asp_rewardautomaton0.ajc$before$aspects__asp_rewardautomaton0$2$6ab66155(_asp_rewardautomaton0.aj:25)
+SocketServerPackage.EchoServer.main(EchoServer.java:103) 
+[reward]AUTOMATON::> reward() STATE::>rightOffRoad
+[reward]MOVED ON METHODCALL: void SocketServerPackage.EchoServer.rlevent(String, String) TO STATE::> !!!SYSTEM REACHED BAD STATE!!! rightOffRoad 
+aspects._asp_rewardautomaton0.ajc$before$aspects__asp_rewardautomaton0$2$6ab66155(_asp_rewardautomaton0.aj:25)
+SocketServerPackage.EchoServer.main(EchoServer.java:103) 
+[reward]AUTOMATON::> reward() STATE::>rightOffRoad
+[reward]MOVED ON METHODCALL: void SocketServerPackage.EchoServer.rlevent(String, String) TO STATE::> !!!SYSTEM REACHED BAD STATE!!! damage 
+aspects._asp_rewardautomaton0.ajc$before$aspects__asp_rewardautomaton0$2$6ab66155(_asp_rewardautomaton0.aj:25)
+SocketServerPackage.EchoServer.main(EchoServer.java:103) 
+[reward]AUTOMATON::> reward() STATE::>damage
+[reward]MOVED ON METHODCALL: void SocketServerPackage.EchoServer.reset() TO STATE::> start
+[reward]AUTOMATON::> reward() STATE::>start
+[reward]MOVED ON METHODCALL: void SocketServerPackage.EchoServer.rlevent(String, String) TO STATE::> centerRoad
+[reward]AUTOMATON::> reward() STATE::>centerRoad
+[reward]MOVED ON METHODCALL: void SocketServerPackage.EchoServer.rlevent(String, String) TO STATE::> centerRoad
+[reward]AUTOMATON::> reward() STATE::>centerRoad
+[reward]MOVED ON METHODCALL: void SocketServerPackage.EchoServer.rlevent(String, String) TO STATE::> centerRoad
+[reward]AUTOMATON::> reward() STATE::>centerRoad
+[reward]MOVED ON METHODCALL: void SocketServerPackage.EchoServer.rlevent(String, String) TO STATE::> centerRoad
+[reward]AUTOMATON::> reward() STATE::>centerRoad
+[reward]MOVED ON METHODCALL: void SocketServerPackage.EchoServer.rlevent(String, String) TO STATE::> centerRoad
+[reward]AUTOMATON::> reward() STATE::>centerRoad
+[reward]MOVED ON METHODCALL: void SocketServerPackage.EchoServer.rlevent(String, String) TO STATE::> centerRoad
+[reward]AUTOMATON::> reward() STATE::>centerRoad
+[reward]MOVED ON METHODCALL: void SocketServerPackage.EchoServer.rlevent(String, String) TO STATE::> centerRoad
+[reward]AUTOMATON::> reward() STATE::>centerRoad
+[reward]MOVED ON METHODCALL: void SocketServerPackage.EchoServer.rlevent(String, String) TO STATE::> centerRoad
+[reward]AUTOMATON::> reward() STATE::>centerRoad
+[reward]MOVED ON METHODCALL: void SocketServerPackage.EchoServer.rlevent(String, String) TO STATE::> centerRoad
+[reward]AUTOMATON::> reward() STATE::>centerRoad
+[reward]MOVED ON METHODCALL: void SocketServerPackage.EchoServer.rlevent(String, String) TO STATE::> centerRoad
+[reward]AUTOMATON::> reward() STATE::>centerRoad
+[reward]MOVED ON METHODCALL: void SocketServerPackage.EchoServer.rlevent(String, String) TO STATE::> centerRoad
+[reward]AUTOMATON::> reward() STATE::>centerRoad
+[reward]MOVED ON METHODCALL: void SocketServerPackage.EchoServer.rlevent(String, String) TO STATE::> centerRoad
+[reward]AUTOMATON::> reward() STATE::>centerRoad
+[reward]MOVED ON METHODCALL: void SocketServerPackage.EchoServer.rlevent(String, String) TO STATE::> centerRoad
+[reward]AUTOMATON::> reward() STATE::>centerRoad
+[reward]MOVED ON METHODCALL: void SocketServerPackage.EchoServer.rlevent(String, String) TO STATE::> centerRoad
+[reward]AUTOMATON::> reward() STATE::>centerRoad
+[reward]MOVED ON METHODCALL: void SocketServerPackage.EchoServer.rlevent(String, String) TO STATE::> centerRoad
+[reward]AUTOMATON::> reward() STATE::>centerRoad
+[reward]MOVED ON METHODCALL: void SocketServerPackage.EchoServer.rlevent(String, String) TO STATE::> centerRoad
+[reward]AUTOMATON::> reward() STATE::>centerRoad
+[reward]MOVED ON METHODCALL: void SocketServerPackage.EchoServer.rlevent(String, String) TO STATE::> limitRoad
+[reward]AUTOMATON::> reward() STATE::>limitRoad
+[reward]MOVED ON METHODCALL: void SocketServerPackage.EchoServer.rlevent(String, String) TO STATE::> limitRoad
+[reward]AUTOMATON::> reward() STATE::>limitRoad
+[reward]MOVED ON METHODCALL: void SocketServerPackage.EchoServer.rlevent(String, String) TO STATE::> limitRoad
+[reward]AUTOMATON::> reward() STATE::>limitRoad
+[reward]MOVED ON METHODCALL: void SocketServerPackage.EchoServer.rlevent(String, String) TO STATE::> limitRoad
+[reward]AUTOMATON::> reward() STATE::>limitRoad
+[reward]MOVED ON METHODCALL: void SocketServerPackage.EchoServer.rlevent(String, String) TO STATE::> limitRoad
+[reward]AUTOMATON::> reward() STATE::>limitRoad
+[reward]MOVED ON METHODCALL: void SocketServerPackage.EchoServer.rlevent(String, String) TO STATE::> !!!SYSTEM REACHED BAD STATE!!! rightOffRoad 
+aspects._asp_rewardautomaton0.ajc$before$aspects__asp_rewardautomaton0$2$6ab66155(_asp_rewardautomaton0.aj:25)
+SocketServerPackage.EchoServer.main(EchoServer.java:103) 
+[reward]AUTOMATON::> reward() STATE::>rightOffRoad
+[reward]MOVED ON METHODCALL: void SocketServerPackage.EchoServer.rlevent(String, String) TO STATE::> !!!SYSTEM REACHED BAD STATE!!! rightOffRoad 
+aspects._asp_rewardautomaton0.ajc$before$aspects__asp_rewardautomaton0$2$6ab66155(_asp_rewardautomaton0.aj:25)
+SocketServerPackage.EchoServer.main(EchoServer.java:103) 
+[reward]AUTOMATON::> reward() STATE::>rightOffRoad
+[reward]MOVED ON METHODCALL: void SocketServerPackage.EchoServer.rlevent(String, String) TO STATE::> !!!SYSTEM REACHED BAD STATE!!! rightOffRoad 
+aspects._asp_rewardautomaton0.ajc$before$aspects__asp_rewardautomaton0$2$6ab66155(_asp_rewardautomaton0.aj:25)
+SocketServerPackage.EchoServer.main(EchoServer.java:103) 
+[reward]AUTOMATON::> reward() STATE::>rightOffRoad
+[reward]MOVED ON METHODCALL: void SocketServerPackage.EchoServer.rlevent(String, String) TO STATE::> !!!SYSTEM REACHED BAD STATE!!! rightOffRoad 
+aspects._asp_rewardautomaton0.ajc$before$aspects__asp_rewardautomaton0$2$6ab66155(_asp_rewardautomaton0.aj:25)
+SocketServerPackage.EchoServer.main(EchoServer.java:103) 
+[reward]AUTOMATON::> reward() STATE::>rightOffRoad
+[reward]MOVED ON METHODCALL: void SocketServerPackage.EchoServer.rlevent(String, String) TO STATE::> !!!SYSTEM REACHED BAD STATE!!! damage 
+aspects._asp_rewardautomaton0.ajc$before$aspects__asp_rewardautomaton0$2$6ab66155(_asp_rewardautomaton0.aj:25)
+SocketServerPackage.EchoServer.main(EchoServer.java:103) 
+[reward]AUTOMATON::> reward() STATE::>damage
+[reward]MOVED ON METHODCALL: void SocketServerPackage.EchoServer.reset() TO STATE::> start
+[reward]AUTOMATON::> reward() STATE::>start
+[reward]MOVED ON METHODCALL: void SocketServerPackage.EchoServer.rlevent(String, String) TO STATE::> centerRoad
+[reward]AUTOMATON::> reward() STATE::>centerRoad
+[reward]MOVED ON METHODCALL: void SocketServerPackage.EchoServer.rlevent(String, String) TO STATE::> centerRoad
+[reward]AUTOMATON::> reward() STATE::>centerRoad
+[reward]MOVED ON METHODCALL: void SocketServerPackage.EchoServer.rlevent(String, String) TO STATE::> centerRoad
+[reward]AUTOMATON::> reward() STATE::>centerRoad
+[reward]MOVED ON METHODCALL: void SocketServerPackage.EchoServer.rlevent(String, String) TO STATE::> centerRoad
+[reward]AUTOMATON::> reward() STATE::>centerRoad
+[reward]MOVED ON METHODCALL: void SocketServerPackage.EchoServer.rlevent(String, String) TO STATE::> centerRoad
+[reward]AUTOMATON::> reward() STATE::>centerRoad
+[reward]MOVED ON METHODCALL: void SocketServerPackage.EchoServer.rlevent(String, String) TO STATE::> centerRoad
+[reward]AUTOMATON::> reward() STATE::>centerRoad
+[reward]MOVED ON METHODCALL: void SocketServerPackage.EchoServer.rlevent(String, String) TO STATE::> centerRoad
+[reward]AUTOMATON::> reward() STATE::>centerRoad
+[reward]MOVED ON METHODCALL: void SocketServerPackage.EchoServer.rlevent(String, String) TO STATE::> centerRoad
+[reward]AUTOMATON::> reward() STATE::>centerRoad
+[reward]MOVED ON METHODCALL: void SocketServerPackage.EchoServer.rlevent(String, String) TO STATE::> centerRoad
+[reward]AUTOMATON::> reward() STATE::>centerRoad
+[reward]MOVED ON METHODCALL: void SocketServerPackage.EchoServer.rlevent(String, String) TO STATE::> centerRoad
+[reward]AUTOMATON::> reward() STATE::>centerRoad
+[reward]MOVED ON METHODCALL: void SocketServerPackage.EchoServer.rlevent(String, String) TO STATE::> centerRoad
+[reward]AUTOMATON::> reward() STATE::>centerRoad
+[reward]MOVED ON METHODCALL: void SocketServerPackage.EchoServer.rlevent(String, String) TO STATE::> centerRoad
+[reward]AUTOMATON::> reward() STATE::>centerRoad
+[reward]MOVED ON METHODCALL: void SocketServerPackage.EchoServer.rlevent(String, String) TO STATE::> centerRoad
+[reward]AUTOMATON::> reward() STATE::>centerRoad
+[reward]MOVED ON METHODCALL: void SocketServerPackage.EchoServer.rlevent(String, String) TO STATE::> centerRoad
+[reward]AUTOMATON::> reward() STATE::>centerRoad
+[reward]MOVED ON METHODCALL: void SocketServerPackage.EchoServer.rlevent(String, String) TO STATE::> centerRoad
+[reward]AUTOMATON::> reward() STATE::>centerRoad
+[reward]MOVED ON METHODCALL: void SocketServerPackage.EchoServer.rlevent(String, String) TO STATE::> centerRoad
+[reward]AUTOMATON::> reward() STATE::>centerRoad
+[reward]MOVED ON METHODCALL: void SocketServerPackage.EchoServer.rlevent(String, String) TO STATE::> limitRoad
+[reward]AUTOMATON::> reward() STATE::>limitRoad
+[reward]MOVED ON METHODCALL: void SocketServerPackage.EchoServer.rlevent(String, String) TO STATE::> limitRoad
+[reward]AUTOMATON::> reward() STATE::>limitRoad
+[reward]MOVED ON METHODCALL: void SocketServerPackage.EchoServer.rlevent(String, String) TO STATE::> limitRoad
+[reward]AUTOMATON::> reward() STATE::>limitRoad
+[reward]MOVED ON METHODCALL: void SocketServerPackage.EchoServer.rlevent(String, String) TO STATE::> !!!SYSTEM REACHED BAD STATE!!! rightOffRoad 
+aspects._asp_rewardautomaton0.ajc$before$aspects__asp_rewardautomaton0$2$6ab66155(_asp_rewardautomaton0.aj:25)
+SocketServerPackage.EchoServer.main(EchoServer.java:103) 
+[reward]AUTOMATON::> reward() STATE::>rightOffRoad
+[reward]MOVED ON METHODCALL: void SocketServerPackage.EchoServer.rlevent(String, String) TO STATE::> !!!SYSTEM REACHED BAD STATE!!! rightOffRoad 
+aspects._asp_rewardautomaton0.ajc$before$aspects__asp_rewardautomaton0$2$6ab66155(_asp_rewardautomaton0.aj:25)
+SocketServerPackage.EchoServer.main(EchoServer.java:103) 
+[reward]AUTOMATON::> reward() STATE::>rightOffRoad
+[reward]MOVED ON METHODCALL: void SocketServerPackage.EchoServer.rlevent(String, String) TO STATE::> !!!SYSTEM REACHED BAD STATE!!! rightOffRoad 
+aspects._asp_rewardautomaton0.ajc$before$aspects__asp_rewardautomaton0$2$6ab66155(_asp_rewardautomaton0.aj:25)
+SocketServerPackage.EchoServer.main(EchoServer.java:103) 
+[reward]AUTOMATON::> reward() STATE::>rightOffRoad
+[reward]MOVED ON METHODCALL: void SocketServerPackage.EchoServer.rlevent(String, String) TO STATE::> !!!SYSTEM REACHED BAD STATE!!! rightOffRoad 
+aspects._asp_rewardautomaton0.ajc$before$aspects__asp_rewardautomaton0$2$6ab66155(_asp_rewardautomaton0.aj:25)
+SocketServerPackage.EchoServer.main(EchoServer.java:103) 
+[reward]AUTOMATON::> reward() STATE::>rightOffRoad
+[reward]MOVED ON METHODCALL: void SocketServerPackage.EchoServer.rlevent(String, String) TO STATE::> !!!SYSTEM REACHED BAD STATE!!! damage 
+aspects._asp_rewardautomaton0.ajc$before$aspects__asp_rewardautomaton0$2$6ab66155(_asp_rewardautomaton0.aj:25)
+SocketServerPackage.EchoServer.main(EchoServer.java:103) 
+[reward]AUTOMATON::> reward() STATE::>damage
+[reward]MOVED ON METHODCALL: void SocketServerPackage.EchoServer.reset() TO STATE::> start
+[reward]AUTOMATON::> reward() STATE::>start
+[reward]MOVED ON METHODCALL: void SocketServerPackage.EchoServer.rlevent(String, String) TO STATE::> centerRoad
+[reward]AUTOMATON::> reward() STATE::>centerRoad
+[reward]MOVED ON METHODCALL: void SocketServerPackage.EchoServer.rlevent(String, String) TO STATE::> centerRoad
+[reward]AUTOMATON::> reward() STATE::>centerRoad
+[reward]MOVED ON METHODCALL: void SocketServerPackage.EchoServer.rlevent(String, String) TO STATE::> centerRoad
+[reward]AUTOMATON::> reward() STATE::>centerRoad
+[reward]MOVED ON METHODCALL: void SocketServerPackage.EchoServer.rlevent(String, String) TO STATE::> centerRoad
+[reward]AUTOMATON::> reward() STATE::>centerRoad
+[reward]MOVED ON METHODCALL: void SocketServerPackage.EchoServer.rlevent(String, String) TO STATE::> centerRoad
+[reward]AUTOMATON::> reward() STATE::>centerRoad
+[reward]MOVED ON METHODCALL: void SocketServerPackage.EchoServer.rlevent(String, String) TO STATE::> centerRoad
+[reward]AUTOMATON::> reward() STATE::>centerRoad
+[reward]MOVED ON METHODCALL: void SocketServerPackage.EchoServer.rlevent(String, String) TO STATE::> centerRoad
+[reward]AUTOMATON::> reward() STATE::>centerRoad
+[reward]MOVED ON METHODCALL: void SocketServerPackage.EchoServer.rlevent(String, String) TO STATE::> centerRoad
+[reward]AUTOMATON::> reward() STATE::>centerRoad
+[reward]MOVED ON METHODCALL: void SocketServerPackage.EchoServer.rlevent(String, String) TO STATE::> centerRoad
+[reward]AUTOMATON::> reward() STATE::>centerRoad
+[reward]MOVED ON METHODCALL: void SocketServerPackage.EchoServer.rlevent(String, String) TO STATE::> centerRoad
+[reward]AUTOMATON::> reward() STATE::>centerRoad
+[reward]MOVED ON METHODCALL: void SocketServerPackage.EchoServer.rlevent(String, String) TO STATE::> centerRoad
+[reward]AUTOMATON::> reward() STATE::>centerRoad
+[reward]MOVED ON METHODCALL: void SocketServerPackage.EchoServer.rlevent(String, String) TO STATE::> centerRoad
+[reward]AUTOMATON::> reward() STATE::>centerRoad
+[reward]MOVED ON METHODCALL: void SocketServerPackage.EchoServer.rlevent(String, String) TO STATE::> centerRoad
+[reward]AUTOMATON::> reward() STATE::>centerRoad
+[reward]MOVED ON METHODCALL: void SocketServerPackage.EchoServer.rlevent(String, String) TO STATE::> centerRoad
+[reward]AUTOMATON::> reward() STATE::>centerRoad
+[reward]MOVED ON METHODCALL: void SocketServerPackage.EchoServer.rlevent(String, String) TO STATE::> centerRoad
+[reward]AUTOMATON::> reward() STATE::>centerRoad
+[reward]MOVED ON METHODCALL: void SocketServerPackage.EchoServer.rlevent(String, String) TO STATE::> centerRoad
+[reward]AUTOMATON::> reward() STATE::>centerRoad
+[reward]MOVED ON METHODCALL: void SocketServerPackage.EchoServer.rlevent(String, String) TO STATE::> limitRoad
+[reward]AUTOMATON::> reward() STATE::>limitRoad
+[reward]MOVED ON METHODCALL: void SocketServerPackage.EchoServer.rlevent(String, String) TO STATE::> limitRoad
+[reward]AUTOMATON::> reward() STATE::>limitRoad
+[reward]MOVED ON METHODCALL: void SocketServerPackage.EchoServer.rlevent(String, String) TO STATE::> limitRoad
+[reward]AUTOMATON::> reward() STATE::>limitRoad
+[reward]MOVED ON METHODCALL: void SocketServerPackage.EchoServer.rlevent(String, String) TO STATE::> limitRoad
+[reward]AUTOMATON::> reward() STATE::>limitRoad
+[reward]MOVED ON METHODCALL: void SocketServerPackage.EchoServer.rlevent(String, String) TO STATE::> !!!SYSTEM REACHED BAD STATE!!! rightOffRoad 
+aspects._asp_rewardautomaton0.ajc$before$aspects__asp_rewardautomaton0$2$6ab66155(_asp_rewardautomaton0.aj:25)
+SocketServerPackage.EchoServer.main(EchoServer.java:103) 
+[reward]AUTOMATON::> reward() STATE::>rightOffRoad
+[reward]MOVED ON METHODCALL: void SocketServerPackage.EchoServer.rlevent(String, String) TO STATE::> !!!SYSTEM REACHED BAD STATE!!! rightOffRoad 
+aspects._asp_rewardautomaton0.ajc$before$aspects__asp_rewardautomaton0$2$6ab66155(_asp_rewardautomaton0.aj:25)
+SocketServerPackage.EchoServer.main(EchoServer.java:103) 
+[reward]AUTOMATON::> reward() STATE::>rightOffRoad
+[reward]MOVED ON METHODCALL: void SocketServerPackage.EchoServer.rlevent(String, String) TO STATE::> !!!SYSTEM REACHED BAD STATE!!! rightOffRoad 
+aspects._asp_rewardautomaton0.ajc$before$aspects__asp_rewardautomaton0$2$6ab66155(_asp_rewardautomaton0.aj:25)
+SocketServerPackage.EchoServer.main(EchoServer.java:103) 
+[reward]AUTOMATON::> reward() STATE::>rightOffRoad
+[reward]MOVED ON METHODCALL: void SocketServerPackage.EchoServer.rlevent(String, String) TO STATE::> !!!SYSTEM REACHED BAD STATE!!! rightOffRoad 
+aspects._asp_rewardautomaton0.ajc$before$aspects__asp_rewardautomaton0$2$6ab66155(_asp_rewardautomaton0.aj:25)
+SocketServerPackage.EchoServer.main(EchoServer.java:103) 
+[reward]AUTOMATON::> reward() STATE::>rightOffRoad
+[reward]MOVED ON METHODCALL: void SocketServerPackage.EchoServer.rlevent(String, String) TO STATE::> !!!SYSTEM REACHED BAD STATE!!! damage 
+aspects._asp_rewardautomaton0.ajc$before$aspects__asp_rewardautomaton0$2$6ab66155(_asp_rewardautomaton0.aj:25)
+SocketServerPackage.EchoServer.main(EchoServer.java:103) 
+[reward]AUTOMATON::> reward() STATE::>damage
+[reward]MOVED ON METHODCALL: void SocketServerPackage.EchoServer.reset() TO STATE::> start
+[reward]AUTOMATON::> reward() STATE::>start
+[reward]MOVED ON METHODCALL: void SocketServerPackage.EchoServer.rlevent(String, String) TO STATE::> centerRoad
+[reward]AUTOMATON::> reward() STATE::>centerRoad
+[reward]MOVED ON METHODCALL: void SocketServerPackage.EchoServer.rlevent(String, String) TO STATE::> centerRoad
+[reward]AUTOMATON::> reward() STATE::>centerRoad
+[reward]MOVED ON METHODCALL: void SocketServerPackage.EchoServer.rlevent(String, String) TO STATE::> centerRoad
+[reward]AUTOMATON::> reward() STATE::>centerRoad
+[reward]MOVED ON METHODCALL: void SocketServerPackage.EchoServer.rlevent(String, String) TO STATE::> centerRoad
+[reward]AUTOMATON::> reward() STATE::>centerRoad
+[reward]MOVED ON METHODCALL: void SocketServerPackage.EchoServer.rlevent(String, String) TO STATE::> centerRoad
+[reward]AUTOMATON::> reward() STATE::>centerRoad
+[reward]MOVED ON METHODCALL: void SocketServerPackage.EchoServer.rlevent(String, String) TO STATE::> centerRoad
+[reward]AUTOMATON::> reward() STATE::>centerRoad
+[reward]MOVED ON METHODCALL: void SocketServerPackage.EchoServer.rlevent(String, String) TO STATE::> centerRoad
+[reward]AUTOMATON::> reward() STATE::>centerRoad
+[reward]MOVED ON METHODCALL: void SocketServerPackage.EchoServer.rlevent(String, String) TO STATE::> centerRoad
+[reward]AUTOMATON::> reward() STATE::>centerRoad
+[reward]MOVED ON METHODCALL: void SocketServerPackage.EchoServer.rlevent(String, String) TO STATE::> centerRoad
+[reward]AUTOMATON::> reward() STATE::>centerRoad
+[reward]MOVED ON METHODCALL: void SocketServerPackage.EchoServer.rlevent(String, String) TO STATE::> centerRoad
+[reward]AUTOMATON::> reward() STATE::>centerRoad
+[reward]MOVED ON METHODCALL: void SocketServerPackage.EchoServer.rlevent(String, String) TO STATE::> centerRoad
+[reward]AUTOMATON::> reward() STATE::>centerRoad
+[reward]MOVED ON METHODCALL: void SocketServerPackage.EchoServer.rlevent(String, String) TO STATE::> centerRoad
+[reward]AUTOMATON::> reward() STATE::>centerRoad
+[reward]MOVED ON METHODCALL: void SocketServerPackage.EchoServer.rlevent(String, String) TO STATE::> centerRoad
+[reward]AUTOMATON::> reward() STATE::>centerRoad
+[reward]MOVED ON METHODCALL: void SocketServerPackage.EchoServer.rlevent(String, String) TO STATE::> centerRoad
+[reward]AUTOMATON::> reward() STATE::>centerRoad
+[reward]MOVED ON METHODCALL: void SocketServerPackage.EchoServer.rlevent(String, String) TO STATE::> centerRoad
+[reward]AUTOMATON::> reward() STATE::>centerRoad
+[reward]MOVED ON METHODCALL: void SocketServerPackage.EchoServer.rlevent(String, String) TO STATE::> centerRoad
+[reward]AUTOMATON::> reward() STATE::>centerRoad
+[reward]MOVED ON METHODCALL: void SocketServerPackage.EchoServer.rlevent(String, String) TO STATE::> centerRoad
+[reward]AUTOMATON::> reward() STATE::>centerRoad
+[reward]MOVED ON METHODCALL: void SocketServerPackage.EchoServer.rlevent(String, String) TO STATE::> limitRoad
+[reward]AUTOMATON::> reward() STATE::>limitRoad
+[reward]MOVED ON METHODCALL: void SocketServerPackage.EchoServer.rlevent(String, String) TO STATE::> limitRoad
+[reward]AUTOMATON::> reward() STATE::>limitRoad
+[reward]MOVED ON METHODCALL: void SocketServerPackage.EchoServer.rlevent(String, String) TO STATE::> limitRoad
+[reward]AUTOMATON::> reward() STATE::>limitRoad
+[reward]MOVED ON METHODCALL: void SocketServerPackage.EchoServer.rlevent(String, String) TO STATE::> limitRoad
+[reward]AUTOMATON::> reward() STATE::>limitRoad
+[reward]MOVED ON METHODCALL: void SocketServerPackage.EchoServer.rlevent(String, String) TO STATE::> !!!SYSTEM REACHED BAD STATE!!! rightOffRoad 
+aspects._asp_rewardautomaton0.ajc$before$aspects__asp_rewardautomaton0$2$6ab66155(_asp_rewardautomaton0.aj:25)
+SocketServerPackage.EchoServer.main(EchoServer.java:103) 
+[reward]AUTOMATON::> reward() STATE::>rightOffRoad
+[reward]MOVED ON METHODCALL: void SocketServerPackage.EchoServer.rlevent(String, String) TO STATE::> !!!SYSTEM REACHED BAD STATE!!! rightOffRoad 
+aspects._asp_rewardautomaton0.ajc$before$aspects__asp_rewardautomaton0$2$6ab66155(_asp_rewardautomaton0.aj:25)
+SocketServerPackage.EchoServer.main(EchoServer.java:103) 
+[reward]AUTOMATON::> reward() STATE::>rightOffRoad
+[reward]MOVED ON METHODCALL: void SocketServerPackage.EchoServer.rlevent(String, String) TO STATE::> !!!SYSTEM REACHED BAD STATE!!! rightOffRoad 
+aspects._asp_rewardautomaton0.ajc$before$aspects__asp_rewardautomaton0$2$6ab66155(_asp_rewardautomaton0.aj:25)
+SocketServerPackage.EchoServer.main(EchoServer.java:103) 
+[reward]AUTOMATON::> reward() STATE::>rightOffRoad
+[reward]MOVED ON METHODCALL: void SocketServerPackage.EchoServer.rlevent(String, String) TO STATE::> !!!SYSTEM REACHED BAD STATE!!! rightOffRoad 
+aspects._asp_rewardautomaton0.ajc$before$aspects__asp_rewardautomaton0$2$6ab66155(_asp_rewardautomaton0.aj:25)
+SocketServerPackage.EchoServer.main(EchoServer.java:103) 
+[reward]AUTOMATON::> reward() STATE::>rightOffRoad
+[reward]MOVED ON METHODCALL: void SocketServerPackage.EchoServer.rlevent(String, String) TO STATE::> !!!SYSTEM REACHED BAD STATE!!! damage 
+aspects._asp_rewardautomaton0.ajc$before$aspects__asp_rewardautomaton0$2$6ab66155(_asp_rewardautomaton0.aj:25)
+SocketServerPackage.EchoServer.main(EchoServer.java:103) 
+[reward]AUTOMATON::> reward() STATE::>damage
+[reward]MOVED ON METHODCALL: void SocketServerPackage.EchoServer.reset() TO STATE::> start
+[reward]AUTOMATON::> reward() STATE::>start
+[reward]MOVED ON METHODCALL: void SocketServerPackage.EchoServer.rlevent(String, String) TO STATE::> centerRoad
+[reward]AUTOMATON::> reward() STATE::>centerRoad
+[reward]MOVED ON METHODCALL: void SocketServerPackage.EchoServer.rlevent(String, String) TO STATE::> centerRoad
+[reward]AUTOMATON::> reward() STATE::>centerRoad
+[reward]MOVED ON METHODCALL: void SocketServerPackage.EchoServer.rlevent(String, String) TO STATE::> centerRoad
+[reward]AUTOMATON::> reward() STATE::>centerRoad
+[reward]MOVED ON METHODCALL: void SocketServerPackage.EchoServer.rlevent(String, String) TO STATE::> centerRoad
+[reward]AUTOMATON::> reward() STATE::>centerRoad
+[reward]MOVED ON METHODCALL: void SocketServerPackage.EchoServer.rlevent(String, String) TO STATE::> centerRoad
+[reward]AUTOMATON::> reward() STATE::>centerRoad
+[reward]MOVED ON METHODCALL: void SocketServerPackage.EchoServer.rlevent(String, String) TO STATE::> centerRoad
+[reward]AUTOMATON::> reward() STATE::>centerRoad
+[reward]MOVED ON METHODCALL: void SocketServerPackage.EchoServer.rlevent(String, String) TO STATE::> centerRoad
+[reward]AUTOMATON::> reward() STATE::>centerRoad
+[reward]MOVED ON METHODCALL: void SocketServerPackage.EchoServer.rlevent(String, String) TO STATE::> centerRoad
+[reward]AUTOMATON::> reward() STATE::>centerRoad
+[reward]MOVED ON METHODCALL: void SocketServerPackage.EchoServer.rlevent(String, String) TO STATE::> centerRoad
+[reward]AUTOMATON::> reward() STATE::>centerRoad
+[reward]MOVED ON METHODCALL: void SocketServerPackage.EchoServer.rlevent(String, String) TO STATE::> centerRoad
+[reward]AUTOMATON::> reward() STATE::>centerRoad
+[reward]MOVED ON METHODCALL: void SocketServerPackage.EchoServer.rlevent(String, String) TO STATE::> centerRoad
+[reward]AUTOMATON::> reward() STATE::>centerRoad
+[reward]MOVED ON METHODCALL: void SocketServerPackage.EchoServer.rlevent(String, String) TO STATE::> centerRoad
+[reward]AUTOMATON::> reward() STATE::>centerRoad
+[reward]MOVED ON METHODCALL: void SocketServerPackage.EchoServer.rlevent(String, String) TO STATE::> centerRoad
+[reward]AUTOMATON::> reward() STATE::>centerRoad
+[reward]MOVED ON METHODCALL: void SocketServerPackage.EchoServer.rlevent(String, String) TO STATE::> centerRoad
+[reward]AUTOMATON::> reward() STATE::>centerRoad
+[reward]MOVED ON METHODCALL: void SocketServerPackage.EchoServer.rlevent(String, String) TO STATE::> centerRoad
+[reward]AUTOMATON::> reward() STATE::>centerRoad
+[reward]MOVED ON METHODCALL: void SocketServerPackage.EchoServer.rlevent(String, String) TO STATE::> centerRoad
+[reward]AUTOMATON::> reward() STATE::>centerRoad
+[reward]MOVED ON METHODCALL: void SocketServerPackage.EchoServer.rlevent(String, String) TO STATE::> limitRoad
+[reward]AUTOMATON::> reward() STATE::>limitRoad
+[reward]MOVED ON METHODCALL: void SocketServerPackage.EchoServer.rlevent(String, String) TO STATE::> limitRoad
+[reward]AUTOMATON::> reward() STATE::>limitRoad
+[reward]MOVED ON METHODCALL: void SocketServerPackage.EchoServer.rlevent(String, String) TO STATE::> limitRoad
+[reward]AUTOMATON::> reward() STATE::>limitRoad
+[reward]MOVED ON METHODCALL: void SocketServerPackage.EchoServer.rlevent(String, String) TO STATE::> limitRoad
+[reward]AUTOMATON::> reward() STATE::>limitRoad
+[reward]MOVED ON METHODCALL: void SocketServerPackage.EchoServer.rlevent(String, String) TO STATE::> !!!SYSTEM REACHED BAD STATE!!! rightOffRoad 
+aspects._asp_rewardautomaton0.ajc$before$aspects__asp_rewardautomaton0$2$6ab66155(_asp_rewardautomaton0.aj:25)
+SocketServerPackage.EchoServer.main(EchoServer.java:103) 
+[reward]AUTOMATON::> reward() STATE::>rightOffRoad
+[reward]MOVED ON METHODCALL: void SocketServerPackage.EchoServer.rlevent(String, String) TO STATE::> !!!SYSTEM REACHED BAD STATE!!! rightOffRoad 
+aspects._asp_rewardautomaton0.ajc$before$aspects__asp_rewardautomaton0$2$6ab66155(_asp_rewardautomaton0.aj:25)
+SocketServerPackage.EchoServer.main(EchoServer.java:103) 
+[reward]AUTOMATON::> reward() STATE::>rightOffRoad
+[reward]MOVED ON METHODCALL: void SocketServerPackage.EchoServer.rlevent(String, String) TO STATE::> !!!SYSTEM REACHED BAD STATE!!! rightOffRoad 
+aspects._asp_rewardautomaton0.ajc$before$aspects__asp_rewardautomaton0$2$6ab66155(_asp_rewardautomaton0.aj:25)
+SocketServerPackage.EchoServer.main(EchoServer.java:103) 
+[reward]AUTOMATON::> reward() STATE::>rightOffRoad
+[reward]MOVED ON METHODCALL: void SocketServerPackage.EchoServer.rlevent(String, String) TO STATE::> !!!SYSTEM REACHED BAD STATE!!! rightOffRoad 
+aspects._asp_rewardautomaton0.ajc$before$aspects__asp_rewardautomaton0$2$6ab66155(_asp_rewardautomaton0.aj:25)
+SocketServerPackage.EchoServer.main(EchoServer.java:103) 
+[reward]AUTOMATON::> reward() STATE::>rightOffRoad
+[reward]MOVED ON METHODCALL: void SocketServerPackage.EchoServer.rlevent(String, String) TO STATE::> !!!SYSTEM REACHED BAD STATE!!! damage 
+aspects._asp_rewardautomaton0.ajc$before$aspects__asp_rewardautomaton0$2$6ab66155(_asp_rewardautomaton0.aj:25)
+SocketServerPackage.EchoServer.main(EchoServer.java:103) 
+[reward]AUTOMATON::> reward() STATE::>damage
+[reward]MOVED ON METHODCALL: void SocketServerPackage.EchoServer.reset() TO STATE::> start
+[reward]AUTOMATON::> reward() STATE::>start
+[reward]MOVED ON METHODCALL: void SocketServerPackage.EchoServer.rlevent(String, String) TO STATE::> centerRoad
+[reward]AUTOMATON::> reward() STATE::>centerRoad
+[reward]MOVED ON METHODCALL: void SocketServerPackage.EchoServer.rlevent(String, String) TO STATE::> centerRoad
+[reward]AUTOMATON::> reward() STATE::>centerRoad
+[reward]MOVED ON METHODCALL: void SocketServerPackage.EchoServer.rlevent(String, String) TO STATE::> centerRoad
+[reward]AUTOMATON::> reward() STATE::>centerRoad
+[reward]MOVED ON METHODCALL: void SocketServerPackage.EchoServer.rlevent(String, String) TO STATE::> centerRoad
+[reward]AUTOMATON::> reward() STATE::>centerRoad
+[reward]MOVED ON METHODCALL: void SocketServerPackage.EchoServer.rlevent(String, String) TO STATE::> centerRoad
+[reward]AUTOMATON::> reward() STATE::>centerRoad
+[reward]MOVED ON METHODCALL: void SocketServerPackage.EchoServer.rlevent(String, String) TO STATE::> centerRoad
+[reward]AUTOMATON::> reward() STATE::>centerRoad
+[reward]MOVED ON METHODCALL: void SocketServerPackage.EchoServer.rlevent(String, String) TO STATE::> centerRoad
+[reward]AUTOMATON::> reward() STATE::>centerRoad
+[reward]MOVED ON METHODCALL: void SocketServerPackage.EchoServer.rlevent(String, String) TO STATE::> centerRoad
+[reward]AUTOMATON::> reward() STATE::>centerRoad
+[reward]MOVED ON METHODCALL: void SocketServerPackage.EchoServer.rlevent(String, String) TO STATE::> centerRoad
+[reward]AUTOMATON::> reward() STATE::>centerRoad
+[reward]MOVED ON METHODCALL: void SocketServerPackage.EchoServer.rlevent(String, String) TO STATE::> centerRoad
+[reward]AUTOMATON::> reward() STATE::>centerRoad
+[reward]MOVED ON METHODCALL: void SocketServerPackage.EchoServer.rlevent(String, String) TO STATE::> centerRoad
+[reward]AUTOMATON::> reward() STATE::>centerRoad
+[reward]MOVED ON METHODCALL: void SocketServerPackage.EchoServer.rlevent(String, String) TO STATE::> centerRoad
+[reward]AUTOMATON::> reward() STATE::>centerRoad
+[reward]MOVED ON METHODCALL: void SocketServerPackage.EchoServer.rlevent(String, String) TO STATE::> centerRoad
+[reward]AUTOMATON::> reward() STATE::>centerRoad
+[reward]MOVED ON METHODCALL: void SocketServerPackage.EchoServer.rlevent(String, String) TO STATE::> centerRoad
+[reward]AUTOMATON::> reward() STATE::>centerRoad
+[reward]MOVED ON METHODCALL: void SocketServerPackage.EchoServer.rlevent(String, String) TO STATE::> centerRoad
+[reward]AUTOMATON::> reward() STATE::>centerRoad
+[reward]MOVED ON METHODCALL: void SocketServerPackage.EchoServer.rlevent(String, String) TO STATE::> centerRoad
+[reward]AUTOMATON::> reward() STATE::>centerRoad
+[reward]MOVED ON METHODCALL: void SocketServerPackage.EchoServer.rlevent(String, String) TO STATE::> limitRoad
+[reward]AUTOMATON::> reward() STATE::>limitRoad
+[reward]MOVED ON METHODCALL: void SocketServerPackage.EchoServer.rlevent(String, String) TO STATE::> limitRoad
+[reward]AUTOMATON::> reward() STATE::>limitRoad
+[reward]MOVED ON METHODCALL: void SocketServerPackage.EchoServer.rlevent(String, String) TO STATE::> limitRoad
+[reward]AUTOMATON::> reward() STATE::>limitRoad
+[reward]MOVED ON METHODCALL: void SocketServerPackage.EchoServer.rlevent(String, String) TO STATE::> !!!SYSTEM REACHED BAD STATE!!! rightOffRoad 
+aspects._asp_rewardautomaton0.ajc$before$aspects__asp_rewardautomaton0$2$6ab66155(_asp_rewardautomaton0.aj:25)
+SocketServerPackage.EchoServer.main(EchoServer.java:103) 
+[reward]AUTOMATON::> reward() STATE::>rightOffRoad
+[reward]MOVED ON METHODCALL: void SocketServerPackage.EchoServer.rlevent(String, String) TO STATE::> !!!SYSTEM REACHED BAD STATE!!! rightOffRoad 
+aspects._asp_rewardautomaton0.ajc$before$aspects__asp_rewardautomaton0$2$6ab66155(_asp_rewardautomaton0.aj:25)
+SocketServerPackage.EchoServer.main(EchoServer.java:103) 
+[reward]AUTOMATON::> reward() STATE::>rightOffRoad
+[reward]MOVED ON METHODCALL: void SocketServerPackage.EchoServer.rlevent(String, String) TO STATE::> !!!SYSTEM REACHED BAD STATE!!! rightOffRoad 
+aspects._asp_rewardautomaton0.ajc$before$aspects__asp_rewardautomaton0$2$6ab66155(_asp_rewardautomaton0.aj:25)
+SocketServerPackage.EchoServer.main(EchoServer.java:103) 
+[reward]AUTOMATON::> reward() STATE::>rightOffRoad
+[reward]MOVED ON METHODCALL: void SocketServerPackage.EchoServer.rlevent(String, String) TO STATE::> !!!SYSTEM REACHED BAD STATE!!! rightOffRoad 
+aspects._asp_rewardautomaton0.ajc$before$aspects__asp_rewardautomaton0$2$6ab66155(_asp_rewardautomaton0.aj:25)
+SocketServerPackage.EchoServer.main(EchoServer.java:103) 
+[reward]AUTOMATON::> reward() STATE::>rightOffRoad
+[reward]MOVED ON METHODCALL: void SocketServerPackage.EchoServer.rlevent(String, String) TO STATE::> !!!SYSTEM REACHED BAD STATE!!! damage 
+aspects._asp_rewardautomaton0.ajc$before$aspects__asp_rewardautomaton0$2$6ab66155(_asp_rewardautomaton0.aj:25)
+SocketServerPackage.EchoServer.main(EchoServer.java:103) 
+[reward]AUTOMATON::> reward() STATE::>damage
+[reward]MOVED ON METHODCALL: void SocketServerPackage.EchoServer.reset() TO STATE::> start
+[reward]AUTOMATON::> reward() STATE::>start
+[reward]MOVED ON METHODCALL: void SocketServerPackage.EchoServer.rlevent(String, String) TO STATE::> centerRoad
+[reward]AUTOMATON::> reward() STATE::>centerRoad
+[reward]MOVED ON METHODCALL: void SocketServerPackage.EchoServer.rlevent(String, String) TO STATE::> centerRoad
+[reward]AUTOMATON::> reward() STATE::>centerRoad
+[reward]MOVED ON METHODCALL: void SocketServerPackage.EchoServer.rlevent(String, String) TO STATE::> centerRoad
+[reward]AUTOMATON::> reward() STATE::>centerRoad
+[reward]MOVED ON METHODCALL: void SocketServerPackage.EchoServer.rlevent(String, String) TO STATE::> centerRoad
+[reward]AUTOMATON::> reward() STATE::>centerRoad
+[reward]MOVED ON METHODCALL: void SocketServerPackage.EchoServer.rlevent(String, String) TO STATE::> centerRoad
+[reward]AUTOMATON::> reward() STATE::>centerRoad
+[reward]MOVED ON METHODCALL: void SocketServerPackage.EchoServer.rlevent(String, String) TO STATE::> centerRoad
+[reward]AUTOMATON::> reward() STATE::>centerRoad
+[reward]MOVED ON METHODCALL: void SocketServerPackage.EchoServer.rlevent(String, String) TO STATE::> centerRoad
+[reward]AUTOMATON::> reward() STATE::>centerRoad
+[reward]MOVED ON METHODCALL: void SocketServerPackage.EchoServer.rlevent(String, String) TO STATE::> centerRoad
+[reward]AUTOMATON::> reward() STATE::>centerRoad
+[reward]MOVED ON METHODCALL: void SocketServerPackage.EchoServer.rlevent(String, String) TO STATE::> centerRoad
+[reward]AUTOMATON::> reward() STATE::>centerRoad
+[reward]MOVED ON METHODCALL: void SocketServerPackage.EchoServer.rlevent(String, String) TO STATE::> centerRoad
+[reward]AUTOMATON::> reward() STATE::>centerRoad
+[reward]MOVED ON METHODCALL: void SocketServerPackage.EchoServer.rlevent(String, String) TO STATE::> centerRoad
+[reward]AUTOMATON::> reward() STATE::>centerRoad
+[reward]MOVED ON METHODCALL: void SocketServerPackage.EchoServer.rlevent(String, String) TO STATE::> centerRoad
+[reward]AUTOMATON::> reward() STATE::>centerRoad
+[reward]MOVED ON METHODCALL: void SocketServerPackage.EchoServer.rlevent(String, String) TO STATE::> centerRoad
+[reward]AUTOMATON::> reward() STATE::>centerRoad
+[reward]MOVED ON METHODCALL: void SocketServerPackage.EchoServer.rlevent(String, String) TO STATE::> centerRoad
+[reward]AUTOMATON::> reward() STATE::>centerRoad
+[reward]MOVED ON METHODCALL: void SocketServerPackage.EchoServer.rlevent(String, String) TO STATE::> centerRoad
+[reward]AUTOMATON::> reward() STATE::>centerRoad
+[reward]MOVED ON METHODCALL: void SocketServerPackage.EchoServer.rlevent(String, String) TO STATE::> centerRoad
+[reward]AUTOMATON::> reward() STATE::>centerRoad
+[reward]MOVED ON METHODCALL: void SocketServerPackage.EchoServer.rlevent(String, String) TO STATE::> limitRoad
+[reward]AUTOMATON::> reward() STATE::>limitRoad
+[reward]MOVED ON METHODCALL: void SocketServerPackage.EchoServer.rlevent(String, String) TO STATE::> limitRoad
+[reward]AUTOMATON::> reward() STATE::>limitRoad
+[reward]MOVED ON METHODCALL: void SocketServerPackage.EchoServer.rlevent(String, String) TO STATE::> limitRoad
+[reward]AUTOMATON::> reward() STATE::>limitRoad
+[reward]MOVED ON METHODCALL: void SocketServerPackage.EchoServer.rlevent(String, String) TO STATE::> !!!SYSTEM REACHED BAD STATE!!! rightOffRoad 
+aspects._asp_rewardautomaton0.ajc$before$aspects__asp_rewardautomaton0$2$6ab66155(_asp_rewardautomaton0.aj:25)
+SocketServerPackage.EchoServer.main(EchoServer.java:103) 
+[reward]AUTOMATON::> reward() STATE::>rightOffRoad
+[reward]MOVED ON METHODCALL: void SocketServerPackage.EchoServer.rlevent(String, String) TO STATE::> !!!SYSTEM REACHED BAD STATE!!! rightOffRoad 
+aspects._asp_rewardautomaton0.ajc$before$aspects__asp_rewardautomaton0$2$6ab66155(_asp_rewardautomaton0.aj:25)
+SocketServerPackage.EchoServer.main(EchoServer.java:103) 
+[reward]AUTOMATON::> reward() STATE::>rightOffRoad
+[reward]MOVED ON METHODCALL: void SocketServerPackage.EchoServer.rlevent(String, String) TO STATE::> !!!SYSTEM REACHED BAD STATE!!! rightOffRoad 
+aspects._asp_rewardautomaton0.ajc$before$aspects__asp_rewardautomaton0$2$6ab66155(_asp_rewardautomaton0.aj:25)
+SocketServerPackage.EchoServer.main(EchoServer.java:103) 
+[reward]AUTOMATON::> reward() STATE::>rightOffRoad
+[reward]MOVED ON METHODCALL: void SocketServerPackage.EchoServer.rlevent(String, String) TO STATE::> !!!SYSTEM REACHED BAD STATE!!! rightOffRoad 
+aspects._asp_rewardautomaton0.ajc$before$aspects__asp_rewardautomaton0$2$6ab66155(_asp_rewardautomaton0.aj:25)
+SocketServerPackage.EchoServer.main(EchoServer.java:103) 
+[reward]AUTOMATON::> reward() STATE::>rightOffRoad
+[reward]MOVED ON METHODCALL: void SocketServerPackage.EchoServer.rlevent(String, String) TO STATE::> !!!SYSTEM REACHED BAD STATE!!! damage 
+aspects._asp_rewardautomaton0.ajc$before$aspects__asp_rewardautomaton0$2$6ab66155(_asp_rewardautomaton0.aj:25)
+SocketServerPackage.EchoServer.main(EchoServer.java:103) 
+[reward]AUTOMATON::> reward() STATE::>damage
+[reward]MOVED ON METHODCALL: void SocketServerPackage.EchoServer.reset() TO STATE::> start
+[reward]AUTOMATON::> reward() STATE::>start
+[reward]MOVED ON METHODCALL: void SocketServerPackage.EchoServer.rlevent(String, String) TO STATE::> centerRoad
+[reward]AUTOMATON::> reward() STATE::>centerRoad
+[reward]MOVED ON METHODCALL: void SocketServerPackage.EchoServer.rlevent(String, String) TO STATE::> centerRoad
+[reward]AUTOMATON::> reward() STATE::>centerRoad
+[reward]MOVED ON METHODCALL: void SocketServerPackage.EchoServer.rlevent(String, String) TO STATE::> centerRoad
+[reward]AUTOMATON::> reward() STATE::>centerRoad
+[reward]MOVED ON METHODCALL: void SocketServerPackage.EchoServer.rlevent(String, String) TO STATE::> centerRoad
+[reward]AUTOMATON::> reward() STATE::>centerRoad
+[reward]MOVED ON METHODCALL: void SocketServerPackage.EchoServer.rlevent(String, String) TO STATE::> centerRoad
+[reward]AUTOMATON::> reward() STATE::>centerRoad
+[reward]MOVED ON METHODCALL: void SocketServerPackage.EchoServer.rlevent(String, String) TO STATE::> centerRoad
+[reward]AUTOMATON::> reward() STATE::>centerRoad
+[reward]MOVED ON METHODCALL: void SocketServerPackage.EchoServer.rlevent(String, String) TO STATE::> centerRoad
+[reward]AUTOMATON::> reward() STATE::>centerRoad
+[reward]MOVED ON METHODCALL: void SocketServerPackage.EchoServer.rlevent(String, String) TO STATE::> centerRoad
+[reward]AUTOMATON::> reward() STATE::>centerRoad
+[reward]MOVED ON METHODCALL: void SocketServerPackage.EchoServer.rlevent(String, String) TO STATE::> centerRoad
+[reward]AUTOMATON::> reward() STATE::>centerRoad
+[reward]MOVED ON METHODCALL: void SocketServerPackage.EchoServer.rlevent(String, String) TO STATE::> centerRoad
+[reward]AUTOMATON::> reward() STATE::>centerRoad
+[reward]MOVED ON METHODCALL: void SocketServerPackage.EchoServer.rlevent(String, String) TO STATE::> centerRoad
+[reward]AUTOMATON::> reward() STATE::>centerRoad
+[reward]MOVED ON METHODCALL: void SocketServerPackage.EchoServer.rlevent(String, String) TO STATE::> centerRoad
+[reward]AUTOMATON::> reward() STATE::>centerRoad
+[reward]MOVED ON METHODCALL: void SocketServerPackage.EchoServer.rlevent(String, String) TO STATE::> centerRoad
+[reward]AUTOMATON::> reward() STATE::>centerRoad
+[reward]MOVED ON METHODCALL: void SocketServerPackage.EchoServer.rlevent(String, String) TO STATE::> centerRoad
+[reward]AUTOMATON::> reward() STATE::>centerRoad
+[reward]MOVED ON METHODCALL: void SocketServerPackage.EchoServer.rlevent(String, String) TO STATE::> centerRoad
+[reward]AUTOMATON::> reward() STATE::>centerRoad
+[reward]MOVED ON METHODCALL: void SocketServerPackage.EchoServer.rlevent(String, String) TO STATE::> centerRoad
+[reward]AUTOMATON::> reward() STATE::>centerRoad
+[reward]MOVED ON METHODCALL: void SocketServerPackage.EchoServer.rlevent(String, String) TO STATE::> centerRoad
+[reward]AUTOMATON::> reward() STATE::>centerRoad
+[reward]MOVED ON METHODCALL: void SocketServerPackage.EchoServer.rlevent(String, String) TO STATE::> limitRoad
+[reward]AUTOMATON::> reward() STATE::>limitRoad
+[reward]MOVED ON METHODCALL: void SocketServerPackage.EchoServer.rlevent(String, String) TO STATE::> limitRoad
+[reward]AUTOMATON::> reward() STATE::>limitRoad
+[reward]MOVED ON METHODCALL: void SocketServerPackage.EchoServer.rlevent(String, String) TO STATE::> limitRoad
+[reward]AUTOMATON::> reward() STATE::>limitRoad
+[reward]MOVED ON METHODCALL: void SocketServerPackage.EchoServer.rlevent(String, String) TO STATE::> !!!SYSTEM REACHED BAD STATE!!! rightOffRoad 
+aspects._asp_rewardautomaton0.ajc$before$aspects__asp_rewardautomaton0$2$6ab66155(_asp_rewardautomaton0.aj:25)
+SocketServerPackage.EchoServer.main(EchoServer.java:103) 
+[reward]AUTOMATON::> reward() STATE::>rightOffRoad
+[reward]MOVED ON METHODCALL: void SocketServerPackage.EchoServer.rlevent(String, String) TO STATE::> !!!SYSTEM REACHED BAD STATE!!! rightOffRoad 
+aspects._asp_rewardautomaton0.ajc$before$aspects__asp_rewardautomaton0$2$6ab66155(_asp_rewardautomaton0.aj:25)
+SocketServerPackage.EchoServer.main(EchoServer.java:103) 
+[reward]AUTOMATON::> reward() STATE::>rightOffRoad
+[reward]MOVED ON METHODCALL: void SocketServerPackage.EchoServer.rlevent(String, String) TO STATE::> !!!SYSTEM REACHED BAD STATE!!! rightOffRoad 
+aspects._asp_rewardautomaton0.ajc$before$aspects__asp_rewardautomaton0$2$6ab66155(_asp_rewardautomaton0.aj:25)
+SocketServerPackage.EchoServer.main(EchoServer.java:103) 
+[reward]AUTOMATON::> reward() STATE::>rightOffRoad
+[reward]MOVED ON METHODCALL: void SocketServerPackage.EchoServer.rlevent(String, String) TO STATE::> !!!SYSTEM REACHED BAD STATE!!! rightOffRoad 
+aspects._asp_rewardautomaton0.ajc$before$aspects__asp_rewardautomaton0$2$6ab66155(_asp_rewardautomaton0.aj:25)
+SocketServerPackage.EchoServer.main(EchoServer.java:103) 
+[reward]AUTOMATON::> reward() STATE::>rightOffRoad
+[reward]MOVED ON METHODCALL: void SocketServerPackage.EchoServer.rlevent(String, String) TO STATE::> !!!SYSTEM REACHED BAD STATE!!! rightOffRoad 
+aspects._asp_rewardautomaton0.ajc$before$aspects__asp_rewardautomaton0$2$6ab66155(_asp_rewardautomaton0.aj:25)
+SocketServerPackage.EchoServer.main(EchoServer.java:103) 
+[reward]AUTOMATON::> reward() STATE::>rightOffRoad
+[reward]MOVED ON METHODCALL: void SocketServerPackage.EchoServer.rlevent(String, String) TO STATE::> !!!SYSTEM REACHED BAD STATE!!! damage 
+aspects._asp_rewardautomaton0.ajc$before$aspects__asp_rewardautomaton0$2$6ab66155(_asp_rewardautomaton0.aj:25)
+SocketServerPackage.EchoServer.main(EchoServer.java:103) 
+[reward]AUTOMATON::> reward() STATE::>damage
+[reward]MOVED ON METHODCALL: void SocketServerPackage.EchoServer.reset() TO STATE::> start
+[reward]AUTOMATON::> reward() STATE::>start
+[reward]MOVED ON METHODCALL: void SocketServerPackage.EchoServer.rlevent(String, String) TO STATE::> centerRoad
+[reward]AUTOMATON::> reward() STATE::>centerRoad
+[reward]MOVED ON METHODCALL: void SocketServerPackage.EchoServer.rlevent(String, String) TO STATE::> centerRoad
+[reward]AUTOMATON::> reward() STATE::>centerRoad
+[reward]MOVED ON METHODCALL: void SocketServerPackage.EchoServer.rlevent(String, String) TO STATE::> centerRoad
+[reward]AUTOMATON::> reward() STATE::>centerRoad
+[reward]MOVED ON METHODCALL: void SocketServerPackage.EchoServer.rlevent(String, String) TO STATE::> centerRoad
+[reward]AUTOMATON::> reward() STATE::>centerRoad
+[reward]MOVED ON METHODCALL: void SocketServerPackage.EchoServer.rlevent(String, String) TO STATE::> centerRoad
+[reward]AUTOMATON::> reward() STATE::>centerRoad
+[reward]MOVED ON METHODCALL: void SocketServerPackage.EchoServer.rlevent(String, String) TO STATE::> centerRoad
+[reward]AUTOMATON::> reward() STATE::>centerRoad
+[reward]MOVED ON METHODCALL: void SocketServerPackage.EchoServer.rlevent(String, String) TO STATE::> centerRoad
+[reward]AUTOMATON::> reward() STATE::>centerRoad
+[reward]MOVED ON METHODCALL: void SocketServerPackage.EchoServer.rlevent(String, String) TO STATE::> centerRoad
+[reward]AUTOMATON::> reward() STATE::>centerRoad
+[reward]MOVED ON METHODCALL: void SocketServerPackage.EchoServer.rlevent(String, String) TO STATE::> centerRoad
+[reward]AUTOMATON::> reward() STATE::>centerRoad
+[reward]MOVED ON METHODCALL: void SocketServerPackage.EchoServer.rlevent(String, String) TO STATE::> centerRoad
+[reward]AUTOMATON::> reward() STATE::>centerRoad
+[reward]MOVED ON METHODCALL: void SocketServerPackage.EchoServer.rlevent(String, String) TO STATE::> centerRoad
+[reward]AUTOMATON::> reward() STATE::>centerRoad
+[reward]MOVED ON METHODCALL: void SocketServerPackage.EchoServer.rlevent(String, String) TO STATE::> centerRoad
+[reward]AUTOMATON::> reward() STATE::>centerRoad
+[reward]MOVED ON METHODCALL: void SocketServerPackage.EchoServer.rlevent(String, String) TO STATE::> centerRoad
+[reward]AUTOMATON::> reward() STATE::>centerRoad
+[reward]MOVED ON METHODCALL: void SocketServerPackage.EchoServer.rlevent(String, String) TO STATE::> centerRoad
+[reward]AUTOMATON::> reward() STATE::>centerRoad
+[reward]MOVED ON METHODCALL: void SocketServerPackage.EchoServer.rlevent(String, String) TO STATE::> centerRoad
+[reward]AUTOMATON::> reward() STATE::>centerRoad
+[reward]MOVED ON METHODCALL: void SocketServerPackage.EchoServer.rlevent(String, String) TO STATE::> centerRoad
+[reward]AUTOMATON::> reward() STATE::>centerRoad
+[reward]MOVED ON METHODCALL: void SocketServerPackage.EchoServer.rlevent(String, String) TO STATE::> limitRoad
+[reward]AUTOMATON::> reward() STATE::>limitRoad
+[reward]MOVED ON METHODCALL: void SocketServerPackage.EchoServer.rlevent(String, String) TO STATE::> limitRoad
+[reward]AUTOMATON::> reward() STATE::>limitRoad
+[reward]MOVED ON METHODCALL: void SocketServerPackage.EchoServer.rlevent(String, String) TO STATE::> limitRoad
+[reward]AUTOMATON::> reward() STATE::>limitRoad
+[reward]MOVED ON METHODCALL: void SocketServerPackage.EchoServer.rlevent(String, String) TO STATE::> limitRoad
+[reward]AUTOMATON::> reward() STATE::>limitRoad
+[reward]MOVED ON METHODCALL: void SocketServerPackage.EchoServer.rlevent(String, String) TO STATE::> !!!SYSTEM REACHED BAD STATE!!! rightOffRoad 
+aspects._asp_rewardautomaton0.ajc$before$aspects__asp_rewardautomaton0$2$6ab66155(_asp_rewardautomaton0.aj:25)
+SocketServerPackage.EchoServer.main(EchoServer.java:103) 
+[reward]AUTOMATON::> reward() STATE::>rightOffRoad
+[reward]MOVED ON METHODCALL: void SocketServerPackage.EchoServer.rlevent(String, String) TO STATE::> !!!SYSTEM REACHED BAD STATE!!! rightOffRoad 
+aspects._asp_rewardautomaton0.ajc$before$aspects__asp_rewardautomaton0$2$6ab66155(_asp_rewardautomaton0.aj:25)
+SocketServerPackage.EchoServer.main(EchoServer.java:103) 
+[reward]AUTOMATON::> reward() STATE::>rightOffRoad
+[reward]MOVED ON METHODCALL: void SocketServerPackage.EchoServer.rlevent(String, String) TO STATE::> !!!SYSTEM REACHED BAD STATE!!! rightOffRoad 
+aspects._asp_rewardautomaton0.ajc$before$aspects__asp_rewardautomaton0$2$6ab66155(_asp_rewardautomaton0.aj:25)
+SocketServerPackage.EchoServer.main(EchoServer.java:103) 
+[reward]AUTOMATON::> reward() STATE::>rightOffRoad
+[reward]MOVED ON METHODCALL: void SocketServerPackage.EchoServer.rlevent(String, String) TO STATE::> !!!SYSTEM REACHED BAD STATE!!! rightOffRoad 
+aspects._asp_rewardautomaton0.ajc$before$aspects__asp_rewardautomaton0$2$6ab66155(_asp_rewardautomaton0.aj:25)
+SocketServerPackage.EchoServer.main(EchoServer.java:103) 
+[reward]AUTOMATON::> reward() STATE::>rightOffRoad
+[reward]MOVED ON METHODCALL: void SocketServerPackage.EchoServer.rlevent(String, String) TO STATE::> !!!SYSTEM REACHED BAD STATE!!! damage 
+aspects._asp_rewardautomaton0.ajc$before$aspects__asp_rewardautomaton0$2$6ab66155(_asp_rewardautomaton0.aj:25)
+SocketServerPackage.EchoServer.main(EchoServer.java:103) 
+[reward]AUTOMATON::> reward() STATE::>damage
+[reward]MOVED ON METHODCALL: void SocketServerPackage.EchoServer.reset() TO STATE::> start
+[reward]AUTOMATON::> reward() STATE::>start
+[reward]MOVED ON METHODCALL: void SocketServerPackage.EchoServer.rlevent(String, String) TO STATE::> centerRoad
+[reward]AUTOMATON::> reward() STATE::>centerRoad
+[reward]MOVED ON METHODCALL: void SocketServerPackage.EchoServer.rlevent(String, String) TO STATE::> centerRoad
+[reward]AUTOMATON::> reward() STATE::>centerRoad
+[reward]MOVED ON METHODCALL: void SocketServerPackage.EchoServer.rlevent(String, String) TO STATE::> centerRoad
+[reward]AUTOMATON::> reward() STATE::>centerRoad
+[reward]MOVED ON METHODCALL: void SocketServerPackage.EchoServer.rlevent(String, String) TO STATE::> centerRoad
+[reward]AUTOMATON::> reward() STATE::>centerRoad
+[reward]MOVED ON METHODCALL: void SocketServerPackage.EchoServer.rlevent(String, String) TO STATE::> centerRoad
+[reward]AUTOMATON::> reward() STATE::>centerRoad
+[reward]MOVED ON METHODCALL: void SocketServerPackage.EchoServer.rlevent(String, String) TO STATE::> centerRoad
+[reward]AUTOMATON::> reward() STATE::>centerRoad
+[reward]MOVED ON METHODCALL: void SocketServerPackage.EchoServer.rlevent(String, String) TO STATE::> centerRoad
+[reward]AUTOMATON::> reward() STATE::>centerRoad
+[reward]MOVED ON METHODCALL: void SocketServerPackage.EchoServer.rlevent(String, String) TO STATE::> centerRoad
+[reward]AUTOMATON::> reward() STATE::>centerRoad
+[reward]MOVED ON METHODCALL: void SocketServerPackage.EchoServer.rlevent(String, String) TO STATE::> centerRoad
+[reward]AUTOMATON::> reward() STATE::>centerRoad
+[reward]MOVED ON METHODCALL: void SocketServerPackage.EchoServer.rlevent(String, String) TO STATE::> centerRoad
+[reward]AUTOMATON::> reward() STATE::>centerRoad
+[reward]MOVED ON METHODCALL: void SocketServerPackage.EchoServer.rlevent(String, String) TO STATE::> centerRoad
+[reward]AUTOMATON::> reward() STATE::>centerRoad
+[reward]MOVED ON METHODCALL: void SocketServerPackage.EchoServer.rlevent(String, String) TO STATE::> centerRoad
+[reward]AUTOMATON::> reward() STATE::>centerRoad
+[reward]MOVED ON METHODCALL: void SocketServerPackage.EchoServer.rlevent(String, String) TO STATE::> centerRoad
+[reward]AUTOMATON::> reward() STATE::>centerRoad
+[reward]MOVED ON METHODCALL: void SocketServerPackage.EchoServer.rlevent(String, String) TO STATE::> centerRoad
+[reward]AUTOMATON::> reward() STATE::>centerRoad
+[reward]MOVED ON METHODCALL: void SocketServerPackage.EchoServer.rlevent(String, String) TO STATE::> centerRoad
+[reward]AUTOMATON::> reward() STATE::>centerRoad
+[reward]MOVED ON METHODCALL: void SocketServerPackage.EchoServer.rlevent(String, String) TO STATE::> centerRoad
+[reward]AUTOMATON::> reward() STATE::>centerRoad
+[reward]MOVED ON METHODCALL: void SocketServerPackage.EchoServer.rlevent(String, String) TO STATE::> limitRoad
+[reward]AUTOMATON::> reward() STATE::>limitRoad
+[reward]MOVED ON METHODCALL: void SocketServerPackage.EchoServer.rlevent(String, String) TO STATE::> limitRoad
+[reward]AUTOMATON::> reward() STATE::>limitRoad
+[reward]MOVED ON METHODCALL: void SocketServerPackage.EchoServer.rlevent(String, String) TO STATE::> limitRoad
+[reward]AUTOMATON::> reward() STATE::>limitRoad
+[reward]MOVED ON METHODCALL: void SocketServerPackage.EchoServer.rlevent(String, String) TO STATE::> !!!SYSTEM REACHED BAD STATE!!! rightOffRoad 
+aspects._asp_rewardautomaton0.ajc$before$aspects__asp_rewardautomaton0$2$6ab66155(_asp_rewardautomaton0.aj:25)
+SocketServerPackage.EchoServer.main(EchoServer.java:103) 
+[reward]AUTOMATON::> reward() STATE::>rightOffRoad
+[reward]MOVED ON METHODCALL: void SocketServerPackage.EchoServer.rlevent(String, String) TO STATE::> !!!SYSTEM REACHED BAD STATE!!! rightOffRoad 
+aspects._asp_rewardautomaton0.ajc$before$aspects__asp_rewardautomaton0$2$6ab66155(_asp_rewardautomaton0.aj:25)
+SocketServerPackage.EchoServer.main(EchoServer.java:103) 
+[reward]AUTOMATON::> reward() STATE::>rightOffRoad
+[reward]MOVED ON METHODCALL: void SocketServerPackage.EchoServer.rlevent(String, String) TO STATE::> !!!SYSTEM REACHED BAD STATE!!! rightOffRoad 
+aspects._asp_rewardautomaton0.ajc$before$aspects__asp_rewardautomaton0$2$6ab66155(_asp_rewardautomaton0.aj:25)
+SocketServerPackage.EchoServer.main(EchoServer.java:103) 
+[reward]AUTOMATON::> reward() STATE::>rightOffRoad
+[reward]MOVED ON METHODCALL: void SocketServerPackage.EchoServer.rlevent(String, String) TO STATE::> !!!SYSTEM REACHED BAD STATE!!! rightOffRoad 
+aspects._asp_rewardautomaton0.ajc$before$aspects__asp_rewardautomaton0$2$6ab66155(_asp_rewardautomaton0.aj:25)
+SocketServerPackage.EchoServer.main(EchoServer.java:103) 
+[reward]AUTOMATON::> reward() STATE::>rightOffRoad
+[reward]MOVED ON METHODCALL: void SocketServerPackage.EchoServer.rlevent(String, String) TO STATE::> !!!SYSTEM REACHED BAD STATE!!! damage 
+aspects._asp_rewardautomaton0.ajc$before$aspects__asp_rewardautomaton0$2$6ab66155(_asp_rewardautomaton0.aj:25)
+SocketServerPackage.EchoServer.main(EchoServer.java:103) 
+[reward]AUTOMATON::> reward() STATE::>damage
+[reward]MOVED ON METHODCALL: void SocketServerPackage.EchoServer.reset() TO STATE::> start
+[reward]AUTOMATON::> reward() STATE::>start
+[reward]MOVED ON METHODCALL: void SocketServerPackage.EchoServer.rlevent(String, String) TO STATE::> centerRoad
+[reward]AUTOMATON::> reward() STATE::>centerRoad
+[reward]MOVED ON METHODCALL: void SocketServerPackage.EchoServer.rlevent(String, String) TO STATE::> centerRoad
+[reward]AUTOMATON::> reward() STATE::>centerRoad
+[reward]MOVED ON METHODCALL: void SocketServerPackage.EchoServer.rlevent(String, String) TO STATE::> centerRoad
+[reward]AUTOMATON::> reward() STATE::>centerRoad
+[reward]MOVED ON METHODCALL: void SocketServerPackage.EchoServer.rlevent(String, String) TO STATE::> centerRoad
+[reward]AUTOMATON::> reward() STATE::>centerRoad
+[reward]MOVED ON METHODCALL: void SocketServerPackage.EchoServer.rlevent(String, String) TO STATE::> centerRoad
+[reward]AUTOMATON::> reward() STATE::>centerRoad
+[reward]MOVED ON METHODCALL: void SocketServerPackage.EchoServer.rlevent(String, String) TO STATE::> centerRoad
+[reward]AUTOMATON::> reward() STATE::>centerRoad
+[reward]MOVED ON METHODCALL: void SocketServerPackage.EchoServer.rlevent(String, String) TO STATE::> centerRoad
+[reward]AUTOMATON::> reward() STATE::>centerRoad
+[reward]MOVED ON METHODCALL: void SocketServerPackage.EchoServer.rlevent(String, String) TO STATE::> centerRoad
+[reward]AUTOMATON::> reward() STATE::>centerRoad
+[reward]MOVED ON METHODCALL: void SocketServerPackage.EchoServer.rlevent(String, String) TO STATE::> centerRoad
+[reward]AUTOMATON::> reward() STATE::>centerRoad
+[reward]MOVED ON METHODCALL: void SocketServerPackage.EchoServer.rlevent(String, String) TO STATE::> centerRoad
+[reward]AUTOMATON::> reward() STATE::>centerRoad
+[reward]MOVED ON METHODCALL: void SocketServerPackage.EchoServer.rlevent(String, String) TO STATE::> centerRoad
+[reward]AUTOMATON::> reward() STATE::>centerRoad
+[reward]MOVED ON METHODCALL: void SocketServerPackage.EchoServer.rlevent(String, String) TO STATE::> centerRoad
+[reward]AUTOMATON::> reward() STATE::>centerRoad
+[reward]MOVED ON METHODCALL: void SocketServerPackage.EchoServer.rlevent(String, String) TO STATE::> centerRoad
+[reward]AUTOMATON::> reward() STATE::>centerRoad
+[reward]MOVED ON METHODCALL: void SocketServerPackage.EchoServer.rlevent(String, String) TO STATE::> centerRoad
+[reward]AUTOMATON::> reward() STATE::>centerRoad
+[reward]MOVED ON METHODCALL: void SocketServerPackage.EchoServer.rlevent(String, String) TO STATE::> centerRoad
+[reward]AUTOMATON::> reward() STATE::>centerRoad
+[reward]MOVED ON METHODCALL: void SocketServerPackage.EchoServer.rlevent(String, String) TO STATE::> centerRoad
+[reward]AUTOMATON::> reward() STATE::>centerRoad
+[reward]MOVED ON METHODCALL: void SocketServerPackage.EchoServer.rlevent(String, String) TO STATE::> limitRoad
+[reward]AUTOMATON::> reward() STATE::>limitRoad
+[reward]MOVED ON METHODCALL: void SocketServerPackage.EchoServer.rlevent(String, String) TO STATE::> limitRoad
+[reward]AUTOMATON::> reward() STATE::>limitRoad
+[reward]MOVED ON METHODCALL: void SocketServerPackage.EchoServer.rlevent(String, String) TO STATE::> limitRoad
+[reward]AUTOMATON::> reward() STATE::>limitRoad
+[reward]MOVED ON METHODCALL: void SocketServerPackage.EchoServer.rlevent(String, String) TO STATE::> !!!SYSTEM REACHED BAD STATE!!! rightOffRoad 
+aspects._asp_rewardautomaton0.ajc$before$aspects__asp_rewardautomaton0$2$6ab66155(_asp_rewardautomaton0.aj:25)
+SocketServerPackage.EchoServer.main(EchoServer.java:103) 
+[reward]AUTOMATON::> reward() STATE::>rightOffRoad
+[reward]MOVED ON METHODCALL: void SocketServerPackage.EchoServer.rlevent(String, String) TO STATE::> !!!SYSTEM REACHED BAD STATE!!! rightOffRoad 
+aspects._asp_rewardautomaton0.ajc$before$aspects__asp_rewardautomaton0$2$6ab66155(_asp_rewardautomaton0.aj:25)
+SocketServerPackage.EchoServer.main(EchoServer.java:103) 
+[reward]AUTOMATON::> reward() STATE::>rightOffRoad
+[reward]MOVED ON METHODCALL: void SocketServerPackage.EchoServer.rlevent(String, String) TO STATE::> !!!SYSTEM REACHED BAD STATE!!! rightOffRoad 
+aspects._asp_rewardautomaton0.ajc$before$aspects__asp_rewardautomaton0$2$6ab66155(_asp_rewardautomaton0.aj:25)
+SocketServerPackage.EchoServer.main(EchoServer.java:103) 
+[reward]AUTOMATON::> reward() STATE::>rightOffRoad
+[reward]MOVED ON METHODCALL: void SocketServerPackage.EchoServer.rlevent(String, String) TO STATE::> !!!SYSTEM REACHED BAD STATE!!! rightOffRoad 
+aspects._asp_rewardautomaton0.ajc$before$aspects__asp_rewardautomaton0$2$6ab66155(_asp_rewardautomaton0.aj:25)
+SocketServerPackage.EchoServer.main(EchoServer.java:103) 
+[reward]AUTOMATON::> reward() STATE::>rightOffRoad
+[reward]MOVED ON METHODCALL: void SocketServerPackage.EchoServer.rlevent(String, String) TO STATE::> !!!SYSTEM REACHED BAD STATE!!! damage 
+aspects._asp_rewardautomaton0.ajc$before$aspects__asp_rewardautomaton0$2$6ab66155(_asp_rewardautomaton0.aj:25)
+SocketServerPackage.EchoServer.main(EchoServer.java:103) 
+[reward]AUTOMATON::> reward() STATE::>damage
+[reward]MOVED ON METHODCALL: void SocketServerPackage.EchoServer.reset() TO STATE::> start
+[reward]AUTOMATON::> reward() STATE::>start
+[reward]MOVED ON METHODCALL: void SocketServerPackage.EchoServer.rlevent(String, String) TO STATE::> centerRoad
+[reward]AUTOMATON::> reward() STATE::>centerRoad
+[reward]MOVED ON METHODCALL: void SocketServerPackage.EchoServer.rlevent(String, String) TO STATE::> centerRoad
+[reward]AUTOMATON::> reward() STATE::>centerRoad
+[reward]MOVED ON METHODCALL: void SocketServerPackage.EchoServer.rlevent(String, String) TO STATE::> centerRoad
+[reward]AUTOMATON::> reward() STATE::>centerRoad
+[reward]MOVED ON METHODCALL: void SocketServerPackage.EchoServer.rlevent(String, String) TO STATE::> centerRoad
+[reward]AUTOMATON::> reward() STATE::>centerRoad
+[reward]MOVED ON METHODCALL: void SocketServerPackage.EchoServer.rlevent(String, String) TO STATE::> centerRoad
+[reward]AUTOMATON::> reward() STATE::>centerRoad
+[reward]MOVED ON METHODCALL: void SocketServerPackage.EchoServer.rlevent(String, String) TO STATE::> centerRoad
+[reward]AUTOMATON::> reward() STATE::>centerRoad
+[reward]MOVED ON METHODCALL: void SocketServerPackage.EchoServer.rlevent(String, String) TO STATE::> centerRoad
+[reward]AUTOMATON::> reward() STATE::>centerRoad
+[reward]MOVED ON METHODCALL: void SocketServerPackage.EchoServer.rlevent(String, String) TO STATE::> centerRoad
+[reward]AUTOMATON::> reward() STATE::>centerRoad
+[reward]MOVED ON METHODCALL: void SocketServerPackage.EchoServer.rlevent(String, String) TO STATE::> centerRoad
+[reward]AUTOMATON::> reward() STATE::>centerRoad
+[reward]MOVED ON METHODCALL: void SocketServerPackage.EchoServer.rlevent(String, String) TO STATE::> centerRoad
+[reward]AUTOMATON::> reward() STATE::>centerRoad
+[reward]MOVED ON METHODCALL: void SocketServerPackage.EchoServer.rlevent(String, String) TO STATE::> centerRoad
+[reward]AUTOMATON::> reward() STATE::>centerRoad
+[reward]MOVED ON METHODCALL: void SocketServerPackage.EchoServer.rlevent(String, String) TO STATE::> centerRoad
+[reward]AUTOMATON::> reward() STATE::>centerRoad
+[reward]MOVED ON METHODCALL: void SocketServerPackage.EchoServer.rlevent(String, String) TO STATE::> centerRoad
+[reward]AUTOMATON::> reward() STATE::>centerRoad
+[reward]MOVED ON METHODCALL: void SocketServerPackage.EchoServer.rlevent(String, String) TO STATE::> centerRoad
+[reward]AUTOMATON::> reward() STATE::>centerRoad
+[reward]MOVED ON METHODCALL: void SocketServerPackage.EchoServer.rlevent(String, String) TO STATE::> centerRoad
+[reward]AUTOMATON::> reward() STATE::>centerRoad
+[reward]MOVED ON METHODCALL: void SocketServerPackage.EchoServer.rlevent(String, String) TO STATE::> centerRoad
+[reward]AUTOMATON::> reward() STATE::>centerRoad
+[reward]MOVED ON METHODCALL: void SocketServerPackage.EchoServer.rlevent(String, String) TO STATE::> centerRoad
+[reward]AUTOMATON::> reward() STATE::>centerRoad
+[reward]MOVED ON METHODCALL: void SocketServerPackage.EchoServer.rlevent(String, String) TO STATE::> limitRoad
+[reward]AUTOMATON::> reward() STATE::>limitRoad
+[reward]MOVED ON METHODCALL: void SocketServerPackage.EchoServer.rlevent(String, String) TO STATE::> limitRoad
+[reward]AUTOMATON::> reward() STATE::>limitRoad
+[reward]MOVED ON METHODCALL: void SocketServerPackage.EchoServer.rlevent(String, String) TO STATE::> limitRoad
+[reward]AUTOMATON::> reward() STATE::>limitRoad
+[reward]MOVED ON METHODCALL: void SocketServerPackage.EchoServer.rlevent(String, String) TO STATE::> !!!SYSTEM REACHED BAD STATE!!! rightOffRoad 
+aspects._asp_rewardautomaton0.ajc$before$aspects__asp_rewardautomaton0$2$6ab66155(_asp_rewardautomaton0.aj:25)
+SocketServerPackage.EchoServer.main(EchoServer.java:103) 
+[reward]AUTOMATON::> reward() STATE::>rightOffRoad
+[reward]MOVED ON METHODCALL: void SocketServerPackage.EchoServer.rlevent(String, String) TO STATE::> !!!SYSTEM REACHED BAD STATE!!! rightOffRoad 
+aspects._asp_rewardautomaton0.ajc$before$aspects__asp_rewardautomaton0$2$6ab66155(_asp_rewardautomaton0.aj:25)
+SocketServerPackage.EchoServer.main(EchoServer.java:103) 
+[reward]AUTOMATON::> reward() STATE::>rightOffRoad
+[reward]MOVED ON METHODCALL: void SocketServerPackage.EchoServer.rlevent(String, String) TO STATE::> !!!SYSTEM REACHED BAD STATE!!! rightOffRoad 
+aspects._asp_rewardautomaton0.ajc$before$aspects__asp_rewardautomaton0$2$6ab66155(_asp_rewardautomaton0.aj:25)
+SocketServerPackage.EchoServer.main(EchoServer.java:103) 
+[reward]AUTOMATON::> reward() STATE::>rightOffRoad
+[reward]MOVED ON METHODCALL: void SocketServerPackage.EchoServer.rlevent(String, String) TO STATE::> !!!SYSTEM REACHED BAD STATE!!! rightOffRoad 
+aspects._asp_rewardautomaton0.ajc$before$aspects__asp_rewardautomaton0$2$6ab66155(_asp_rewardautomaton0.aj:25)
+SocketServerPackage.EchoServer.main(EchoServer.java:103) 
+[reward]AUTOMATON::> reward() STATE::>rightOffRoad
+[reward]MOVED ON METHODCALL: void SocketServerPackage.EchoServer.rlevent(String, String) TO STATE::> !!!SYSTEM REACHED BAD STATE!!! damage 
+aspects._asp_rewardautomaton0.ajc$before$aspects__asp_rewardautomaton0$2$6ab66155(_asp_rewardautomaton0.aj:25)
+SocketServerPackage.EchoServer.main(EchoServer.java:103) 
+[reward]AUTOMATON::> reward() STATE::>damage
+[reward]MOVED ON METHODCALL: void SocketServerPackage.EchoServer.reset() TO STATE::> start
+[reward]AUTOMATON::> reward() STATE::>start
+[reward]MOVED ON METHODCALL: void SocketServerPackage.EchoServer.rlevent(String, String) TO STATE::> centerRoad
+[reward]AUTOMATON::> reward() STATE::>centerRoad
+[reward]MOVED ON METHODCALL: void SocketServerPackage.EchoServer.rlevent(String, String) TO STATE::> centerRoad
+[reward]AUTOMATON::> reward() STATE::>centerRoad
+[reward]MOVED ON METHODCALL: void SocketServerPackage.EchoServer.rlevent(String, String) TO STATE::> centerRoad
+[reward]AUTOMATON::> reward() STATE::>centerRoad
+[reward]MOVED ON METHODCALL: void SocketServerPackage.EchoServer.rlevent(String, String) TO STATE::> centerRoad
+[reward]AUTOMATON::> reward() STATE::>centerRoad
+[reward]MOVED ON METHODCALL: void SocketServerPackage.EchoServer.rlevent(String, String) TO STATE::> centerRoad
+[reward]AUTOMATON::> reward() STATE::>centerRoad
+[reward]MOVED ON METHODCALL: void SocketServerPackage.EchoServer.rlevent(String, String) TO STATE::> centerRoad
+[reward]AUTOMATON::> reward() STATE::>centerRoad
+[reward]MOVED ON METHODCALL: void SocketServerPackage.EchoServer.rlevent(String, String) TO STATE::> centerRoad
+[reward]AUTOMATON::> reward() STATE::>centerRoad
+[reward]MOVED ON METHODCALL: void SocketServerPackage.EchoServer.rlevent(String, String) TO STATE::> centerRoad
+[reward]AUTOMATON::> reward() STATE::>centerRoad
+[reward]MOVED ON METHODCALL: void SocketServerPackage.EchoServer.rlevent(String, String) TO STATE::> centerRoad
+[reward]AUTOMATON::> reward() STATE::>centerRoad
+[reward]MOVED ON METHODCALL: void SocketServerPackage.EchoServer.rlevent(String, String) TO STATE::> centerRoad
+[reward]AUTOMATON::> reward() STATE::>centerRoad
+[reward]MOVED ON METHODCALL: void SocketServerPackage.EchoServer.rlevent(String, String) TO STATE::> centerRoad
+[reward]AUTOMATON::> reward() STATE::>centerRoad
+[reward]MOVED ON METHODCALL: void SocketServerPackage.EchoServer.rlevent(String, String) TO STATE::> centerRoad
+[reward]AUTOMATON::> reward() STATE::>centerRoad
+[reward]MOVED ON METHODCALL: void SocketServerPackage.EchoServer.rlevent(String, String) TO STATE::> centerRoad
+[reward]AUTOMATON::> reward() STATE::>centerRoad
+[reward]MOVED ON METHODCALL: void SocketServerPackage.EchoServer.rlevent(String, String) TO STATE::> centerRoad
+[reward]AUTOMATON::> reward() STATE::>centerRoad
+[reward]MOVED ON METHODCALL: void SocketServerPackage.EchoServer.rlevent(String, String) TO STATE::> centerRoad
+[reward]AUTOMATON::> reward() STATE::>centerRoad
+[reward]MOVED ON METHODCALL: void SocketServerPackage.EchoServer.rlevent(String, String) TO STATE::> centerRoad
+[reward]AUTOMATON::> reward() STATE::>centerRoad
+[reward]MOVED ON METHODCALL: void SocketServerPackage.EchoServer.rlevent(String, String) TO STATE::> limitRoad
+[reward]AUTOMATON::> reward() STATE::>limitRoad
+[reward]MOVED ON METHODCALL: void SocketServerPackage.EchoServer.rlevent(String, String) TO STATE::> limitRoad
+[reward]AUTOMATON::> reward() STATE::>limitRoad
+[reward]MOVED ON METHODCALL: void SocketServerPackage.EchoServer.rlevent(String, String) TO STATE::> limitRoad
+[reward]AUTOMATON::> reward() STATE::>limitRoad
+[reward]MOVED ON METHODCALL: void SocketServerPackage.EchoServer.rlevent(String, String) TO STATE::> limitRoad
+[reward]AUTOMATON::> reward() STATE::>limitRoad
+[reward]MOVED ON METHODCALL: void SocketServerPackage.EchoServer.rlevent(String, String) TO STATE::> !!!SYSTEM REACHED BAD STATE!!! rightOffRoad 
+aspects._asp_rewardautomaton0.ajc$before$aspects__asp_rewardautomaton0$2$6ab66155(_asp_rewardautomaton0.aj:25)
+SocketServerPackage.EchoServer.main(EchoServer.java:103) 
+[reward]AUTOMATON::> reward() STATE::>rightOffRoad
+[reward]MOVED ON METHODCALL: void SocketServerPackage.EchoServer.rlevent(String, String) TO STATE::> !!!SYSTEM REACHED BAD STATE!!! rightOffRoad 
+aspects._asp_rewardautomaton0.ajc$before$aspects__asp_rewardautomaton0$2$6ab66155(_asp_rewardautomaton0.aj:25)
+SocketServerPackage.EchoServer.main(EchoServer.java:103) 
+[reward]AUTOMATON::> reward() STATE::>rightOffRoad
+[reward]MOVED ON METHODCALL: void SocketServerPackage.EchoServer.rlevent(String, String) TO STATE::> !!!SYSTEM REACHED BAD STATE!!! rightOffRoad 
+aspects._asp_rewardautomaton0.ajc$before$aspects__asp_rewardautomaton0$2$6ab66155(_asp_rewardautomaton0.aj:25)
+SocketServerPackage.EchoServer.main(EchoServer.java:103) 
+[reward]AUTOMATON::> reward() STATE::>rightOffRoad
+[reward]MOVED ON METHODCALL: void SocketServerPackage.EchoServer.rlevent(String, String) TO STATE::> !!!SYSTEM REACHED BAD STATE!!! rightOffRoad 
+aspects._asp_rewardautomaton0.ajc$before$aspects__asp_rewardautomaton0$2$6ab66155(_asp_rewardautomaton0.aj:25)
+SocketServerPackage.EchoServer.main(EchoServer.java:103) 
+[reward]AUTOMATON::> reward() STATE::>rightOffRoad
+[reward]MOVED ON METHODCALL: void SocketServerPackage.EchoServer.rlevent(String, String) TO STATE::> !!!SYSTEM REACHED BAD STATE!!! damage 
+aspects._asp_rewardautomaton0.ajc$before$aspects__asp_rewardautomaton0$2$6ab66155(_asp_rewardautomaton0.aj:25)
+SocketServerPackage.EchoServer.main(EchoServer.java:103) 
+[reward]AUTOMATON::> reward() STATE::>damage
+[reward]MOVED ON METHODCALL: void SocketServerPackage.EchoServer.reset() TO STATE::> start
+[reward]AUTOMATON::> reward() STATE::>start
+[reward]MOVED ON METHODCALL: void SocketServerPackage.EchoServer.rlevent(String, String) TO STATE::> centerRoad
+[reward]AUTOMATON::> reward() STATE::>centerRoad
+[reward]MOVED ON METHODCALL: void SocketServerPackage.EchoServer.rlevent(String, String) TO STATE::> centerRoad
+[reward]AUTOMATON::> reward() STATE::>centerRoad
+[reward]MOVED ON METHODCALL: void SocketServerPackage.EchoServer.rlevent(String, String) TO STATE::> centerRoad
+[reward]AUTOMATON::> reward() STATE::>centerRoad
+[reward]MOVED ON METHODCALL: void SocketServerPackage.EchoServer.rlevent(String, String) TO STATE::> centerRoad
+[reward]AUTOMATON::> reward() STATE::>centerRoad
+[reward]MOVED ON METHODCALL: void SocketServerPackage.EchoServer.rlevent(String, String) TO STATE::> centerRoad
+[reward]AUTOMATON::> reward() STATE::>centerRoad
+[reward]MOVED ON METHODCALL: void SocketServerPackage.EchoServer.rlevent(String, String) TO STATE::> centerRoad
+[reward]AUTOMATON::> reward() STATE::>centerRoad
+[reward]MOVED ON METHODCALL: void SocketServerPackage.EchoServer.rlevent(String, String) TO STATE::> centerRoad
+[reward]AUTOMATON::> reward() STATE::>centerRoad
+[reward]MOVED ON METHODCALL: void SocketServerPackage.EchoServer.rlevent(String, String) TO STATE::> centerRoad
+[reward]AUTOMATON::> reward() STATE::>centerRoad
+[reward]MOVED ON METHODCALL: void SocketServerPackage.EchoServer.rlevent(String, String) TO STATE::> centerRoad
+[reward]AUTOMATON::> reward() STATE::>centerRoad
+[reward]MOVED ON METHODCALL: void SocketServerPackage.EchoServer.rlevent(String, String) TO STATE::> centerRoad
+[reward]AUTOMATON::> reward() STATE::>centerRoad
+[reward]MOVED ON METHODCALL: void SocketServerPackage.EchoServer.rlevent(String, String) TO STATE::> centerRoad
+[reward]AUTOMATON::> reward() STATE::>centerRoad
+[reward]MOVED ON METHODCALL: void SocketServerPackage.EchoServer.rlevent(String, String) TO STATE::> centerRoad
+[reward]AUTOMATON::> reward() STATE::>centerRoad
+[reward]MOVED ON METHODCALL: void SocketServerPackage.EchoServer.rlevent(String, String) TO STATE::> centerRoad
+[reward]AUTOMATON::> reward() STATE::>centerRoad
+[reward]MOVED ON METHODCALL: void SocketServerPackage.EchoServer.rlevent(String, String) TO STATE::> centerRoad
+[reward]AUTOMATON::> reward() STATE::>centerRoad
+[reward]MOVED ON METHODCALL: void SocketServerPackage.EchoServer.rlevent(String, String) TO STATE::> centerRoad
+[reward]AUTOMATON::> reward() STATE::>centerRoad
+[reward]MOVED ON METHODCALL: void SocketServerPackage.EchoServer.rlevent(String, String) TO STATE::> centerRoad
+[reward]AUTOMATON::> reward() STATE::>centerRoad
+[reward]MOVED ON METHODCALL: void SocketServerPackage.EchoServer.rlevent(String, String) TO STATE::> limitRoad
+[reward]AUTOMATON::> reward() STATE::>limitRoad
+[reward]MOVED ON METHODCALL: void SocketServerPackage.EchoServer.rlevent(String, String) TO STATE::> limitRoad
+[reward]AUTOMATON::> reward() STATE::>limitRoad
+[reward]MOVED ON METHODCALL: void SocketServerPackage.EchoServer.rlevent(String, String) TO STATE::> limitRoad
+[reward]AUTOMATON::> reward() STATE::>limitRoad
+[reward]MOVED ON METHODCALL: void SocketServerPackage.EchoServer.rlevent(String, String) TO STATE::> !!!SYSTEM REACHED BAD STATE!!! rightOffRoad 
+aspects._asp_rewardautomaton0.ajc$before$aspects__asp_rewardautomaton0$2$6ab66155(_asp_rewardautomaton0.aj:25)
+SocketServerPackage.EchoServer.main(EchoServer.java:103) 
+[reward]AUTOMATON::> reward() STATE::>rightOffRoad
+[reward]MOVED ON METHODCALL: void SocketServerPackage.EchoServer.rlevent(String, String) TO STATE::> !!!SYSTEM REACHED BAD STATE!!! rightOffRoad 
+aspects._asp_rewardautomaton0.ajc$before$aspects__asp_rewardautomaton0$2$6ab66155(_asp_rewardautomaton0.aj:25)
+SocketServerPackage.EchoServer.main(EchoServer.java:103) 
+[reward]AUTOMATON::> reward() STATE::>rightOffRoad
+[reward]MOVED ON METHODCALL: void SocketServerPackage.EchoServer.rlevent(String, String) TO STATE::> !!!SYSTEM REACHED BAD STATE!!! rightOffRoad 
+aspects._asp_rewardautomaton0.ajc$before$aspects__asp_rewardautomaton0$2$6ab66155(_asp_rewardautomaton0.aj:25)
+SocketServerPackage.EchoServer.main(EchoServer.java:103) 
+[reward]AUTOMATON::> reward() STATE::>rightOffRoad
+[reward]MOVED ON METHODCALL: void SocketServerPackage.EchoServer.rlevent(String, String) TO STATE::> !!!SYSTEM REACHED BAD STATE!!! rightOffRoad 
+aspects._asp_rewardautomaton0.ajc$before$aspects__asp_rewardautomaton0$2$6ab66155(_asp_rewardautomaton0.aj:25)
+SocketServerPackage.EchoServer.main(EchoServer.java:103) 
+[reward]AUTOMATON::> reward() STATE::>rightOffRoad
+[reward]MOVED ON METHODCALL: void SocketServerPackage.EchoServer.rlevent(String, String) TO STATE::> !!!SYSTEM REACHED BAD STATE!!! damage 
+aspects._asp_rewardautomaton0.ajc$before$aspects__asp_rewardautomaton0$2$6ab66155(_asp_rewardautomaton0.aj:25)
+SocketServerPackage.EchoServer.main(EchoServer.java:103) 
+[reward]AUTOMATON::> reward() STATE::>damage
+[reward]MOVED ON METHODCALL: void SocketServerPackage.EchoServer.reset() TO STATE::> start
+[reward]AUTOMATON::> reward() STATE::>start
+[reward]MOVED ON METHODCALL: void SocketServerPackage.EchoServer.rlevent(String, String) TO STATE::> centerRoad
+[reward]AUTOMATON::> reward() STATE::>centerRoad
+[reward]MOVED ON METHODCALL: void SocketServerPackage.EchoServer.rlevent(String, String) TO STATE::> centerRoad
+[reward]AUTOMATON::> reward() STATE::>centerRoad
+[reward]MOVED ON METHODCALL: void SocketServerPackage.EchoServer.rlevent(String, String) TO STATE::> centerRoad
+[reward]AUTOMATON::> reward() STATE::>centerRoad
+[reward]MOVED ON METHODCALL: void SocketServerPackage.EchoServer.rlevent(String, String) TO STATE::> centerRoad
+[reward]AUTOMATON::> reward() STATE::>centerRoad
+[reward]MOVED ON METHODCALL: void SocketServerPackage.EchoServer.rlevent(String, String) TO STATE::> centerRoad
+[reward]AUTOMATON::> reward() STATE::>centerRoad
+[reward]MOVED ON METHODCALL: void SocketServerPackage.EchoServer.rlevent(String, String) TO STATE::> centerRoad
+[reward]AUTOMATON::> reward() STATE::>centerRoad
+[reward]MOVED ON METHODCALL: void SocketServerPackage.EchoServer.rlevent(String, String) TO STATE::> centerRoad
+[reward]AUTOMATON::> reward() STATE::>centerRoad
+[reward]MOVED ON METHODCALL: void SocketServerPackage.EchoServer.rlevent(String, String) TO STATE::> centerRoad
+[reward]AUTOMATON::> reward() STATE::>centerRoad
+[reward]MOVED ON METHODCALL: void SocketServerPackage.EchoServer.rlevent(String, String) TO STATE::> centerRoad
+[reward]AUTOMATON::> reward() STATE::>centerRoad
+[reward]MOVED ON METHODCALL: void SocketServerPackage.EchoServer.rlevent(String, String) TO STATE::> centerRoad
+[reward]AUTOMATON::> reward() STATE::>centerRoad
+[reward]MOVED ON METHODCALL: void SocketServerPackage.EchoServer.rlevent(String, String) TO STATE::> centerRoad
+[reward]AUTOMATON::> reward() STATE::>centerRoad
+[reward]MOVED ON METHODCALL: void SocketServerPackage.EchoServer.rlevent(String, String) TO STATE::> centerRoad
+[reward]AUTOMATON::> reward() STATE::>centerRoad
+[reward]MOVED ON METHODCALL: void SocketServerPackage.EchoServer.rlevent(String, String) TO STATE::> centerRoad
+[reward]AUTOMATON::> reward() STATE::>centerRoad
+[reward]MOVED ON METHODCALL: void SocketServerPackage.EchoServer.rlevent(String, String) TO STATE::> centerRoad
+[reward]AUTOMATON::> reward() STATE::>centerRoad
+[reward]MOVED ON METHODCALL: void SocketServerPackage.EchoServer.rlevent(String, String) TO STATE::> centerRoad
+[reward]AUTOMATON::> reward() STATE::>centerRoad
+[reward]MOVED ON METHODCALL: void SocketServerPackage.EchoServer.rlevent(String, String) TO STATE::> centerRoad
+[reward]AUTOMATON::> reward() STATE::>centerRoad
+[reward]MOVED ON METHODCALL: void SocketServerPackage.EchoServer.rlevent(String, String) TO STATE::> limitRoad
+[reward]AUTOMATON::> reward() STATE::>limitRoad
+[reward]MOVED ON METHODCALL: void SocketServerPackage.EchoServer.rlevent(String, String) TO STATE::> limitRoad
+[reward]AUTOMATON::> reward() STATE::>limitRoad
+[reward]MOVED ON METHODCALL: void SocketServerPackage.EchoServer.rlevent(String, String) TO STATE::> limitRoad
+[reward]AUTOMATON::> reward() STATE::>limitRoad
+[reward]MOVED ON METHODCALL: void SocketServerPackage.EchoServer.rlevent(String, String) TO STATE::> !!!SYSTEM REACHED BAD STATE!!! rightOffRoad 
+aspects._asp_rewardautomaton0.ajc$before$aspects__asp_rewardautomaton0$2$6ab66155(_asp_rewardautomaton0.aj:25)
+SocketServerPackage.EchoServer.main(EchoServer.java:103) 
+[reward]AUTOMATON::> reward() STATE::>rightOffRoad
+[reward]MOVED ON METHODCALL: void SocketServerPackage.EchoServer.rlevent(String, String) TO STATE::> !!!SYSTEM REACHED BAD STATE!!! rightOffRoad 
+aspects._asp_rewardautomaton0.ajc$before$aspects__asp_rewardautomaton0$2$6ab66155(_asp_rewardautomaton0.aj:25)
+SocketServerPackage.EchoServer.main(EchoServer.java:103) 
+[reward]AUTOMATON::> reward() STATE::>rightOffRoad
+[reward]MOVED ON METHODCALL: void SocketServerPackage.EchoServer.rlevent(String, String) TO STATE::> !!!SYSTEM REACHED BAD STATE!!! rightOffRoad 
+aspects._asp_rewardautomaton0.ajc$before$aspects__asp_rewardautomaton0$2$6ab66155(_asp_rewardautomaton0.aj:25)
+SocketServerPackage.EchoServer.main(EchoServer.java:103) 
+[reward]AUTOMATON::> reward() STATE::>rightOffRoad
+[reward]MOVED ON METHODCALL: void SocketServerPackage.EchoServer.rlevent(String, String) TO STATE::> !!!SYSTEM REACHED BAD STATE!!! rightOffRoad 
+aspects._asp_rewardautomaton0.ajc$before$aspects__asp_rewardautomaton0$2$6ab66155(_asp_rewardautomaton0.aj:25)
+SocketServerPackage.EchoServer.main(EchoServer.java:103) 
+[reward]AUTOMATON::> reward() STATE::>rightOffRoad
+[reward]MOVED ON METHODCALL: void SocketServerPackage.EchoServer.rlevent(String, String) TO STATE::> !!!SYSTEM REACHED BAD STATE!!! damage 
+aspects._asp_rewardautomaton0.ajc$before$aspects__asp_rewardautomaton0$2$6ab66155(_asp_rewardautomaton0.aj:25)
+SocketServerPackage.EchoServer.main(EchoServer.java:103) 
+[reward]AUTOMATON::> reward() STATE::>damage
+[reward]MOVED ON METHODCALL: void SocketServerPackage.EchoServer.reset() TO STATE::> start
+[reward]AUTOMATON::> reward() STATE::>start
+[reward]MOVED ON METHODCALL: void SocketServerPackage.EchoServer.rlevent(String, String) TO STATE::> centerRoad
+[reward]AUTOMATON::> reward() STATE::>centerRoad
+[reward]MOVED ON METHODCALL: void SocketServerPackage.EchoServer.rlevent(String, String) TO STATE::> centerRoad
+[reward]AUTOMATON::> reward() STATE::>centerRoad
+[reward]MOVED ON METHODCALL: void SocketServerPackage.EchoServer.rlevent(String, String) TO STATE::> centerRoad
+[reward]AUTOMATON::> reward() STATE::>centerRoad
+[reward]MOVED ON METHODCALL: void SocketServerPackage.EchoServer.rlevent(String, String) TO STATE::> centerRoad
+[reward]AUTOMATON::> reward() STATE::>centerRoad
+[reward]MOVED ON METHODCALL: void SocketServerPackage.EchoServer.rlevent(String, String) TO STATE::> centerRoad
+[reward]AUTOMATON::> reward() STATE::>centerRoad
+[reward]MOVED ON METHODCALL: void SocketServerPackage.EchoServer.rlevent(String, String) TO STATE::> centerRoad
+[reward]AUTOMATON::> reward() STATE::>centerRoad
+[reward]MOVED ON METHODCALL: void SocketServerPackage.EchoServer.rlevent(String, String) TO STATE::> centerRoad
+[reward]AUTOMATON::> reward() STATE::>centerRoad
+[reward]MOVED ON METHODCALL: void SocketServerPackage.EchoServer.rlevent(String, String) TO STATE::> centerRoad
+[reward]AUTOMATON::> reward() STATE::>centerRoad
+[reward]MOVED ON METHODCALL: void SocketServerPackage.EchoServer.rlevent(String, String) TO STATE::> centerRoad
+[reward]AUTOMATON::> reward() STATE::>centerRoad
+[reward]MOVED ON METHODCALL: void SocketServerPackage.EchoServer.rlevent(String, String) TO STATE::> centerRoad
+[reward]AUTOMATON::> reward() STATE::>centerRoad
+[reward]MOVED ON METHODCALL: void SocketServerPackage.EchoServer.rlevent(String, String) TO STATE::> centerRoad
+[reward]AUTOMATON::> reward() STATE::>centerRoad
+[reward]MOVED ON METHODCALL: void SocketServerPackage.EchoServer.rlevent(String, String) TO STATE::> centerRoad
+[reward]AUTOMATON::> reward() STATE::>centerRoad
+[reward]MOVED ON METHODCALL: void SocketServerPackage.EchoServer.rlevent(String, String) TO STATE::> centerRoad
+[reward]AUTOMATON::> reward() STATE::>centerRoad
+[reward]MOVED ON METHODCALL: void SocketServerPackage.EchoServer.rlevent(String, String) TO STATE::> centerRoad
+[reward]AUTOMATON::> reward() STATE::>centerRoad
+[reward]MOVED ON METHODCALL: void SocketServerPackage.EchoServer.rlevent(String, String) TO STATE::> centerRoad
+[reward]AUTOMATON::> reward() STATE::>centerRoad
+[reward]MOVED ON METHODCALL: void SocketServerPackage.EchoServer.rlevent(String, String) TO STATE::> centerRoad
+[reward]AUTOMATON::> reward() STATE::>centerRoad
+[reward]MOVED ON METHODCALL: void SocketServerPackage.EchoServer.rlevent(String, String) TO STATE::> centerRoad
+[reward]AUTOMATON::> reward() STATE::>centerRoad
+[reward]MOVED ON METHODCALL: void SocketServerPackage.EchoServer.rlevent(String, String) TO STATE::> limitRoad
+[reward]AUTOMATON::> reward() STATE::>limitRoad
+[reward]MOVED ON METHODCALL: void SocketServerPackage.EchoServer.rlevent(String, String) TO STATE::> limitRoad
+[reward]AUTOMATON::> reward() STATE::>limitRoad
+[reward]MOVED ON METHODCALL: void SocketServerPackage.EchoServer.rlevent(String, String) TO STATE::> limitRoad
+[reward]AUTOMATON::> reward() STATE::>limitRoad
+[reward]MOVED ON METHODCALL: void SocketServerPackage.EchoServer.rlevent(String, String) TO STATE::> !!!SYSTEM REACHED BAD STATE!!! rightOffRoad 
+aspects._asp_rewardautomaton0.ajc$before$aspects__asp_rewardautomaton0$2$6ab66155(_asp_rewardautomaton0.aj:25)
+SocketServerPackage.EchoServer.main(EchoServer.java:103) 
+[reward]AUTOMATON::> reward() STATE::>rightOffRoad
+[reward]MOVED ON METHODCALL: void SocketServerPackage.EchoServer.rlevent(String, String) TO STATE::> !!!SYSTEM REACHED BAD STATE!!! rightOffRoad 
+aspects._asp_rewardautomaton0.ajc$before$aspects__asp_rewardautomaton0$2$6ab66155(_asp_rewardautomaton0.aj:25)
+SocketServerPackage.EchoServer.main(EchoServer.java:103) 
+[reward]AUTOMATON::> reward() STATE::>rightOffRoad
+[reward]MOVED ON METHODCALL: void SocketServerPackage.EchoServer.rlevent(String, String) TO STATE::> !!!SYSTEM REACHED BAD STATE!!! rightOffRoad 
+aspects._asp_rewardautomaton0.ajc$before$aspects__asp_rewardautomaton0$2$6ab66155(_asp_rewardautomaton0.aj:25)
+SocketServerPackage.EchoServer.main(EchoServer.java:103) 
+[reward]AUTOMATON::> reward() STATE::>rightOffRoad
+[reward]MOVED ON METHODCALL: void SocketServerPackage.EchoServer.rlevent(String, String) TO STATE::> !!!SYSTEM REACHED BAD STATE!!! rightOffRoad 
+aspects._asp_rewardautomaton0.ajc$before$aspects__asp_rewardautomaton0$2$6ab66155(_asp_rewardautomaton0.aj:25)
+SocketServerPackage.EchoServer.main(EchoServer.java:103) 
+[reward]AUTOMATON::> reward() STATE::>rightOffRoad
+[reward]MOVED ON METHODCALL: void SocketServerPackage.EchoServer.rlevent(String, String) TO STATE::> !!!SYSTEM REACHED BAD STATE!!! rightOffRoad 
+aspects._asp_rewardautomaton0.ajc$before$aspects__asp_rewardautomaton0$2$6ab66155(_asp_rewardautomaton0.aj:25)
+SocketServerPackage.EchoServer.main(EchoServer.java:103) 
+[reward]AUTOMATON::> reward() STATE::>rightOffRoad
+[reward]MOVED ON METHODCALL: void SocketServerPackage.EchoServer.rlevent(String, String) TO STATE::> !!!SYSTEM REACHED BAD STATE!!! damage 
+aspects._asp_rewardautomaton0.ajc$before$aspects__asp_rewardautomaton0$2$6ab66155(_asp_rewardautomaton0.aj:25)
+SocketServerPackage.EchoServer.main(EchoServer.java:103) 
+[reward]AUTOMATON::> reward() STATE::>damage
+[reward]MOVED ON METHODCALL: void SocketServerPackage.EchoServer.reset() TO STATE::> start
+[reward]AUTOMATON::> reward() STATE::>start
+[reward]MOVED ON METHODCALL: void SocketServerPackage.EchoServer.rlevent(String, String) TO STATE::> centerRoad
+[reward]AUTOMATON::> reward() STATE::>centerRoad
+[reward]MOVED ON METHODCALL: void SocketServerPackage.EchoServer.rlevent(String, String) TO STATE::> centerRoad
+[reward]AUTOMATON::> reward() STATE::>centerRoad
+[reward]MOVED ON METHODCALL: void SocketServerPackage.EchoServer.rlevent(String, String) TO STATE::> centerRoad
+[reward]AUTOMATON::> reward() STATE::>centerRoad
+[reward]MOVED ON METHODCALL: void SocketServerPackage.EchoServer.rlevent(String, String) TO STATE::> centerRoad
+[reward]AUTOMATON::> reward() STATE::>centerRoad
+[reward]MOVED ON METHODCALL: void SocketServerPackage.EchoServer.rlevent(String, String) TO STATE::> centerRoad
+[reward]AUTOMATON::> reward() STATE::>centerRoad
+[reward]MOVED ON METHODCALL: void SocketServerPackage.EchoServer.rlevent(String, String) TO STATE::> centerRoad
+[reward]AUTOMATON::> reward() STATE::>centerRoad
+[reward]MOVED ON METHODCALL: void SocketServerPackage.EchoServer.rlevent(String, String) TO STATE::> centerRoad
+[reward]AUTOMATON::> reward() STATE::>centerRoad
+[reward]MOVED ON METHODCALL: void SocketServerPackage.EchoServer.rlevent(String, String) TO STATE::> centerRoad
+[reward]AUTOMATON::> reward() STATE::>centerRoad
+[reward]MOVED ON METHODCALL: void SocketServerPackage.EchoServer.rlevent(String, String) TO STATE::> centerRoad
+[reward]AUTOMATON::> reward() STATE::>centerRoad
+[reward]MOVED ON METHODCALL: void SocketServerPackage.EchoServer.rlevent(String, String) TO STATE::> centerRoad
+[reward]AUTOMATON::> reward() STATE::>centerRoad
+[reward]MOVED ON METHODCALL: void SocketServerPackage.EchoServer.rlevent(String, String) TO STATE::> centerRoad
+[reward]AUTOMATON::> reward() STATE::>centerRoad
+[reward]MOVED ON METHODCALL: void SocketServerPackage.EchoServer.rlevent(String, String) TO STATE::> centerRoad
+[reward]AUTOMATON::> reward() STATE::>centerRoad
+[reward]MOVED ON METHODCALL: void SocketServerPackage.EchoServer.rlevent(String, String) TO STATE::> centerRoad
+[reward]AUTOMATON::> reward() STATE::>centerRoad
+[reward]MOVED ON METHODCALL: void SocketServerPackage.EchoServer.rlevent(String, String) TO STATE::> centerRoad
+[reward]AUTOMATON::> reward() STATE::>centerRoad
+[reward]MOVED ON METHODCALL: void SocketServerPackage.EchoServer.rlevent(String, String) TO STATE::> centerRoad
+[reward]AUTOMATON::> reward() STATE::>centerRoad
+[reward]MOVED ON METHODCALL: void SocketServerPackage.EchoServer.rlevent(String, String) TO STATE::> centerRoad
+[reward]AUTOMATON::> reward() STATE::>centerRoad
+[reward]MOVED ON METHODCALL: void SocketServerPackage.EchoServer.rlevent(String, String) TO STATE::> limitRoad
+[reward]AUTOMATON::> reward() STATE::>limitRoad
+[reward]MOVED ON METHODCALL: void SocketServerPackage.EchoServer.rlevent(String, String) TO STATE::> limitRoad
+[reward]AUTOMATON::> reward() STATE::>limitRoad
+[reward]MOVED ON METHODCALL: void SocketServerPackage.EchoServer.rlevent(String, String) TO STATE::> limitRoad
+[reward]AUTOMATON::> reward() STATE::>limitRoad
+[reward]MOVED ON METHODCALL: void SocketServerPackage.EchoServer.rlevent(String, String) TO STATE::> limitRoad
+[reward]AUTOMATON::> reward() STATE::>limitRoad
+[reward]MOVED ON METHODCALL: void SocketServerPackage.EchoServer.rlevent(String, String) TO STATE::> !!!SYSTEM REACHED BAD STATE!!! rightOffRoad 
+aspects._asp_rewardautomaton0.ajc$before$aspects__asp_rewardautomaton0$2$6ab66155(_asp_rewardautomaton0.aj:25)
+SocketServerPackage.EchoServer.main(EchoServer.java:103) 
+[reward]AUTOMATON::> reward() STATE::>rightOffRoad
+[reward]MOVED ON METHODCALL: void SocketServerPackage.EchoServer.rlevent(String, String) TO STATE::> !!!SYSTEM REACHED BAD STATE!!! rightOffRoad 
+aspects._asp_rewardautomaton0.ajc$before$aspects__asp_rewardautomaton0$2$6ab66155(_asp_rewardautomaton0.aj:25)
+SocketServerPackage.EchoServer.main(EchoServer.java:103) 
+[reward]AUTOMATON::> reward() STATE::>rightOffRoad
+[reward]MOVED ON METHODCALL: void SocketServerPackage.EchoServer.rlevent(String, String) TO STATE::> !!!SYSTEM REACHED BAD STATE!!! rightOffRoad 
+aspects._asp_rewardautomaton0.ajc$before$aspects__asp_rewardautomaton0$2$6ab66155(_asp_rewardautomaton0.aj:25)
+SocketServerPackage.EchoServer.main(EchoServer.java:103) 
+[reward]AUTOMATON::> reward() STATE::>rightOffRoad
+[reward]MOVED ON METHODCALL: void SocketServerPackage.EchoServer.rlevent(String, String) TO STATE::> !!!SYSTEM REACHED BAD STATE!!! rightOffRoad 
+aspects._asp_rewardautomaton0.ajc$before$aspects__asp_rewardautomaton0$2$6ab66155(_asp_rewardautomaton0.aj:25)
+SocketServerPackage.EchoServer.main(EchoServer.java:103) 
+[reward]AUTOMATON::> reward() STATE::>rightOffRoad
+[reward]MOVED ON METHODCALL: void SocketServerPackage.EchoServer.rlevent(String, String) TO STATE::> !!!SYSTEM REACHED BAD STATE!!! damage 
+aspects._asp_rewardautomaton0.ajc$before$aspects__asp_rewardautomaton0$2$6ab66155(_asp_rewardautomaton0.aj:25)
+SocketServerPackage.EchoServer.main(EchoServer.java:103) 
+[reward]AUTOMATON::> reward() STATE::>damage
+[reward]MOVED ON METHODCALL: void SocketServerPackage.EchoServer.reset() TO STATE::> start
+[reward]AUTOMATON::> reward() STATE::>start
+[reward]MOVED ON METHODCALL: void SocketServerPackage.EchoServer.rlevent(String, String) TO STATE::> centerRoad
+[reward]AUTOMATON::> reward() STATE::>centerRoad
+[reward]MOVED ON METHODCALL: void SocketServerPackage.EchoServer.rlevent(String, String) TO STATE::> centerRoad
+[reward]AUTOMATON::> reward() STATE::>centerRoad
+[reward]MOVED ON METHODCALL: void SocketServerPackage.EchoServer.rlevent(String, String) TO STATE::> centerRoad
+[reward]AUTOMATON::> reward() STATE::>centerRoad
+[reward]MOVED ON METHODCALL: void SocketServerPackage.EchoServer.rlevent(String, String) TO STATE::> centerRoad
+[reward]AUTOMATON::> reward() STATE::>centerRoad
+[reward]MOVED ON METHODCALL: void SocketServerPackage.EchoServer.rlevent(String, String) TO STATE::> centerRoad
+[reward]AUTOMATON::> reward() STATE::>centerRoad
+[reward]MOVED ON METHODCALL: void SocketServerPackage.EchoServer.rlevent(String, String) TO STATE::> centerRoad
+[reward]AUTOMATON::> reward() STATE::>centerRoad
+[reward]MOVED ON METHODCALL: void SocketServerPackage.EchoServer.rlevent(String, String) TO STATE::> centerRoad
+[reward]AUTOMATON::> reward() STATE::>centerRoad
+[reward]MOVED ON METHODCALL: void SocketServerPackage.EchoServer.rlevent(String, String) TO STATE::> centerRoad
+[reward]AUTOMATON::> reward() STATE::>centerRoad
+[reward]MOVED ON METHODCALL: void SocketServerPackage.EchoServer.rlevent(String, String) TO STATE::> centerRoad
+[reward]AUTOMATON::> reward() STATE::>centerRoad
+[reward]MOVED ON METHODCALL: void SocketServerPackage.EchoServer.rlevent(String, String) TO STATE::> centerRoad
+[reward]AUTOMATON::> reward() STATE::>centerRoad
+[reward]MOVED ON METHODCALL: void SocketServerPackage.EchoServer.rlevent(String, String) TO STATE::> centerRoad
+[reward]AUTOMATON::> reward() STATE::>centerRoad
+[reward]MOVED ON METHODCALL: void SocketServerPackage.EchoServer.rlevent(String, String) TO STATE::> centerRoad
+[reward]AUTOMATON::> reward() STATE::>centerRoad
+[reward]MOVED ON METHODCALL: void SocketServerPackage.EchoServer.rlevent(String, String) TO STATE::> centerRoad
+[reward]AUTOMATON::> reward() STATE::>centerRoad
+[reward]MOVED ON METHODCALL: void SocketServerPackage.EchoServer.rlevent(String, String) TO STATE::> centerRoad
+[reward]AUTOMATON::> reward() STATE::>centerRoad
+[reward]MOVED ON METHODCALL: void SocketServerPackage.EchoServer.rlevent(String, String) TO STATE::> centerRoad
+[reward]AUTOMATON::> reward() STATE::>centerRoad
+[reward]MOVED ON METHODCALL: void SocketServerPackage.EchoServer.rlevent(String, String) TO STATE::> centerRoad
+[reward]AUTOMATON::> reward() STATE::>centerRoad
+[reward]MOVED ON METHODCALL: void SocketServerPackage.EchoServer.rlevent(String, String) TO STATE::> limitRoad
+[reward]AUTOMATON::> reward() STATE::>limitRoad
+[reward]MOVED ON METHODCALL: void SocketServerPackage.EchoServer.rlevent(String, String) TO STATE::> limitRoad
+[reward]AUTOMATON::> reward() STATE::>limitRoad
+[reward]MOVED ON METHODCALL: void SocketServerPackage.EchoServer.rlevent(String, String) TO STATE::> limitRoad
+[reward]AUTOMATON::> reward() STATE::>limitRoad
+[reward]MOVED ON METHODCALL: void SocketServerPackage.EchoServer.rlevent(String, String) TO STATE::> !!!SYSTEM REACHED BAD STATE!!! rightOffRoad 
+aspects._asp_rewardautomaton0.ajc$before$aspects__asp_rewardautomaton0$2$6ab66155(_asp_rewardautomaton0.aj:25)
+SocketServerPackage.EchoServer.main(EchoServer.java:103) 
+[reward]AUTOMATON::> reward() STATE::>rightOffRoad
+[reward]MOVED ON METHODCALL: void SocketServerPackage.EchoServer.rlevent(String, String) TO STATE::> !!!SYSTEM REACHED BAD STATE!!! rightOffRoad 
+aspects._asp_rewardautomaton0.ajc$before$aspects__asp_rewardautomaton0$2$6ab66155(_asp_rewardautomaton0.aj:25)
+SocketServerPackage.EchoServer.main(EchoServer.java:103) 
+[reward]AUTOMATON::> reward() STATE::>rightOffRoad
+[reward]MOVED ON METHODCALL: void SocketServerPackage.EchoServer.rlevent(String, String) TO STATE::> !!!SYSTEM REACHED BAD STATE!!! rightOffRoad 
+aspects._asp_rewardautomaton0.ajc$before$aspects__asp_rewardautomaton0$2$6ab66155(_asp_rewardautomaton0.aj:25)
+SocketServerPackage.EchoServer.main(EchoServer.java:103) 
+[reward]AUTOMATON::> reward() STATE::>rightOffRoad
+[reward]MOVED ON METHODCALL: void SocketServerPackage.EchoServer.rlevent(String, String) TO STATE::> !!!SYSTEM REACHED BAD STATE!!! rightOffRoad 
+aspects._asp_rewardautomaton0.ajc$before$aspects__asp_rewardautomaton0$2$6ab66155(_asp_rewardautomaton0.aj:25)
+SocketServerPackage.EchoServer.main(EchoServer.java:103) 
+[reward]AUTOMATON::> reward() STATE::>rightOffRoad
+[reward]MOVED ON METHODCALL: void SocketServerPackage.EchoServer.rlevent(String, String) TO STATE::> !!!SYSTEM REACHED BAD STATE!!! damage 
+aspects._asp_rewardautomaton0.ajc$before$aspects__asp_rewardautomaton0$2$6ab66155(_asp_rewardautomaton0.aj:25)
+SocketServerPackage.EchoServer.main(EchoServer.java:103) 
+[reward]AUTOMATON::> reward() STATE::>damage
+[reward]MOVED ON METHODCALL: void SocketServerPackage.EchoServer.reset() TO STATE::> start
+[reward]AUTOMATON::> reward() STATE::>start
+[reward]MOVED ON METHODCALL: void SocketServerPackage.EchoServer.rlevent(String, String) TO STATE::> centerRoad
+[reward]AUTOMATON::> reward() STATE::>centerRoad
+[reward]MOVED ON METHODCALL: void SocketServerPackage.EchoServer.rlevent(String, String) TO STATE::> centerRoad
+[reward]AUTOMATON::> reward() STATE::>centerRoad
+[reward]MOVED ON METHODCALL: void SocketServerPackage.EchoServer.rlevent(String, String) TO STATE::> centerRoad
+[reward]AUTOMATON::> reward() STATE::>centerRoad
+[reward]MOVED ON METHODCALL: void SocketServerPackage.EchoServer.rlevent(String, String) TO STATE::> centerRoad
+[reward]AUTOMATON::> reward() STATE::>centerRoad
+[reward]MOVED ON METHODCALL: void SocketServerPackage.EchoServer.rlevent(String, String) TO STATE::> centerRoad
+[reward]AUTOMATON::> reward() STATE::>centerRoad
+[reward]MOVED ON METHODCALL: void SocketServerPackage.EchoServer.rlevent(String, String) TO STATE::> centerRoad
+[reward]AUTOMATON::> reward() STATE::>centerRoad
+[reward]MOVED ON METHODCALL: void SocketServerPackage.EchoServer.rlevent(String, String) TO STATE::> centerRoad
+[reward]AUTOMATON::> reward() STATE::>centerRoad
+[reward]MOVED ON METHODCALL: void SocketServerPackage.EchoServer.rlevent(String, String) TO STATE::> centerRoad
+[reward]AUTOMATON::> reward() STATE::>centerRoad
+[reward]MOVED ON METHODCALL: void SocketServerPackage.EchoServer.rlevent(String, String) TO STATE::> centerRoad
+[reward]AUTOMATON::> reward() STATE::>centerRoad
+[reward]MOVED ON METHODCALL: void SocketServerPackage.EchoServer.rlevent(String, String) TO STATE::> centerRoad
+[reward]AUTOMATON::> reward() STATE::>centerRoad
+[reward]MOVED ON METHODCALL: void SocketServerPackage.EchoServer.rlevent(String, String) TO STATE::> centerRoad
+[reward]AUTOMATON::> reward() STATE::>centerRoad
+[reward]MOVED ON METHODCALL: void SocketServerPackage.EchoServer.rlevent(String, String) TO STATE::> centerRoad
+[reward]AUTOMATON::> reward() STATE::>centerRoad
+[reward]MOVED ON METHODCALL: void SocketServerPackage.EchoServer.rlevent(String, String) TO STATE::> centerRoad
+[reward]AUTOMATON::> reward() STATE::>centerRoad
+[reward]MOVED ON METHODCALL: void SocketServerPackage.EchoServer.rlevent(String, String) TO STATE::> centerRoad
+[reward]AUTOMATON::> reward() STATE::>centerRoad
+[reward]MOVED ON METHODCALL: void SocketServerPackage.EchoServer.rlevent(String, String) TO STATE::> centerRoad
+[reward]AUTOMATON::> reward() STATE::>centerRoad
+[reward]MOVED ON METHODCALL: void SocketServerPackage.EchoServer.rlevent(String, String) TO STATE::> centerRoad
+[reward]AUTOMATON::> reward() STATE::>centerRoad
+[reward]MOVED ON METHODCALL: void SocketServerPackage.EchoServer.rlevent(String, String) TO STATE::> limitRoad
+[reward]AUTOMATON::> reward() STATE::>limitRoad
+[reward]MOVED ON METHODCALL: void SocketServerPackage.EchoServer.rlevent(String, String) TO STATE::> limitRoad
+[reward]AUTOMATON::> reward() STATE::>limitRoad
+[reward]MOVED ON METHODCALL: void SocketServerPackage.EchoServer.rlevent(String, String) TO STATE::> limitRoad
+[reward]AUTOMATON::> reward() STATE::>limitRoad
+[reward]MOVED ON METHODCALL: void SocketServerPackage.EchoServer.rlevent(String, String) TO STATE::> !!!SYSTEM REACHED BAD STATE!!! rightOffRoad 
+aspects._asp_rewardautomaton0.ajc$before$aspects__asp_rewardautomaton0$2$6ab66155(_asp_rewardautomaton0.aj:25)
+SocketServerPackage.EchoServer.main(EchoServer.java:103) 
+[reward]AUTOMATON::> reward() STATE::>rightOffRoad
+[reward]MOVED ON METHODCALL: void SocketServerPackage.EchoServer.rlevent(String, String) TO STATE::> !!!SYSTEM REACHED BAD STATE!!! rightOffRoad 
+aspects._asp_rewardautomaton0.ajc$before$aspects__asp_rewardautomaton0$2$6ab66155(_asp_rewardautomaton0.aj:25)
+SocketServerPackage.EchoServer.main(EchoServer.java:103) 
+[reward]AUTOMATON::> reward() STATE::>rightOffRoad
+[reward]MOVED ON METHODCALL: void SocketServerPackage.EchoServer.rlevent(String, String) TO STATE::> !!!SYSTEM REACHED BAD STATE!!! rightOffRoad 
+aspects._asp_rewardautomaton0.ajc$before$aspects__asp_rewardautomaton0$2$6ab66155(_asp_rewardautomaton0.aj:25)
+SocketServerPackage.EchoServer.main(EchoServer.java:103) 
+[reward]AUTOMATON::> reward() STATE::>rightOffRoad
+[reward]MOVED ON METHODCALL: void SocketServerPackage.EchoServer.rlevent(String, String) TO STATE::> !!!SYSTEM REACHED BAD STATE!!! rightOffRoad 
+aspects._asp_rewardautomaton0.ajc$before$aspects__asp_rewardautomaton0$2$6ab66155(_asp_rewardautomaton0.aj:25)
+SocketServerPackage.EchoServer.main(EchoServer.java:103) 
+[reward]AUTOMATON::> reward() STATE::>rightOffRoad
+[reward]MOVED ON METHODCALL: void SocketServerPackage.EchoServer.rlevent(String, String) TO STATE::> !!!SYSTEM REACHED BAD STATE!!! damage 
+aspects._asp_rewardautomaton0.ajc$before$aspects__asp_rewardautomaton0$2$6ab66155(_asp_rewardautomaton0.aj:25)
+SocketServerPackage.EchoServer.main(EchoServer.java:103) 
+[reward]AUTOMATON::> reward() STATE::>damage
+[reward]MOVED ON METHODCALL: void SocketServerPackage.EchoServer.reset() TO STATE::> start
+[reward]AUTOMATON::> reward() STATE::>start
+[reward]MOVED ON METHODCALL: void SocketServerPackage.EchoServer.rlevent(String, String) TO STATE::> centerRoad
+[reward]AUTOMATON::> reward() STATE::>centerRoad
+[reward]MOVED ON METHODCALL: void SocketServerPackage.EchoServer.rlevent(String, String) TO STATE::> centerRoad
+[reward]AUTOMATON::> reward() STATE::>centerRoad
+[reward]MOVED ON METHODCALL: void SocketServerPackage.EchoServer.rlevent(String, String) TO STATE::> centerRoad
+[reward]AUTOMATON::> reward() STATE::>centerRoad
+[reward]MOVED ON METHODCALL: void SocketServerPackage.EchoServer.rlevent(String, String) TO STATE::> centerRoad
+[reward]AUTOMATON::> reward() STATE::>centerRoad
+[reward]MOVED ON METHODCALL: void SocketServerPackage.EchoServer.rlevent(String, String) TO STATE::> centerRoad
+[reward]AUTOMATON::> reward() STATE::>centerRoad
+[reward]MOVED ON METHODCALL: void SocketServerPackage.EchoServer.rlevent(String, String) TO STATE::> centerRoad
+[reward]AUTOMATON::> reward() STATE::>centerRoad
+[reward]MOVED ON METHODCALL: void SocketServerPackage.EchoServer.rlevent(String, String) TO STATE::> centerRoad
+[reward]AUTOMATON::> reward() STATE::>centerRoad
+[reward]MOVED ON METHODCALL: void SocketServerPackage.EchoServer.rlevent(String, String) TO STATE::> centerRoad
+[reward]AUTOMATON::> reward() STATE::>centerRoad
+[reward]MOVED ON METHODCALL: void SocketServerPackage.EchoServer.rlevent(String, String) TO STATE::> centerRoad
+[reward]AUTOMATON::> reward() STATE::>centerRoad
+[reward]MOVED ON METHODCALL: void SocketServerPackage.EchoServer.rlevent(String, String) TO STATE::> centerRoad
+[reward]AUTOMATON::> reward() STATE::>centerRoad
+[reward]MOVED ON METHODCALL: void SocketServerPackage.EchoServer.rlevent(String, String) TO STATE::> centerRoad
+[reward]AUTOMATON::> reward() STATE::>centerRoad
+[reward]MOVED ON METHODCALL: void SocketServerPackage.EchoServer.rlevent(String, String) TO STATE::> centerRoad
+[reward]AUTOMATON::> reward() STATE::>centerRoad
+[reward]MOVED ON METHODCALL: void SocketServerPackage.EchoServer.rlevent(String, String) TO STATE::> centerRoad
+[reward]AUTOMATON::> reward() STATE::>centerRoad
+[reward]MOVED ON METHODCALL: void SocketServerPackage.EchoServer.rlevent(String, String) TO STATE::> centerRoad
+[reward]AUTOMATON::> reward() STATE::>centerRoad
+[reward]MOVED ON METHODCALL: void SocketServerPackage.EchoServer.rlevent(String, String) TO STATE::> centerRoad
+[reward]AUTOMATON::> reward() STATE::>centerRoad
+[reward]MOVED ON METHODCALL: void SocketServerPackage.EchoServer.rlevent(String, String) TO STATE::> centerRoad
+[reward]AUTOMATON::> reward() STATE::>centerRoad
+[reward]MOVED ON METHODCALL: void SocketServerPackage.EchoServer.rlevent(String, String) TO STATE::> centerRoad
+[reward]AUTOMATON::> reward() STATE::>centerRoad
+[reward]MOVED ON METHODCALL: void SocketServerPackage.EchoServer.rlevent(String, String) TO STATE::> centerRoad
+[reward]AUTOMATON::> reward() STATE::>centerRoad
+[reward]MOVED ON METHODCALL: void SocketServerPackage.EchoServer.rlevent(String, String) TO STATE::> centerRoad
+[reward]AUTOMATON::> reward() STATE::>centerRoad
+[reward]MOVED ON METHODCALL: void SocketServerPackage.EchoServer.rlevent(String, String) TO STATE::> centerRoad
+[reward]AUTOMATON::> reward() STATE::>centerRoad
+[reward]MOVED ON METHODCALL: void SocketServerPackage.EchoServer.rlevent(String, String) TO STATE::> centerRoad
+[reward]AUTOMATON::> reward() STATE::>centerRoad
+[reward]MOVED ON METHODCALL: void SocketServerPackage.EchoServer.rlevent(String, String) TO STATE::> centerRoad
+[reward]AUTOMATON::> reward() STATE::>centerRoad
+[reward]MOVED ON METHODCALL: void SocketServerPackage.EchoServer.rlevent(String, String) TO STATE::> limitRoad
+[reward]AUTOMATON::> reward() STATE::>limitRoad
+[reward]MOVED ON METHODCALL: void SocketServerPackage.EchoServer.rlevent(String, String) TO STATE::> centerRoad
+[reward]AUTOMATON::> reward() STATE::>centerRoad
+[reward]MOVED ON METHODCALL: void SocketServerPackage.EchoServer.rlevent(String, String) TO STATE::> centerRoad
+[reward]AUTOMATON::> reward() STATE::>centerRoad
+[reward]MOVED ON METHODCALL: void SocketServerPackage.EchoServer.rlevent(String, String) TO STATE::> centerRoad
+[reward]AUTOMATON::> reward() STATE::>centerRoad
+[reward]MOVED ON METHODCALL: void SocketServerPackage.EchoServer.rlevent(String, String) TO STATE::> centerRoad
+[reward]AUTOMATON::> reward() STATE::>centerRoad
+[reward]MOVED ON METHODCALL: void SocketServerPackage.EchoServer.rlevent(String, String) TO STATE::> limitRoad
+[reward]AUTOMATON::> reward() STATE::>limitRoad
+[reward]MOVED ON METHODCALL: void SocketServerPackage.EchoServer.rlevent(String, String) TO STATE::> limitRoad
+[reward]AUTOMATON::> reward() STATE::>limitRoad
+[reward]MOVED ON METHODCALL: void SocketServerPackage.EchoServer.rlevent(String, String) TO STATE::> limitRoad
+[reward]AUTOMATON::> reward() STATE::>limitRoad
+[reward]MOVED ON METHODCALL: void SocketServerPackage.EchoServer.rlevent(String, String) TO STATE::> !!!SYSTEM REACHED BAD STATE!!! rightOffRoad 
+aspects._asp_rewardautomaton0.ajc$before$aspects__asp_rewardautomaton0$2$6ab66155(_asp_rewardautomaton0.aj:25)
+SocketServerPackage.EchoServer.main(EchoServer.java:103) 
+[reward]AUTOMATON::> reward() STATE::>rightOffRoad
+[reward]MOVED ON METHODCALL: void SocketServerPackage.EchoServer.rlevent(String, String) TO STATE::> !!!SYSTEM REACHED BAD STATE!!! rightOffRoad 
+aspects._asp_rewardautomaton0.ajc$before$aspects__asp_rewardautomaton0$2$6ab66155(_asp_rewardautomaton0.aj:25)
+SocketServerPackage.EchoServer.main(EchoServer.java:103) 
+[reward]AUTOMATON::> reward() STATE::>rightOffRoad
+[reward]MOVED ON METHODCALL: void SocketServerPackage.EchoServer.rlevent(String, String) TO STATE::> !!!SYSTEM REACHED BAD STATE!!! rightOffRoad 
+aspects._asp_rewardautomaton0.ajc$before$aspects__asp_rewardautomaton0$2$6ab66155(_asp_rewardautomaton0.aj:25)
+SocketServerPackage.EchoServer.main(EchoServer.java:103) 
+[reward]AUTOMATON::> reward() STATE::>rightOffRoad
+[reward]MOVED ON METHODCALL: void SocketServerPackage.EchoServer.rlevent(String, String) TO STATE::> !!!SYSTEM REACHED BAD STATE!!! damage 
+aspects._asp_rewardautomaton0.ajc$before$aspects__asp_rewardautomaton0$2$6ab66155(_asp_rewardautomaton0.aj:25)
+SocketServerPackage.EchoServer.main(EchoServer.java:103) 
