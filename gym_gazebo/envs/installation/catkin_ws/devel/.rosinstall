@@ -1,2 +1,2 @@
 - setup-file:
-    local-name: /home/chalmers/gym-gazebo/gym_gazebo/envs/installation/catkin_ws/devel/setup.sh
+    local-name: /home/chalmers/rl_monitor/gym_gazebo/envs/installation/catkin_ws/devel/setup.sh

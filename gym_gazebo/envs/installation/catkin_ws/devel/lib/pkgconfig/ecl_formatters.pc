@@ -1,8 +1,0 @@
-prefix=/home/chalmers/gym-gazebo/gym_gazebo/envs/installation/catkin_ws/devel
-
-Name: ecl_formatters
-Description: Description of ecl_formatters
-Version: 0.61.17
-Cflags: -I/home/chalmers/gym-gazebo/gym_gazebo/envs/installation/catkin_ws/src/ecl_core/ecl_formatters/include
-Libs: -L/home/chalmers/gym-gazebo/gym_gazebo/envs/installation/catkin_ws/devel/lib -lecl_formatters
-Requires: ecl_config ecl_exceptions ecl_converters

@@ -1,8 +1,0 @@
-prefix=/home/chalmers/gym-gazebo/gym_gazebo/envs/installation/catkin_ws/install
-
-Name: ecl_sigslots
-Description: Description of ecl_sigslots
-Version: 0.61.17
-Cflags: -I/home/chalmers/gym-gazebo/gym_gazebo/envs/installation/catkin_ws/install/include
-Libs: -L/home/chalmers/gym-gazebo/gym_gazebo/envs/installation/catkin_ws/install/lib 
-Requires: ecl_config ecl_threads

@@ -1,8 +1,0 @@
-prefix=/home/chalmers/gym-gazebo/gym_gazebo/envs/installation/catkin_ws/install
-
-Name: rotors_model
-Description: Description of rotors_model
-Version: 0.0.0
-Cflags: -I/home/chalmers/gym-gazebo/gym_gazebo/envs/installation/catkin_ws/install/include -I/usr/include/eigen3
-Libs: -L/home/chalmers/gym-gazebo/gym_gazebo/envs/installation/catkin_ws/install/lib 
-Requires: 

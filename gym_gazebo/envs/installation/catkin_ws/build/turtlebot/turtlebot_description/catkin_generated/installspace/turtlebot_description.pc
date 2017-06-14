@@ -1,8 +1,0 @@
-prefix=/home/chalmers/gym-gazebo/gym_gazebo/envs/installation/catkin_ws/install
-
-Name: turtlebot_description
-Description: Description of turtlebot_description
-Version: 2.3.14
-Cflags: 
-Libs: -L/home/chalmers/gym-gazebo/gym_gazebo/envs/installation/catkin_ws/install/lib 
-Requires: urdf xacro

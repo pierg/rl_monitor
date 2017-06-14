@@ -1,1 +1,0 @@
-/usr/bin/c++   -g    CMakeFiles/bdi_parser.dir/src/bdi_parser.cpp.o  -o /home/chalmers/gym-gazebo/gym_gazebo/envs/installation/catkin_ws/devel/lib/drcsim_gazebo/bdi_parser -rdynamic -lurdfdom_sensor -lurdfdom_model_state -lurdfdom_model -lurdfdom_world -lconsole_bridge -ltinyxml -lconsole_bridge -lboost_thread -lpthread -ltinyxml -lboost_thread -lpthread 

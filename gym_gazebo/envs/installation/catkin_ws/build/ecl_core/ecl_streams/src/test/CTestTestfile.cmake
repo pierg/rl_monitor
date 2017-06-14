@@ -1,8 +1,0 @@
-# CMake generated Testfile for 
-# Source directory: /home/chalmers/gym-gazebo/gym_gazebo/envs/installation/catkin_ws/src/ecl_core/ecl_streams/src/test
-# Build directory: /home/chalmers/gym-gazebo/gym_gazebo/envs/installation/catkin_ws/build/ecl_core/ecl_streams/src/test
-# 
-# This file includes the relevant testing commands required for 
-# testing this directory and lists subdirectories to be tested as well.
-ADD_TEST(_ctest_ecl_streams_gtest_ecl_test_file_streams "/home/chalmers/gym-gazebo/gym_gazebo/envs/installation/catkin_ws/build/catkin_generated/env_cached.sh" "/usr/bin/python" "/opt/ros/indigo/share/catkin/cmake/test/run_tests.py" "/home/chalmers/gym-gazebo/gym_gazebo/envs/installation/catkin_ws/build/test_results/ecl_streams/gtest-ecl_test_file_streams.xml" "--return-code" "/home/chalmers/gym-gazebo/gym_gazebo/envs/installation/catkin_ws/devel/lib/ecl_streams/ecl_test_file_streams --gtest_output=xml:/home/chalmers/gym-gazebo/gym_gazebo/envs/installation/catkin_ws/build/test_results/ecl_streams/gtest-ecl_test_file_streams.xml")
-ADD_TEST(_ctest_ecl_streams_gtest_ecl_test_string_streams "/home/chalmers/gym-gazebo/gym_gazebo/envs/installation/catkin_ws/build/catkin_generated/env_cached.sh" "/usr/bin/python" "/opt/ros/indigo/share/catkin/cmake/test/run_tests.py" "/home/chalmers/gym-gazebo/gym_gazebo/envs/installation/catkin_ws/build/test_results/ecl_streams/gtest-ecl_test_string_streams.xml" "--return-code" "/home/chalmers/gym-gazebo/gym_gazebo/envs/installation/catkin_ws/devel/lib/ecl_streams/ecl_test_string_streams --gtest_output=xml:/home/chalmers/gym-gazebo/gym_gazebo/envs/installation/catkin_ws/build/test_results/ecl_streams/gtest-ecl_test_string_streams.xml")

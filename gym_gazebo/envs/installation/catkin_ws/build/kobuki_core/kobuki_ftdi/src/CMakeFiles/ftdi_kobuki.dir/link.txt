@@ -1,1 +1,0 @@
-/usr/bin/c++   -O3 -DNDEBUG    CMakeFiles/ftdi_kobuki.dir/ftdi_kobuki.cpp.o  -o /home/chalmers/gym-gazebo/gym_gazebo/envs/installation/catkin_ws/devel/lib/kobuki_ftdi/ftdi_kobuki -rdynamic -lftdi 

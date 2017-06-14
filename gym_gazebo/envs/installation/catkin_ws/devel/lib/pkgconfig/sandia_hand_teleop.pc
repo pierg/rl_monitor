@@ -1,8 +1,0 @@
-prefix=/home/chalmers/gym-gazebo/gym_gazebo/envs/installation/catkin_ws/devel
-
-Name: sandia_hand_teleop
-Description: Description of sandia_hand_teleop
-Version: 5.1.15
-Cflags: 
-Libs: -L/home/chalmers/gym-gazebo/gym_gazebo/envs/installation/catkin_ws/devel/lib 
-Requires: osrf_msgs sandia_hand_msgs

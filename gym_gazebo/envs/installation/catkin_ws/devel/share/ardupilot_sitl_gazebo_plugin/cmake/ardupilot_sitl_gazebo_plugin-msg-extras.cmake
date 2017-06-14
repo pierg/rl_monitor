@@ -1,2 +1,0 @@
-set(ardupilot_sitl_gazebo_plugin_MESSAGE_FILES "")
-set(ardupilot_sitl_gazebo_plugin_SERVICE_FILES "/home/chalmers/gym-gazebo/gym_gazebo/envs/installation/catkin_ws/src/ardupilot_sitl_gazebo_plugin/ardupilot_sitl_gazebo_plugin/srv/ReleaseApmLapseLock.srv;/home/chalmers/gym-gazebo/gym_gazebo/envs/installation/catkin_ws/src/ardupilot_sitl_gazebo_plugin/ardupilot_sitl_gazebo_plugin/srv/TakeApmLapseLock.srv")

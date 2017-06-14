@@ -1,23 +1,23 @@
 Determining if the pthread_create exist failed with the following output:
-Change Dir: /home/chalmers/gym-gazebo/gym_gazebo/envs/installation/catkin_ws/build/CMakeFiles/CMakeTmp
+Change Dir: /home/chalmers/rl_monitor/gym_gazebo/envs/installation/catkin_ws/build/CMakeFiles/CMakeTmp
 
-Run Build Command:/usr/bin/make "cmTryCompileExec1428008410/fast"
-/usr/bin/make -f CMakeFiles/cmTryCompileExec1428008410.dir/build.make CMakeFiles/cmTryCompileExec1428008410.dir/build
-make[1]: Entering directory `/home/chalmers/gym-gazebo/gym_gazebo/envs/installation/catkin_ws/build/CMakeFiles/CMakeTmp'
-/usr/bin/cmake -E cmake_progress_report /home/chalmers/gym-gazebo/gym_gazebo/envs/installation/catkin_ws/build/CMakeFiles/CMakeTmp/CMakeFiles 1
-Building C object CMakeFiles/cmTryCompileExec1428008410.dir/CheckSymbolExists.c.o
-/usr/bin/cc    -o CMakeFiles/cmTryCompileExec1428008410.dir/CheckSymbolExists.c.o   -c /home/chalmers/gym-gazebo/gym_gazebo/envs/installation/catkin_ws/build/CMakeFiles/CMakeTmp/CheckSymbolExists.c
-Linking C executable cmTryCompileExec1428008410
-/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTryCompileExec1428008410.dir/link.txt --verbose=1
-/usr/bin/cc       CMakeFiles/cmTryCompileExec1428008410.dir/CheckSymbolExists.c.o  -o cmTryCompileExec1428008410 -rdynamic 
-CMakeFiles/cmTryCompileExec1428008410.dir/CheckSymbolExists.c.o: In function `main':
+Run Build Command:/usr/bin/make "cmTryCompileExec3439621561/fast"
+/usr/bin/make -f CMakeFiles/cmTryCompileExec3439621561.dir/build.make CMakeFiles/cmTryCompileExec3439621561.dir/build
+make[1]: Entering directory `/home/chalmers/rl_monitor/gym_gazebo/envs/installation/catkin_ws/build/CMakeFiles/CMakeTmp'
+/usr/bin/cmake -E cmake_progress_report /home/chalmers/rl_monitor/gym_gazebo/envs/installation/catkin_ws/build/CMakeFiles/CMakeTmp/CMakeFiles 1
+Building C object CMakeFiles/cmTryCompileExec3439621561.dir/CheckSymbolExists.c.o
+/usr/bin/cc    -o CMakeFiles/cmTryCompileExec3439621561.dir/CheckSymbolExists.c.o   -c /home/chalmers/rl_monitor/gym_gazebo/envs/installation/catkin_ws/build/CMakeFiles/CMakeTmp/CheckSymbolExists.c
+Linking C executable cmTryCompileExec3439621561
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTryCompileExec3439621561.dir/link.txt --verbose=1
+/usr/bin/cc       CMakeFiles/cmTryCompileExec3439621561.dir/CheckSymbolExists.c.o  -o cmTryCompileExec3439621561 -rdynamic 
+CMakeFiles/cmTryCompileExec3439621561.dir/CheckSymbolExists.c.o: In function `main':
 CheckSymbolExists.c:(.text+0x16): undefined reference to `pthread_create'
 collect2: error: ld returned 1 exit status
-make[1]: Leaving directory `/home/chalmers/gym-gazebo/gym_gazebo/envs/installation/catkin_ws/build/CMakeFiles/CMakeTmp'
-make[1]: *** [cmTryCompileExec1428008410] Error 1
-make: *** [cmTryCompileExec1428008410/fast] Error 2
+make[1]: Leaving directory `/home/chalmers/rl_monitor/gym_gazebo/envs/installation/catkin_ws/build/CMakeFiles/CMakeTmp'
+make[1]: *** [cmTryCompileExec3439621561] Error 1
+make: *** [cmTryCompileExec3439621561/fast] Error 2
 
-File /home/chalmers/gym-gazebo/gym_gazebo/envs/installation/catkin_ws/build/CMakeFiles/CMakeTmp/CheckSymbolExists.c:
+File /home/chalmers/rl_monitor/gym_gazebo/envs/installation/catkin_ws/build/CMakeFiles/CMakeTmp/CheckSymbolExists.c:
 /* */
 #include <pthread.h>
 
@@ -33,175 +33,21 @@ int main(int argc, char** argv)
 }
 
 Determining if the function pthread_create exists in the pthreads failed with the following output:
-Change Dir: /home/chalmers/gym-gazebo/gym_gazebo/envs/installation/catkin_ws/build/CMakeFiles/CMakeTmp
+Change Dir: /home/chalmers/rl_monitor/gym_gazebo/envs/installation/catkin_ws/build/CMakeFiles/CMakeTmp
 
-Run Build Command:/usr/bin/make "cmTryCompileExec2988106207/fast"
-/usr/bin/make -f CMakeFiles/cmTryCompileExec2988106207.dir/build.make CMakeFiles/cmTryCompileExec2988106207.dir/build
-make[1]: Entering directory `/home/chalmers/gym-gazebo/gym_gazebo/envs/installation/catkin_ws/build/CMakeFiles/CMakeTmp'
-/usr/bin/cmake -E cmake_progress_report /home/chalmers/gym-gazebo/gym_gazebo/envs/installation/catkin_ws/build/CMakeFiles/CMakeTmp/CMakeFiles 1
-Building C object CMakeFiles/cmTryCompileExec2988106207.dir/CheckFunctionExists.c.o
-/usr/bin/cc   -DCHECK_FUNCTION_EXISTS=pthread_create   -o CMakeFiles/cmTryCompileExec2988106207.dir/CheckFunctionExists.c.o   -c /usr/share/cmake-2.8/Modules/CheckFunctionExists.c
-Linking C executable cmTryCompileExec2988106207
-/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTryCompileExec2988106207.dir/link.txt --verbose=1
-/usr/bin/cc   -DCHECK_FUNCTION_EXISTS=pthread_create    CMakeFiles/cmTryCompileExec2988106207.dir/CheckFunctionExists.c.o  -o cmTryCompileExec2988106207 -rdynamic -lpthreads 
+Run Build Command:/usr/bin/make "cmTryCompileExec1519862878/fast"
+/usr/bin/make -f CMakeFiles/cmTryCompileExec1519862878.dir/build.make CMakeFiles/cmTryCompileExec1519862878.dir/build
+make[1]: Entering directory `/home/chalmers/rl_monitor/gym_gazebo/envs/installation/catkin_ws/build/CMakeFiles/CMakeTmp'
+/usr/bin/cmake -E cmake_progress_report /home/chalmers/rl_monitor/gym_gazebo/envs/installation/catkin_ws/build/CMakeFiles/CMakeTmp/CMakeFiles 1
+Building C object CMakeFiles/cmTryCompileExec1519862878.dir/CheckFunctionExists.c.o
+/usr/bin/cc   -DCHECK_FUNCTION_EXISTS=pthread_create   -o CMakeFiles/cmTryCompileExec1519862878.dir/CheckFunctionExists.c.o   -c /usr/share/cmake-2.8/Modules/CheckFunctionExists.c
+Linking C executable cmTryCompileExec1519862878
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTryCompileExec1519862878.dir/link.txt --verbose=1
+/usr/bin/cc   -DCHECK_FUNCTION_EXISTS=pthread_create    CMakeFiles/cmTryCompileExec1519862878.dir/CheckFunctionExists.c.o  -o cmTryCompileExec1519862878 -rdynamic -lpthreads 
 /usr/bin/ld: cannot find -lpthreads
 collect2: error: ld returned 1 exit status
-make[1]: *** [cmTryCompileExec2988106207] Error 1
-make[1]: Leaving directory `/home/chalmers/gym-gazebo/gym_gazebo/envs/installation/catkin_ws/build/CMakeFiles/CMakeTmp'
-make: *** [cmTryCompileExec2988106207/fast] Error 2
-
-
-Determining if the system is big endian passed with the following output:
-Change Dir: /home/chalmers/gym-gazebo/gym_gazebo/envs/installation/catkin_ws/build/CMakeFiles/CMakeTmp
-
-Run Build Command:/usr/bin/make "cmTryCompileExec1528215037/fast"
-/usr/bin/make -f CMakeFiles/cmTryCompileExec1528215037.dir/build.make CMakeFiles/cmTryCompileExec1528215037.dir/build
-make[1]: Entering directory `/home/chalmers/gym-gazebo/gym_gazebo/envs/installation/catkin_ws/build/CMakeFiles/CMakeTmp'
-/usr/bin/cmake -E cmake_progress_report /home/chalmers/gym-gazebo/gym_gazebo/envs/installation/catkin_ws/build/CMakeFiles/CMakeTmp/CMakeFiles 1
-Building C object CMakeFiles/cmTryCompileExec1528215037.dir/TestEndianess.c.o
-/usr/bin/cc    -o CMakeFiles/cmTryCompileExec1528215037.dir/TestEndianess.c.o   -c /home/chalmers/gym-gazebo/gym_gazebo/envs/installation/catkin_ws/build/CMakeFiles/CMakeTmp/TestEndianess.c
-Linking C executable cmTryCompileExec1528215037
-/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTryCompileExec1528215037.dir/link.txt --verbose=1
-/usr/bin/cc       CMakeFiles/cmTryCompileExec1528215037.dir/TestEndianess.c.o  -o cmTryCompileExec1528215037 -rdynamic 
-make[1]: Leaving directory `/home/chalmers/gym-gazebo/gym_gazebo/envs/installation/catkin_ws/build/CMakeFiles/CMakeTmp'
-
-TestEndianess.c:
-/* A 16 bit integer is required. */
-typedef unsigned short cmakeint16;
-
-/* On a little endian machine, these 16bit ints will give "THIS IS LITTLE ENDIAN."
-   On a big endian machine the characters will be exchanged pairwise. */
-const cmakeint16 info_little[] =  {0x4854, 0x5349, 0x4920, 0x2053, 0x494c, 0x5454, 0x454c, 0x4520, 0x444e, 0x4149, 0x2e4e, 0x0000};
-
-/* on a big endian machine, these 16bit ints will give "THIS IS BIG ENDIAN."
-   On a little endian machine the characters will be exchanged pairwise. */
-const cmakeint16 info_big[] =     {0x5448, 0x4953, 0x2049, 0x5320, 0x4249, 0x4720, 0x454e, 0x4449, 0x414e, 0x2e2e, 0x0000};
-
-#ifdef __CLASSIC_C__
-int main(argc, argv) int argc; char *argv[];
-#else
-int main(int argc, char *argv[])
-#endif
-{
-  int require = 0;
-  require += info_little[argc];
-  require += info_big[argc];
-  (void)argv;
-  return require;
-}
-
-
-Determining if the Q_WS_WIN exist failed with the following output:
-Change Dir: /home/chalmers/gym-gazebo/gym_gazebo/envs/installation/catkin_ws/build/CMakeFiles/CMakeTmp
-
-Run Build Command:/usr/bin/make "cmTryCompileExec1470517650/fast"
-/usr/bin/make -f CMakeFiles/cmTryCompileExec1470517650.dir/build.make CMakeFiles/cmTryCompileExec1470517650.dir/build
-make[1]: Entering directory `/home/chalmers/gym-gazebo/gym_gazebo/envs/installation/catkin_ws/build/CMakeFiles/CMakeTmp'
-/usr/bin/cmake -E cmake_progress_report /home/chalmers/gym-gazebo/gym_gazebo/envs/installation/catkin_ws/build/CMakeFiles/CMakeTmp/CMakeFiles 1
-Building CXX object CMakeFiles/cmTryCompileExec1470517650.dir/CheckSymbolExists.cxx.o
-/usr/bin/c++    -I/usr/include/qt4    -o CMakeFiles/cmTryCompileExec1470517650.dir/CheckSymbolExists.cxx.o -c /home/chalmers/gym-gazebo/gym_gazebo/envs/installation/catkin_ws/build/CMakeFiles/CMakeTmp/CheckSymbolExists.cxx
-/home/chalmers/gym-gazebo/gym_gazebo/envs/installation/catkin_ws/build/CMakeFiles/CMakeTmp/CheckSymbolExists.cxx: In function ‘int main(int, char**)’:
-/home/chalmers/gym-gazebo/gym_gazebo/envs/installation/catkin_ws/build/CMakeFiles/CMakeTmp/CheckSymbolExists.cxx:8:19: error: ‘Q_WS_WIN’ was not declared in this scope
-   return ((int*)(&Q_WS_WIN))[argc];
-                   ^
-make[1]: Leaving directory `/home/chalmers/gym-gazebo/gym_gazebo/envs/installation/catkin_ws/build/CMakeFiles/CMakeTmp'
-make[1]: *** [CMakeFiles/cmTryCompileExec1470517650.dir/CheckSymbolExists.cxx.o] Error 1
-make: *** [cmTryCompileExec1470517650/fast] Error 2
-
-File /home/chalmers/gym-gazebo/gym_gazebo/envs/installation/catkin_ws/build/CMakeFiles/CMakeTmp/CheckSymbolExists.cxx:
-/* */
-#include <QtCore/qglobal.h>
-
-int main(int argc, char** argv)
-{
-  (void)argv;
-#ifndef Q_WS_WIN
-  return ((int*)(&Q_WS_WIN))[argc];
-#else
-  (void)argc;
-  return 0;
-#endif
-}
-
-Determining if the Q_WS_QWS exist failed with the following output:
-Change Dir: /home/chalmers/gym-gazebo/gym_gazebo/envs/installation/catkin_ws/build/CMakeFiles/CMakeTmp
-
-Run Build Command:/usr/bin/make "cmTryCompileExec497620135/fast"
-/usr/bin/make -f CMakeFiles/cmTryCompileExec497620135.dir/build.make CMakeFiles/cmTryCompileExec497620135.dir/build
-make[1]: Entering directory `/home/chalmers/gym-gazebo/gym_gazebo/envs/installation/catkin_ws/build/CMakeFiles/CMakeTmp'
-/usr/bin/cmake -E cmake_progress_report /home/chalmers/gym-gazebo/gym_gazebo/envs/installation/catkin_ws/build/CMakeFiles/CMakeTmp/CMakeFiles 1
-Building CXX object CMakeFiles/cmTryCompileExec497620135.dir/CheckSymbolExists.cxx.o
-/usr/bin/c++    -I/usr/include/qt4    -o CMakeFiles/cmTryCompileExec497620135.dir/CheckSymbolExists.cxx.o -c /home/chalmers/gym-gazebo/gym_gazebo/envs/installation/catkin_ws/build/CMakeFiles/CMakeTmp/CheckSymbolExists.cxx
-/home/chalmers/gym-gazebo/gym_gazebo/envs/installation/catkin_ws/build/CMakeFiles/CMakeTmp/CheckSymbolExists.cxx: In function ‘int main(int, char**)’:
-/home/chalmers/gym-gazebo/gym_gazebo/envs/installation/catkin_ws/build/CMakeFiles/CMakeTmp/CheckSymbolExists.cxx:8:19: error: ‘Q_WS_QWS’ was not declared in this scope
-   return ((int*)(&Q_WS_QWS))[argc];
-                   ^
-make[1]: *** [CMakeFiles/cmTryCompileExec497620135.dir/CheckSymbolExists.cxx.o] Error 1
-make[1]: Leaving directory `/home/chalmers/gym-gazebo/gym_gazebo/envs/installation/catkin_ws/build/CMakeFiles/CMakeTmp'
-make: *** [cmTryCompileExec497620135/fast] Error 2
-
-File /home/chalmers/gym-gazebo/gym_gazebo/envs/installation/catkin_ws/build/CMakeFiles/CMakeTmp/CheckSymbolExists.cxx:
-/* */
-#include <QtCore/qglobal.h>
-
-int main(int argc, char** argv)
-{
-  (void)argv;
-#ifndef Q_WS_QWS
-  return ((int*)(&Q_WS_QWS))[argc];
-#else
-  (void)argc;
-  return 0;
-#endif
-}
-
-Determining if the Q_WS_MAC exist failed with the following output:
-Change Dir: /home/chalmers/gym-gazebo/gym_gazebo/envs/installation/catkin_ws/build/CMakeFiles/CMakeTmp
-
-Run Build Command:/usr/bin/make "cmTryCompileExec3541506667/fast"
-/usr/bin/make -f CMakeFiles/cmTryCompileExec3541506667.dir/build.make CMakeFiles/cmTryCompileExec3541506667.dir/build
-make[1]: Entering directory `/home/chalmers/gym-gazebo/gym_gazebo/envs/installation/catkin_ws/build/CMakeFiles/CMakeTmp'
-/usr/bin/cmake -E cmake_progress_report /home/chalmers/gym-gazebo/gym_gazebo/envs/installation/catkin_ws/build/CMakeFiles/CMakeTmp/CMakeFiles 1
-Building CXX object CMakeFiles/cmTryCompileExec3541506667.dir/CheckSymbolExists.cxx.o
-/usr/bin/c++    -I/usr/include/qt4    -o CMakeFiles/cmTryCompileExec3541506667.dir/CheckSymbolExists.cxx.o -c /home/chalmers/gym-gazebo/gym_gazebo/envs/installation/catkin_ws/build/CMakeFiles/CMakeTmp/CheckSymbolExists.cxx
-/home/chalmers/gym-gazebo/gym_gazebo/envs/installation/catkin_ws/build/CMakeFiles/CMakeTmp/CheckSymbolExists.cxx: In function ‘int main(int, char**)’:
-/home/chalmers/gym-gazebo/gym_gazebo/envs/installation/catkin_ws/build/CMakeFiles/CMakeTmp/CheckSymbolExists.cxx:8:19: error: ‘Q_WS_MAC’ was not declared in this scope
-   return ((int*)(&Q_WS_MAC))[argc];
-                   ^
-make[1]: Leaving directory `/home/chalmers/gym-gazebo/gym_gazebo/envs/installation/catkin_ws/build/CMakeFiles/CMakeTmp'
-make[1]: *** [CMakeFiles/cmTryCompileExec3541506667.dir/CheckSymbolExists.cxx.o] Error 1
-make: *** [cmTryCompileExec3541506667/fast] Error 2
-
-File /home/chalmers/gym-gazebo/gym_gazebo/envs/installation/catkin_ws/build/CMakeFiles/CMakeTmp/CheckSymbolExists.cxx:
-/* */
-#include <QtCore/qglobal.h>
-
-int main(int argc, char** argv)
-{
-  (void)argv;
-#ifndef Q_WS_MAC
-  return ((int*)(&Q_WS_MAC))[argc];
-#else
-  (void)argc;
-  return 0;
-#endif
-}
-
-Determining if the include file pgm.h exists failed with the following output:
-Change Dir: /home/chalmers/gym-gazebo/gym_gazebo/envs/installation/catkin_ws/build/CMakeFiles/CMakeTmp
-
-Run Build Command:/usr/bin/make "cmTryCompileExec3939884402/fast"
-/usr/bin/make -f CMakeFiles/cmTryCompileExec3939884402.dir/build.make CMakeFiles/cmTryCompileExec3939884402.dir/build
-make[1]: Entering directory `/home/chalmers/gym-gazebo/gym_gazebo/envs/installation/catkin_ws/build/CMakeFiles/CMakeTmp'
-/usr/bin/cmake -E cmake_progress_report /home/chalmers/gym-gazebo/gym_gazebo/envs/installation/catkin_ws/build/CMakeFiles/CMakeTmp/CMakeFiles 1
-Building CXX object CMakeFiles/cmTryCompileExec3939884402.dir/CheckIncludeFile.cxx.o
-/usr/bin/c++    -Wno-deprecated    -o CMakeFiles/cmTryCompileExec3939884402.dir/CheckIncludeFile.cxx.o -c /home/chalmers/gym-gazebo/gym_gazebo/envs/installation/catkin_ws/build/CMakeFiles/CMakeTmp/CheckIncludeFile.cxx
-/home/chalmers/gym-gazebo/gym_gazebo/envs/installation/catkin_ws/build/CMakeFiles/CMakeTmp/CheckIncludeFile.cxx:1:17: fatal error: pgm.h: No such file or directory
- #include <pgm.h>
-                 ^
-compilation terminated.
-make[1]: Leaving directory `/home/chalmers/gym-gazebo/gym_gazebo/envs/installation/catkin_ws/build/CMakeFiles/CMakeTmp'
-make[1]: *** [CMakeFiles/cmTryCompileExec3939884402.dir/CheckIncludeFile.cxx.o] Error 1
-make: *** [cmTryCompileExec3939884402/fast] Error 2
+make[1]: *** [cmTryCompileExec1519862878] Error 1
+make[1]: Leaving directory `/home/chalmers/rl_monitor/gym_gazebo/envs/installation/catkin_ws/build/CMakeFiles/CMakeTmp'
+make: *** [cmTryCompileExec1519862878/fast] Error 2
 
 

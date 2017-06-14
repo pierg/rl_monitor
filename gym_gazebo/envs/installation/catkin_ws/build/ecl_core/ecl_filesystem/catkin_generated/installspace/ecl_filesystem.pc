@@ -1,8 +1,0 @@
-prefix=/home/chalmers/gym-gazebo/gym_gazebo/envs/installation/catkin_ws/install
-
-Name: ecl_filesystem
-Description: Description of ecl_filesystem
-Version: 0.61.17
-Cflags: -I/home/chalmers/gym-gazebo/gym_gazebo/envs/installation/catkin_ws/install/include
-Libs: -L/home/chalmers/gym-gazebo/gym_gazebo/envs/installation/catkin_ws/install/lib -lecl_filesystem
-Requires: ecl_config ecl_errors

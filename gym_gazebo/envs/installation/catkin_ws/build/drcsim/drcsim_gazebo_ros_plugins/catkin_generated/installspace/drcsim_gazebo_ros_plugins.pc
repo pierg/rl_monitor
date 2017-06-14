@@ -1,8 +1,0 @@
-prefix=/home/chalmers/gym-gazebo/gym_gazebo/envs/installation/catkin_ws/install
-
-Name: drcsim_gazebo_ros_plugins
-Description: Description of drcsim_gazebo_ros_plugins
-Version: 3.1.0
-Cflags: 
-Libs: -L/home/chalmers/gym-gazebo/gym_gazebo/envs/installation/catkin_ws/install/lib 
-Requires: gazebo_plugins

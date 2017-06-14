@@ -1,1 +1,0 @@
-/usr/bin/c++   -O3 -DNDEBUG    CMakeFiles/demo_sigslots_lite.dir/sigslots.cpp.o  -o /home/chalmers/gym-gazebo/gym_gazebo/envs/installation/catkin_ws/devel/lib/ecl_sigslots_lite/demo_sigslots_lite -rdynamic 

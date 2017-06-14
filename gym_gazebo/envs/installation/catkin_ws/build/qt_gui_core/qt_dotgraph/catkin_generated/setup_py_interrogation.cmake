@@ -1,6 +1,0 @@
-set(qt_dotgraph_SETUP_PY_VERSION "0.2.32")
-set(qt_dotgraph_SETUP_PY_SCRIPTS "")
-set(qt_dotgraph_SETUP_PY_PACKAGES "qt_dotgraph")
-set(qt_dotgraph_SETUP_PY_PACKAGE_DIRS "src/qt_dotgraph")
-set(qt_dotgraph_SETUP_PY_MODULES "")
-set(qt_dotgraph_SETUP_PY_MODULE_DIRS "")

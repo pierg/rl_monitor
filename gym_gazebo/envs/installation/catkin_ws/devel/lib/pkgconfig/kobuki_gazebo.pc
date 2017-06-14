@@ -1,8 +1,0 @@
-prefix=/home/chalmers/gym-gazebo/gym_gazebo/envs/installation/catkin_ws/devel
-
-Name: kobuki_gazebo
-Description: Description of kobuki_gazebo
-Version: 0.4.2
-Cflags: 
-Libs: -L/home/chalmers/gym-gazebo/gym_gazebo/envs/installation/catkin_ws/devel/lib 
-Requires: 

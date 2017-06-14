@@ -1,1 +1,0 @@
-/usr/bin/c++  -fPIC -O3 -DNDEBUG   -shared -Wl,-soname,libAtlasSimInterface2.so.2.10.2 -o /home/chalmers/gym-gazebo/gym_gazebo/envs/installation/catkin_ws/devel/lib/libAtlasSimInterface2.so.2.10.2 CMakeFiles/AtlasSimInterface2.dir/AtlasSimInterface_2.10.2/src/AtlasSimInterface.cc.o  -L/usr/lib/x86_64-linux-gnu/gazebo-7/plugins 

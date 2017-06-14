@@ -1,8 +1,0 @@
-prefix=/home/chalmers/gym-gazebo/gym_gazebo/envs/installation/catkin_ws/install
-
-Name: ecl_ipc
-Description: Description of ecl_ipc
-Version: 0.61.17
-Cflags: -I/home/chalmers/gym-gazebo/gym_gazebo/envs/installation/catkin_ws/install/include
-Libs: -L/home/chalmers/gym-gazebo/gym_gazebo/envs/installation/catkin_ws/install/lib -lecl_ipc
-Requires: ecl_config ecl_errors ecl_time_lite ecl_exceptions ecl_time

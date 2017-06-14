@@ -1,8 +1,0 @@
-prefix=/home/chalmers/gym-gazebo/gym_gazebo/envs/installation/catkin_ws/install
-
-Name: yocs_waypoint_provider
-Description: Description of yocs_waypoint_provider
-Version: 0.6.4
-Cflags: 
-Libs: -L/home/chalmers/gym-gazebo/gym_gazebo/envs/installation/catkin_ws/install/lib -lyaml-cpp
-Requires: roscpp visualization_msgs yocs_msgs

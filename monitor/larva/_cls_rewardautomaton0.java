@@ -15,7 +15,7 @@ public static LinkedHashMap<_cls_rewardautomaton0,_cls_rewardautomaton0> _cls_re
 static{
 try{
 RunningClock.start();
-pw = new PrintWriter("/home/chalmers/gym-gazebo/monitor//output_rewardautomaton.txt");
+pw = new PrintWriter("/home/chalmers/rl_monitor/monitor//output_rewardautomaton.txt");
 
 root = new _cls_rewardautomaton0();
 _cls_rewardautomaton0_instances.put(root, root);

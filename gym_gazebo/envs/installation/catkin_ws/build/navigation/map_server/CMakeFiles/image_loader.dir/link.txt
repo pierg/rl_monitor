@@ -1,1 +1,0 @@
-/usr/bin/c++  -fPIC -O3 -DNDEBUG   -shared -Wl,-soname,libimage_loader.so -o /home/chalmers/gym-gazebo/gym_gazebo/envs/installation/catkin_ws/devel/lib/libimage_loader.so CMakeFiles/image_loader.dir/src/image_loader.cpp.o -lSDL -lSDL_image -lboost_system 

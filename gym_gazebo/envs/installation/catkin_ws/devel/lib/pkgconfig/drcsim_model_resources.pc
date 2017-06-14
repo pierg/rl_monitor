@@ -1,8 +1,0 @@
-prefix=/home/chalmers/gym-gazebo/gym_gazebo/envs/installation/catkin_ws/devel
-
-Name: drcsim_model_resources
-Description: Description of drcsim_model_resources
-Version: 3.1.0
-Cflags: 
-Libs: -L/home/chalmers/gym-gazebo/gym_gazebo/envs/installation/catkin_ws/devel/lib 
-Requires: 

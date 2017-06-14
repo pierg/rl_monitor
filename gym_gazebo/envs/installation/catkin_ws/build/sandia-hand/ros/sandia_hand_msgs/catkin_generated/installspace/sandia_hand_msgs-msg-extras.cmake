@@ -1,2 +1,0 @@
-set(sandia_hand_msgs_MESSAGE_FILES "msg/RelativeJointCommands.msg;msg/RawTactile.msg;msg/RawPalmState.msg;msg/RawMoboState.msg;msg/RawFingerState.msg;msg/RawFingerInertial.msg;msg/Parameter.msg;msg/CalFingerState.msg;msg/SimpleGrasp.msg;msg/RawFingerCommands.msg")
-set(sandia_hand_msgs_SERVICE_FILES "srv/SimpleGraspSrv.srv;srv/SimpleGraspWithSlew.srv;srv/SetParameters.srv;srv/SetJointLimitPolicy.srv;srv/SetFingerHome.srv;srv/GetParameters.srv")
