@@ -161,7 +161,8 @@ public class EchoServer {
   // Return a positive value propotional to the errors from the Goals
   private static double eGoals()
   {
-      return factor*(errorSpeed() + errorTrackPos());
+    return factor*(errorSpeed() + errorTrackPos());
+    //return 0;
   }
 
   public static void setRewardLimitRoadToCenterRoad(){

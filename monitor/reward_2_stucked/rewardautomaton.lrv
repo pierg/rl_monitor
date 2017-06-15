@@ -1,0 +1,88 @@
+Imports
+{
+	import SocketServerPackage.EchoServer;
+}
+
+Global{
+
+	Variables{
+		int counter = 0;
+	}
+
+	Events{
+		rlevent(obs, preobs) = {EchoServer.rlevent(String o, String preo)}
+		reset() = {EchoServer.reset()}
+	}
+
+	Property reward{
+
+		States{
+			Bad{rightOffRoad leftOffRoad damage stucked}
+			Normal{centerRoad limitRoad}
+			Starting{start}
+		}
+
+		Transitions{
+			start->centerRoad[rlevent\\EchoServer.setRewardCenterRoad();EchoServer.response();counter++;]
+
+			start->start[reset()\\EchoServer.reward = 0;EchoServer.response();]
+			centerRoad->start[reset()\\EchoServer.reward = 0;EchoServer.response();]
+			leftOffRoad->start[reset()\\EchoServer.reward = 0;EchoServer.response();]
+			rightOffRoad->start[reset()\\EchoServer.reward = 0;EchoServer.response();]
+			limitRoad->start[reset()\\EchoServer.reward = 0;EchoServer.response();]
+			damage->start[reset()\\EchoServer.reward = 0;EchoServer.response();]
+			stucked->start[reset()\\EchoServer.reward = 0;EchoServer.response();]
+
+			centerRoad->damage[rlevent\EchoServer.isDamage()\EchoServer.setRewardDamage();EchoServer.response();counter++;]
+
+			centerRoad->centerRoad[rlevent\EchoServer.isCenterRoad()\EchoServer.setRewardCenterRoad();EchoServer.response();counter++;]
+
+			centerRoad->limitRoad[rlevent\EchoServer.isLimitRoad()\EchoServer.setRewardLimitRoad();EchoServer.response();counter++;]
+
+
+			rightOffRoad->damage[rlevent\EchoServer.isDamage()\EchoServer.setRewardDamage();EchoServer.response();counter++;]
+
+			rightOffRoad->limitRoad[rlevent\EchoServer.isLimitRoad()\EchoServer.setRewardOffRoadToLimitRoad();EchoServer.response();counter++;]
+
+			rightOffRoad->rightOffRoad[rlevent\EchoServer.isRightOffRoad()\EchoServer.setRewardRightOffRoad();EchoServer.response();counter++;]
+
+
+			leftOffRoad->damage[rlevent\EchoServer.isDamage()\EchoServer.setRewardDamage();EchoServer.response();counter++;]
+
+			leftOffRoad->limitRoad[rlevent\EchoServer.isLimitRoad()\EchoServer.setRewardOffRoadToLimitRoad();EchoServer.response();counter++;]
+
+			leftOffRoad->leftOffRoad[rlevent\EchoServer.isLeftOffRoad()\EchoServer.setRewardLeftOffRoad();EchoServer.response();counter++;]
+
+
+			limitRoad->damage[rlevent\EchoServer.isDamage()\EchoServer.setRewardDamage();EchoServer.response();counter++;]
+
+			limitRoad->centerRoad[rlevent\EchoServer.isCenterRoad()\EchoServer.setRewardLimitRoadToCenterRoad();EchoServer.response();counter++;]
+
+			limitRoad->limitRoad[rlevent\EchoServer.isLimitRoad()\EchoServer.setRewardLimitRoad();EchoServer.response();counter++;]
+
+			limitRoad->rightOffRoad[rlevent\EchoServer.isRightOffRoad()\EchoServer.setRewardRightOffRoad();EchoServer.response();counter++;]
+
+			limitRoad->leftOffRoad[rlevent\EchoServer.isLeftOffRoad()\EchoServer.setRewardLeftOffRoad();EchoServer.response();counter++;]
+
+
+			damage->stucked[rlevent\EchoServer.isStucked()\EchoServer.setRewardStucked();EchoServer.response();counter++;]
+
+			damage->centerRoad[rlevent\EchoServer.isCenterRoad()\EchoServer.setRewardCenterRoad();EchoServer.response();counter++;]
+
+			damage->leftOffRoad[rlevent\EchoServer.isLeftOffRoad()\EchoServer.setRewardLeftOffRoad();EchoServer.response();counter++;]
+
+			damage->rightOffRoad[rlevent\EchoServer.isRightOffRoad()\EchoServer.setRewardRightOffRoad();EchoServer.response();counter++;]
+
+			damage->limitRoad[rlevent\EchoServer.isLimitRoad()\EchoServer.setRewardLimitRoad();EchoServer.response();counter++;]
+
+
+			stucked->stucked[rlevent\EchoServer.isStucked()\EchoServer.setRewardStucked();EchoServer.response();counter++;]
+
+			stucked->leftOffRoad[rlevent\EchoServer.isLeftOffRoad()\EchoServer.setRewardFromStuckedToLeftOffRoad();EchoServer.response();counter++;]
+
+			stucked->rightOffRoad[rlevent\EchoServer.isRightOffRoad()\EchoServer.setRewardFromStuckedToRightOffRoad();EchoServer.response();counter++;]
+		}
+
+	}
+
+}

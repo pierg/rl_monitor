@@ -5,8 +5,10 @@ FROM ubuntu:xenial
 RUN apt-get update
 
 #Install git and python
-RUN apt-get install -y git \
+RUN apt-get install -y apt-utils \
+    git \
     python-dev \
+    apt-utils \
     python-pip && \
     pip install --upgrade pip
 
@@ -18,7 +20,8 @@ RUN export TF_BINARY_URL=https://storage.googleapis.com/tensorflow/linux/cpu/ten
     pip install --upgrade $TF_BINARY_URL
     
 #Dependencies for gym-torcs
-RUN apt-get install -y xautomation \
+RUN apt-get install -y python3 \
+    xautomation \
     libglib2.0-dev \
     libgl1-mesa-dev \
     libglu1-mesa-dev \
@@ -30,8 +33,9 @@ RUN apt-get install -y xautomation \
     libxmu-dev \
     libxrender-dev \
     libxrandr-dev \
-    libpng12-dev && \
-    pip install gym && \
+    libpng12-dev
+
+RUN pip install gym && \
     pip install numpy && \
     pip install h5py
 

@@ -1,6 +1,0 @@
-Results from simulation. Launch date : 12/06/2017 - 11:49:28
-
-TOTAL REWARD @ 0-th Episode  : Reward -7674.41031753
-Total Step: 25
-Total Time: 5.5634829998
-

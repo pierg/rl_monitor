@@ -8,9 +8,9 @@ import copy
 import collections as col
 import os
 import time
-from socket import * # Socket library
 
 from larva import *
+
 
 class TorcsEnv:
     terminal_judge_start = 100  # If after 100 timestep still no progress, terminated
@@ -31,12 +31,14 @@ class TorcsEnv:
         os.system('pkill torcs')
         time.sleep(0.5)
         if self.vision is True:
-            os.system('torcs -nofuel -nodamage -nolaptime -vision -r practice.xml &')
+            os.system('torcs -nofuel -nodamage -nolaptime -vision &')
         else:
-            os.system('torcs -nofuel -nolaptime -r practice.xml &')
+            os.system('torcs -nofuel -nolaptime &')
         time.sleep(0.5)
         os.system('sh autostart.sh')
         time.sleep(0.5)
+
+        send_message_to_monitor("reset")
 
         """
         # Modify here if you use multiple tracks in the environment
@@ -131,18 +133,18 @@ class TorcsEnv:
 
         # Reward setting Here #######################################
         # direction-dependent positive reward
-        #
         track = np.array(obs['track'])
-        # float = 0 center, -1 left edge, +1 right edge
         trackPos = np.array(obs['trackPos'])
-        #
+        sp = np.array(obs['speedX'])
         damage = np.array(obs['damage'])
-        #
         rpm = np.array(obs['rpm'])
 
-        # opponents signals..
+        #progress = sp*np.cos(obs['angle']) - np.abs(sp*np.sin(obs['angle'])) - sp * np.abs(obs['trackPos'])
+        #reward = progress
 
-
+        # collision detection
+        #if obs['damage'] - obs_pre['damage'] > 0:
+            #reward = -1
 
         # Termination judgement #########################
         episode_terminate = False
@@ -161,10 +163,9 @@ class TorcsEnv:
             episode_terminate = True
             client.R.d['meta'] = True
 
-        if obs['damage'] > 0: # Episode is terminated if the agent runs in a wall
-            episode_terminate = True
-            client.R.d['meta'] = True
-
+        #if obs['damage'] > 0: # Episode is terminated if the agent runs in a wall
+        #    episode_terminate = True
+        #    client.R.d['meta'] = True
 
         if client.R.d['meta'] is True: # Send a reset signal
             self.initial_run = False
@@ -217,9 +218,9 @@ class TorcsEnv:
         os.system('pkill torcs')
         time.sleep(0.5)
         if self.vision is True:
-            os.system('torcs -nofuel -nodamage -nolaptime -vision -r practice.xml &')
+            os.system('torcs -nofuel -nodamage -nolaptime -vision &')
         else:
-            os.system('torcs -nofuel -nolaptime -r practice.xml &')
+            os.system('torcs -nofuel -nolaptime &')
         time.sleep(0.5)
         os.system('sh autostart.sh')
         time.sleep(0.5)
