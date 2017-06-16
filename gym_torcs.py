@@ -38,7 +38,7 @@ class TorcsEnv:
         os.system('sh autostart.sh')
         time.sleep(0.5)
 
-        send_message_to_monitor("reset")
+        # send_message_to_monitor("reset")
 
         """
         # Modify here if you use multiple tracks in the environment
@@ -198,7 +198,7 @@ class TorcsEnv:
 
         obs = client.S.d  # Get the current full-observation from torcs
 
-        send_message_to_monitor("reset")
+        # send_message_to_monitor("reset")
 
         self.observation = self.make_observaton(obs)
 

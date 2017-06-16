@@ -25,10 +25,7 @@ _cls_rewardautomaton0_instances.put(root, root);
 }
 
 _cls_rewardautomaton0 parent; //to remain null - this class does not have a parent!
-public static String preo;
-public static String o;
 int no_automata = 1;
- public int counter =0 ;
 
 public static void initialize(){}
 //inheritance could not be used because of the automatic call to super()
@@ -106,7 +103,6 @@ EchoServer .response ();
 		else if ((_occurredEvent(_event,0/*rlevent*/)) && (EchoServer .isStucked ())){
 		EchoServer .setRewardStucked ();
 EchoServer .response ();
-counter ++;
 
 		_state_id_reward = 3;//moving to state stucked
 		_goto_reward(_info);
@@ -114,7 +110,6 @@ counter ++;
 		else if ((_occurredEvent(_event,0/*rlevent*/)) && (EchoServer .isCenterRoad ())){
 		EchoServer .setRewardCenterRoad ();
 EchoServer .response ();
-counter ++;
 
 		_state_id_reward = 4;//moving to state centerRoad
 		_goto_reward(_info);
@@ -122,7 +117,6 @@ counter ++;
 		else if ((_occurredEvent(_event,0/*rlevent*/)) && (EchoServer .isLeftOffRoad ())){
 		EchoServer .setRewardLeftOffRoad ();
 EchoServer .response ();
-counter ++;
 
 		_state_id_reward = 1;//moving to state leftOffRoad
 		_goto_reward(_info);
@@ -130,7 +124,6 @@ counter ++;
 		else if ((_occurredEvent(_event,0/*rlevent*/)) && (EchoServer .isRightOffRoad ())){
 		EchoServer .setRewardRightOffRoad ();
 EchoServer .response ();
-counter ++;
 
 		_state_id_reward = 0;//moving to state rightOffRoad
 		_goto_reward(_info);
@@ -138,7 +131,6 @@ counter ++;
 		else if ((_occurredEvent(_event,0/*rlevent*/)) && (EchoServer .isLimitRoad ())){
 		EchoServer .setRewardLimitRoad ();
 EchoServer .response ();
-counter ++;
 
 		_state_id_reward = 5;//moving to state limitRoad
 		_goto_reward(_info);
@@ -156,7 +148,6 @@ EchoServer .response ();
 		else if ((_occurredEvent(_event,0/*rlevent*/)) && (EchoServer .isDamage ())){
 		EchoServer .setRewardDamage ();
 EchoServer .response ();
-counter ++;
 
 		_state_id_reward = 2;//moving to state damage
 		_goto_reward(_info);
@@ -164,7 +155,6 @@ counter ++;
 		else if ((_occurredEvent(_event,0/*rlevent*/)) && (EchoServer .isCenterRoad ())){
 		EchoServer .setRewardCenterRoad ();
 EchoServer .response ();
-counter ++;
 
 		_state_id_reward = 4;//moving to state centerRoad
 		_goto_reward(_info);
@@ -172,7 +162,6 @@ counter ++;
 		else if ((_occurredEvent(_event,0/*rlevent*/)) && (EchoServer .isLimitRoad ())){
 		EchoServer .setRewardLimitRoad ();
 EchoServer .response ();
-counter ++;
 
 		_state_id_reward = 5;//moving to state limitRoad
 		_goto_reward(_info);
@@ -190,7 +179,6 @@ EchoServer .response ();
 		else if ((_occurredEvent(_event,0/*rlevent*/)) && (EchoServer .isStucked ())){
 		EchoServer .setRewardStucked ();
 EchoServer .response ();
-counter ++;
 
 		_state_id_reward = 3;//moving to state stucked
 		_goto_reward(_info);
@@ -198,7 +186,6 @@ counter ++;
 		else if ((_occurredEvent(_event,0/*rlevent*/)) && (EchoServer .isLeftOffRoad ())){
 		EchoServer .setRewardFromStuckedToLeftOffRoad ();
 EchoServer .response ();
-counter ++;
 
 		_state_id_reward = 1;//moving to state leftOffRoad
 		_goto_reward(_info);
@@ -206,7 +193,6 @@ counter ++;
 		else if ((_occurredEvent(_event,0/*rlevent*/)) && (EchoServer .isRightOffRoad ())){
 		EchoServer .setRewardFromStuckedToRightOffRoad ();
 EchoServer .response ();
-counter ++;
 
 		_state_id_reward = 0;//moving to state rightOffRoad
 		_goto_reward(_info);
@@ -217,7 +203,6 @@ else if (_state_id_reward==6){
 		else if ((_occurredEvent(_event,0/*rlevent*/))){
 		EchoServer .setRewardCenterRoad ();
 EchoServer .response ();
-counter ++;
 
 		_state_id_reward = 4;//moving to state centerRoad
 		_goto_reward(_info);
@@ -242,7 +227,6 @@ EchoServer .response ();
 		else if ((_occurredEvent(_event,0/*rlevent*/)) && (EchoServer .isDamage ())){
 		EchoServer .setRewardDamage ();
 EchoServer .response ();
-counter ++;
 
 		_state_id_reward = 2;//moving to state damage
 		_goto_reward(_info);
@@ -250,7 +234,6 @@ counter ++;
 		else if ((_occurredEvent(_event,0/*rlevent*/)) && (EchoServer .isLimitRoad ())){
 		EchoServer .setRewardOffRoadToLimitRoad ();
 EchoServer .response ();
-counter ++;
 
 		_state_id_reward = 5;//moving to state limitRoad
 		_goto_reward(_info);
@@ -258,7 +241,6 @@ counter ++;
 		else if ((_occurredEvent(_event,0/*rlevent*/)) && (EchoServer .isLeftOffRoad ())){
 		EchoServer .setRewardLeftOffRoad ();
 EchoServer .response ();
-counter ++;
 
 		_state_id_reward = 1;//moving to state leftOffRoad
 		_goto_reward(_info);
@@ -276,7 +258,6 @@ EchoServer .response ();
 		else if ((_occurredEvent(_event,0/*rlevent*/)) && (EchoServer .isDamage ())){
 		EchoServer .setRewardDamage ();
 EchoServer .response ();
-counter ++;
 
 		_state_id_reward = 2;//moving to state damage
 		_goto_reward(_info);
@@ -284,7 +265,6 @@ counter ++;
 		else if ((_occurredEvent(_event,0/*rlevent*/)) && (EchoServer .isLimitRoad ())){
 		EchoServer .setRewardOffRoadToLimitRoad ();
 EchoServer .response ();
-counter ++;
 
 		_state_id_reward = 5;//moving to state limitRoad
 		_goto_reward(_info);
@@ -292,7 +272,6 @@ counter ++;
 		else if ((_occurredEvent(_event,0/*rlevent*/)) && (EchoServer .isRightOffRoad ())){
 		EchoServer .setRewardRightOffRoad ();
 EchoServer .response ();
-counter ++;
 
 		_state_id_reward = 0;//moving to state rightOffRoad
 		_goto_reward(_info);
@@ -310,7 +289,6 @@ EchoServer .response ();
 		else if ((_occurredEvent(_event,0/*rlevent*/)) && (EchoServer .isDamage ())){
 		EchoServer .setRewardDamage ();
 EchoServer .response ();
-counter ++;
 
 		_state_id_reward = 2;//moving to state damage
 		_goto_reward(_info);
@@ -318,7 +296,6 @@ counter ++;
 		else if ((_occurredEvent(_event,0/*rlevent*/)) && (EchoServer .isCenterRoad ())){
 		EchoServer .setRewardLimitRoadToCenterRoad ();
 EchoServer .response ();
-counter ++;
 
 		_state_id_reward = 4;//moving to state centerRoad
 		_goto_reward(_info);
@@ -326,7 +303,6 @@ counter ++;
 		else if ((_occurredEvent(_event,0/*rlevent*/)) && (EchoServer .isLimitRoad ())){
 		EchoServer .setRewardLimitRoad ();
 EchoServer .response ();
-counter ++;
 
 		_state_id_reward = 5;//moving to state limitRoad
 		_goto_reward(_info);
@@ -334,7 +310,6 @@ counter ++;
 		else if ((_occurredEvent(_event,0/*rlevent*/)) && (EchoServer .isRightOffRoad ())){
 		EchoServer .setRewardRightOffRoad ();
 EchoServer .response ();
-counter ++;
 
 		_state_id_reward = 0;//moving to state rightOffRoad
 		_goto_reward(_info);
@@ -342,7 +317,6 @@ counter ++;
 		else if ((_occurredEvent(_event,0/*rlevent*/)) && (EchoServer .isLeftOffRoad ())){
 		EchoServer .setRewardLeftOffRoad ();
 EchoServer .response ();
-counter ++;
 
 		_state_id_reward = 1;//moving to state leftOffRoad
 		_goto_reward(_info);

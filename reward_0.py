@@ -10,8 +10,6 @@ import os
 import time
 import json
 
-from larva import *
-
 def reward(obs, obs_pre):
 
 	sp = np.array(obs['speedX'])

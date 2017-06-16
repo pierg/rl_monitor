@@ -22,10 +22,10 @@ int counter = 0;
 
 
 // Variables that we get from the simulator
-int[-10,10] trackPos;     // position of the vehicle with respect to the position of the track (0 is middle)
+double trackPos;     // position of the vehicle with respect to the position of the track (0 is middle)
 double speedX;            // speed of the vehicle on its X axis
-int[0,100] damage;        //
-int[0,100] lastDamage;
+double damage;        //
+double lastDamage;
 double angle;
 
 
@@ -96,6 +96,27 @@ bool isStucked()
 }
 
 // Update functions
+
+void rewardLimitRoad(){
+    reward = 20 - eGoals();
+}
+
+void rewardLeftOffRoad(){
+    reward = -20 + 10*angle - eGoals();
+}
+
+void rewardRightOffRoad(){
+    reward = -20 - 10*angle - eGoals();
+}
+
+void rewardDamage(){
+    reward = -40 - eGoals();
+}
+
+void rewardCenter(){
+    reward = 50 - eGoals();
+}
+
 void rewardFromStuckedToLeftOffRoad()
 {
     counter = 0;
@@ -177,7 +198,7 @@ void rewardStucked()
 			<source ref="id6"/>
 			<target ref="id1"/>
 			<label kind="guard" x="527" y="-654">isDamage()</label>
-			<label kind="assignment" x="442" y="-637">reward = -40 - eGoals()</label>
+			<label kind="assignment" x="493" y="-637">rewardDamage()</label>
 			<nail x="612" y="-739"/>
 			<nail x="612" y="-476"/>
 			<nail x="204" y="-476"/>
@@ -185,16 +206,16 @@ void rewardStucked()
 		<transition>
 			<source ref="id6"/>
 			<target ref="id3"/>
-			<label kind="guard" x="331" y="-773">isLimitRoad()</label>
-			<label kind="assignment" x="331" y="-756">reward = 30 - eGoals()</label>
-			<nail x="569" y="-756"/>
-			<nail x="204" y="-756"/>
+			<label kind="guard" x="306" y="-765">isLimitRoad()</label>
+			<label kind="assignment" x="399" y="-765">rewardLimitRoad()</label>
+			<nail x="569" y="-765"/>
+			<nail x="204" y="-765"/>
 		</transition>
 		<transition>
 			<source ref="id3"/>
 			<target ref="id6"/>
-			<label kind="guard" x="314" y="-816">isRightOffRoad()</label>
-			<label kind="assignment" x="314" y="-799">reward = -20 - 10*angle - eGoals()</label>
+			<label kind="guard" x="280" y="-799">isRightOffRoad()</label>
+			<label kind="assignment" x="399" y="-799">rewardRightOffRoad()</label>
 			<nail x="195" y="-782"/>
 			<nail x="586" y="-782"/>
 		</transition>
@@ -202,7 +223,7 @@ void rewardStucked()
 			<source ref="id1"/>
 			<target ref="id6"/>
 			<label kind="guard" x="671" y="-680">isRightOffRoad()</label>
-			<label kind="assignment" x="671" y="-663">reward = -20 - 10*angle - eGoals()</label>
+			<label kind="assignment" x="671" y="-663">rewardRightOffRoad()</label>
 			<nail x="663" y="-459"/>
 			<nail x="663" y="-739"/>
 		</transition>
@@ -210,7 +231,7 @@ void rewardStucked()
 			<source ref="id1"/>
 			<target ref="id2"/>
 			<label kind="guard" x="-408" y="-654">isLeftOffRoad()</label>
-			<label kind="assignment" x="-552" y="-637">reward = -20 + 10*angle - eGoals()</label>
+			<label kind="assignment" x="-442" y="-637">rewardLeftOffRoad()</label>
 			<nail x="76" y="-459"/>
 			<nail x="-314" y="-459"/>
 			<nail x="-314" y="-739"/>
@@ -219,14 +240,14 @@ void rewardStucked()
 			<source ref="id1"/>
 			<target ref="id3"/>
 			<label kind="guard" x="161" y="-620">isLimitRoad()</label>
-			<label kind="assignment" x="161" y="-603">reward = 20 - eGoals()</label>
+			<label kind="assignment" x="161" y="-603">rewardLimitRoad()</label>
 			<nail x="153" y="-620"/>
 		</transition>
 		<transition>
 			<source ref="id1"/>
 			<target ref="id4"/>
-			<label kind="guard" x="586" y="-994">isCenter()</label>
-			<label kind="assignment" x="586" y="-977">reward = 50 - eGoals()</label>
+			<label kind="guard" x="544" y="-994">isCenter()</label>
+			<label kind="assignment" x="620" y="-994">rewardCenter()</label>
 			<nail x="195" y="-442"/>
 			<nail x="799" y="-442"/>
 			<nail x="799" y="-977"/>
@@ -235,7 +256,7 @@ void rewardStucked()
 			<source ref="id2"/>
 			<target ref="id1"/>
 			<label kind="guard" x="-178" y="-493">isDamage()</label>
-			<label kind="assignment" x="-93" y="-493">reward = -40 - eGoals()</label>
+			<label kind="assignment" x="-93" y="-493">rewardDamage()</label>
 			<nail x="-263" y="-739"/>
 			<nail x="-263" y="-476"/>
 			<nail x="93" y="-476"/>
@@ -244,7 +265,7 @@ void rewardStucked()
 			<source ref="id3"/>
 			<target ref="id1"/>
 			<label kind="guard" x="-8" y="-688">isDamage()</label>
-			<label kind="assignment" x="-93" y="-671">reward = -40 - eGoals()</label>
+			<label kind="assignment" x="-42" y="-671">rewardDamage()</label>
 			<nail x="76" y="-731"/>
 			<nail x="76" y="-518"/>
 		</transition>
@@ -252,7 +273,7 @@ void rewardStucked()
 			<source ref="id4"/>
 			<target ref="id1"/>
 			<label kind="guard" x="-178" y="-433">isDamage()</label>
-			<label kind="assignment" x="-93" y="-433">reward = -40 - eGoals()</label>
+			<label kind="assignment" x="-93" y="-433">rewardDamage()</label>
 			<nail x="-416" y="-977"/>
 			<nail x="-416" y="-442"/>
 			<nail x="102" y="-442"/>
@@ -260,8 +281,8 @@ void rewardStucked()
 		<transition>
 			<source ref="id2"/>
 			<target ref="id2"/>
-			<label kind="guard" x="-459" y="-773">isLeftOffRoad()</label>
-			<label kind="assignment" x="-603" y="-756">reward = -20 + 10*angle - eGoals()</label>
+			<label kind="guard" x="-450" y="-773">isLeftOffRoad()</label>
+			<label kind="assignment" x="-484" y="-756">rewardLeftOffRoad()</label>
 			<nail x="-348" y="-731"/>
 			<nail x="-348" y="-773"/>
 		</transition>
@@ -269,7 +290,7 @@ void rewardStucked()
 			<source ref="id2"/>
 			<target ref="id3"/>
 			<label kind="guard" x="-178" y="-799">isLimitRoad()</label>
-			<label kind="assignment" x="-76" y="-799">reward = 30 - eGoals()</label>
+			<label kind="assignment" x="-76" y="-799">rewardLimitRoad()</label>
 			<nail x="-246" y="-782"/>
 			<nail x="102" y="-782"/>
 		</transition>
@@ -277,15 +298,15 @@ void rewardStucked()
 			<source ref="id3"/>
 			<target ref="id2"/>
 			<label kind="guard" x="-187" y="-765">isLeftOffRoad()</label>
-			<label kind="assignment" x="-221" y="-748">reward = -20 + 10*angle - eGoals()</label>
+			<label kind="assignment" x="-76" y="-765">rewardLeftOffRoad()</label>
 			<nail x="110" y="-765"/>
 			<nail x="-246" y="-765"/>
 		</transition>
 		<transition>
 			<source ref="id3"/>
 			<target ref="id3"/>
-			<label kind="guard" x="204" y="-722">isLimitRoad()</label>
-			<label kind="assignment" x="187" y="-705">reward = 20 - eGoals()</label>
+			<label kind="guard" x="187" y="-714">isLimitRoad()</label>
+			<label kind="assignment" x="187" y="-697">rewardLimitRoad()</label>
 			<nail x="187" y="-714"/>
 			<nail x="212" y="-722"/>
 		</transition>
@@ -293,7 +314,7 @@ void rewardStucked()
 			<source ref="id3"/>
 			<target ref="id4"/>
 			<label kind="guard" x="238" y="-943">isCenter()</label>
-			<label kind="assignment" x="238" y="-926">reward = 60 -  eGoals()</label>
+			<label kind="assignment" x="238" y="-926">rewardCenter()</label>
 			<nail x="229" y="-824"/>
 			<nail x="229" y="-952"/>
 		</transition>
@@ -301,7 +322,7 @@ void rewardStucked()
 			<source ref="id4"/>
 			<target ref="id4"/>
 			<label kind="guard" x="119" y="-909">isCenter()</label>
-			<label kind="assignment" x="73" y="-891">reward = 50 - eGoals()</label>
+			<label kind="assignment" x="102" y="-892">rewardCenter()</label>
 			<nail x="137" y="-913"/>
 			<nail x="169" y="-913"/>
 		</transition>
@@ -309,19 +330,20 @@ void rewardStucked()
 			<source ref="id4"/>
 			<target ref="id3"/>
 			<label kind="guard" x="-25" y="-943">isLimitRoad()</label>
-			<label kind="assignment" x="-93" y="-926">reward = 20 - eGoals()</label>
+			<label kind="assignment" x="-59" y="-926">rewardLimitRoad()</label>
 			<nail x="68" y="-952"/>
 			<nail x="68" y="-824"/>
 		</transition>
 		<transition>
 			<source ref="id5"/>
 			<target ref="id4"/>
+			<label kind="assignment" x="153" y="-1011">rewardCenter()</label>
 		</transition>
 		<transition>
 			<source ref="id6"/>
 			<target ref="id6"/>
 			<label kind="guard" x="705" y="-765">isRightOffRoad()</label>
-			<label kind="assignment" x="705" y="-748">reward = -20 - 10*angle - eGoals()</label>
+			<label kind="assignment" x="705" y="-748">rewardRightOffRoad()</label>
 			<nail x="697" y="-731"/>
 			<nail x="697" y="-765"/>
 		</transition>

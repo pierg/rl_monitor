@@ -5,12 +5,8 @@ Imports
 
 Global{
 
-	Variables{
-		int counter = 0;
-	}
-
 	Events{
-		rlevent(obs, preobs) = {EchoServer.rlevent(String o, String preo)}
+		rlevent(obs, preobs) = {EchoServer.rlevent()}
 		reset() = {EchoServer.reset()}
 	}
 
@@ -23,7 +19,7 @@ Global{
 		}
 
 		Transitions{
-			start->centerRoad[rlevent\\EchoServer.setRewardCenterRoad();EchoServer.response();counter++;]
+			start->centerRoad[rlevent\\EchoServer.setRewardCenterRoad();EchoServer.response();]
 
 			start->start[reset()\\EchoServer.reward = 0;EchoServer.response();]
 			centerRoad->start[reset()\\EchoServer.reward = 0;EchoServer.response();]
@@ -33,54 +29,53 @@ Global{
 			damage->start[reset()\\EchoServer.reward = 0;EchoServer.response();]
 			stucked->start[reset()\\EchoServer.reward = 0;EchoServer.response();]
 
-			centerRoad->damage[rlevent\EchoServer.isDamage()\EchoServer.setRewardDamage();EchoServer.response();counter++;]
+			centerRoad->damage[rlevent\EchoServer.isDamage()\EchoServer.setRewardDamage();EchoServer.response();]
 
-			centerRoad->centerRoad[rlevent\EchoServer.isCenterRoad()\EchoServer.setRewardCenterRoad();EchoServer.response();counter++;]
+			centerRoad->centerRoad[rlevent\EchoServer.isCenterRoad()\EchoServer.setRewardCenterRoad();EchoServer.response();]
 
-			centerRoad->limitRoad[rlevent\EchoServer.isLimitRoad()\EchoServer.setRewardLimitRoad();EchoServer.response();counter++;]
+			centerRoad->limitRoad[rlevent\EchoServer.isLimitRoad()\EchoServer.setRewardLimitRoad();EchoServer.response();]
 
+			rightOffRoad->damage[rlevent\EchoServer.isDamage()\EchoServer.setRewardDamage();EchoServer.response();]
 
-			rightOffRoad->damage[rlevent\EchoServer.isDamage()\EchoServer.setRewardDamage();EchoServer.response();counter++;]
+			rightOffRoad->limitRoad[rlevent\EchoServer.isLimitRoad()\EchoServer.setRewardOffRoadToLimitRoad();EchoServer.response();]
 
-			rightOffRoad->limitRoad[rlevent\EchoServer.isLimitRoad()\EchoServer.setRewardOffRoadToLimitRoad();EchoServer.response();counter++;]
-
-			rightOffRoad->rightOffRoad[rlevent\EchoServer.isRightOffRoad()\EchoServer.setRewardRightOffRoad();EchoServer.response();counter++;]
-
-
-			leftOffRoad->damage[rlevent\EchoServer.isDamage()\EchoServer.setRewardDamage();EchoServer.response();counter++;]
-
-			leftOffRoad->limitRoad[rlevent\EchoServer.isLimitRoad()\EchoServer.setRewardOffRoadToLimitRoad();EchoServer.response();counter++;]
-
-			leftOffRoad->leftOffRoad[rlevent\EchoServer.isLeftOffRoad()\EchoServer.setRewardLeftOffRoad();EchoServer.response();counter++;]
+			rightOffRoad->rightOffRoad[rlevent\EchoServer.isRightOffRoad()\EchoServer.setRewardRightOffRoad();EchoServer.response();]
 
 
-			limitRoad->damage[rlevent\EchoServer.isDamage()\EchoServer.setRewardDamage();EchoServer.response();counter++;]
+			leftOffRoad->damage[rlevent\EchoServer.isDamage()\EchoServer.setRewardDamage();EchoServer.response();]
 
-			limitRoad->centerRoad[rlevent\EchoServer.isCenterRoad()\EchoServer.setRewardLimitRoadToCenterRoad();EchoServer.response();counter++;]
+			leftOffRoad->limitRoad[rlevent\EchoServer.isLimitRoad()\EchoServer.setRewardOffRoadToLimitRoad();EchoServer.response();]
 
-			limitRoad->limitRoad[rlevent\EchoServer.isLimitRoad()\EchoServer.setRewardLimitRoad();EchoServer.response();counter++;]
-
-			limitRoad->rightOffRoad[rlevent\EchoServer.isRightOffRoad()\EchoServer.setRewardRightOffRoad();EchoServer.response();counter++;]
-
-			limitRoad->leftOffRoad[rlevent\EchoServer.isLeftOffRoad()\EchoServer.setRewardLeftOffRoad();EchoServer.response();counter++;]
+			leftOffRoad->leftOffRoad[rlevent\EchoServer.isLeftOffRoad()\EchoServer.setRewardLeftOffRoad();EchoServer.response();]
 
 
-			damage->stucked[rlevent\EchoServer.isStucked()\EchoServer.setRewardStucked();EchoServer.response();counter++;]
+			limitRoad->damage[rlevent\EchoServer.isDamage()\EchoServer.setRewardDamage();EchoServer.response();]
 
-			damage->centerRoad[rlevent\EchoServer.isCenterRoad()\EchoServer.setRewardCenterRoad();EchoServer.response();counter++;]
+			limitRoad->centerRoad[rlevent\EchoServer.isCenterRoad()\EchoServer.setRewardLimitRoadToCenterRoad();EchoServer.response();]
 
-			damage->leftOffRoad[rlevent\EchoServer.isLeftOffRoad()\EchoServer.setRewardLeftOffRoad();EchoServer.response();counter++;]
+			limitRoad->limitRoad[rlevent\EchoServer.isLimitRoad()\EchoServer.setRewardLimitRoad();EchoServer.response();]
 
-			damage->rightOffRoad[rlevent\EchoServer.isRightOffRoad()\EchoServer.setRewardRightOffRoad();EchoServer.response();counter++;]
+			limitRoad->rightOffRoad[rlevent\EchoServer.isRightOffRoad()\EchoServer.setRewardRightOffRoad();EchoServer.response();]
 
-			damage->limitRoad[rlevent\EchoServer.isLimitRoad()\EchoServer.setRewardLimitRoad();EchoServer.response();counter++;]
+			limitRoad->leftOffRoad[rlevent\EchoServer.isLeftOffRoad()\EchoServer.setRewardLeftOffRoad();EchoServer.response();]
 
 
-			stucked->stucked[rlevent\EchoServer.isStucked()\EchoServer.setRewardStucked();EchoServer.response();counter++;]
+			damage->stucked[rlevent\EchoServer.isStucked()\EchoServer.setRewardStucked();EchoServer.response();]
 
-			stucked->leftOffRoad[rlevent\EchoServer.isLeftOffRoad()\EchoServer.setRewardFromStuckedToLeftOffRoad();EchoServer.response();counter++;]
+			damage->centerRoad[rlevent\EchoServer.isCenterRoad()\EchoServer.setRewardCenterRoad();EchoServer.response();]
 
-			stucked->rightOffRoad[rlevent\EchoServer.isRightOffRoad()\EchoServer.setRewardFromStuckedToRightOffRoad();EchoServer.response();counter++;]
+			damage->leftOffRoad[rlevent\EchoServer.isLeftOffRoad()\EchoServer.setRewardLeftOffRoad();EchoServer.response();]
+
+			damage->rightOffRoad[rlevent\EchoServer.isRightOffRoad()\EchoServer.setRewardRightOffRoad();EchoServer.response();]
+
+			damage->limitRoad[rlevent\EchoServer.isLimitRoad()\EchoServer.setRewardLimitRoad();EchoServer.response();]
+
+
+			stucked->stucked[rlevent\EchoServer.isStucked()\EchoServer.setRewardStucked();EchoServer.response();]
+
+			stucked->leftOffRoad[rlevent\EchoServer.isLeftOffRoad()\EchoServer.setRewardFromStuckedToLeftOffRoad();EchoServer.response();]
+
+			stucked->rightOffRoad[rlevent\EchoServer.isRightOffRoad()\EchoServer.setRewardFromStuckedToRightOffRoad();EchoServer.response();]
 		}
 
 	}

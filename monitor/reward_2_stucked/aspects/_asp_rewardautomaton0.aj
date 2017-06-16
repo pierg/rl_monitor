@@ -15,13 +15,11 @@ if (!initialized){
 	_cls_rewardautomaton0.initialize();
 }
 }
-before ( String preo,String o) : (call(* *.rlevent(..)) && args(o,preo) && !cflow(adviceexecution())) {
+before () : (call(* *.rlevent(..)) && !cflow(adviceexecution())) {
 
 synchronized(_asp_rewardautomaton0.lock){
 
 _cls_rewardautomaton0 _cls_inst = _cls_rewardautomaton0._get_cls_rewardautomaton0_inst();
-_cls_inst.preo = preo;
-_cls_inst.o = o;
 _cls_inst._call(thisJoinPoint.getSignature().toString(), 0/*rlevent*/);
 _cls_inst._call_all_filtered(thisJoinPoint.getSignature().toString(), 0/*rlevent*/);
 }

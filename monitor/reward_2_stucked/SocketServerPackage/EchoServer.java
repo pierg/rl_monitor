@@ -66,6 +66,7 @@ public class EchoServer {
 
     int portNumber = Integer.parseInt(args[0]);
 
+    JSONObject obj = new JSONObject();
     try {
       ServerSocket serverSocket = new ServerSocket(Integer.parseInt(args[0]));
       while(true){
