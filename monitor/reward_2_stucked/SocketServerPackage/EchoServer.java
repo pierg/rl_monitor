@@ -46,7 +46,7 @@ public class EchoServer {
   // Internal parameters
   private static int fastSpeedPenalityIndex = 2;
   private static int slowSpeedPenalityIndex = 1;
-  private static int factor = 10;         // multiplication factor for the reward function
+  private static int factor = 1;         // multiplication factor for the reward function
 
   public static double reward;
   public static double speedX;
@@ -162,7 +162,7 @@ public class EchoServer {
   // Return a positive value propotional to the errors from the Goals
   private static double eGoals()
   {
-    return factor*(errorSpeed() + errorTrackPos());
+    return factor*(errorTrackPos());
     //return 0;
   }
 
@@ -216,7 +216,7 @@ public class EchoServer {
     System.out.println(eGoals() + " limitRoad");
   }
 
-  public static void setRewardFromStuckedToLeftOffRoad()
+  public static void setRewardFromStuckToLeftOffRoad()
   {
     counter = 0;
     reward = -20 + 10*angle - eGoals();
@@ -224,18 +224,18 @@ public class EchoServer {
     System.out.println(eGoals() + " leftOffRoad");
   }
 
-  public static void setRewardFromStuckedToRightOffRoad()
+  public static void setRewardFromStuckToRightOffRoad()
   {
     counter = 0;
     reward = -20 - 10*angle - eGoals();
     System.out.println(eGoals() + " rightOffRoad");
   }
 
-  public static void setRewardStucked()
+  public static void setRewardStuck()
   {
     counter += 10;
     reward = -40 - eGoals() - counter;
-    System.out.println(eGoals() + " stucked");
+    System.out.println(eGoals() + " stuck");
   }
 
   public static boolean isCenterRoad(){
@@ -258,8 +258,8 @@ public class EchoServer {
     return damage > lastDamage;
   }
 
-  public static boolean isStucked(){
-    return (trackPos >= 1 || trackPos <= -1) && speedX < 8;
+  public static boolean isStuck(){
+    return (trackPos >= 1 || trackPos <= -1) && speedX < 10;
   }
 
 
@@ -271,6 +271,11 @@ public class EchoServer {
 
   public static void response(){
     out.println(reward);
+  }
+
+
+  public static void resetAgent(){
+    out.println("reset");
   }
     //
     // public static void timer_handler(String m){

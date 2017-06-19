@@ -25,6 +25,8 @@ class TorcsEnv:
         self.gear_change = gear_change
         self.reward = reward
 
+        self.stuckCounter = 0
+
         self.initial_run = True
 
         ##print("launch torcs")
@@ -38,7 +40,7 @@ class TorcsEnv:
         os.system('sh autostart.sh')
         time.sleep(0.5)
 
-        # send_message_to_monitor("reset")
+        send_message_to_monitor("reset")
 
         """
         # Modify here if you use multiple tracks in the environment
@@ -116,6 +118,7 @@ class TorcsEnv:
                     action_torcs['gear'] = 5
                 if client.S.d['speedX'] > 170:
                     action_torcs['gear'] = 6
+                    
         # Save the privious full-obs from torcs for the reward calculation
         obs_pre = copy.deepcopy(client.S.d)
 
@@ -163,7 +166,15 @@ class TorcsEnv:
             episode_terminate = True
             client.R.d['meta'] = True
 
-        #if obs['damage'] > 0: # Episode is terminated if the agent runs in a wall
+        if (obs['trackPos'] >= 1 or obs['trackPos'] <= -1) and obs['speedX'] < 10 :
+            self.stuckCounter += 1
+            if self.stuckCounter == 100:
+                episode_terminate = True
+                client.R.d['meta'] = True
+        else :
+            self.stuckCounter = 0
+
+        #if obs['damage'] > 500: # Episode is terminated if the agent gets too much damage
         #    episode_terminate = True
         #    client.R.d['meta'] = True
 
@@ -198,7 +209,7 @@ class TorcsEnv:
 
         obs = client.S.d  # Get the current full-observation from torcs
 
-        # send_message_to_monitor("reset")
+        send_message_to_monitor("reset")
 
         self.observation = self.make_observaton(obs)
 

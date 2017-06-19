@@ -13,7 +13,7 @@ Global{
 	Property reward{
 
 		States{
-			Bad{rightOffRoad leftOffRoad damage stucked}
+			Bad{rightOffRoad leftOffRoad damage stuck default}
 			Normal{centerRoad limitRoad}
 			Starting{start}
 		}
@@ -27,7 +27,8 @@ Global{
 			rightOffRoad->start[reset()\\EchoServer.reward = 0;EchoServer.response();]
 			limitRoad->start[reset()\\EchoServer.reward = 0;EchoServer.response();]
 			damage->start[reset()\\EchoServer.reward = 0;EchoServer.response();]
-			stucked->start[reset()\\EchoServer.reward = 0;EchoServer.response();]
+			stuck->start[reset()\\EchoServer.reward = 0;EchoServer.response();]
+			default->start[reset()\\EchoServer.reward = 0;EchoServer.response();]
 
 			centerRoad->damage[rlevent\EchoServer.isDamage()\EchoServer.setRewardDamage();EchoServer.response();]
 
@@ -35,12 +36,17 @@ Global{
 
 			centerRoad->limitRoad[rlevent\EchoServer.isLimitRoad()\EchoServer.setRewardLimitRoad();EchoServer.response();]
 
+
+			rightOffRoad->stuck[rlevent\EchoServer.isStuck()\EchoServer.setRewardStuck();EchoServer.response();]
+
 			rightOffRoad->damage[rlevent\EchoServer.isDamage()\EchoServer.setRewardDamage();EchoServer.response();]
 
 			rightOffRoad->limitRoad[rlevent\EchoServer.isLimitRoad()\EchoServer.setRewardOffRoadToLimitRoad();EchoServer.response();]
 
 			rightOffRoad->rightOffRoad[rlevent\EchoServer.isRightOffRoad()\EchoServer.setRewardRightOffRoad();EchoServer.response();]
 
+
+			leftOffRoad->stuck[rlevent\EchoServer.isStuck()\EchoServer.setRewardStuck();EchoServer.response();]
 
 			leftOffRoad->damage[rlevent\EchoServer.isDamage()\EchoServer.setRewardDamage();EchoServer.response();]
 
@@ -60,7 +66,7 @@ Global{
 			limitRoad->leftOffRoad[rlevent\EchoServer.isLeftOffRoad()\EchoServer.setRewardLeftOffRoad();EchoServer.response();]
 
 
-			damage->stucked[rlevent\EchoServer.isStucked()\EchoServer.setRewardStucked();EchoServer.response();]
+			damage->stuck[rlevent\EchoServer.isStuck()\EchoServer.setRewardStuck();EchoServer.response();]
 
 			damage->centerRoad[rlevent\EchoServer.isCenterRoad()\EchoServer.setRewardCenterRoad();EchoServer.response();]
 
@@ -71,11 +77,19 @@ Global{
 			damage->limitRoad[rlevent\EchoServer.isLimitRoad()\EchoServer.setRewardLimitRoad();EchoServer.response();]
 
 
-			stucked->stucked[rlevent\EchoServer.isStucked()\EchoServer.setRewardStucked();EchoServer.response();]
+			stuck->stuck[rlevent\EchoServer.isStuck()\EchoServer.setRewardStuck();EchoServer.response();]
 
-			stucked->leftOffRoad[rlevent\EchoServer.isLeftOffRoad()\EchoServer.setRewardFromStuckedToLeftOffRoad();EchoServer.response();]
+			stuck->leftOffRoad[rlevent\EchoServer.isLeftOffRoad()\EchoServer.setRewardFromStuckToLeftOffRoad();EchoServer.response();]
 
-			stucked->rightOffRoad[rlevent\EchoServer.isRightOffRoad()\EchoServer.setRewardFromStuckedToRightOffRoad();EchoServer.response();]
+			stuck->rightOffRoad[rlevent\EchoServer.isRightOffRoad()\EchoServer.setRewardFromStuckToRightOffRoad();EchoServer.response();]
+
+			start->default[rlevent()\\EchoServer.reward = 0;EchoServer.resetAgent();]
+			centerRoad->default[rlevent()\\EchoServer.reward = 0;EchoServer.resetAgent();]
+			leftOffRoad->default[rlevent()\\EchoServer.reward = 0;EchoServer.resetAgent();]
+			rightOffRoad->default[rlevent()\\EchoServer.reward = 0;EchoServer.resetAgent();]
+			limitRoad->default[rlevent()\\EchoServer.reward = 0;EchoServer.resetAgent();]
+			damage->default[rlevent()\\EchoServer.reward = 0;EchoServer.resetAgent();]
+			stuck->default[rlevent()\\EchoServer.reward = 0;EchoServer.resetAgent();]
 		}
 
 	}

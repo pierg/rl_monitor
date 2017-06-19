@@ -15,9 +15,10 @@ from ReplayBuffer import ReplayBuffer
 from ActorNetwork import ActorNetwork
 from CriticNetwork import CriticNetwork
 from OU import OU
+from shutil import copy
 import timeit
 import time
-from reward_0 import reward
+from reward import reward
 
 OU = OU()       #Ornstein-Uhlenbeck Process
 
@@ -88,6 +89,11 @@ def playGame(train_indicator=1):    #1 means Train, 0 means simply Run
         rewardsPerEpisode += "rewardsPerEpisode{" + str(iteration) + "} = ["
         lastEpisodeStep = 0
 
+        copy("originalmodel/actormodel.h5", "actormodel.h5")
+        copy("originalmodel/criticmodel.h5", "criticmodel.h5")
+        copy("originalmodel/actormodel.json", "actormodel.json")
+        copy("originalmodel/criticmodel.json", "criticmodel.json")
+
         #Now load the weight
         print("Now we load the weight")
         try:
@@ -141,6 +147,10 @@ def playGame(train_indicator=1):    #1 means Train, 0 means simply Run
 
                 ob, r_t, done, info, finished = env.step(a_t[0])
 
+                if r_t == "reset" : 
+                    done = True
+                    r_t = 0
+
                 s_t1 = np.hstack((ob.angle, ob.track, ob.trackPos, ob.speedX, ob.speedY, ob.speedZ, ob.wheelSpinVel/100.0, ob.rpm))
             
                 buff.add(s_t, a_t[0], r_t, s_t1, done)      #Add replay buffer
@@ -176,7 +186,7 @@ def playGame(train_indicator=1):    #1 means Train, 0 means simply Run
                 print("Episode", i, "Step", step, "Action", a_t, "Reward", r_t, "Loss", loss)
             
                 # MATLAB
-                rewardsPerStep += str(r_t) + " "
+                rewardsPerStep += str(round(r_t, 2)) + " "
 
                 step += 1
                 if done:
@@ -203,9 +213,10 @@ def playGame(train_indicator=1):    #1 means Train, 0 means simply Run
             print("")
 
             # Matlab strings
-            subtimes += str(endEpisode - startEpisode) + " "
+            subtimes += str(round(endEpisode - startEpisode)) + " "
             steps += str(step - lastEpisodeStep) + " "
-            rewardsPerEpisode += str(total_reward) + " "
+            rewardsPerEpisode += str(round(total_reward, 2)) + " "
+            rewardsPerStep += "]\n"
 
             lastEpisodeStep = step
 
@@ -216,10 +227,9 @@ def playGame(train_indicator=1):    #1 means Train, 0 means simply Run
         end = time.time()
         isGoalReached += "1 " if finished else "0 "
         episodeCount += str(i+1) + " "
-        totalTime += str(end-start) + " "
+        totalTime += str(round(end-start,2)) + " "
         subtimes += "]\n"
         steps += "]\n"
-        rewardsPerStep += "]\n"
         rewardsPerEpisode += "]\n"
 
         # PRINT IN MATLAB (each iteration rewrite the whole file)

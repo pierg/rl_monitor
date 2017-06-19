@@ -20,8 +20,8 @@ def reward(obs, obs_pre):
 
 	reward = send_message_to_monitor(message).replace('n', '').replace('\\', '').replace('\'', '')
 
-	# Talk to LARVA
-	print "[LARVA ANSWER]: " + reward
-
-	return float(reward)
+	if reward == "reset":
+		return reward
+	else :
+		return float(reward)
 
