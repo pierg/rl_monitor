@@ -38,6 +38,7 @@ import org.json.*;
 
 public class EchoServer {
   static PrintWriter out;
+  private static boolean isReset;
 
   // Set the goals to achieve
   private static int goalSpeed = 90;       // Kmh
@@ -49,12 +50,19 @@ public class EchoServer {
   private static int factor = 1;         // multiplication factor for the reward function
 
   public static double reward;
+
   public static double speedX;
   public static double angle;
   public static double trackPos;
   public static double damage;
-  public static double lastDamage;
-  public static double lastAngle;
+  public static double[] track;
+
+  public static double speedX_pre;
+  public static double angle_pre;
+  public static double trackPos_pre;
+  public static double damage_pre;
+  public static double[] track_pre;
+
   private static int counter = 0;
 
   public static void main(String[] args) throws IOException {
@@ -66,7 +74,7 @@ public class EchoServer {
 
     int portNumber = Integer.parseInt(args[0]);
 
-    JSONObject obj = new JSONObject();
+
     try {
       ServerSocket serverSocket = new ServerSocket(Integer.parseInt(args[0]));
       while(true){
@@ -83,12 +91,11 @@ public class EchoServer {
             // able to detect that the client closed the connection to the
             // socket.
         while ((inputLine = in.readLine()) != null) {
-          System.out.println("Message receive: " + inputLine);
-
-              //progress = sp*np.cos(obs['angle']) - np.abs(sp*np.sin(obs['angle'])) - sp * np.abs(obs['trackPos'])
+          isReset = false;
+          reward = 0;
+          //System.out.println("Message receive: " + inputLine);
 
           EchoServer a = new EchoServer();
-
 
           if(inputLine.equals("reset")){
             a.reset();
@@ -97,22 +104,8 @@ public class EchoServer {
 
           prepareResponse(inputLine);
 
-          //System.out.println("reward : " + reward);
-
-              // Structure of the message 'diaspora;<user_id>;<action>'
           List<String> list = new ArrayList<String>(Arrays.asList(inputLine.split(";")));
           a.rlevent("1","2");
-              // if(list.get(2).toString().equals("post")){
-              //   a.post(list.get(1).toString(), "nothing");
-              // }
-              //
-              // if(list.get(2).toString().equals("monday")){
-              //   a.monday(list.get(1).toString(), "nothing");
-              // }
-              //
-              // if(list.get(2).toString().equals("friday")){
-              //   a.friday(list.get(1).toString(), "nothing");
-              // }
         }
       }
     } catch (IOException e) {
@@ -123,14 +116,30 @@ public class EchoServer {
   }
 
   public static void prepareResponse(String message){
+    JSONObject obj = new JSONObject(message);
+    JSONObject obs = (JSONObject)obj.get("obs");
+    JSONObject obs_pre = (JSONObject)obj.get("obs_pre");
 
-    String[] parts = message.split(":");
-    speedX = Double.parseDouble(parts[0]);
-    angle = Double.parseDouble(parts[1]);
-    trackPos = Double.parseDouble(parts[2]);
-    damage = Double.parseDouble(parts[3]);
-    lastDamage = Double.parseDouble(parts[4]);
-    lastAngle = Double.parseDouble(parts[5]);
+    JSONArray jsonTrack = (JSONArray)obs.get("track");
+    JSONArray jsonTrack_pre = (JSONArray)obs_pre.get("track");
+
+    track = new double[jsonTrack.length()];
+    track_pre = new double[jsonTrack.length()];
+
+    for (int i = 0; i < jsonTrack.length(); i++) {
+      track[i] = jsonTrack.getDouble(i);
+      track_pre[i] = jsonTrack_pre.getDouble(i);
+    }
+
+    speedX = obs.getDouble("speedX");
+    angle = obs.getDouble("angle");
+    trackPos = obs.getDouble("trackPos");
+    damage = obs.getDouble("damage");
+
+    speedX_pre = obs_pre.getDouble("speedX");
+    angle_pre = obs_pre.getDouble("angle");
+    trackPos_pre = obs_pre.getDouble("trackPos");
+    damage_pre = obs_pre.getDouble("damage");
   }
 
   // Return a positive value propotional to the error of the speed from the Goal, penalizing if it's too fast
@@ -168,70 +177,80 @@ public class EchoServer {
 
   public static void setRewardLimitRoadToCenterRoad(){
 
-    System.out.println(eGoals() + " limit to center");
+    System.out.println(trackPos + " limit to center");
 
-    reward = 60 - eGoals();
+    reward += 60 - eGoals();
   }
 
 
   public static void setRewardOffRoadToLimitRoad(){
 
-    System.out.println(eGoals() + " off to limit");
+    System.out.println(trackPos + " off to limit");
 
-    reward = 30 - eGoals();
+    reward += 30 - eGoals();
   }
 
   public static void setRewardRightOffRoad(){
 
-    System.out.println(eGoals() + " rightOffRoad");
+    System.out.println(trackPos + " rightOffRoad");
 
-    reward = -20 - 10*angle - eGoals();
+    reward += -20 - 10*angle - eGoals();
   }
 
   public static void setRewardLeftOffRoad(){
-    System.out.println(eGoals() + " leftOffRoad" + angle);
+    System.out.println(trackPos + " leftOffRoad" + angle);
 
-    reward = -20 + 10*angle - eGoals();
+    reward += -20 + 10*angle - eGoals();
   }
 
   public static void setRewardCenterRoad(){
-    reward = 50 - eGoals();
+    reward += 50 - eGoals();
 
-    System.out.println(eGoals() + " center");
+    System.out.println(trackPos + " center");
   }
 
   public static void setRewardDamage(){
-    reward = -40 - eGoals();
+    reward += -40 - eGoals();
 
-    System.out.println(eGoals() + "damage");
+    System.out.println(trackPos + "damage");
   }
 
   public static void setRewardLimitRoad(){
-    reward = 20 - eGoals();
+    reward += 20 - eGoals();
 
-    System.out.println(eGoals() + " limitRoad");
+    System.out.println(trackPos + " limitRoad");
   }
 
   public static void setRewardFromStuckToLeftOffRoad()
   {
     counter = 0;
-    reward = -20 + 10*angle - eGoals();
+    reward += -20 + 10*angle - eGoals();
 
-    System.out.println(eGoals() + " leftOffRoad");
+    System.out.println(trackPos + " leftOffRoad");
   }
 
   public static void setRewardFromStuckToRightOffRoad()
   {
     counter = 0;
-    reward = -20 - 10*angle - eGoals();
-    System.out.println(eGoals() + " rightOffRoad");
+    reward += -20 - 10*angle - eGoals();
+    System.out.println(trackPos + " rightOffRoad");
   }
 
   public static void setRewardStuck()
   {
     counter += 10;
-    reward = -40 - eGoals() - counter;
-    System.out.println(eGoals() + " stuck");
+    reward += -40 - eGoals() - counter;
+    System.out.println(trackPos + " stuck");
+  }
+
+  public static void setRewardGoingStraight()
+  {
+    System.out.println("straight");
+  }
+
+  public static void setRewardTurning()
+  {
+    System.out.println("turning");
   }
 
   public static boolean isCenterRoad(){
@@ -243,58 +262,36 @@ public class EchoServer {
   }
 
   public static boolean isRightOffRoad(){
-    return trackPos <= -1;
-  }
-
-  public static boolean isLeftOffRoad(){
     return trackPos >= 1;
   }
 
+  public static boolean isLeftOffRoad(){
+    return trackPos <= -1;
+  }
+
   public static boolean isDamage(){
-    return damage > lastDamage;
+    return damage > damage_pre;
   }
 
   public static boolean isStuck(){
     return (trackPos >= 1 || trackPos <= -1) && speedX < 10;
   }
 
+  public static boolean isTurning(){
+    return (track[9] < 50) && angle < 0.2 && angle > -0.2 && !isLeftOffRoad() && !isRightOffRoad();
+  }
 
   public void rlevent(String o, String pre_o) {}
   public void reset() { counter = 0; }
-    // public void post(String u, String s) {}
-    // public void monday(String u, String s) {}
-    // public void friday(String u, String s) {}
 
   public static void response(){
-    out.println(reward);
+    if(!isReset){
+      out.println(reward);
+    }
   }
-
 
   public static void resetAgent(){
+    isReset = true;
     out.println("reset");
   }
-    //
-    // public static void timer_handler(String m){
-    //   String hostName = "localhost";
-    //   int portNumber = 3001;
-    //
-    //   try {
-    //     Socket echoSocket = new Socket(hostName, portNumber);
-    //     PrintWriter out =
-    //           new PrintWriter(echoSocket.getOutputStream(), true);
-    //     BufferedReader in =
-    //           new BufferedReader(
-    //               new InputStreamReader(echoSocket.getInputStream()));
-    //
-    //     out.println(m);
-    //     System.out.println("Diaspora answer: " + in.readLine());
-    //
-    //   } catch (UnknownHostException e) {
-    //     System.err.println("Don't know about host " + hostName);
-    //     System.exit(1);
-    //   } catch (IOException e) {
-    //     System.err.println("Couldn't get I/O for the connection to " + hostName);
-    //     System.exit(1);
-    //   }
-    // }
 }

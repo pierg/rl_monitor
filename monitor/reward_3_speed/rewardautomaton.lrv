@@ -1,0 +1,133 @@
+Imports
+{
+	import SocketServerPackage.EchoServer;
+}
+
+Global{
+
+	Events{
+		rlevent(obs, preobs) = {EchoServer.rlevent()}
+		reset() = {EchoServer.reset()}
+	}
+
+	Property trackPos{
+
+		States{
+			Bad{rightOffRoad leftOffRoad damage stuck default}
+			Normal{centerRoad limitRoad}
+			Starting{start}
+		}
+
+		Transitions{
+			start->centerRoad[rlevent\\EchoServer.setRewardCenterRoad();]
+
+			start->start[reset()\\EchoServer.reward = 0;]
+			centerRoad->start[reset()\\EchoServer.reward = 0;]
+			leftOffRoad->start[reset()\\EchoServer.reward = 0;]
+			rightOffRoad->start[reset()\\EchoServer.reward = 0;]
+			limitRoad->start[reset()\\EchoServer.reward = 0;]
+			damage->start[reset()\\EchoServer.reward = 0;]
+			stuck->start[reset()\\EchoServer.reward = 0;]
+			default->start[reset()\\EchoServer.reward = 0;]
+
+			centerRoad->damage[rlevent\EchoServer.isDamage()\EchoServer.setRewardDamage();]
+
+			centerRoad->centerRoad[rlevent\EchoServer.isCenterRoad()\EchoServer.setRewardCenterRoad();]
+
+			centerRoad->limitRoad[rlevent\EchoServer.isLimitRoad()\EchoServer.setRewardLimitRoad();]
+
+
+			rightOffRoad->stuck[rlevent\EchoServer.isStuck()\EchoServer.setRewardStuck();]
+
+			rightOffRoad->damage[rlevent\EchoServer.isDamage()\EchoServer.setRewardDamage();]
+
+			rightOffRoad->limitRoad[rlevent\EchoServer.isLimitRoad()\EchoServer.setRewardOffRoadToLimitRoad();]
+
+			rightOffRoad->rightOffRoad[rlevent\EchoServer.isRightOffRoad()\EchoServer.setRewardRightOffRoad();]
+
+
+			leftOffRoad->stuck[rlevent\EchoServer.isStuck()\EchoServer.setRewardStuck();]
+
+			leftOffRoad->damage[rlevent\EchoServer.isDamage()\EchoServer.setRewardDamage();]
+
+			leftOffRoad->limitRoad[rlevent\EchoServer.isLimitRoad()\EchoServer.setRewardOffRoadToLimitRoad();]
+
+			leftOffRoad->leftOffRoad[rlevent\EchoServer.isLeftOffRoad()\EchoServer.setRewardLeftOffRoad();]
+
+
+			limitRoad->damage[rlevent\EchoServer.isDamage()\EchoServer.setRewardDamage();]
+
+			limitRoad->centerRoad[rlevent\EchoServer.isCenterRoad()\EchoServer.setRewardLimitRoadToCenterRoad();]
+
+			limitRoad->limitRoad[rlevent\EchoServer.isLimitRoad()\EchoServer.setRewardLimitRoad();]
+
+			limitRoad->rightOffRoad[rlevent\EchoServer.isRightOffRoad()\EchoServer.setRewardRightOffRoad();]
+
+			limitRoad->leftOffRoad[rlevent\EchoServer.isLeftOffRoad()\EchoServer.setRewardLeftOffRoad();]
+
+
+			damage->stuck[rlevent\EchoServer.isStuck()\EchoServer.setRewardStuck();]
+
+			damage->centerRoad[rlevent\EchoServer.isCenterRoad()\EchoServer.setRewardCenterRoad();]
+
+			damage->leftOffRoad[rlevent\EchoServer.isLeftOffRoad()\EchoServer.setRewardLeftOffRoad();]
+
+			damage->rightOffRoad[rlevent\EchoServer.isRightOffRoad()\EchoServer.setRewardRightOffRoad();]
+
+			damage->limitRoad[rlevent\EchoServer.isLimitRoad()\EchoServer.setRewardLimitRoad();]
+
+
+			stuck->stuck[rlevent\EchoServer.isStuck()\EchoServer.setRewardStuck();]
+
+			stuck->leftOffRoad[rlevent\EchoServer.isLeftOffRoad()\EchoServer.setRewardFromStuckToLeftOffRoad();]
+
+			stuck->rightOffRoad[rlevent\EchoServer.isRightOffRoad()\EchoServer.setRewardFromStuckToRightOffRoad();]
+
+			start->default[rlevent()\\EchoServer.reward = 0;EchoServer.resetAgent();]
+			centerRoad->default[rlevent()\\EchoServer.reward = 0;EchoServer.resetAgent();]
+			leftOffRoad->default[rlevent()\\EchoServer.reward = 0;EchoServer.resetAgent();]
+			rightOffRoad->default[rlevent()\\EchoServer.reward = 0;EchoServer.resetAgent();]
+			limitRoad->default[rlevent()\\EchoServer.reward = 0;EchoServer.resetAgent();]
+			damage->default[rlevent()\\EchoServer.reward = 0;EchoServer.resetAgent();]
+			stuck->default[rlevent()\\EchoServer.reward = 0;EchoServer.resetAgent();]
+		}
+
+	}
+
+
+	Property speed{
+
+		States{
+			Bad{default}
+			Normal{goingStraight turning}
+			Starting{start}
+		}
+
+		Transitions{
+			start->start[reset()\\EchoServer.reward = 0;EchoServer.response();]
+			goingStraight->start[reset()\\EchoServer.reward = 0;EchoServer.response();]
+			turning->start[reset()\\EchoServer.reward = 0;EchoServer.response();]
+			default->start[reset()\\EchoServer.reward = 0;EchoServer.response();]
+
+
+			start->goingStraight[rlevent()\\EchoServer.setRewardGoingStraight();EchoServer.response();]
+
+
+			goingStraight->turning[rlevent()\EchoServer.isTurning()\EchoServer.setRewardTurning();EchoServer.response();]
+
+			goingStraight->goingStraight[rlevent()\\EchoServer.setRewardGoingStraight();EchoServer.response();]
+
+
+			turning->turning[rlevent()\EchoServer.isTurning()\EchoServer.setRewardTurning();EchoServer.response();]
+
+			turning->goingStraight[rlevent()\\EchoServer.setRewardTurning();EchoServer.response();]
+
+
+			start->default[rlevent()\\EchoServer.reward = 0;EchoServer.resetAgent();]
+			goingStraight->default[rlevent()\\EchoServer.reward = 0;EchoServer.resetAgent();]
+			turning->default[rlevent()\\EchoServer.reward = 0;EchoServer.resetAgent();]
+		}
+
+	}
+
+}

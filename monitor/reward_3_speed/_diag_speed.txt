@@ -1,0 +1,19 @@
+digraph _logic_speed {
+rankdir=LR;
+node [shape = circle]; goingStraight turning start;
+node [shape = octagon]; default;
+node [shape = point]; _s_s;
+_s_s -> start;
+default -> start [ label = "(1) reset\\\\EchoServer . reward = 0 ; EchoServer . response ( ) ; "];
+goingStraight -> start [ label = "(1) reset\\\\EchoServer . reward = 0 ; EchoServer . response ( ) ; "];
+goingStraight -> turning [ label = "(2) rlevent\\EchoServer . isTurning ( ) \\EchoServer . setRewardTurning ( ) ; EchoServer . response ( ) ; "];
+goingStraight -> goingStraight [ label = "(3) rlevent\\\\EchoServer . setRewardGoingStraight ( ) ; EchoServer . response ( ) ; "];
+goingStraight -> default [ label = "(4) rlevent\\\\EchoServer . reward = 0 ; EchoServer . resetAgent ( ) ; "];
+turning -> start [ label = "(1) reset\\\\EchoServer . reward = 0 ; EchoServer . response ( ) ; "];
+turning -> turning [ label = "(2) rlevent\\EchoServer . isTurning ( ) \\EchoServer . setRewardTurning ( ) ; EchoServer . response ( ) ; "];
+turning -> goingStraight [ label = "(3) rlevent\\\\EchoServer . setRewardTurning ( ) ; EchoServer . response ( ) ; "];
+turning -> default [ label = "(4) rlevent\\\\EchoServer . reward = 0 ; EchoServer . resetAgent ( ) ; "];
+start -> start [ label = "(1) reset\\\\EchoServer . reward = 0 ; EchoServer . response ( ) ; "];
+start -> goingStraight [ label = "(2) rlevent\\\\EchoServer . setRewardGoingStraight ( ) ; EchoServer . response ( ) ; "];
+start -> default [ label = "(3) rlevent\\\\EchoServer . reward = 0 ; EchoServer . resetAgent ( ) ; "];
+}
