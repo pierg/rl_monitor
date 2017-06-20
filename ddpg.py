@@ -89,18 +89,18 @@ def playGame(train_indicator=1):    #1 means Train, 0 means simply Run
         rewardsPerEpisode += "rewardsPerEpisode{" + str(iteration) + "} = ["
         lastEpisodeStep = 0
 
-        copy("originalmodel/actormodel.h5", "actormodel.h5")
-        copy("originalmodel/criticmodel.h5", "criticmodel.h5")
-        copy("originalmodel/actormodel.json", "actormodel.json")
-        copy("originalmodel/criticmodel.json", "criticmodel.json")
+        #copy("originalmodel/actormodel.h5", "actormodel.h5")
+        #copy("originalmodel/criticmodel.h5", "criticmodel.h5")
+        #copy("originalmodel/actormodel.json", "actormodel.json")
+        #copy("originalmodel/criticmodel.json", "criticmodel.json")
 
         #Now load the weight
         print("Now we load the weight")
         try:
-            actor.model.load_weights("actormodel.h5")
-            critic.model.load_weights("criticmodel.h5")
-            actor.target_model.load_weights("actormodel.h5")
-            critic.target_model.load_weights("criticmodel.h5")
+            actor.model.load_weights("originalmodel/actormodel.h5")
+            critic.model.load_weights("originalmodel/criticmodel.h5")
+            actor.target_model.load_weights("originalmodel/actormodel.h5")
+            critic.target_model.load_weights("originalmodel/criticmodel.h5")
             print("Weight load successfully")
         except:
             print("Cannot find the weight")
