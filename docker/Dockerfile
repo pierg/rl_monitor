@@ -5,8 +5,10 @@ FROM ubuntu:xenial
 RUN apt-get update
 
 #Install git and python
-RUN apt-get install -y git \
+RUN apt-get install -y apt-utils \
+    git \
     python-dev \
+    apt-utils \
     python-pip && \
     pip install --upgrade pip
 
@@ -18,7 +20,8 @@ RUN export TF_BINARY_URL=https://storage.googleapis.com/tensorflow/linux/cpu/ten
     pip install --upgrade $TF_BINARY_URL
     
 #Dependencies for gym-torcs
-RUN apt-get install -y xautomation \
+RUN apt-get install -y python3 \
+    xautomation \
     libglib2.0-dev \
     libgl1-mesa-dev \
     libglu1-mesa-dev \
@@ -30,24 +33,30 @@ RUN apt-get install -y xautomation \
     libxmu-dev \
     libxrender-dev \
     libxrandr-dev \
-    libpng12-dev && \
-    pip install gym && \
+    libpng12-dev
+
+RUN pip install gym && \
     pip install numpy && \
     pip install h5py
-   
-#Install gym_torcs
-RUN git clone https://github.com/ugo-nama-kun/gym_torcs.git && \
-    cd gym_torcs/vtorcs-RL-color && \
-    ./configure && \
+
+RUN git clone --branch gym_torcs --single-branch https://github.com/pierg/rl_monitor.git  && \
+    cd rl_monitor/vtorcs-RL-color && \
+    chmod 777 configure && \
+    ./configure
+  
+RUN cd rl_monitor/vtorcs-RL-color && \
+    make clean
+
+RUN cd rl_monitor/vtorcs-RL-color && \
     make && \
     make install && \
-    make datainstall && \
-    cd ../..
+    make datainstall
+
+RUN apt-get install -y default-jdk \
+    aspectj
+
+RUN cd rl_monitor/monitor && \
+    make compile
     
-#DDPG Keras Torcs
-RUN git clone https://github.com/yanpanlau/DDPG-Keras-Torcs.git && \
-    cd DDPG-Keras-Torcs && \
-    cp *.* ../gym_torcs && \
-    cd ..
-    
-WORKDIR gym_torcs/
+
+WORKDIR rl_monitor/

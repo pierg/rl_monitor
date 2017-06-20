@@ -1,0 +1,137 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE nta PUBLIC '-//Uppaal Team//DTD Flat System 1.1//EN' 'http://www.it.uu.se/research/group/darts/uppaal/flat-1_2.dtd'>
+<nta>
+	<declaration>// Place global declarations here.</declaration>
+	<template>
+		<name x="5" y="5">Template</name>
+		<declaration>// Place local declarations here.
+typedef int[-3,3] TrackPositions;
+int position;
+int reward;</declaration>
+		<location id="id0" x="-288" y="25">
+			<name x="-348" y="0">outLeft</name>
+		</location>
+		<location id="id1" x="204" y="25">
+			<name x="212" y="0">outRight</name>
+		</location>
+		<location id="id2" x="-42" y="-238">
+			<name x="-68" y="-221">center</name>
+		</location>
+		<init ref="id2"/>
+		<transition>
+			<source ref="id1"/>
+			<target ref="id1"/>
+			<label kind="guard" x="391" y="-110">position &gt; 20</label>
+			<label kind="assignment" x="391" y="-93">position=20,
+reward=-10</label>
+			<nail x="340" y="-136"/>
+			<nail x="399" y="-17"/>
+		</transition>
+		<transition>
+			<source ref="id0"/>
+			<target ref="id0"/>
+			<label kind="guard" x="-535" y="-93">position &lt; -20</label>
+			<label kind="assignment" x="-535" y="-76">position=-20,
+reward=-10</label>
+			<nail x="-399" y="-85"/>
+			<nail x="-450" y="-8"/>
+		</transition>
+		<transition>
+			<source ref="id0"/>
+			<target ref="id0"/>
+			<label kind="select" x="-629" y="51">move:TrackPositions</label>
+			<label kind="guard" x="-629" y="68">(position&lt;-10) &amp;&amp; (position &gt;= -20)</label>
+			<label kind="assignment" x="-629" y="85">position = position+move,
+reward=-5</label>
+			<nail x="-382" y="25"/>
+			<nail x="-306" y="102"/>
+		</transition>
+		<transition>
+			<source ref="id1"/>
+			<target ref="id1"/>
+			<label kind="select" x="280" y="51">move:TrackPositions</label>
+			<label kind="guard" x="280" y="68">(position &gt; 10) &amp;&amp; (position &lt;= 20)</label>
+			<label kind="assignment" x="280" y="85">position = position+move,
+reward=-5</label>
+			<nail x="297" y="25"/>
+			<nail x="238" y="93"/>
+		</transition>
+		<transition>
+			<source ref="id2"/>
+			<target ref="id2"/>
+			<label kind="select" x="-102" y="-374">move:TrackPositions</label>
+			<label kind="guard" x="-102" y="-357">(position &gt;= -10) &amp;&amp; (position &lt;= 10)</label>
+			<label kind="assignment" x="-102" y="-340">position = position+move,
+reward = 5</label>
+			<nail x="-102" y="-297"/>
+			<nail x="0" y="-297"/>
+		</transition>
+		<transition>
+			<source ref="id2"/>
+			<target ref="id0"/>
+			<label kind="select" x="-357" y="-187">move:TrackPositions</label>
+			<label kind="guard" x="-357" y="-170">position &lt; -10</label>
+			<label kind="assignment" x="-357" y="-153">position = position+move,
+reward=-1</label>
+			<nail x="-76" y="-238"/>
+			<nail x="-289" y="-8"/>
+		</transition>
+		<transition>
+			<source ref="id1"/>
+			<target ref="id2"/>
+			<label kind="select" x="119" y="-204">move:TrackPositions</label>
+			<label kind="guard" x="119" y="-187">position &lt;= 10</label>
+			<label kind="assignment" x="119" y="-170">position = position + move,
+reward=-1</label>
+			<nail x="212" y="-25"/>
+			<nail x="8" y="-238"/>
+		</transition>
+		<transition>
+			<source ref="id0"/>
+			<target ref="id2"/>
+			<label kind="select" x="-238" y="-17">move:TrackPositions</label>
+			<label kind="guard" x="-238" y="0">position &gt;= -10</label>
+			<label kind="assignment" x="-238" y="17">position = position+move,
+reward=5</label>
+		</transition>
+		<transition>
+			<source ref="id2"/>
+			<target ref="id1"/>
+			<label kind="select" x="-51" y="-85">move:TrackPositions</label>
+			<label kind="guard" x="-51" y="-68">position &gt; 10</label>
+			<label kind="assignment" x="-51" y="-51">position = position +move,
+reward=5</label>
+		</transition>
+	</template>
+	<system>// Place template instantiations here.
+Monitor = Template();
+// List one or more processes to be composed into a system.
+system Monitor;
+    </system>
+	<queries>
+		<query>
+			<formula>E[](Monitor.outLeft imply (Monitor.position &lt; -10))
+			</formula>
+			<comment>- There exists a path where if the monitor goes out left it stays there forever.
+Satisfied, since it is possible that the car never fixes its trajectory.
+
+			</comment>
+		</query>
+		<query>
+			<formula>A[](Monitor.outLeft imply (Monitor.position &lt; -10))
+			</formula>
+			<comment>- For all paths it is always the case that the if the monitor went out left it will never come back to the center.
+Not satisfied, since it is possible for the car to fix its trajectory
+
+
+			</comment>
+		</query>
+		<query>
+			<formula>A[](Monitor.center)
+			</formula>
+			<comment>- The monitor stays always in ther center.
+Not satisfied but not surprising.
+			</comment>
+		</query>
+	</queries>
+</nta>
