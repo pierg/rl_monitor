@@ -118,7 +118,7 @@ class TorcsEnv:
                     action_torcs['gear'] = 5
                 if client.S.d['speedX'] > 170:
                     action_torcs['gear'] = 6
-                    
+
         # Save the privious full-obs from torcs for the reward calculation
         obs_pre = copy.deepcopy(client.S.d)
 
@@ -184,7 +184,7 @@ class TorcsEnv:
 
         self.time_step += 1
 
-        return self.get_obs(), self.reward(obs, obs_pre), client.R.d['meta'], {}, obs_pre == obs
+        return self.get_obs(), self.reward(obs, obs_pre, u), client.R.d['meta'], {}, obs_pre == obs
 
     def reset(self, relaunch=False):
         #print("Reset")

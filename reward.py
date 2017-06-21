@@ -17,13 +17,13 @@ class State:
     	self.obs = obs
     	self.obs_pre = obs_pre
 
-def reward(obs, obs_pre):
+def reward(obs, obs_pre, action):
 
 	sp = np.array(obs['speedX'])
 
 	#message = str(sp) + ":" + str(obs['angle']) + ":" + str(obs['trackPos']) + ":" + str(obs['damage']) + ":" + str(obs_pre['damage']) + ":" + str(obs_pre['angle'])
 
-	message = json.dumps({"obs": obs, "obs_pre": obs_pre}) 
+	message = json.dumps({"obs": obs, "obs_pre": obs_pre, "action": action}) 
 
 	reward = send_message_to_monitor(message).replace('n', '').replace('\\', '').replace('\'', '')
 
