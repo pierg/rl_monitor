@@ -55,7 +55,7 @@ RUN cd rl_monitor/vtorcs-RL-color && \
 RUN apt-get install -y default-jdk \
     aspectj
 
-RUN cd rl_monitor/monitor && \
+RUN cd rl_monitor/monitor/reward_3_speed && \
     make compile
 
 RUN apt-get install screen
