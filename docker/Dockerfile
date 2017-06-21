@@ -57,6 +57,11 @@ RUN apt-get install -y default-jdk \
 
 RUN cd rl_monitor/monitor && \
     make compile
+
+RUN apt-get install screen
+
+ADD practice.xml ~/.torcs/config/raceman
+ADD practice.xml /usr/local/share/games/torcs/config/raceman
     
 
 WORKDIR rl_monitor/

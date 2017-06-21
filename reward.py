@@ -23,7 +23,7 @@ def reward(obs, obs_pre, action):
 
 	#message = str(sp) + ":" + str(obs['angle']) + ":" + str(obs['trackPos']) + ":" + str(obs['damage']) + ":" + str(obs_pre['damage']) + ":" + str(obs_pre['angle'])
 
-	message = json.dumps({"obs": obs, "obs_pre": obs_pre, "action": action}) 
+	message = json.dumps({"obs": obs, "obs_pre": obs_pre}) 
 
 	reward = send_message_to_monitor(message).replace('n', '').replace('\\', '').replace('\'', '')
 
