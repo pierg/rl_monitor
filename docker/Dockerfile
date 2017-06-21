@@ -60,6 +60,9 @@ RUN cd rl_monitor/monitor/reward_3_speed && \
 
 RUN apt-get install screen
 
+RUN apt-get install -y x11vnc xvfb 
+RUN mkdir ~/.vnc
+
 ADD practice.xml ~/.torcs/config/raceman
 ADD practice.xml /usr/local/share/games/torcs/config/raceman
     
