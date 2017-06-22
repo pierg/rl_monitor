@@ -1,0 +1,11 @@
+sudo docker run -i -t gym_torcs /bin/bash
+	Xvfb :1 -screen 0 800x600x16 &
+	x11vnc -forever -create -display :1.0 &
+
+sudo docker exec -i -t CONTAINER_ID /bin/bash
+	cd monitor/reward_3_speed
+	make run
+
+sudo docker exec -i -t CONTAINER_ID /bin/bash
+	export DISPLAY=:1.0
+	python ddpg.py
