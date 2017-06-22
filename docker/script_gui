@@ -1,4 +1,15 @@
-xhost +
-export DISPLAY=:0.0
-sudo docker run -i -t -e DISPLAY=$DISPLAY -v /tmp/.X11-unix --net=host gym_torcs /bin/bash
-xhost -
+#xhost +
+#export DISPLAY=:0.0
+#sudo docker run -i -t -e DISPLAY=$DISPLAY -v /tmp/.X11-unix --net=host gym_torcs /bin/bash
+#xhost -
+
+sudo docker run -i -t gym_torcs /bin/bash
+	Xvfb :1 -screen 0 800x600x16 &
+	x11vnc -forever -create -display :1.0
+
+sudo docker run -i -t gym_torcs /bin/bash
+	cd monitor/reward_3_speed
+	make run
+
+sudo docker run -i -t gym_torcs /bin/bash
+	python ddpg.py

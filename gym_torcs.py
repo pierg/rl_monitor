@@ -33,9 +33,10 @@ class TorcsEnv:
         os.system('pkill torcs')
         time.sleep(0.5)
         if self.vision is True:
-            os.system('torcs -nofuel -nodamage -nolaptime -vision &')
+            os.system('torcs -nofuel -nodamage -nolaptime -vision -r ~/.torcs/config/raceman/pratice.xml &')
         else:
-            os.system('torcs -nofuel -nolaptime &')
+            os.system('torcs -nofuel -nolaptime -r ~/.torcs/config/raceman/pratice.xml &')
+
         time.sleep(0.5)
         os.system('sh autostart.sh')
         time.sleep(0.5)
@@ -229,9 +230,9 @@ class TorcsEnv:
         os.system('pkill torcs')
         time.sleep(0.5)
         if self.vision is True:
-            os.system('torcs -nofuel -nodamage -nolaptime -vision &')
+            os.system('torcs -nofuel -nodamage -nolaptime -vision -r ~/.torcs/config/raceman/pratice.xml &')
         else:
-            os.system('torcs -nofuel -nolaptime &')
+            os.system('torcs -nofuel -nolaptime -r ~/.torcs/config/raceman/pratice.xml &')
         time.sleep(0.5)
         os.system('sh autostart.sh')
         time.sleep(0.5)
