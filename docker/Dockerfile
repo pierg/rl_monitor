@@ -69,6 +69,9 @@ ADD practice.xml ~/.torcs/config/raceman
 ADD practice.xml /usr/local/share/games/torcs/config/raceman
 
 EXPOSE 80
-    
+
+ENTRYPOINT ["Xvfb :1 -screen 0 800x600x16 &"]
+ENTRYPOINT ["x11vnc -forever -create -display :1.0 &"]
+ENTRYPOINT ["export DISPLAY=:1.0 &"]
 
 WORKDIR rl_monitor/
