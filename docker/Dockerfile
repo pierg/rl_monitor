@@ -66,5 +66,6 @@ RUN mkdir ~/.vnc
 ADD practice.xml ~/.torcs/config/raceman
 ADD practice.xml /usr/local/share/games/torcs/config/raceman
     
+EXPOSE 80
 
 WORKDIR rl_monitor/
