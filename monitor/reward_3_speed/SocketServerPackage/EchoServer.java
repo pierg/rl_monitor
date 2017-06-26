@@ -56,12 +56,14 @@ public class EchoServer {
   public static double trackPos;
   public static double damage;
   public static double[] track;
+  public static double[] opponents;
 
   public static double speedX_pre;
   public static double angle_pre;
   public static double trackPos_pre;
   public static double damage_pre;
   public static double[] track_pre;
+  public static double[] opponents_pre;
 
   private static int counter = 0;
 
@@ -122,14 +124,23 @@ public class EchoServer {
 
     JSONArray jsonTrack = (JSONArray)obs.get("track");
     JSONArray jsonTrack_pre = (JSONArray)obs_pre.get("track");
+    JSONArray jsonOpponents = (JSONArray)obs.get("opponents");
+    JSONArray jsonOpponents_pre = (JSONArray)obs_pre.get("opponents");
 
     track = new double[jsonTrack.length()];
     track_pre = new double[jsonTrack.length()];
+    opponents = new double[jsonOpponents.length()];
+    opponents_pre = new double[jsonOpponents.length()];
 
     for (int i = 0; i < jsonTrack.length(); i++) {
       track[i] = jsonTrack.getDouble(i);
       track_pre[i] = jsonTrack_pre.getDouble(i);
     }
+
+    for (int i = 0; i < jsonOpponents.length(); i++) {
+      opponents[i] = jsonOpponents.getDouble(i);
+      opponents_pre[i] = jsonOpponents_pre.getDouble(i);
+    }    
 
     speedX = obs.getDouble("speedX");
     angle = obs.getDouble("angle");

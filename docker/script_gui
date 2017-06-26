@@ -1,4 +1,0 @@
-xhost +
-export DISPLAY=:0.0
-sudo docker run -i -t -e DISPLAY=$DISPLAY -v /tmp/.X11-unix --net=host gym_torcs /bin/bash
-xhost -
