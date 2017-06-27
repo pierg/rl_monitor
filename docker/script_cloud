@@ -9,3 +9,5 @@ sudo docker exec -i -t CONTAINER_ID /bin/bash
 sudo docker exec -i -t CONTAINER_ID /bin/bash
 	export DISPLAY=:1.0
 	python ddpg.py
+
+	
