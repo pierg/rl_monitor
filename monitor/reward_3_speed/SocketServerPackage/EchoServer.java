@@ -39,6 +39,8 @@ import org.json.*;
 public class EchoServer {
   static PrintWriter out;
   private static boolean isReset;
+  private static int propertiesChecked = 0;
+  private static int propertiesNumber = 2;
 
   // Set the goals to achieve
   private static int goalSpeed = 90;       // Kmh
@@ -51,19 +53,25 @@ public class EchoServer {
 
   public static double reward;
 
+  // Environnement datas
   public static double speedX;
   public static double angle;
   public static double trackPos;
   public static double damage;
-  public static double[] track;
-  public static double[] opponents;
+  public static double track[];
+  public static double opponents[];
 
   public static double speedX_pre;
   public static double angle_pre;
   public static double trackPos_pre;
   public static double damage_pre;
-  public static double[] track_pre;
-  public static double[] opponents_pre;
+  public static double track_pre[];
+  public static double opponents_pre[];
+
+  // Lat action data
+  public static double steer;
+  public static double accel;
+  public static double brake;
 
   private static int counter = 0;
 
@@ -86,19 +94,13 @@ public class EchoServer {
           new InputStreamReader(clientSocket.getInputStream()));
 
         String inputLine;
-            // This loop guarantees that only the messges that are not null are
-            // read. readLine() keeps reading null values in the socket until
-            // the client program writes anything else in the socket. The server
-            // finishes when the client finishes its executing. The server is
-            // able to detect that the client closed the connection to the
-            // socket.
+
         while ((inputLine = in.readLine()) != null) {
           isReset = false;
           reward = 0;
-          //System.out.println("Message receive: " + inputLine);
+          propertiesChecked = 0;
 
           EchoServer a = new EchoServer();
-
           if(inputLine.equals("reset")){
             a.reset();
             continue;
@@ -107,7 +109,7 @@ public class EchoServer {
           prepareResponse(inputLine);
 
           List<String> list = new ArrayList<String>(Arrays.asList(inputLine.split(";")));
-          a.rlevent("1","2");
+          a.rlevent();
         }
       }
     } catch (IOException e) {
@@ -117,10 +119,14 @@ public class EchoServer {
     }
   }
 
+  /**
+   *  Get datas from environnement with JSON message
+   */
   public static void prepareResponse(String message){
     JSONObject obj = new JSONObject(message);
     JSONObject obs = (JSONObject)obj.get("obs");
     JSONObject obs_pre = (JSONObject)obj.get("obs_pre");
+    JSONObject action = (JSONObject)obj.get("action");
 
     JSONArray jsonTrack = (JSONArray)obs.get("track");
     JSONArray jsonTrack_pre = (JSONArray)obs_pre.get("track");
@@ -151,6 +157,10 @@ public class EchoServer {
     angle_pre = obs_pre.getDouble("angle");
     trackPos_pre = obs_pre.getDouble("trackPos");
     damage_pre = obs_pre.getDouble("damage");
+
+    steer = action.getDouble("steer");
+    accel = action.getDouble("accel");
+    brake = action.getDouble("brake");
   }
 
   // Return a positive value propotional to the error of the speed from the Goal, penalizing if it's too fast
@@ -183,12 +193,11 @@ public class EchoServer {
   private static double eGoals()
   {
     return factor*(errorTrackPos());
-    //return 0;
   }
 
   public static void setRewardLimitRoadToCenterRoad(){
 
-    System.out.println(trackPos + " limit to center");
+    System.out.println("limit to center");
 
     reward += 60 - eGoals();
   }
@@ -196,20 +205,20 @@ public class EchoServer {
 
   public static void setRewardOffRoadToLimitRoad(){
 
-    System.out.println(trackPos + " off to limit");
+    System.out.println("off to limit");
 
     reward += 30 - eGoals();
   }
 
   public static void setRewardRightOffRoad(){
 
-    System.out.println(trackPos + " rightOffRoad");
+    System.out.println("rightOffRoad");
 
     reward += -20 - 10*angle - eGoals();
   }
 
   public static void setRewardLeftOffRoad(){
-    System.out.println(trackPos + " leftOffRoad" + angle);
+    System.out.println("leftOffRoad");
 
     reward += -20 + 10*angle - eGoals();
   }
@@ -217,19 +226,19 @@ public class EchoServer {
   public static void setRewardCenterRoad(){
     reward += 50 - eGoals();
 
-    System.out.println(trackPos + " center");
+    System.out.println("center");
   }
 
   public static void setRewardDamage(){
     reward += -40 - eGoals();
 
-    System.out.println(trackPos + "damage");
+    System.out.println("damage");
   }
 
   public static void setRewardLimitRoad(){
     reward += 20 - eGoals();
 
-    System.out.println(trackPos + " limitRoad");
+    System.out.println("limitRoad");
   }
 
   public static void setRewardFromStuckToLeftOffRoad()
@@ -237,21 +246,21 @@ public class EchoServer {
     counter = 0;
     reward += -20 + 10*angle - eGoals();
 
-    System.out.println(trackPos + " leftOffRoad");
+    System.out.println("leftOffRoad");
   }
 
   public static void setRewardFromStuckToRightOffRoad()
   {
     counter = 0;
     reward += -20 - 10*angle - eGoals();
-    System.out.println(trackPos + " rightOffRoad");
+    System.out.println("rightOffRoad");
   }
 
   public static void setRewardStuck()
   {
     counter += 10;
     reward += -40 - eGoals() - counter;
-    System.out.println(trackPos + " stuck");
+    System.out.println("stuck");
   }
 
   public static void setRewardGoingStraight()
@@ -292,8 +301,16 @@ public class EchoServer {
     return (track[9] < 50) && angle < 0.2 && angle > -0.2 && !isLeftOffRoad() && !isRightOffRoad();
   }
 
-  public void rlevent(String o, String pre_o) {}
+  public void rlevent() {}
   public void reset() { counter = 0; }
+
+  public static void propertyChecked(){
+    propertiesChecked++;
+    System.out.println("prop : " + propertiesChecked);
+    if(propertiesChecked == propertiesNumber){
+      response();
+    }
+  }
 
   public static void response(){
     if(!isReset){

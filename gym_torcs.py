@@ -185,7 +185,7 @@ class TorcsEnv:
 
         self.time_step += 1
 
-        return self.get_obs(), self.reward(obs, obs_pre, u), client.R.d['meta'], {}, obs_pre == obs
+        return self.get_obs(), self.reward(obs, obs_pre, this_action), client.R.d['meta'], {}, obs_pre == obs
 
     def reset(self, relaunch=False):
         #print("Reset")

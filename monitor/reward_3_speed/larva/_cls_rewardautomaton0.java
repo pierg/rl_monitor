@@ -96,36 +96,42 @@ else if (_state_id_trackPos==2){
 		if (1==0){}
 		else if ((_occurredEvent(_event,2/*reset*/))){
 		EchoServer .reward =0 ;
+EchoServer .propertyChecked ();
 
 		_state_id_trackPos = 7;//moving to state start
 		_goto_trackPos(_info);
 		}
 		else if ((_occurredEvent(_event,0/*rlevent*/)) && (EchoServer .isStuck ())){
 		EchoServer .setRewardStuck ();
+EchoServer .propertyChecked ();
 
 		_state_id_trackPos = 3;//moving to state stuck
 		_goto_trackPos(_info);
 		}
 		else if ((_occurredEvent(_event,0/*rlevent*/)) && (EchoServer .isCenterRoad ())){
 		EchoServer .setRewardCenterRoad ();
+EchoServer .propertyChecked ();
 
 		_state_id_trackPos = 5;//moving to state centerRoad
 		_goto_trackPos(_info);
 		}
 		else if ((_occurredEvent(_event,0/*rlevent*/)) && (EchoServer .isLeftOffRoad ())){
 		EchoServer .setRewardLeftOffRoad ();
+EchoServer .propertyChecked ();
 
 		_state_id_trackPos = 1;//moving to state leftOffRoad
 		_goto_trackPos(_info);
 		}
 		else if ((_occurredEvent(_event,0/*rlevent*/)) && (EchoServer .isRightOffRoad ())){
 		EchoServer .setRewardRightOffRoad ();
+EchoServer .propertyChecked ();
 
 		_state_id_trackPos = 0;//moving to state rightOffRoad
 		_goto_trackPos(_info);
 		}
 		else if ((_occurredEvent(_event,0/*rlevent*/)) && (EchoServer .isLimitRoad ())){
 		EchoServer .setRewardLimitRoad ();
+EchoServer .propertyChecked ();
 
 		_state_id_trackPos = 6;//moving to state limitRoad
 		_goto_trackPos(_info);
@@ -142,6 +148,7 @@ else if (_state_id_trackPos==4){
 		if (1==0){}
 		else if ((_occurredEvent(_event,2/*reset*/))){
 		EchoServer .reward =0 ;
+EchoServer .propertyChecked ();
 
 		_state_id_trackPos = 7;//moving to state start
 		_goto_trackPos(_info);
@@ -151,24 +158,28 @@ else if (_state_id_trackPos==5){
 		if (1==0){}
 		else if ((_occurredEvent(_event,2/*reset*/))){
 		EchoServer .reward =0 ;
+EchoServer .propertyChecked ();
 
 		_state_id_trackPos = 7;//moving to state start
 		_goto_trackPos(_info);
 		}
 		else if ((_occurredEvent(_event,0/*rlevent*/)) && (EchoServer .isDamage ())){
 		EchoServer .setRewardDamage ();
+EchoServer .propertyChecked ();
 
 		_state_id_trackPos = 2;//moving to state damage
 		_goto_trackPos(_info);
 		}
 		else if ((_occurredEvent(_event,0/*rlevent*/)) && (EchoServer .isCenterRoad ())){
 		EchoServer .setRewardCenterRoad ();
+EchoServer .propertyChecked ();
 
 		_state_id_trackPos = 5;//moving to state centerRoad
 		_goto_trackPos(_info);
 		}
 		else if ((_occurredEvent(_event,0/*rlevent*/)) && (EchoServer .isLimitRoad ())){
 		EchoServer .setRewardLimitRoad ();
+EchoServer .propertyChecked ();
 
 		_state_id_trackPos = 6;//moving to state limitRoad
 		_goto_trackPos(_info);
@@ -185,24 +196,28 @@ else if (_state_id_trackPos==3){
 		if (1==0){}
 		else if ((_occurredEvent(_event,2/*reset*/))){
 		EchoServer .reward =0 ;
+EchoServer .propertyChecked ();
 
 		_state_id_trackPos = 7;//moving to state start
 		_goto_trackPos(_info);
 		}
 		else if ((_occurredEvent(_event,0/*rlevent*/)) && (EchoServer .isStuck ())){
 		EchoServer .setRewardStuck ();
+EchoServer .propertyChecked ();
 
 		_state_id_trackPos = 3;//moving to state stuck
 		_goto_trackPos(_info);
 		}
 		else if ((_occurredEvent(_event,0/*rlevent*/)) && (EchoServer .isLeftOffRoad ())){
 		EchoServer .setRewardFromStuckToLeftOffRoad ();
+EchoServer .propertyChecked ();
 
 		_state_id_trackPos = 1;//moving to state leftOffRoad
 		_goto_trackPos(_info);
 		}
 		else if ((_occurredEvent(_event,0/*rlevent*/)) && (EchoServer .isRightOffRoad ())){
 		EchoServer .setRewardFromStuckToRightOffRoad ();
+EchoServer .propertyChecked ();
 
 		_state_id_trackPos = 0;//moving to state rightOffRoad
 		_goto_trackPos(_info);
@@ -219,12 +234,14 @@ else if (_state_id_trackPos==7){
 		if (1==0){}
 		else if ((_occurredEvent(_event,0/*rlevent*/))){
 		EchoServer .setRewardCenterRoad ();
+EchoServer .propertyChecked ();
 
 		_state_id_trackPos = 5;//moving to state centerRoad
 		_goto_trackPos(_info);
 		}
 		else if ((_occurredEvent(_event,2/*reset*/))){
 		EchoServer .reward =0 ;
+EchoServer .propertyChecked ();
 
 		_state_id_trackPos = 7;//moving to state start
 		_goto_trackPos(_info);
@@ -241,30 +258,35 @@ else if (_state_id_trackPos==1){
 		if (1==0){}
 		else if ((_occurredEvent(_event,2/*reset*/))){
 		EchoServer .reward =0 ;
+EchoServer .propertyChecked ();
 
 		_state_id_trackPos = 7;//moving to state start
 		_goto_trackPos(_info);
 		}
 		else if ((_occurredEvent(_event,0/*rlevent*/)) && (EchoServer .isStuck ())){
 		EchoServer .setRewardStuck ();
+EchoServer .propertyChecked ();
 
 		_state_id_trackPos = 3;//moving to state stuck
 		_goto_trackPos(_info);
 		}
 		else if ((_occurredEvent(_event,0/*rlevent*/)) && (EchoServer .isDamage ())){
 		EchoServer .setRewardDamage ();
+EchoServer .propertyChecked ();
 
 		_state_id_trackPos = 2;//moving to state damage
 		_goto_trackPos(_info);
 		}
 		else if ((_occurredEvent(_event,0/*rlevent*/)) && (EchoServer .isLimitRoad ())){
 		EchoServer .setRewardOffRoadToLimitRoad ();
+EchoServer .propertyChecked ();
 
 		_state_id_trackPos = 6;//moving to state limitRoad
 		_goto_trackPos(_info);
 		}
 		else if ((_occurredEvent(_event,0/*rlevent*/)) && (EchoServer .isLeftOffRoad ())){
 		EchoServer .setRewardLeftOffRoad ();
+EchoServer .propertyChecked ();
 
 		_state_id_trackPos = 1;//moving to state leftOffRoad
 		_goto_trackPos(_info);
@@ -281,30 +303,35 @@ else if (_state_id_trackPos==0){
 		if (1==0){}
 		else if ((_occurredEvent(_event,2/*reset*/))){
 		EchoServer .reward =0 ;
+EchoServer .propertyChecked ();
 
 		_state_id_trackPos = 7;//moving to state start
 		_goto_trackPos(_info);
 		}
 		else if ((_occurredEvent(_event,0/*rlevent*/)) && (EchoServer .isStuck ())){
 		EchoServer .setRewardStuck ();
+EchoServer .propertyChecked ();
 
 		_state_id_trackPos = 3;//moving to state stuck
 		_goto_trackPos(_info);
 		}
 		else if ((_occurredEvent(_event,0/*rlevent*/)) && (EchoServer .isDamage ())){
 		EchoServer .setRewardDamage ();
+EchoServer .propertyChecked ();
 
 		_state_id_trackPos = 2;//moving to state damage
 		_goto_trackPos(_info);
 		}
 		else if ((_occurredEvent(_event,0/*rlevent*/)) && (EchoServer .isLimitRoad ())){
 		EchoServer .setRewardOffRoadToLimitRoad ();
+EchoServer .propertyChecked ();
 
 		_state_id_trackPos = 6;//moving to state limitRoad
 		_goto_trackPos(_info);
 		}
 		else if ((_occurredEvent(_event,0/*rlevent*/)) && (EchoServer .isRightOffRoad ())){
 		EchoServer .setRewardRightOffRoad ();
+EchoServer .propertyChecked ();
 
 		_state_id_trackPos = 0;//moving to state rightOffRoad
 		_goto_trackPos(_info);
@@ -321,36 +348,42 @@ else if (_state_id_trackPos==6){
 		if (1==0){}
 		else if ((_occurredEvent(_event,2/*reset*/))){
 		EchoServer .reward =0 ;
+EchoServer .propertyChecked ();
 
 		_state_id_trackPos = 7;//moving to state start
 		_goto_trackPos(_info);
 		}
 		else if ((_occurredEvent(_event,0/*rlevent*/)) && (EchoServer .isDamage ())){
 		EchoServer .setRewardDamage ();
+EchoServer .propertyChecked ();
 
 		_state_id_trackPos = 2;//moving to state damage
 		_goto_trackPos(_info);
 		}
 		else if ((_occurredEvent(_event,0/*rlevent*/)) && (EchoServer .isCenterRoad ())){
 		EchoServer .setRewardLimitRoadToCenterRoad ();
+EchoServer .propertyChecked ();
 
 		_state_id_trackPos = 5;//moving to state centerRoad
 		_goto_trackPos(_info);
 		}
 		else if ((_occurredEvent(_event,0/*rlevent*/)) && (EchoServer .isLimitRoad ())){
 		EchoServer .setRewardLimitRoad ();
+EchoServer .propertyChecked ();
 
 		_state_id_trackPos = 6;//moving to state limitRoad
 		_goto_trackPos(_info);
 		}
 		else if ((_occurredEvent(_event,0/*rlevent*/)) && (EchoServer .isRightOffRoad ())){
 		EchoServer .setRewardRightOffRoad ();
+EchoServer .propertyChecked ();
 
 		_state_id_trackPos = 0;//moving to state rightOffRoad
 		_goto_trackPos(_info);
 		}
 		else if ((_occurredEvent(_event,0/*rlevent*/)) && (EchoServer .isLeftOffRoad ())){
 		EchoServer .setRewardLeftOffRoad ();
+EchoServer .propertyChecked ();
 
 		_state_id_trackPos = 1;//moving to state leftOffRoad
 		_goto_trackPos(_info);
@@ -395,7 +428,7 @@ else if (_state_id_speed==8){
 		if (1==0){}
 		else if ((_occurredEvent(_event,2/*reset*/))){
 		EchoServer .reward =0 ;
-EchoServer .response ();
+EchoServer .propertyChecked ();
 
 		_state_id_speed = 11;//moving to state start
 		_goto_speed(_info);
@@ -405,21 +438,21 @@ else if (_state_id_speed==9){
 		if (1==0){}
 		else if ((_occurredEvent(_event,2/*reset*/))){
 		EchoServer .reward =0 ;
-EchoServer .response ();
+EchoServer .propertyChecked ();
 
 		_state_id_speed = 11;//moving to state start
 		_goto_speed(_info);
 		}
 		else if ((_occurredEvent(_event,0/*rlevent*/)) && (EchoServer .isTurning ())){
 		EchoServer .setRewardTurning ();
-EchoServer .response ();
+EchoServer .propertyChecked ();
 
 		_state_id_speed = 10;//moving to state turning
 		_goto_speed(_info);
 		}
 		else if ((_occurredEvent(_event,0/*rlevent*/))){
 		EchoServer .setRewardGoingStraight ();
-EchoServer .response ();
+EchoServer .propertyChecked ();
 
 		_state_id_speed = 9;//moving to state goingStraight
 		_goto_speed(_info);
@@ -436,21 +469,21 @@ else if (_state_id_speed==10){
 		if (1==0){}
 		else if ((_occurredEvent(_event,2/*reset*/))){
 		EchoServer .reward =0 ;
-EchoServer .response ();
+EchoServer .propertyChecked ();
 
 		_state_id_speed = 11;//moving to state start
 		_goto_speed(_info);
 		}
 		else if ((_occurredEvent(_event,0/*rlevent*/)) && (EchoServer .isTurning ())){
 		EchoServer .setRewardTurning ();
-EchoServer .response ();
+EchoServer .propertyChecked ();
 
 		_state_id_speed = 10;//moving to state turning
 		_goto_speed(_info);
 		}
 		else if ((_occurredEvent(_event,0/*rlevent*/))){
 		EchoServer .setRewardTurning ();
-EchoServer .response ();
+EchoServer .propertyChecked ();
 
 		_state_id_speed = 9;//moving to state goingStraight
 		_goto_speed(_info);
@@ -467,14 +500,14 @@ else if (_state_id_speed==11){
 		if (1==0){}
 		else if ((_occurredEvent(_event,2/*reset*/))){
 		EchoServer .reward =0 ;
-EchoServer .response ();
+EchoServer .propertyChecked ();
 
 		_state_id_speed = 11;//moving to state start
 		_goto_speed(_info);
 		}
 		else if ((_occurredEvent(_event,0/*rlevent*/))){
 		EchoServer .setRewardGoingStraight ();
-EchoServer .response ();
+EchoServer .propertyChecked ();
 
 		_state_id_speed = 9;//moving to state goingStraight
 		_goto_speed(_info);

@@ -8,15 +8,35 @@ const int FACTOR = 100;
 int goalSpeed = 90;       // Kmh
 int goalTrackPos = 0;     // middle of the lane
 
+// Sub-rewards
+int sp_reward = 0;
+int dam_reward = 0;
+int trp_reward = 0;
+int oppa_reward = 0;
+int oppl_reward = 0;
+int oppr_reward = 0;
+int oppb_reward = 0;
+
 // Reward cumulative returned
 int tot_reward;
 
-int trackPos;
 int speedX;
+int angle;
+int trackPos;
 int damage;
-
-int damage_pre;
 int track[19];
+int opponents[36];
+
+int speedX_pre;
+int angle_pre;
+int trackPos_pre;
+int damage_pre;
+int track_pre[19];
+int opponents_pre[36];
+
+int steer;
+int accel;
+int brake;
 
 // BEGIN SIMULATION VALUES 
 // Distance between the car and the track axis. 
@@ -49,6 +69,17 @@ bool isLeftOffRoad()
     return (trackPos &gt;= 10);
 }
 
+void computeTotalReward(){
+    tot_reward = 0;
+	tot_reward += sp_reward;
+	tot_reward += dam_reward;
+	tot_reward += trp_reward;
+	tot_reward += oppa_reward;
+	tot_reward += oppl_reward;
+	tot_reward += oppr_reward;
+	tot_reward += oppb_reward;
+}
+
 
 
 
@@ -59,11 +90,7 @@ bool isLeftOffRoad()
 </declaration>
 	<template>
 		<name>OpponentsRight</name>
-		<declaration>int reward = 0;
-
-int[0,200] opponents[36];
-
-bool isRightCarDetectedNearby(){
+		<declaration>bool isRightCarDetectedNearby(){
     int i = 0;
     for(i = 13; i &lt; 24; i++){
         if(opponents[i] &lt; 3){
@@ -101,7 +128,9 @@ bool isRightFree(){
         }
     }
     return true;
-}</declaration>
+}
+
+</declaration>
 		<location id="id0" x="-76" y="-68">
 			<name x="-59" y="-76">carToTheRight</name>
 		</location>
@@ -227,11 +256,7 @@ bool isRightFree(){
 	</template>
 	<template>
 		<name>OpponentsBehind</name>
-		<declaration>int reward = 0;
-
-int[0,200] opponents[36];
-
-bool isCarDetectedNearbyBehind(){
+		<declaration>bool isCarDetectedNearbyBehind(){
     int i = 0;
     for(i = 22; i &lt; 15; i++){
         if(opponents[i] &lt; 3){
@@ -394,11 +419,7 @@ bool isFreeBehind(){
 	</template>
 	<template>
 		<name>OpponentsLeft</name>
-		<declaration>int reward = 0;
-
-int[0,200] opponents[36];
-
-bool isLeftCarDetectedNearby(){
+		<declaration>bool isLeftCarDetectedNearby(){
     int i = 0;
     for(i = 0; i &lt; 36; i++){
         if(opponents[i] &lt; 3){
@@ -574,11 +595,7 @@ bool isLeftFree(){
 	</template>
 	<template>
 		<name>OpponentsAhead</name>
-		<declaration>int reward = 0;
-
-int[0,200] opponents[36];
-
-bool isFrontCarDetectedNearby(){
+		<declaration>bool isFrontCarDetectedNearby(){
     int i = 0;
     for(i = 4; i &lt; 15; i++){
         if(opponents[i] &lt; 3){
@@ -741,9 +758,7 @@ bool isFrontFree(){
 	</template>
 	<template>
 		<name x="5" y="5">TrackPos</name>
-		<declaration>int reward = 0;
-
-// Track position guard functions
+		<declaration>// Track position guard functions
 bool isCenter()
 {
     return (-50 &lt;= trackPos &amp;&amp; trackPos &lt;= 50);
@@ -757,19 +772,19 @@ bool isLimitRoad()
 // Track position update functions
 
 void rewardLimitRoad(){
-    reward += 0;
+    trp_reward = 0;
 }
 
 void rewardLeftOffRoad(){
-    reward += -10;
+    trp_reward += -10;
 }
 
 void rewardRightOffRoad(){
-    reward += -10;
+    trp_reward += -10;
 }
 
 void rewardCenter(){
-    reward += +20;
+    trp_reward += +20;
 }
 </declaration>
 		<location id="id20" x="-289" y="-773">
@@ -889,9 +904,7 @@ rewardCenter()</label>
 	</template>
 	<template>
 		<name>Damage</name>
-		<declaration>int reward = 0;
-
-bool isDamaged(){
+		<declaration>bool isDamaged(){
     return damage &gt; damage_pre;
 }
 
@@ -900,11 +913,11 @@ bool isNormal(){
 }
 
 void rewardDamaged(){
-    reward += -40;
+    dam_reward = -40;
 }
 
 void rewardNormal(){
-    reward += 0;
+    dam_reward = 0;
 }</declaration>
 		<location id="id25" x="-289" y="-51">
 			<name x="-272" y="-59">damaged</name>
@@ -1028,16 +1041,13 @@ typedef int[-500, +500] trackPosT;</declaration>
 	</template>
 	<template>
 		<name>Speed</name>
-		<declaration>double angle;
-double track[19];
-
-bool isStuck()
+		<declaration>bool isStuck()
 {
     return (trackPos &gt;= 10 || trackPos &lt;=10) &amp;&amp; speedX &lt; 10;
 }
 
 bool isTurning(){
-    return (track[9] &lt; 100) &amp;&amp; angle &lt; 0.2 &amp;&amp; angle &gt; -0.2 &amp;&amp; !isLeftOffRoad() &amp;&amp; !isRightOffRoad() &amp;&amp; !isStuck();
+    return (track[9] &lt; 10000) &amp;&amp; angle &lt; 20 &amp;&amp; angle &gt; -20 &amp;&amp; !isLeftOffRoad() &amp;&amp; !isRightOffRoad() &amp;&amp; !isStuck();
 }
 </declaration>
 		<location id="id32" x="-407" y="-357">
