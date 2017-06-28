@@ -1,0 +1,1104 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE nta PUBLIC '-//Uppaal Team//DTD Flat System 1.1//EN' 'http://www.it.uu.se/research/group/darts/uppaal/flat-1_2.dtd'>
+<nta>
+	<declaration>// Precision factor: from double to int
+const int FACTOR = 100;
+
+// Set the goals to achieve
+int goalSpeed = 90;       // Kmh
+int goalTrackPos = 0;     // middle of the lane
+
+// Reward cumulative returned
+int tot_reward;
+
+int trackPos;
+int speedX;
+int damage;
+
+int damage_pre;
+int track[19];
+
+// BEGIN SIMULATION VALUES 
+// Distance between the car and the track axis. 
+// The value is normalized w.r.t to the track width: 
+// it is 0 when car is on the axis, -1 when the car is on the right edge of the track and +1 when it is on the left edge of the car. 
+// Values greater than 1 or smaller than -1 mean that the car is outside of the track.
+// We assume a limit between -5 and +5 (* FACTOR)
+typedef int[-500, +500]      trackPos_T;
+typedef int[-5, +5]          move_T;
+typedef int[5, 10]           moveIncrement;
+const int                    trackPos_Right_Limit = 500;
+const int                    trackPos_Left_Limit = -500;
+chan                         trackPos_C;
+// END SIMULATION VALUES
+
+
+// Speed of the car along the longitudinal axis of the car.
+// We assume a limit between 0 and 100 ( *FACTOR)
+typedef int[0, 10000]  speedX_T;
+
+// GLOBAL FUNCTIONS
+
+bool isRightOffRoad()
+{
+    return (trackPos &lt;= -10);
+}
+
+bool isLeftOffRoad()
+{
+    return (trackPos &gt;= 10);
+}
+
+
+
+
+
+
+
+
+</declaration>
+	<template>
+		<name>OpponentsRight</name>
+		<declaration>int reward = 0;
+
+int[0,200] opponents[36];
+
+bool isRightCarDetectedNearby(){
+    int i = 0;
+    for(i = 13; i &lt; 24; i++){
+        if(opponents[i] &lt; 3){
+            return true;
+        }
+    }
+    return false;
+}
+
+bool isRightCarDetected(){
+    int i = 0;
+    for(i = 13; i &lt; 24; i++){
+        if(opponents[i] &lt; 6 &amp;&amp; opponents[i] &gt;= 3){
+            return true;
+        }
+    }
+    return false;
+}
+
+bool isRightCarDetectedFar(){
+    int i = 0;
+    for(i = 13; i &lt; 24; i++){
+        if(opponents[i] &lt; 10 &amp;&amp; opponents[i] &gt;= 6){
+            return true;
+        }
+    }
+    return false;
+}
+
+bool isRightFree(){
+     int i = 0;
+    for(i = 13; i &lt; 24; i++){
+        if(opponents[i] &gt;= 10 ){
+            return false;
+        }
+    }
+    return true;
+}</declaration>
+		<location id="id0" x="-76" y="-68">
+			<name x="-59" y="-76">carToTheRight</name>
+		</location>
+		<location id="id1" x="264" y="-68">
+			<name x="204" y="-102">carCloseToTheRight</name>
+		</location>
+		<location id="id2" x="-697" y="-68">
+			<name x="-722" y="-102">rightFree</name>
+		</location>
+		<location id="id3" x="-331" y="-68">
+			<name x="-314" y="-76">carFarToTheRight</name>
+		</location>
+		<location id="id4" x="-203" y="331">
+			<name x="-186" y="323">start</name>
+		</location>
+		<init ref="id4"/>
+		<transition>
+			<source ref="id1"/>
+			<target ref="id1"/>
+			<label kind="guard" x="331" y="-76">isRightCarDetectedNearby()</label>
+			<nail x="289" y="-85"/>
+			<nail x="323" y="-85"/>
+			<nail x="323" y="-51"/>
+			<nail x="289" y="-51"/>
+		</transition>
+		<transition>
+			<source ref="id0"/>
+			<target ref="id0"/>
+			<label kind="guard" x="-153" y="-153">isRightCarDetected()</label>
+			<nail x="-59" y="-93"/>
+			<nail x="-59" y="-136"/>
+			<nail x="-93" y="-136"/>
+			<nail x="-93" y="-93"/>
+		</transition>
+		<transition>
+			<source ref="id1"/>
+			<target ref="id0"/>
+			<label kind="guard" x="9" y="-51">isRightCarDetected()</label>
+			<nail x="238" y="-51"/>
+			<nail x="-51" y="-51"/>
+		</transition>
+		<transition>
+			<source ref="id4"/>
+			<target ref="id1"/>
+			<label kind="guard" x="272" y="85">isRightCarDetectedNearby()</label>
+			<nail x="-203" y="238"/>
+			<nail x="264" y="238"/>
+		</transition>
+		<transition>
+			<source ref="id0"/>
+			<target ref="id1"/>
+			<label kind="guard" x="-8" y="-102">isRightCarDetectedNearby()</label>
+			<nail x="-51" y="-85"/>
+			<nail x="238" y="-85"/>
+		</transition>
+		<transition>
+			<source ref="id4"/>
+			<target ref="id0"/>
+			<label kind="guard" x="-68" y="85">isRightCarDetected()</label>
+			<nail x="-203" y="238"/>
+			<nail x="-76" y="238"/>
+		</transition>
+		<transition>
+			<source ref="id0"/>
+			<target ref="id3"/>
+			<label kind="guard" x="-280" y="-51">isRightCarDetectedFar()</label>
+			<nail x="-102" y="-51"/>
+			<nail x="-306" y="-51"/>
+		</transition>
+		<transition>
+			<source ref="id3"/>
+			<target ref="id0"/>
+			<label kind="guard" x="-271" y="-102">isRightCarDetected()</label>
+			<nail x="-306" y="-85"/>
+			<nail x="-102" y="-85"/>
+		</transition>
+		<transition>
+			<source ref="id3"/>
+			<target ref="id3"/>
+			<label kind="guard" x="-416" y="-153">isRightCarDetectedFar()</label>
+			<nail x="-314" y="-93"/>
+			<nail x="-314" y="-136"/>
+			<nail x="-348" y="-136"/>
+			<nail x="-348" y="-93"/>
+		</transition>
+		<transition>
+			<source ref="id2"/>
+			<target ref="id2"/>
+			<label kind="guard" x="-850" y="-76">isRightFree()</label>
+			<nail x="-722" y="-51"/>
+			<nail x="-757" y="-50"/>
+			<nail x="-757" y="-84"/>
+			<nail x="-722" y="-85"/>
+		</transition>
+		<transition>
+			<source ref="id3"/>
+			<target ref="id2"/>
+			<label kind="guard" x="-585" y="-51">isRightFree()</label>
+			<nail x="-357" y="-51"/>
+			<nail x="-671" y="-51"/>
+		</transition>
+		<transition>
+			<source ref="id4"/>
+			<target ref="id3"/>
+			<label kind="guard" x="-322" y="85">isRightCarDetectedFar()</label>
+			<nail x="-203" y="238"/>
+			<nail x="-331" y="238"/>
+		</transition>
+		<transition>
+			<source ref="id2"/>
+			<target ref="id3"/>
+			<label kind="guard" x="-611" y="-102">isRightCarDetectedFar()</label>
+			<nail x="-671" y="-85"/>
+			<nail x="-357" y="-85"/>
+		</transition>
+		<transition>
+			<source ref="id4"/>
+			<target ref="id2"/>
+			<label kind="guard" x="-688" y="85">isRightFree()</label>
+			<nail x="-203" y="238"/>
+			<nail x="-697" y="238"/>
+		</transition>
+	</template>
+	<template>
+		<name>OpponentsBehind</name>
+		<declaration>int reward = 0;
+
+int[0,200] opponents[36];
+
+bool isCarDetectedNearbyBehind(){
+    int i = 0;
+    for(i = 22; i &lt; 15; i++){
+        if(opponents[i] &lt; 3){
+            return true;
+        }
+    }
+    return false;
+}
+
+bool isCarDetectedBehind(){
+    int i = 0;
+    for(i = 22; i &lt; 15; i++){
+        if(opponents[i] &lt; 6 &amp;&amp; opponents[i] &gt;= 3){
+            return true;
+        }
+    }
+    return false;
+}
+
+bool isCarDetectedFarBehind(){
+    int i = 0;
+    for(i = 22; i &lt; 15; i++){
+        if(opponents[i] &lt; 15 &amp;&amp; opponents[i] &gt;= 6){
+            return true;
+        }
+        if(i == 5){
+            i = 30;
+        }
+    }
+    return false;
+}
+
+bool isFreeBehind(){
+    int i = 0;
+    for(i = 22; i &lt; 33; i++){
+        if(opponents[i] &gt;= 15 ){
+            return false;
+        }
+    }
+    return true;
+}</declaration>
+		<location id="id5" x="-68" y="238">
+			<name x="-78" y="204">start</name>
+		</location>
+		<location id="id6" x="383" y="-170">
+			<name x="323" y="-204">carCloseBehind</name>
+		</location>
+		<location id="id7" x="43" y="-170">
+			<name x="60" y="-178">carBehind</name>
+		</location>
+		<location id="id8" x="-212" y="-170">
+			<name x="-195" y="-178">carFarbehind</name>
+		</location>
+		<location id="id9" x="-578" y="-170">
+			<name x="-612" y="-204">behindFree</name>
+		</location>
+		<init ref="id5"/>
+		<transition>
+			<source ref="id5"/>
+			<target ref="id6"/>
+			<label kind="guard" x="399" y="25">isCarDetectedNearbyBehind()</label>
+			<nail x="391" y="238"/>
+		</transition>
+		<transition>
+			<source ref="id5"/>
+			<target ref="id7"/>
+			<label kind="guard" x="51" y="25">isCarDetectedBehind()</label>
+			<nail x="42" y="238"/>
+		</transition>
+		<transition>
+			<source ref="id5"/>
+			<target ref="id8"/>
+			<label kind="guard" x="-204" y="25">isCarDetectedFarBehind()</label>
+			<nail x="-212" y="238"/>
+		</transition>
+		<transition>
+			<source ref="id5"/>
+			<target ref="id9"/>
+			<label kind="guard" x="-569" y="25">isFreeBehind()</label>
+			<nail x="-578" y="238"/>
+		</transition>
+		<transition>
+			<source ref="id6"/>
+			<target ref="id6"/>
+			<label kind="guard" x="450" y="-178">isCarDetectedNearbyBehind()</label>
+			<nail x="408" y="-187"/>
+			<nail x="442" y="-187"/>
+			<nail x="442" y="-153"/>
+			<nail x="408" y="-153"/>
+		</transition>
+		<transition>
+			<source ref="id7"/>
+			<target ref="id7"/>
+			<label kind="guard" x="-34" y="-255">isCarDetectedBehind()</label>
+			<nail x="60" y="-195"/>
+			<nail x="60" y="-238"/>
+			<nail x="26" y="-238"/>
+			<nail x="26" y="-195"/>
+		</transition>
+		<transition>
+			<source ref="id6"/>
+			<target ref="id7"/>
+			<label kind="guard" x="136" y="-153">isCarDetectedBehind()</label>
+			<nail x="357" y="-153"/>
+			<nail x="68" y="-153"/>
+		</transition>
+		<transition>
+			<source ref="id7"/>
+			<target ref="id6"/>
+			<label kind="guard" x="110" y="-204">isCarDetectedNearbyBehind()</label>
+			<nail x="68" y="-187"/>
+			<nail x="357" y="-187"/>
+		</transition>
+		<transition>
+			<source ref="id7"/>
+			<target ref="id8"/>
+			<label kind="guard" x="-161" y="-153">isCarDetectedFarBehind()</label>
+			<nail x="17" y="-153"/>
+			<nail x="-187" y="-153"/>
+		</transition>
+		<transition>
+			<source ref="id8"/>
+			<target ref="id7"/>
+			<label kind="guard" x="-152" y="-204">isCarDetectedBehind()</label>
+			<nail x="-187" y="-187"/>
+			<nail x="17" y="-187"/>
+		</transition>
+		<transition>
+			<source ref="id8"/>
+			<target ref="id8"/>
+			<label kind="guard" x="-297" y="-255">isCarDetectedFarBehind()</label>
+			<nail x="-195" y="-195"/>
+			<nail x="-195" y="-238"/>
+			<nail x="-229" y="-238"/>
+			<nail x="-229" y="-195"/>
+		</transition>
+		<transition>
+			<source ref="id9"/>
+			<target ref="id9"/>
+			<label kind="guard" x="-739" y="-178">isFreeBehind()</label>
+			<nail x="-603" y="-153"/>
+			<nail x="-637" y="-153"/>
+			<nail x="-637" y="-187"/>
+			<nail x="-603" y="-187"/>
+		</transition>
+		<transition>
+			<source ref="id8"/>
+			<target ref="id9"/>
+			<label kind="guard" x="-442" y="-153">isFreeBehind()</label>
+			<nail x="-238" y="-153"/>
+			<nail x="-552" y="-153"/>
+		</transition>
+		<transition>
+			<source ref="id9"/>
+			<target ref="id8"/>
+			<label kind="guard" x="-484" y="-204">isCarDetectedFarBehind()</label>
+			<nail x="-552" y="-187"/>
+			<nail x="-238" y="-187"/>
+		</transition>
+	</template>
+	<template>
+		<name>OpponentsLeft</name>
+		<declaration>int reward = 0;
+
+int[0,200] opponents[36];
+
+bool isLeftCarDetectedNearby(){
+    int i = 0;
+    for(i = 0; i &lt; 36; i++){
+        if(opponents[i] &lt; 3){
+            return true;
+        }
+        if(i == 5){
+            i = 30;
+        }
+    }
+    return false;
+}
+
+bool isLeftCarDetected(){
+    int i = 0;
+    for(i = 0; i &lt; 36; i++){
+        if(opponents[i] &lt; 6 &amp;&amp; opponents[i] &gt;= 3){
+            return true;
+        }
+        if(i == 5){
+            i = 30;
+        }
+    }
+    return false;
+}
+
+bool isLeftCarDetectedFar(){
+    int i = 0;
+    for(i = 0; i &lt; 36; i++){
+        if(opponents[i] &lt; 10 &amp;&amp; opponents[i] &gt;= 6){
+            return true;
+        }
+        if(i == 5){
+            i = 30;
+        }
+    }
+    return false;
+}
+
+bool isLeftFree(){
+     int i = 0;
+    for(i = 0; i &lt; 36; i++){
+        if(opponents[i] &gt;= 10 ){
+            return false;
+        }
+        if(i == 5){
+            i = 30;
+        }
+    }
+    return true;
+}</declaration>
+		<location id="id10" x="281" y="-246">
+			<name x="221" y="-280">carCloseToTheLeft</name>
+		</location>
+		<location id="id11" x="-59" y="-246">
+			<name x="-42" y="-254">carToTheLeft</name>
+		</location>
+		<location id="id12" x="-186" y="153">
+			<name x="-169" y="145">start</name>
+		</location>
+		<location id="id13" x="-314" y="-246">
+			<name x="-297" y="-254">carFarToTheLeft</name>
+		</location>
+		<location id="id14" x="-680" y="-246">
+			<name x="-705" y="-280">leftFree</name>
+		</location>
+		<init ref="id12"/>
+		<transition>
+			<source ref="id10"/>
+			<target ref="id10"/>
+			<label kind="guard" x="348" y="-254">isLeftCarDetectedNearby()</label>
+			<nail x="306" y="-263"/>
+			<nail x="340" y="-263"/>
+			<nail x="340" y="-229"/>
+			<nail x="306" y="-229"/>
+		</transition>
+		<transition>
+			<source ref="id11"/>
+			<target ref="id11"/>
+			<label kind="guard" x="-136" y="-331">isLeftCarDetected()</label>
+			<nail x="-42" y="-271"/>
+			<nail x="-42" y="-314"/>
+			<nail x="-76" y="-314"/>
+			<nail x="-76" y="-271"/>
+		</transition>
+		<transition>
+			<source ref="id10"/>
+			<target ref="id11"/>
+			<label kind="guard" x="42" y="-229">isLeftCarDetected()</label>
+			<nail x="255" y="-229"/>
+			<nail x="-34" y="-229"/>
+		</transition>
+		<transition>
+			<source ref="id12"/>
+			<target ref="id10"/>
+			<label kind="guard" x="289" y="-93">isLeftCarDetectedNearby()</label>
+			<nail x="-186" y="60"/>
+			<nail x="281" y="60"/>
+		</transition>
+		<transition>
+			<source ref="id11"/>
+			<target ref="id10"/>
+			<label kind="guard" x="17" y="-280">isLeftCarDetectedNearby()</label>
+			<nail x="-34" y="-263"/>
+			<nail x="255" y="-263"/>
+		</transition>
+		<transition>
+			<source ref="id12"/>
+			<target ref="id11"/>
+			<label kind="guard" x="-51" y="-93">isLeftCarDetected()</label>
+			<nail x="-186" y="60"/>
+			<nail x="-59" y="60"/>
+		</transition>
+		<transition>
+			<source ref="id11"/>
+			<target ref="id13"/>
+			<label kind="guard" x="-263" y="-229">isLeftCarDetectedFar()</label>
+			<nail x="-85" y="-229"/>
+			<nail x="-289" y="-229"/>
+		</transition>
+		<transition>
+			<source ref="id13"/>
+			<target ref="id11"/>
+			<label kind="guard" x="-254" y="-280">isLeftCarDetected()</label>
+			<nail x="-289" y="-263"/>
+			<nail x="-85" y="-263"/>
+		</transition>
+		<transition>
+			<source ref="id13"/>
+			<target ref="id13"/>
+			<label kind="guard" x="-391" y="-331">isLeftCarDetectedFar()</label>
+			<nail x="-297" y="-271"/>
+			<nail x="-297" y="-314"/>
+			<nail x="-331" y="-314"/>
+			<nail x="-331" y="-271"/>
+		</transition>
+		<transition>
+			<source ref="id14"/>
+			<target ref="id14"/>
+			<label kind="guard" x="-824" y="-255">isLeftFree()</label>
+			<nail x="-705" y="-229"/>
+			<nail x="-739" y="-229"/>
+			<nail x="-739" y="-263"/>
+			<nail x="-705" y="-263"/>
+		</transition>
+		<transition>
+			<source ref="id13"/>
+			<target ref="id14"/>
+			<label kind="guard" x="-544" y="-229">isLeftFree()</label>
+			<nail x="-340" y="-229"/>
+			<nail x="-654" y="-229"/>
+		</transition>
+		<transition>
+			<source ref="id12"/>
+			<target ref="id13"/>
+			<label kind="guard" x="-305" y="-93">isLeftCarDetectedFar()</label>
+			<nail x="-186" y="60"/>
+			<nail x="-314" y="60"/>
+		</transition>
+		<transition>
+			<source ref="id14"/>
+			<target ref="id13"/>
+			<label kind="guard" x="-586" y="-280">isLeftCarDetectedFar()</label>
+			<nail x="-654" y="-263"/>
+			<nail x="-340" y="-263"/>
+		</transition>
+		<transition>
+			<source ref="id12"/>
+			<target ref="id14"/>
+			<label kind="guard" x="-671" y="-93">isLeftFree()</label>
+			<nail x="-186" y="60"/>
+			<nail x="-680" y="60"/>
+		</transition>
+	</template>
+	<template>
+		<name>OpponentsAhead</name>
+		<declaration>int reward = 0;
+
+int[0,200] opponents[36];
+
+bool isFrontCarDetectedNearby(){
+    int i = 0;
+    for(i = 4; i &lt; 15; i++){
+        if(opponents[i] &lt; 3){
+            return true;
+        }
+    }
+    return false;
+}
+
+bool isFrontCarDetected(){
+    int i = 0;
+    for(i = 4; i &lt; 15; i++){
+        if(opponents[i] &lt; 6 &amp;&amp; opponents[i] &gt;= 3){
+            return true;
+        }
+    }
+    return false;
+}
+
+bool isFrontCarDetectedFar(){
+    int i = 0;
+    for(i = 4; i &lt; 15; i++){
+        if(opponents[i] &lt; 15 &amp;&amp; opponents[i] &gt;= 6){
+            return true;
+        }
+        if(i == 5){
+            i = 30;
+        }
+    }
+    return false;
+}
+
+bool isFrontFree(){
+    int i = 0;
+    for(i = 4; i &lt; 15; i++){
+        if(opponents[i] &gt;= 15 ){
+            return false;
+        }
+    }
+    return true;
+}</declaration>
+		<location id="id15" x="-68" y="238">
+			<name x="-78" y="204">start</name>
+		</location>
+		<location id="id16" x="383" y="-170">
+			<name x="323" y="-204">carCloseAhead</name>
+		</location>
+		<location id="id17" x="43" y="-170">
+			<name x="60" y="-178">carAhead</name>
+		</location>
+		<location id="id18" x="-212" y="-170">
+			<name x="-195" y="-178">carFarAhead</name>
+		</location>
+		<location id="id19" x="-578" y="-170">
+			<name x="-612" y="-204">frontFree</name>
+		</location>
+		<init ref="id15"/>
+		<transition>
+			<source ref="id15"/>
+			<target ref="id16"/>
+			<label kind="guard" x="399" y="25">isFrontCarDetectedNearby()</label>
+			<nail x="391" y="238"/>
+		</transition>
+		<transition>
+			<source ref="id15"/>
+			<target ref="id17"/>
+			<label kind="guard" x="51" y="25">isFrontCarDetected()</label>
+			<nail x="42" y="238"/>
+		</transition>
+		<transition>
+			<source ref="id15"/>
+			<target ref="id18"/>
+			<label kind="guard" x="-204" y="25">isFrontCarDetectedFar()</label>
+			<nail x="-212" y="238"/>
+		</transition>
+		<transition>
+			<source ref="id15"/>
+			<target ref="id19"/>
+			<label kind="guard" x="-569" y="25">isFrontFree()</label>
+			<nail x="-578" y="238"/>
+		</transition>
+		<transition>
+			<source ref="id16"/>
+			<target ref="id16"/>
+			<label kind="guard" x="450" y="-178">isFrontCarDetectedNearby()</label>
+			<nail x="408" y="-187"/>
+			<nail x="442" y="-187"/>
+			<nail x="442" y="-153"/>
+			<nail x="408" y="-153"/>
+		</transition>
+		<transition>
+			<source ref="id17"/>
+			<target ref="id17"/>
+			<label kind="guard" x="-34" y="-255">isFrontCarDetected()</label>
+			<nail x="60" y="-195"/>
+			<nail x="60" y="-238"/>
+			<nail x="26" y="-238"/>
+			<nail x="26" y="-195"/>
+		</transition>
+		<transition>
+			<source ref="id16"/>
+			<target ref="id17"/>
+			<label kind="guard" x="144" y="-153">isFrontCarDetected()</label>
+			<nail x="357" y="-153"/>
+			<nail x="68" y="-153"/>
+		</transition>
+		<transition>
+			<source ref="id17"/>
+			<target ref="id16"/>
+			<label kind="guard" x="119" y="-204">isFrontCarDetectedNearby()</label>
+			<nail x="68" y="-187"/>
+			<nail x="357" y="-187"/>
+		</transition>
+		<transition>
+			<source ref="id17"/>
+			<target ref="id18"/>
+			<label kind="guard" x="-161" y="-153">isFrontCarDetectedFar()</label>
+			<nail x="17" y="-153"/>
+			<nail x="-187" y="-153"/>
+		</transition>
+		<transition>
+			<source ref="id18"/>
+			<target ref="id17"/>
+			<label kind="guard" x="-152" y="-204">isFrontCarDetected()</label>
+			<nail x="-187" y="-187"/>
+			<nail x="17" y="-187"/>
+		</transition>
+		<transition>
+			<source ref="id18"/>
+			<target ref="id18"/>
+			<label kind="guard" x="-297" y="-255">isFrontCarDetectedFar()</label>
+			<nail x="-195" y="-195"/>
+			<nail x="-195" y="-238"/>
+			<nail x="-229" y="-238"/>
+			<nail x="-229" y="-195"/>
+		</transition>
+		<transition>
+			<source ref="id19"/>
+			<target ref="id19"/>
+			<label kind="guard" x="-722" y="-179">isFrontFree()</label>
+			<nail x="-603" y="-153"/>
+			<nail x="-637" y="-153"/>
+			<nail x="-637" y="-187"/>
+			<nail x="-603" y="-187"/>
+		</transition>
+		<transition>
+			<source ref="id18"/>
+			<target ref="id19"/>
+			<label kind="guard" x="-442" y="-153">isFrontFree()</label>
+			<nail x="-238" y="-153"/>
+			<nail x="-552" y="-153"/>
+		</transition>
+		<transition>
+			<source ref="id19"/>
+			<target ref="id18"/>
+			<label kind="guard" x="-484" y="-204">isFrontCarDetectedFar()</label>
+			<nail x="-552" y="-187"/>
+			<nail x="-238" y="-187"/>
+		</transition>
+	</template>
+	<template>
+		<name x="5" y="5">TrackPos</name>
+		<declaration>int reward = 0;
+
+// Track position guard functions
+bool isCenter()
+{
+    return (-50 &lt;= trackPos &amp;&amp; trackPos &lt;= 50);
+}
+
+bool isLimitRoad()
+{   
+    return ((-100 &lt; trackPos &amp;&amp; trackPos &lt; -50) || (50 &lt; trackPos &amp;&amp; trackPos &lt; 100));
+}
+
+// Track position update functions
+
+void rewardLimitRoad(){
+    reward += 0;
+}
+
+void rewardLeftOffRoad(){
+    reward += -10;
+}
+
+void rewardRightOffRoad(){
+    reward += -10;
+}
+
+void rewardCenter(){
+    reward += +20;
+}
+</declaration>
+		<location id="id20" x="-289" y="-773">
+			<name x="-357" y="-807">leftOffRoad</name>
+		</location>
+		<location id="id21" x="153" y="-773">
+			<name x="127" y="-816">limitRoad</name>
+		</location>
+		<location id="id22" x="153" y="-977">
+			<name x="51" y="-1003">centerRoad</name>
+		</location>
+		<location id="id23" x="153" y="-1113">
+			<name x="102" y="-1122">start</name>
+		</location>
+		<location id="id24" x="637" y="-765">
+			<name x="613" y="-797">rightOffRoad</name>
+		</location>
+		<init ref="id23"/>
+		<transition>
+			<source ref="id24"/>
+			<target ref="id21"/>
+			<label kind="guard" x="306" y="-765">isLimitRoad()</label>
+			<label kind="synchronisation" x="425" y="-714">trackPos_C?</label>
+			<label kind="assignment" x="399" y="-765">rewardLimitRoad()</label>
+			<nail x="569" y="-765"/>
+			<nail x="204" y="-765"/>
+		</transition>
+		<transition>
+			<source ref="id21"/>
+			<target ref="id24"/>
+			<label kind="guard" x="280" y="-799">isRightOffRoad()</label>
+			<label kind="synchronisation" x="382" y="-833">trackPos_C?</label>
+			<label kind="assignment" x="399" y="-799">rewardRightOffRoad()</label>
+			<nail x="195" y="-782"/>
+			<nail x="586" y="-782"/>
+		</transition>
+		<transition>
+			<source ref="id20"/>
+			<target ref="id20"/>
+			<label kind="guard" x="-450" y="-773">isLeftOffRoad()</label>
+			<label kind="synchronisation" x="-442" y="-731">trackPos_C?</label>
+			<label kind="assignment" x="-484" y="-756">rewardLeftOffRoad()</label>
+			<nail x="-348" y="-731"/>
+			<nail x="-348" y="-773"/>
+		</transition>
+		<transition>
+			<source ref="id20"/>
+			<target ref="id21"/>
+			<label kind="guard" x="-178" y="-799">isLimitRoad()</label>
+			<label kind="synchronisation" x="-76" y="-824">trackPos_C?</label>
+			<label kind="assignment" x="-76" y="-799">rewardLimitRoad()</label>
+			<nail x="-246" y="-782"/>
+			<nail x="102" y="-782"/>
+		</transition>
+		<transition>
+			<source ref="id21"/>
+			<target ref="id20"/>
+			<label kind="guard" x="-187" y="-765">isLeftOffRoad()</label>
+			<label kind="synchronisation" x="-136" y="-748">trackPos_C?</label>
+			<label kind="assignment" x="-76" y="-765">rewardLeftOffRoad()</label>
+			<nail x="110" y="-765"/>
+			<nail x="-246" y="-765"/>
+		</transition>
+		<transition>
+			<source ref="id21"/>
+			<target ref="id21"/>
+			<label kind="guard" x="127" y="-714">isLimitRoad()</label>
+			<label kind="synchronisation" x="127" y="-680">trackPos_C?</label>
+			<label kind="assignment" x="127" y="-697">rewardLimitRoad()</label>
+			<nail x="127" y="-714"/>
+			<nail x="187" y="-714"/>
+		</transition>
+		<transition>
+			<source ref="id21"/>
+			<target ref="id22"/>
+			<label kind="guard" x="221" y="-943">isCenter()</label>
+			<label kind="synchronisation" x="221" y="-884">trackPos_C?</label>
+			<label kind="assignment" x="221" y="-926">rewardCenter()</label>
+			<nail x="212" y="-799"/>
+			<nail x="212" y="-952"/>
+		</transition>
+		<transition>
+			<source ref="id22"/>
+			<target ref="id22"/>
+			<label kind="guard" x="119" y="-909">isCenter()</label>
+			<label kind="synchronisation" x="119" y="-875">trackPos_C?</label>
+			<label kind="assignment" x="102" y="-892">rewardCenter()</label>
+			<nail x="137" y="-913"/>
+			<nail x="169" y="-913"/>
+		</transition>
+		<transition>
+			<source ref="id22"/>
+			<target ref="id21"/>
+			<label kind="guard" x="0" y="-943">isLimitRoad()</label>
+			<label kind="synchronisation" x="8" y="-909">trackPos_C?</label>
+			<label kind="assignment" x="-34" y="-926">rewardLimitRoad()</label>
+			<nail x="93" y="-952"/>
+			<nail x="93" y="-799"/>
+		</transition>
+		<transition>
+			<source ref="id23"/>
+			<target ref="id22"/>
+			<label kind="guard" x="161" y="-1079">isCenter()</label>
+			<label kind="synchronisation" x="161" y="-1011">trackPos_C?</label>
+			<label kind="assignment" x="161" y="-1062">trackPos = 0,
+rewardCenter()</label>
+		</transition>
+		<transition>
+			<source ref="id24"/>
+			<target ref="id24"/>
+			<label kind="guard" x="705" y="-765">isRightOffRoad()</label>
+			<label kind="synchronisation" x="671" y="-833">trackPos_C?</label>
+			<label kind="assignment" x="705" y="-748">rewardRightOffRoad()</label>
+			<nail x="697" y="-731"/>
+			<nail x="697" y="-765"/>
+		</transition>
+	</template>
+	<template>
+		<name>Damage</name>
+		<declaration>int reward = 0;
+
+bool isDamaged(){
+    return damage &gt; damage_pre;
+}
+
+bool isNormal(){
+    return !isDamaged();
+}
+
+void rewardDamaged(){
+    reward += -40;
+}
+
+void rewardNormal(){
+    reward += 0;
+}</declaration>
+		<location id="id25" x="-289" y="-51">
+			<name x="-272" y="-59">damaged</name>
+		</location>
+		<location id="id26" x="-289" y="-195">
+			<name x="-281" y="-220">normal</name>
+		</location>
+		<location id="id27" x="-289" y="-314">
+			<name x="-299" y="-348">start</name>
+		</location>
+		<init ref="id27"/>
+		<transition>
+			<source ref="id25"/>
+			<target ref="id25"/>
+			<label kind="guard" x="-331" y="0">isDamaged()</label>
+			<label kind="assignment" x="-348" y="17">rewardDamaged()</label>
+			<nail x="-306" y="0"/>
+			<nail x="-272" y="0"/>
+		</transition>
+		<transition>
+			<source ref="id26"/>
+			<target ref="id26"/>
+			<label kind="guard" x="-416" y="-229">isNormal()</label>
+			<label kind="assignment" x="-451" y="-212">rewardNormal()</label>
+			<nail x="-340" y="-229"/>
+			<nail x="-340" y="-195"/>
+		</transition>
+		<transition>
+			<source ref="id25"/>
+			<target ref="id26"/>
+			<label kind="guard" x="-255" y="-144">isNormal()</label>
+			<label kind="assignment" x="-255" y="-127">rewardNormal()</label>
+			<nail x="-264" y="-68"/>
+			<nail x="-264" y="-178"/>
+		</transition>
+		<transition>
+			<source ref="id26"/>
+			<target ref="id25"/>
+			<label kind="guard" x="-408" y="-144">isDamaged()</label>
+			<label kind="assignment" x="-442" y="-127">rewardDamaged()</label>
+			<nail x="-315" y="-178"/>
+			<nail x="-315" y="-68"/>
+		</transition>
+		<transition>
+			<source ref="id27"/>
+			<target ref="id26"/>
+		</transition>
+	</template>
+	<template>
+		<name>Sim_TrackPos</name>
+		<declaration>// We assume a limit between -5 and +5 (* FACTOR)
+typedef int[-500, +500] trackPosT;</declaration>
+		<location id="id28" x="-289" y="76">
+		</location>
+		<location id="id29" x="-187" y="-161">
+			<name x="-170" y="-170">goingRight</name>
+		</location>
+		<location id="id30" x="-425" y="-170">
+			<name x="-518" y="-178">goingLeft</name>
+		</location>
+		<init ref="id28"/>
+		<transition>
+			<source ref="id28"/>
+			<target ref="id29"/>
+			<nail x="-161" y="17"/>
+		</transition>
+		<transition>
+			<source ref="id28"/>
+			<target ref="id30"/>
+			<nail x="-450" y="17"/>
+		</transition>
+		<transition>
+			<source ref="id29"/>
+			<target ref="id29"/>
+			<label kind="select" x="-76" y="-178">i:moveIncrement</label>
+			<label kind="guard" x="-76" y="-204">trackPos &lt;= trackPos_Right_Limit</label>
+			<label kind="synchronisation" x="-76" y="-153">trackPos_C!</label>
+			<label kind="assignment" x="-76" y="-127">trackPos = trackPos + i</label>
+			<nail x="-85" y="-221"/>
+			<nail x="-85" y="-68"/>
+		</transition>
+		<transition>
+			<source ref="id29"/>
+			<target ref="id30"/>
+			<label kind="select" x="-374" y="-110">i : moveIncrement</label>
+			<label kind="guard" x="-399" y="-34">trackPos &gt;= trackPos_Left_Limit</label>
+			<label kind="synchronisation" x="-374" y="-85">trackPos_C!</label>
+			<label kind="assignment" x="-374" y="-59">trackPos = trackPos - i</label>
+			<nail x="-221" y="-119"/>
+			<nail x="-391" y="-119"/>
+		</transition>
+		<transition>
+			<source ref="id30"/>
+			<target ref="id29"/>
+			<label kind="select" x="-357" y="-289">i : moveIncrement</label>
+			<label kind="guard" x="-357" y="-314">trackPos &lt;= trackPos_Right_Limit</label>
+			<label kind="synchronisation" x="-357" y="-264">trackPos_C!</label>
+			<label kind="assignment" x="-357" y="-238">trackPos = trackPos + i</label>
+			<nail x="-366" y="-213"/>
+			<nail x="-264" y="-213"/>
+		</transition>
+		<transition>
+			<source ref="id30"/>
+			<target ref="id30"/>
+			<label kind="select" x="-697" y="-161">i : moveIncrement</label>
+			<label kind="guard" x="-799" y="-187">trackPos &gt;= trackPos_Left_Limit</label>
+			<label kind="synchronisation" x="-654" y="-110">trackPos_C!</label>
+			<label kind="assignment" x="-731" y="-136">trackPos = trackPos - i</label>
+			<nail x="-569" y="-85"/>
+			<nail x="-569" y="-229"/>
+		</transition>
+	</template>
+	<template>
+		<name>Sim_Speed</name>
+		<declaration>
+
+</declaration>
+		<location id="id31" x="0" y="0">
+		</location>
+		<init ref="id31"/>
+	</template>
+	<template>
+		<name>Speed</name>
+		<declaration>double angle;
+double track[19];
+
+bool isStuck()
+{
+    return (trackPos &gt;= 10 || trackPos &lt;=10) &amp;&amp; speedX &lt; 10;
+}
+
+bool isTurning(){
+    return (track[9] &lt; 100) &amp;&amp; angle &lt; 0.2 &amp;&amp; angle &gt; -0.2 &amp;&amp; !isLeftOffRoad() &amp;&amp; !isRightOffRoad() &amp;&amp; !isStuck();
+}
+</declaration>
+		<location id="id32" x="-407" y="-357">
+			<name x="-425" y="-340">Stuck</name>
+		</location>
+		<location id="id33" x="-127" y="-357">
+			<name x="-153" y="-340">Turning</name>
+		</location>
+		<location id="id34" x="-127" y="-595">
+			<name x="-110" y="-603">GoingStraight</name>
+		</location>
+		<location id="id35" x="-127" y="-748">
+			<name x="-144" y="-799">start</name>
+		</location>
+		<init ref="id35"/>
+		<transition>
+			<source ref="id34"/>
+			<target ref="id32"/>
+			<label kind="guard" x="-357" y="-493">isStuck()</label>
+			<nail x="-153" y="-595"/>
+			<nail x="-408" y="-382"/>
+		</transition>
+		<transition>
+			<source ref="id32"/>
+			<target ref="id34"/>
+		</transition>
+		<transition>
+			<source ref="id32"/>
+			<target ref="id33"/>
+			<label kind="guard" x="-306" y="-340">isTurning()</label>
+			<nail x="-391" y="-340"/>
+			<nail x="-144" y="-340"/>
+		</transition>
+		<transition>
+			<source ref="id33"/>
+			<target ref="id32"/>
+			<label kind="guard" x="-297" y="-374">isStuck()</label>
+			<nail x="-136" y="-357"/>
+			<nail x="-391" y="-357"/>
+		</transition>
+		<transition>
+			<source ref="id33"/>
+			<target ref="id34"/>
+			<nail x="-110" y="-374"/>
+			<nail x="-110" y="-578"/>
+		</transition>
+		<transition>
+			<source ref="id34"/>
+			<target ref="id33"/>
+			<label kind="guard" x="-204" y="-476">isTurning()</label>
+			<nail x="-127" y="-561"/>
+			<nail x="-127" y="-382"/>
+		</transition>
+		<transition>
+			<source ref="id35"/>
+			<target ref="id34"/>
+		</transition>
+	</template>
+	<system>
+// List one or more processes to be composed into a system.
+system TrackPos, Sim_TrackPos;</system>
+	<queries>
+	</queries>
+</nta>
