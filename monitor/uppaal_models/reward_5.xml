@@ -4,6 +4,7 @@
 	<declaration>// Precision factor: from double to int
 const int FACTOR = 100;
 
+/*start parsing*/
 // Set the goals to achieve
 int goalSpeed = 90;       // Kmh
 int goalTrackPos = 0;     // middle of the lane
@@ -37,6 +38,7 @@ int opponents_pre[36];
 int steer;
 int accel;
 int brake;
+/*end parsing*/
 
 // BEGIN SIMULATION VALUES 
 // Distance between the car and the track axis. 
@@ -59,6 +61,7 @@ typedef int[0, 10000]  speedX_T;
 
 // GLOBAL FUNCTIONS
 
+/*start parsing*/
 bool isRightOffRoad()
 {
     return (trackPos &lt;= -10);
@@ -68,6 +71,7 @@ bool isLeftOffRoad()
 {
     return (trackPos &gt;= 10);
 }
+/*end parsing*/
 
 void computeTotalReward(){
     tot_reward = 0;
@@ -759,6 +763,7 @@ bool isFrontFree(){
 	<template>
 		<name x="5" y="5">TrackPos</name>
 		<declaration>// Track position guard functions
+/*start parsing*/
 bool isCenter()
 {
     return (-50 &lt;= trackPos &amp;&amp; trackPos &lt;= 50);
@@ -768,6 +773,7 @@ bool isLimitRoad()
 {   
     return ((-100 &lt; trackPos &amp;&amp; trackPos &lt; -50) || (50 &lt; trackPos &amp;&amp; trackPos &lt; 100));
 }
+/*end parsing*/
 
 // Track position update functions
 
@@ -1041,12 +1047,16 @@ typedef int[-500, +500] trackPosT;</declaration>
 	</template>
 	<template>
 		<name>Speed</name>
-		<declaration>bool isStuck()
+		<declaration>/*start parsing*/
+int angle;
+
+bool isStuck()
 {
     return (trackPos &gt;= 10 || trackPos &lt;=10) &amp;&amp; speedX &lt; 10;
 }
 
-bool isTurning(){
+bool isTurning()
+{
     return (track[9] &lt; 10000) &amp;&amp; angle &lt; 20 &amp;&amp; angle &gt; -20 &amp;&amp; !isLeftOffRoad() &amp;&amp; !isRightOffRoad() &amp;&amp; !isStuck();
 }
 </declaration>
