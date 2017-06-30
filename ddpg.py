@@ -236,6 +236,7 @@ def playGame(train_indicator=1):    #1 means Train, 0 means simply Run
         file = open("results/" + filename + ".m", "w")
         file.write(isGoalReached + "]\n" + episodeCount + "]\n" + totalTime + "]\n" + subtimes + steps + rewardsPerEpisode + rewardsPerStep)
         file.close();
+        
         env.end()  # This is for shutting down TORCS
         print("Finish.")
         iteration += 1

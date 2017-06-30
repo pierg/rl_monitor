@@ -51,6 +51,14 @@ public class EchoServer {
   private static int slowSpeedPenalityIndex = 1;
   private static int factor = 1;         // multiplication factor for the reward function
 
+  public static double sp_reward = 0;
+  public static double dam_reward = 0;
+  public static double trp_reward = 0;
+  public static double oppa_reward = 0;
+  public static double oppl_reward = 0;
+  public static double oppr_reward = 0;
+  public static double oppb_reward = 0;
+  
   public static double reward;
 
   // Environnement datas
@@ -199,7 +207,7 @@ public class EchoServer {
 
     System.out.println("limit to center");
 
-    reward += 60 - eGoals();
+    trp_reward = 60 - eGoals();
   }
 
 
@@ -207,36 +215,36 @@ public class EchoServer {
 
     System.out.println("off to limit");
 
-    reward += 30 - eGoals();
+    trp_reward = 30 - eGoals();
   }
 
   public static void setRewardRightOffRoad(){
 
     System.out.println("rightOffRoad");
 
-    reward += -20 - 10*angle - eGoals();
+    trp_reward = -20 - 10*angle - eGoals();
   }
 
   public static void setRewardLeftOffRoad(){
     System.out.println("leftOffRoad");
 
-    reward += -20 + 10*angle - eGoals();
+    trp_reward = -20 + 10*angle - eGoals();
   }
 
   public static void setRewardCenterRoad(){
-    reward += 50 - eGoals();
+    trp_reward = 50 - eGoals();
 
     System.out.println("center");
   }
 
   public static void setRewardDamage(){
-    reward += -40 - eGoals();
+    trp_reward = -40 - eGoals();
 
     System.out.println("damage");
   }
 
   public static void setRewardLimitRoad(){
-    reward += 20 - eGoals();
+    trp_reward = 20 - eGoals();
 
     System.out.println("limitRoad");
   }
@@ -244,7 +252,7 @@ public class EchoServer {
   public static void setRewardFromStuckToLeftOffRoad()
   {
     counter = 0;
-    reward += -20 + 10*angle - eGoals();
+    trp_reward = -20 + 10*angle - eGoals();
 
     System.out.println("leftOffRoad");
   }
@@ -252,14 +260,14 @@ public class EchoServer {
   public static void setRewardFromStuckToRightOffRoad()
   {
     counter = 0;
-    reward += -20 - 10*angle - eGoals();
+    trp_reward = -20 - 10*angle - eGoals();
     System.out.println("rightOffRoad");
   }
 
   public static void setRewardStuck()
   {
     counter += 10;
-    reward += -40 - eGoals() - counter;
+    trp_reward = -40 - eGoals() - counter;
     System.out.println("stuck");
   }
 
@@ -301,6 +309,17 @@ public class EchoServer {
     return (track[9] < 50) && angle < 0.2 && angle > -0.2 && !isLeftOffRoad() && !isRightOffRoad();
   }
 
+  public static void computeTotalReward(){
+    reward = 0;
+    reward += sp_reward;
+    reward += dam_reward;
+    reward += trp_reward;
+    reward += oppa_reward;
+    reward += oppl_reward;
+    reward += oppr_reward;
+    reward += oppb_reward;
+  }
+
   public void rlevent() {}
   public void reset() { counter = 0; }
 
@@ -308,6 +327,7 @@ public class EchoServer {
     propertiesChecked++;
     System.out.println("prop : " + propertiesChecked);
     if(propertiesChecked == propertiesNumber){
+      computeTotalReward();
       response();
     }
   }
