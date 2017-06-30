@@ -1,12 +1,12 @@
 #!/bin/bash
 echo "Launch TORCS simulation with ddpg.py and LARVA monitoring"
 
-while getopts ":df:" opt; do
+while getopts ":dm:" opt; do
 	case $opt in
 		d)
 			detached="y"
 		;;
-		f)
+		m)
 			fn=$OPTARG
 		;;
 		\?)

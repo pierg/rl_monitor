@@ -2,7 +2,7 @@
 <!DOCTYPE nta PUBLIC '-//Uppaal Team//DTD Flat System 1.1//EN' 'http://www.it.uu.se/research/group/darts/uppaal/flat-1_2.dtd'>
 <nta>
 	<declaration>// Precision factor: from double to int
-const int FACTOR = 100;
+int FACTOR = 100;
 
 /*start parsing*/
 // Set the goals to achieve
@@ -64,12 +64,12 @@ typedef int[0, 10000]  speedX_T;
 /*start parsing*/
 bool isRightOffRoad()
 {
-    return (trackPos &lt;= -10);
+    return (trackPos &lt;= -100);
 }
 
 bool isLeftOffRoad()
 {
-    return (trackPos &gt;= 10);
+    return (trackPos &gt;= 100);
 }
 /*end parsing*/
 
@@ -782,15 +782,15 @@ void rewardLimitRoad(){
 }
 
 void rewardLeftOffRoad(){
-    trp_reward += -10;
+    trp_reward = -10;
 }
 
 void rewardRightOffRoad(){
-    trp_reward += -10;
+    trp_reward = -10;
 }
 
 void rewardCenter(){
-    trp_reward += +20;
+    trp_reward = +20;
 }
 </declaration>
 		<location id="id20" x="-289" y="-773">
@@ -1052,13 +1052,14 @@ int angle;
 
 bool isStuck()
 {
-    return (trackPos &gt;= 10 || trackPos &lt;=10) &amp;&amp; speedX &lt; 10;
+    return (trackPos &gt;= 100 || trackPos &lt;=100) &amp;&amp; speedX &lt; 1000;
 }
 
 bool isTurning()
 {
     return (track[9] &lt; 10000) &amp;&amp; angle &lt; 20 &amp;&amp; angle &gt; -20 &amp;&amp; !isLeftOffRoad() &amp;&amp; !isRightOffRoad() &amp;&amp; !isStuck();
 }
+/*end parsing*/
 </declaration>
 		<location id="id32" x="-407" y="-357">
 			<name x="-425" y="-340">Stuck</name>
