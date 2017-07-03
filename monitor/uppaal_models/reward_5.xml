@@ -1218,7 +1218,9 @@ typedef int[-500, +500] trackPosT;</declaration>
 	</template>
 	<template>
 		<name>Speed</name>
-		<declaration>/*start functions*/
+		<declaration>int counter = 0;
+
+/*start functions*/
 bool isStuck()
 {
     return (trackPos &gt;= 100 || trackPos &lt;=100) &amp;&amp; speedX &lt; 1000;
@@ -1227,6 +1229,30 @@ bool isStuck()
 bool isTurning()
 {
     return (track[9] &lt; 10000) &amp;&amp; angle &lt; 20 &amp;&amp; angle &gt; -20 &amp;&amp; !isLeftOffRoad() &amp;&amp; !isRightOffRoad() &amp;&amp; !isStuck();
+}
+
+bool isGoingStraight()
+{
+    return !isStuck() &amp;&amp; !isTurning();
+}
+
+void rewardStuck()
+{
+    counter++;
+    sp_reward = -10 * counter;
+}
+
+void rewardTurning()
+{
+    // TODO
+    counter = 0;
+    sp_reward = 10;
+}
+
+void rewardStraight()
+{
+    counter = 0;
+    sp_reward = 10;
 }
 /*end functions*/
 </declaration>
@@ -1253,6 +1279,7 @@ bool isTurning()
 		<transition>
 			<source ref="id32"/>
 			<target ref="id34"/>
+			<label kind="guard" x="-255" y="-484">isGoingStraight()</label>
 		</transition>
 		<transition>
 			<source ref="id32"/>
@@ -1271,13 +1298,14 @@ bool isTurning()
 		<transition>
 			<source ref="id33"/>
 			<target ref="id34"/>
+			<label kind="guard" x="-102" y="-484">isGoingStraight()</label>
 			<nail x="-110" y="-374"/>
 			<nail x="-110" y="-578"/>
 		</transition>
 		<transition>
 			<source ref="id34"/>
 			<target ref="id33"/>
-			<label kind="guard" x="-204" y="-476">isTurning()</label>
+			<label kind="guard" x="-204" y="-425">isTurning()</label>
 			<nail x="-127" y="-561"/>
 			<nail x="-127" y="-382"/>
 		</transition>
