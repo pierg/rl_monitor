@@ -105,7 +105,6 @@ public class EchoServer {
 
         while ((inputLine = in.readLine()) != null) {
           isReset = false;
-          reward = 0;
           propertiesChecked = 0;
 
           EchoServer a = new EchoServer();
