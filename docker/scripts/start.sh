@@ -26,8 +26,10 @@ sudo docker exec -itd $(sudo docker ps -lq) x11vnc -forever -create -display :1.
 
 if [ -z $fn ]
 then
+	sudo docker exec -itd $(sudo docker ps -lq) make -C monitor/reward_3_speed/ compile
 	sudo docker exec -itd $(sudo docker ps -lq) make -C monitor/reward_3_speed/ run
 else
+	sudo docker exec -itd $(sudo docker ps -lq) make -C monitor/$fn/ compile
 	sudo docker exec -itd $(sudo docker ps -lq) make -C monitor/$fn/ run
 fi
 
