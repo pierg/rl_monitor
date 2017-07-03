@@ -10,7 +10,7 @@ import os
 import time
 import json
 
-def reward(obs, obs_pre):
+def reward(obs, obs_pre, action):
 
 	sp = np.array(obs['speedX'])
 
