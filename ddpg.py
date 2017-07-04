@@ -2,6 +2,7 @@ from gym_torcs import TorcsEnv
 import numpy as np
 import random
 import argparse
+import os, sys
 from keras.models import model_from_json, Model
 from keras.models import Sequential
 from keras.layers.core import Dense, Dropout, Activation, Flatten
@@ -37,8 +38,9 @@ def playGame(train_indicator=1):    #1 means Train, 0 means simply Run
     steps = ""
     rewardsPerEpisode = ""
     rewardsPerStep = ""
-
-    filename = "results" + time.strftime("%d-%m-%Y-%H%M%S")
+    filename = "results" + time.strftime("%d_%m_%Y_%H%M%S")
+    os.mkdir( "results/" + filename, 0755 );
+    copy("results/src/plot.m", "results/" + filename + "/plot.m")
 
     while True:
 
@@ -233,7 +235,7 @@ def playGame(train_indicator=1):    #1 means Train, 0 means simply Run
         rewardsPerEpisode += "]\n"
 
         # PRINT IN MATLAB (each iteration rewrite the whole file)
-        file = open("results/" + filename + ".m", "w")
+        file = open("results/" + filename + "/results.m", "w")
         file.write(isGoalReached + "]\n" + episodeCount + "]\n" + totalTime + "]\n" + subtimes + steps + rewardsPerEpisode + rewardsPerStep)
         file.close();
         
