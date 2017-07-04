@@ -1117,10 +1117,6 @@ void rewardCenter(){
 		<transition>
 			<source ref="id23"/>
 			<target ref="id22"/>
-			<label kind="guard" x="161" y="-1079">isCenter()</label>
-			<label kind="synchronisation" x="161" y="-1011">trackPos_C?</label>
-			<label kind="assignment" x="161" y="-1062">trackPos = 0,
-rewardCenter()</label>
 		</transition>
 		<transition>
 			<source ref="id24"/>
