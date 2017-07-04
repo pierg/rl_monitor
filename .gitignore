@@ -1,4 +1,6 @@
 monitor/*.class
 *.pyc
 results/*
+actormodel.h5
+criticmodel.h5
 _cls_rewardautomaton0.java
