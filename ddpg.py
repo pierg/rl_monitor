@@ -218,7 +218,7 @@ def playGame(train_indicator=1):    #1 means Train, 0 means simply Run
             subtimes += str(round(endEpisode - startEpisode)) + " "
             steps += str(step - lastEpisodeStep) + " "
             rewardsPerEpisode += str(round(total_reward, 2)) + " "
-            rewardsPerStep += "]\n"
+            rewardsPerStep += "];\n"
 
             lastEpisodeStep = step
 
@@ -230,13 +230,13 @@ def playGame(train_indicator=1):    #1 means Train, 0 means simply Run
         isGoalReached += "1 " if finished else "0 "
         episodeCount += str(i+1) + " "
         totalTime += str(round(end-start,2)) + " "
-        subtimes += "]\n"
-        steps += "]\n"
-        rewardsPerEpisode += "]\n"
+        subtimes += "];\n"
+        steps += "];\n"
+        rewardsPerEpisode += "];\n"
 
         # PRINT IN MATLAB (each iteration rewrite the whole file)
         file = open("results/" + filename + "/results.m", "w")
-        file.write(isGoalReached + "]\n" + episodeCount + "]\n" + totalTime + "]\n" + subtimes + steps + rewardsPerEpisode + rewardsPerStep)
+        file.write(isGoalReached + "];\n" + episodeCount + "];\n" + totalTime + "];\n" + subtimes + steps + rewardsPerEpisode + rewardsPerStep)
         file.close();
         
         env.end()  # This is for shutting down TORCS
