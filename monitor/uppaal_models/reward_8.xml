@@ -5,8 +5,9 @@
 int FACTOR = 100;
 
 // Set the goals to achieve
-int goalSpeed = 90;       // Kmh
-int goalTrackPos = 0;     // middle of the lane
+int goalSpeed = 90;        // Kmh
+int goalSpeedTurning = 60; // Kmh
+int goalTrackPos = 0;      // middle of the lane
 
 // Sub-rewards
 int sp_reward = 0;
@@ -1170,9 +1171,7 @@ void rewardCenter(){
 	</template>
 	<template>
 		<name>Speed</name>
-		<declaration>int counter = 0;
-
-/*start functions*/
+		<declaration>/*start functions*/
 bool isStuck()
 {
     return (trackPos &gt;= 100 || trackPos &lt;= -100) &amp;&amp; speedX &lt; 1000;
@@ -1182,7 +1181,8 @@ bool isStuck()
 // 
 bool isTurning()
 {
-    return (track[9] &lt; 10000) &amp;&amp; angle &lt; 20 &amp;&amp; angle &gt; -20 &amp;&amp; !isLeftOffRoad() &amp;&amp; !isRightOffRoad() &amp;&amp; !isStuck();
+    return (angle &gt; 60 || angle &lt; -60) &amp;&amp; !isStuck();
+    //return (track[9] &lt; 10000) &amp;&amp; angle &lt; 20 &amp;&amp; angle &gt; -20 &amp;&amp; !isLeftOffRoad() &amp;&amp; !isRightOffRoad() &amp;&amp; !isStuck();
 }
 
 bool isGoingStraight()
@@ -1192,21 +1192,35 @@ bool isGoingStraight()
 
 void rewardStuck()
 {
-    counter++;
-    sp_reward = -10 * counter;
+    sp_reward = -2 ;
 }
 
 void rewardTurning()
 {
-    // TODO
-    counter = 0;
-    sp_reward = 10;
+    if (goalSpeedTurning &gt;= speedX)
+    {
+        sp_reward = goalSpeedTurning - speedX;
+    }
+    else
+    {
+        sp_reward = speedX - goalSpeedTurning;
+    }
+
+    sp_reward /= 10;
 }
 
 void rewardStraight()
 {
-    counter = 0;
-    sp_reward = 10;
+    if (goalSpeed &gt;= speedX)
+    {
+        sp_reward = goalSpeed - speedX;
+    }
+    else
+    {
+        sp_reward = speedX - goalSpeed;
+    }
+    
+    sp_reward /= 10;
 }
 /*end functions*/
 </declaration>

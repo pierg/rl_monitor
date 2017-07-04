@@ -28,7 +28,7 @@
   </section>
 
   <section name="Practice">
-    <attnum name="laps" val="1"/>
+    <attnum name="laps" val="3"/>
     <attstr name="type" val="practice"/>
     <attstr name="starting order" val="drivers list"/>
     <attstr name="restart" val="yes"/>
