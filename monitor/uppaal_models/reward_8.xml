@@ -1583,13 +1583,7 @@ system TrackPos, Speed, Damage, Sim_trackPos, Sim_angle, Sim_speedX;</system>
 			</comment>
 		</query>
 		<query>
-			<formula>E&lt;&gt; (TrackPos.centerRoad and Speed.GoingStraight) imply trackPos_rwd&gt;0
-			</formula>
-			<comment>
-			</comment>
-		</query>
-		<query>
-			<formula>A[] (TrackPos.centerRoad and Speed.GoingStraight) imply computeReward()&lt;0
+			<formula>A[] (TrackPos.centerRoad and Speed.GoingStraight and Damage.normal) imply (speedX_rwd+damage_rwd+trackPos_rwd+opponents_ahead_rwd+opponents_left_rwd+opponents_right_rwd+opponents_back_rwd) &gt;= 0
 			</formula>
 			<comment>
 			</comment>
