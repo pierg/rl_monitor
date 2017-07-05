@@ -10,13 +10,13 @@ int goalSpeedTurning = 60; // Kmh
 int goalTrackPos = 0;      // middle of the lane
 
 // Sub-rewards
-int sp_reward = 0;
-int dam_reward = 0;
-int trp_reward = 0;
-int oppa_reward = 0;
-int oppl_reward = 0;
-int oppr_reward = 0;
-int oppb_reward = 0;
+int speedX_rwd = 0;
+int damage_rwd = 0;
+int trackPos_rwd = 0;
+int opponents_ahead_rwd = 0;
+int opponents_left_rwd = 0;
+int opponents_right_rwd = 0;
+int opponents_back_rwd = 0;
 
 // Reward cumulative returned
 int tot_reward;
@@ -57,14 +57,14 @@ bool isLeftOffRoad()
 }
 
 void computeTotalReward(){
-    tot_reward = 0;
-	tot_reward += sp_reward;
-	tot_reward += dam_reward;
-	tot_reward += trp_reward;
-	tot_reward += oppa_reward;
-	tot_reward += oppl_reward;
-	tot_reward += oppr_reward;
-	tot_reward += oppb_reward;
+    tot_reward =  0;
+	tot_reward += speedX_rwd;
+	tot_reward += damage_rwd;
+	tot_reward += trackPos_rwd;
+	tot_reward += opponents_ahead_rwd;
+	tot_reward += opponents_left_rwd;
+	tot_reward += opponents_right_rwd;
+	tot_reward += opponents_back_rwd;
 }
 /*end functions*/
 
@@ -183,19 +183,19 @@ int getNearestOpponentRightValue(){
 }
 
 void rewardRightFree(){
-    oppr_reward = 0;
+    opponents_right_rwd = 0;
 }
 
 void rewardRightCarFar(){
-    oppr_reward = -10 + getNearestOpponentRightValue();
+    opponents_right_rwd = -10 + getNearestOpponentRightValue();
 }
 
 void rewardRightCar(){
-    oppr_reward = (-10 + getNearestOpponentRightValue())*2;
+    opponents_right_rwd = (-10 + getNearestOpponentRightValue())*2;
 }
 
 void rewardRightCarClose(){
-    oppr_reward = (-10 + getNearestOpponentRightValue())*4;
+    opponents_right_rwd = (-10 + getNearestOpponentRightValue())*4;
 }
 /*end functions*/</declaration>
 		<location id="id0" x="-76" y="-68">
@@ -403,19 +403,19 @@ int getNearestOpponentBehindValue(){
 }
 
 void rewardBehindFree(){
-    oppb_reward = 0;
+    opponents_back_rwd = 0;
 }
 
 void rewardBehindCarFar(){
-    oppb_reward = -15 + getNearestOpponentBehindValue();
+    opponents_back_rwd = -15 + getNearestOpponentBehindValue();
 }
 
 void rewardBehindCar(){
-    oppb_reward = (-15 + getNearestOpponentBehindValue())*2;
+    opponents_back_rwd = (-15 + getNearestOpponentBehindValue())*2;
 }
 
 void rewardBehindCarClose(){
-    oppb_reward = (-15 + getNearestOpponentBehindValue())*4;
+    opponents_back_rwd = (-15 + getNearestOpponentBehindValue())*4;
 }
 /*end functions*/</declaration>
 		<location id="id5" x="-68" y="238">
@@ -637,19 +637,19 @@ int getNearestOpponentLeftValue(){
 }
 
 void rewardLeftFree(){
-    oppl_reward = 0;
+    opponents_left_rwd = 0;
 }
 
 void rewardLeftCarFar(){
-    oppl_reward = -10 + getNearestOpponentLeftValue();
+    opponents_left_rwd = -10 + getNearestOpponentLeftValue();
 }
 
 void rewardLeftCar(){
-    oppl_reward = (-10 + getNearestOpponentLeftValue())*2;
+    opponents_left_rwd = (-10 + getNearestOpponentLeftValue())*2;
 }
 
 void rewardLeftCarClose(){
-    oppl_reward = (-10 + getNearestOpponentLeftValue())*4;
+    opponents_left_rwd = (-10 + getNearestOpponentLeftValue())*4;
 }
 /*end functions*/</declaration>
 		<location id="id10" x="281" y="-246">
@@ -856,19 +856,19 @@ int getNearestOpponentAheadValue(){
 }
 
 void rewardFrontFree(){
-    oppa_reward = 0;
+    opponents_ahead_rwd = 0;
 }
 
 void rewardFrontCarFar(){
-    oppa_reward = -15 + getNearestOpponentAheadValue();
+    opponents_ahead_rwd = -15 + getNearestOpponentAheadValue();
 }
 
 void rewardFrontCar(){
-    oppa_reward = (-15 + getNearestOpponentAheadValue())*2;
+    opponents_ahead_rwd = (-15 + getNearestOpponentAheadValue())*2;
 }
 
 void rewardFrontCarClose(){
-    oppa_reward = (-15 + getNearestOpponentAheadValue())*4;
+    opponents_ahead_rwd = (-15 + getNearestOpponentAheadValue())*4;
 }
 
 /*end functions*/</declaration>
@@ -1034,27 +1034,27 @@ int errorTrackPos()
 
 
 void rewardLimitRoad(){
-    trp_reward = 0;
+    trackPos_rwd = 0;
 }
 
 void rewardLeftOffRoad(){
     if(steer &lt; 0){
-        trp_reward = -1;
+        trackPos_rwd = -1;
     }else{
-        trp_reward = -2;
+        trackPos_rwd = -2;
     }
 }
 
 void rewardRightOffRoad(){
     if(steer &gt; 0){
-        trp_reward = -1;
+        trackPos_rwd = -1;
     }else{
-        trp_reward = -2;
+        trackPos_rwd = -2;
     }
 }
 
 void rewardCenter(){
-    trp_reward = 2;
+    trackPos_rwd = 2;
 }
 /*end functions*/</declaration>
 		<location id="id20" x="-289" y="-773">
@@ -1192,35 +1192,35 @@ bool isGoingStraight()
 
 void rewardStuck()
 {
-    sp_reward = -2 ;
+    speedX_rwd = -2 ;
 }
 
 void rewardTurning()
 {
     if (goalSpeedTurning &gt;= speedX)
     {
-        sp_reward = goalSpeedTurning - speedX;
+        speedX_rwd = goalSpeedTurning - speedX;
     }
     else
     {
-        sp_reward = speedX - goalSpeedTurning;
+        speedX_rwd = speedX - goalSpeedTurning;
     }
 
-    sp_reward /= 10;
+    speedX_rwd /= 10;
 }
 
 void rewardStraight()
 {
     if (goalSpeed &gt;= speedX)
     {
-        sp_reward = goalSpeed - speedX;
+        speedX_rwd = goalSpeed - speedX;
     }
     else
     {
-        sp_reward = speedX - goalSpeed;
+        speedX_rwd = speedX - goalSpeed;
     }
     
-    sp_reward /= 10;
+    speedX_rwd /= 10;
 }
 /*end functions*/
 </declaration>
@@ -1228,15 +1228,42 @@ void rewardStraight()
 			<name x="-425" y="-340">Stuck</name>
 		</location>
 		<location id="id26" x="-127" y="-357">
-			<name x="-153" y="-340">Turning</name>
+			<name x="-161" y="-331">Turning</name>
 		</location>
 		<location id="id27" x="-127" y="-595">
-			<name x="-110" y="-603">GoingStraight</name>
+			<name x="-246" y="-620">GoingStraight</name>
 		</location>
 		<location id="id28" x="-127" y="-748">
 			<name x="-144" y="-799">start</name>
 		</location>
 		<init ref="id28"/>
+		<transition>
+			<source ref="id25"/>
+			<target ref="id25"/>
+			<label kind="guard" x="-527" y="-399">isStuck()</label>
+			<label kind="synchronisation" x="-518" y="-374">synch?</label>
+			<label kind="assignment" x="-569" y="-348">rewardStuck()</label>
+			<nail x="-467" y="-399"/>
+			<nail x="-467" y="-331"/>
+		</transition>
+		<transition>
+			<source ref="id26"/>
+			<target ref="id26"/>
+			<label kind="guard" x="-42" y="-374">isTurning()</label>
+			<label kind="synchronisation" x="-42" y="-357">synch?</label>
+			<label kind="assignment" x="-42" y="-340">rewardTurning()</label>
+			<nail x="-59" y="-365"/>
+			<nail x="-59" y="-306"/>
+		</transition>
+		<transition>
+			<source ref="id27"/>
+			<target ref="id27"/>
+			<label kind="guard" x="-59" y="-663">isGoingStraight()</label>
+			<label kind="synchronisation" x="-59" y="-646">synch?</label>
+			<label kind="assignment" x="-59" y="-629">rewardStraight()</label>
+			<nail x="-68" y="-663"/>
+			<nail x="-68" y="-612"/>
+		</transition>
 		<transition>
 			<source ref="id27"/>
 			<target ref="id25"/>
@@ -1306,11 +1333,11 @@ bool isNormal(){
 }
 
 void rewardDamaged(){
-    dam_reward = -40;
+    damage_rwd = -40;
 }
 
 void rewardNormal(){
-    dam_reward = 0;
+    damage_rwd = 0;
 }</declaration>
 		<location id="id29" x="-289" y="-51">
 			<name x="-272" y="-59">damaged</name>
@@ -1556,7 +1583,13 @@ system TrackPos, Speed, Damage, Sim_trackPos, Sim_angle, Sim_speedX;</system>
 			</comment>
 		</query>
 		<query>
-			<formula>A[] (TrackPos.centerRoad and Speed.GoingStraight) imply trp_reward&gt;0
+			<formula>E&lt;&gt; (TrackPos.centerRoad and Speed.GoingStraight) imply trackPos_rwd&gt;0
+			</formula>
+			<comment>
+			</comment>
+		</query>
+		<query>
+			<formula>A[] (TrackPos.centerRoad and Speed.GoingStraight) imply computeReward()&lt;0
 			</formula>
 			<comment>
 			</comment>
