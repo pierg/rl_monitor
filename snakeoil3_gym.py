@@ -193,9 +193,9 @@ class Client(object):
 
     def parse_the_command_line(self):
         try:
-            (opts, args) = getopt.getopt(sys.argv[1:], u'H:p:i:m:e:t:s:n:dhv',
+            (opts, args) = getopt.getopt(sys.argv[1:], u'H:p:i:m:e:t:s:n:r:x:dhv',
                        [u'host=',u'port=',u'id=',u'steps=',
-                        u'episodes=',u'track=',u'stage=', u'number=',
+                        u'episodes=',u'track=',u'stage=', u'number=', u'reward', u'time',
                         u'debug',u'help',u'version'])
         except getopt.error, why:
             print u'getopt error: %s\n%s' % (why, usage)
