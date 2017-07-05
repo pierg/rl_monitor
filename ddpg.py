@@ -27,15 +27,21 @@ def playGame(train_indicator=1):    #1 means Train, 0 means simply Run
 
     parser = argparse.ArgumentParser()
     parser.add_argument("-n", type=int, help="number of episodes")
-    parser.add_argument("-monitor", type=str, help="name of the monitor")
+    parser.add_argument("-r", type=str, help="name of the monitor")
+    parser.add_argument("-x", type=float, help="time of the simulation (in hour)")
     args = parser.parse_args()
 
     iteration = 1
 
-    if args.monitor > 0 :
-        monitor = "_" + args.monitor + "_"
+    if args.r > 0 :
+        monitor = "_" + args.r
     else :
         monitor = ""
+
+    if args.x > 0 :
+        simTime = args.x
+    else :
+        simTime = -1
 
     isGoalReached = "goalReached = ["
     totalTime = "totalTime = ["
@@ -48,6 +54,9 @@ def playGame(train_indicator=1):    #1 means Train, 0 means simply Run
     os.mkdir( "results/" + filename, 0755 );
     copy("results/src/plot_all_iterations.m", "results/" + filename + "/plot_all_iterations.m")
     copy("results/src/plot_results.m", "results/" + filename + "/plot_results.m")
+
+
+    startSim = time.time()
 
     while True:
 
@@ -116,6 +125,7 @@ def playGame(train_indicator=1):    #1 means Train, 0 means simply Run
 
 
         start = time.time()
+        finishSimulation = False
 
         print("TORCS Experiment Start.")
         for i in range(episode_count):
@@ -197,12 +207,17 @@ def playGame(train_indicator=1):    #1 means Train, 0 means simply Run
                 # MATLAB
                 rewardsPerStep += str(round(r_t, 2)) + " "
 
+                statusSim = time.time()
+                simTotalTime = statusSim - startSim 
+
+                if simTime != -1 and simTotalTime >= simTime * 3600 :
+                    finishSimulation = True
+
                 step += 1
-                if done:
+                if done or finished or finishSimulation:
                     break
 
-                if finished:
-                    break
+
 
             if np.mod(i, 3) == 0:
                 if (train_indicator):
@@ -229,7 +244,7 @@ def playGame(train_indicator=1):    #1 means Train, 0 means simply Run
 
             lastEpisodeStep = step
 
-            if finished:
+            if finished or finishSimulation:
                 break
 
         # PUT DATAS IN FORM FOR MATLAB DOC
@@ -249,6 +264,9 @@ def playGame(train_indicator=1):    #1 means Train, 0 means simply Run
         env.end()  # This is for shutting down TORCS
         print("Finish.")
         iteration += 1
+
+        if finishSimulation:
+            exit()
 
 if __name__ == "__main__":
     playGame()
