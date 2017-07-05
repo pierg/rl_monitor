@@ -16,7 +16,6 @@ fi
 verify_output=$({ time verifyta -t0 -f tracefile $1 $2; } 2>realtime.txt)
 execution_time=`cat realtime.txt`
 rm realtime.txt
-rm tracefile-1.xtr
 echo "Time to execute query: $execution_time"
 if [[ $verify_output == *"Formula is satisfied."* ]]
 	then echo "The property is satisfied"

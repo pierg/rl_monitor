@@ -1,0 +1,1 @@
+A[] (TrackPos.centerRoad and Speed.GoingStraight and Damage.normal) imply (speedX_rwd+damage_rwd+trackPos_rwd+opponents_ahead_rwd+opponents_left_rwd+opponents_right_rwd+opponents_back_rwd) >= 0
