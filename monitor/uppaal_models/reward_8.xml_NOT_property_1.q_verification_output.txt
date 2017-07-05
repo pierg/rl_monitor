@@ -1,0 +1,1 @@
+Options for the verification: Generating some trace Search order is breadth first Using conservative space optimisation Seed is 1499262935 State space representation uses minimal constraint systems [2K Verifying formula 1 at line 1 [2K -- Formula is NOT satisfied.
