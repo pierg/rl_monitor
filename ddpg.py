@@ -27,9 +27,15 @@ def playGame(train_indicator=1):    #1 means Train, 0 means simply Run
 
     parser = argparse.ArgumentParser()
     parser.add_argument("-n", type=int, help="number of episodes")
+    parser.add_argument("-monitor", type=str, help="name of the monitor")
     args = parser.parse_args()
 
     iteration = 1
+
+    if args.monitor > 0 :
+        monitor = "_" + args.monitor + "_"
+    else :
+        monitor = ""
 
     isGoalReached = "goalReached = ["
     totalTime = "totalTime = ["
@@ -38,7 +44,7 @@ def playGame(train_indicator=1):    #1 means Train, 0 means simply Run
     steps = ""
     rewardsPerEpisode = ""
     rewardsPerStep = ""
-    filename = "results" + time.strftime("%d_%m_%Y_%H%M%S")
+    filename = "results" + monitor + "_" + time.strftime("%d_%m_%Y_%H%M%S")
     os.mkdir( "results/" + filename, 0755 );
     copy("results/src/plot_all_iterations.m", "results/" + filename + "/plot_all_iterations.m")
     copy("results/src/plot_results.m", "results/" + filename + "/plot_results.m")
