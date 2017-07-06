@@ -177,9 +177,11 @@ def playGame(train_indicator=1):    #1 means Train, 0 means simply Run
                 a_t[0][1] = a_t_original[0][1] + noise_t[0][1]
                 a_t[0][2] = a_t_original[0][2] + noise_t[0][2]
 
+
+
                 ob, r_t, done, info, finished = env.step(a_t[0])
 
-                if r_t == "reset" : 
+                if isinstance(r_t, basestring) : 
                     done = True
                     r_t = 0
 
