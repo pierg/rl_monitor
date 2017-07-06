@@ -3,7 +3,7 @@ echo "Launch TORCS simulation with ddpg.py and LARVA monitoring"
 
 detached=""
 monitor=""
-fn="reward_3_speed"
+fn="reward_8"
 
 while getopts ":dm:" opt; do
 	case $opt in
