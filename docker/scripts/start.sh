@@ -36,4 +36,4 @@ sudo docker exec -itd $(sudo docker ps -lq) x11vnc -forever -create -display :1.
 sudo docker exec -it $(sudo docker ps -lq) make -C monitor/$fn/ compile
 sudo docker exec -itd $(sudo docker ps -lq) make -C monitor/$fn/ run
 
-sudo docker exec -it $detached -e "DISPLAY=:1.0" $(sudo docker ps -lq) python ddpg.py $monitor
+sudo docker exec -it $detached -e "DISPLAY=:1.0" $(sudo docker ps -lq) python ddpg.py -r $monitor -x 2
