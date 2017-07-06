@@ -30,9 +30,10 @@ sudo docker exec -it $(sudo docker ps -lq) git pull origin gym_torcs
 sudo docker exec -it $(sudo docker ps -lq) bash -c "cd .. && git clone https://github.com/pierg/uppaal_to_larva.git"
 sudo docker exec -it $(sudo docker ps -lq) mkdir /rl_monitor/monitor/$fn
 sudo docker exec -it $(sudo docker ps -lq) bash -c "cd ../uppaal_to_larva && java -jar uppaal_to_larva.jar /rl_monitor/monitor/uppaal_models/$fn.xml /rl_monitor/monitor/$fn/"
+echo "PARSING DONE"
 sudo docker exec -itd $(sudo docker ps -lq) x11vnc -forever -create -display :1.0
 
-sudo docker exec -itd $(sudo docker ps -lq) make -C monitor/$fn/ compile
+sudo docker exec -it $(sudo docker ps -lq) make -C monitor/$fn/ compile
 sudo docker exec -itd $(sudo docker ps -lq) make -C monitor/$fn/ run
 
 sudo docker exec -it $d -e "DISPLAY=:1.0" $(sudo docker ps -lq) python ddpg.py $monitor
