@@ -113,7 +113,6 @@ def playGame(train_indicator=1):    #1 means Train, 0 means simply Run
         except:
             print("Cannot find the weight")
 
-
         start = time.time()
         finishSimulation = False
 
