@@ -82,7 +82,7 @@ public static int c_Speed_start = 0;
 public static int c_Speed_default = 0;
 public static double propertiesNumber = 7;
 // Precision factor: from double to public static double
-public static double FACTOR = 100;
+public static double factor=100;
 
 // Set the goals to achieve
 public static double goalSpeed = 90;       // Kmh
@@ -154,12 +154,12 @@ public static void rewardNormal(){
 // GLOBAL FUNCTIONS
 public static boolean isRightOffRoad()
 {
-    return (trackPos <= -100.0);
+    return (trackPos <= -1.0);
 }
 
 public static boolean isLeftOffRoad()
 {
-    return (trackPos >= 100.0);
+    return (trackPos >= 1.0);
 }
 
 public static void computeTotalReward(){
@@ -176,7 +176,7 @@ public static void computeTotalReward(){
 public static boolean isRightCarDetectedNearby(){
     int i;
     for(i = 13; i < 24; i++){
-        if(opponents[i] < 300.0){
+        if(opponents[i] < 3.0){
             return true;
         }
     }
@@ -187,11 +187,11 @@ public static boolean isRightCarDetected(){
     int i;
     boolean res = false;
     for(i = 13; i < 24; i++){
-        if(opponents[i] < 600.0 && opponents[i] >= 600.0){
+        if(opponents[i] < 6.0 && opponents[i] >= 3.0){
             res =  true;
         }
 
-        if(opponents[i] < 3.0){
+        if(opponents[i] < 0.03){
             return false;
         }
     }
@@ -202,11 +202,11 @@ public static boolean isRightCarDetectedFar(){
     int i;
     boolean res = false;
     for(i = 13; i < 24; i++){
-        if(opponents[i] <= 1000.0 && opponents[i] >= 1000.0){
+        if(opponents[i] <= 10.0 && opponents[i] >= 6.0){
             res = true;
         }
 
-        if(opponents[i] < 600.0){
+        if(opponents[i] < 6.0){
             return false;
         }
     }
@@ -216,7 +216,7 @@ public static boolean isRightCarDetectedFar(){
 public static boolean isRightFree(){
     int i;
     for(i = 13; i < 24; i++){
-        if(opponents[i] <= 1000.0 ){
+        if(opponents[i] <= 10.0 ){
             return false;
         }
     }
@@ -253,7 +253,7 @@ public static void rewardRightCarClose(){
 public static boolean isCarDetectedNearbyBehind(){
     int i;
     for(i = 22; i < 33; i++){
-        if(opponents[i] < 300.0){
+        if(opponents[i] < 3.0){
             return true;
         }
     }
@@ -264,11 +264,11 @@ public static boolean isCarDetectedBehind(){
     int i;
     boolean res = false;
     for(i = 22; i < 33; i++){
-        if(opponents[i] < 600.0 && opponents[i] >= 600.0){
+        if(opponents[i] < 6.0 && opponents[i] >= 3.0){
             res = true;
         }
 
-        if(opponents[i] < 300.0){
+        if(opponents[i] < 3.0){
             return false;
         }
     }
@@ -279,11 +279,11 @@ public static boolean isCarDetectedFarBehind(){
     int i;
     boolean res = false;
     for(i = 22; i < 33; i++){
-        if(opponents[i] <= 1500.0 && opponents[i] >= 1500.0){
+        if(opponents[i] <= 15.0 && opponents[i] >= 6.0){
             res = true;
         }
 
-        if(opponents[i] < 600.0){
+        if(opponents[i] < 6.0){
             return false;
         }
     }
@@ -293,7 +293,7 @@ public static boolean isCarDetectedFarBehind(){
 public static boolean isFreeBehind(){
     int i;
     for(i = 22; i < 33; i++){
-        if(opponents[i] <= 1500.0 ){
+        if(opponents[i] <= 15.0 ){
             return false;
         }
     }
@@ -331,7 +331,7 @@ public static void rewardBehindCarClose(){
 public static boolean isLeftCarDetectedNearby(){
     int i;
     for(i = 0; i < 36; i++){
-        if(opponents[i] < 300.0){
+        if(opponents[i] < 3.0){
             return true;
         }
         if(i == 5){
@@ -345,11 +345,11 @@ public static boolean isLeftCarDetected(){
     int i;
     boolean res = false;
     for(i = 0; i < 36; i++){
-        if(opponents[i] < 600.0 && opponents[i] >= 600.0){
+        if(opponents[i] < 6.0 && opponents[i] >= 3.0){
             res =  true;
         }
 
-        if(opponents[i] < 300.0){
+        if(opponents[i] < 3.0){
             return false;
         }
 
@@ -364,11 +364,11 @@ public static boolean isLeftCarDetectedFar(){
     int i;
     boolean res = false;
     for(i = 0; i < 36; i++){
-        if(opponents[i] <= 1000.0 && opponents[i] >= 1000.0){
+        if(opponents[i] <= 10.0 && opponents[i] >= 6.0){
             res = true;
         }
 
-        if(opponents[i] < 600.0){
+        if(opponents[i] < 6.0){
             return false;
         }
 
@@ -383,7 +383,7 @@ public static boolean isLeftCarDetectedFar(){
 public static boolean isLeftFree(){
     int i;
     for(i = 0; i < 36; i++){
-        if(opponents[i] <= 10.0 ){
+        if(opponents[i] <= 0.1 ){
             return false;
         }
         if(i == 5){
@@ -427,7 +427,7 @@ public static void rewardLeftCarClose(){
 public static boolean isFrontCarDetectedNearby(){
     int i;
     for(i = 4; i < 15; i++){
-        if(opponents[i] < 300.0){
+        if(opponents[i] < 3.0){
             return true;
         }
     }
@@ -438,11 +438,11 @@ public static boolean isFrontCarDetected(){
     int i;
     boolean res = false;
     for(i = 4; i < 15; i++){
-        if(opponents[i] < 600.0 && opponents[i] >= 600.0){
+        if(opponents[i] < 6.0 && opponents[i] >= 3.0){
             res =  true;
         }
 
-        if(opponents[i] < 300.0){
+        if(opponents[i] < 3.0){
             return false;
         }
     }
@@ -453,11 +453,11 @@ public static boolean isFrontCarDetectedFar(){
     int i;
     boolean res = false;
     for(i = 4; i < 15; i++){
-        if(opponents[i] <= 1500.0 && opponents[i] >= 1500.0){
+        if(opponents[i] <= 15.0 && opponents[i] >= 6.0){
             res = true;
         }
 
-        if(opponents[i] < 600.0){
+        if(opponents[i] < 6.0){
             return false;
         }
     }
@@ -467,7 +467,7 @@ public static boolean isFrontCarDetectedFar(){
 public static boolean isFrontFree(){
     int i;
     for(i = 4; i < 15; i++){
-        if(opponents[i] <= 1500.0 ){
+        if(opponents[i] <= 15.0 ){
             return false;
         }
     }
@@ -505,12 +505,12 @@ public static void rewardFrontCarClose(){
 // Track position guard functions
 public static boolean isCenter()
 {
-    return (-50.0 <= trackPos && trackPos <= 50.0);
+    return (-0.5 <= trackPos && trackPos <= 0.5);
 }
 
 public static boolean isLimitRoad()
 {   
-    return ((-100.0 < trackPos && trackPos < -100.0) || (100.0 < trackPos && trackPos < 100.0));
+    return ((-1.0 < trackPos && trackPos < -0.5) || (0.5 < trackPos && trackPos < 1.0));
 }
 
 // Return a positive value propostional to the error fo the trackPos from the Goal
@@ -545,12 +545,12 @@ public static void rewardCenter(){
 /*end functions*//*start functions*/
 public static boolean isStuck()
 {
-    return (trackPos >= 100.0 || trackPos <= -100.0) && speedX < 100.0;
+    return (trackPos >= 1.0 || trackPos <= -1.0) && speedX < 10.0;
 }
 
 public static boolean isTurning()
 {
-    return (track[9] < 9.0) && angle < 9.0 && angle > -9.0 && !isLeftOffRoad() && !isRightOffRoad() && !isStuck();
+    return (track[9] < 100.0) && angle < 0.2 && angle > -0.2 && !isLeftOffRoad() && !isRightOffRoad() && !isStuck();
 }
 
 public static boolean isGoingStraight()
@@ -728,8 +728,10 @@ public static void resetCounters(){
   }
 
   public static void resetAgent(){
-    isReset = true;
-    out.println(getJSONCounters());
-    resetCounters();
+    if(!isReset){
+        out.println(getJSONCounters());
+        isReset = true;
+        resetCounters();
+    }
   }
 }

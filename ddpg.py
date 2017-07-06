@@ -137,8 +137,8 @@ def playGame(train_indicator=1):    #1 means Train, 0 means simply Run
         finishSimulation = False
 
 
-        for i in range(len(monitorValuesJson["names"])) : 
-            monitorValues[i] += monitorValuesJson["names"][i] + "{" + str(iteration) + "} = ["
+        for j in range(len(monitorValuesJson["names"])) : 
+            monitorValues[j] += monitorValuesJson["names"][j] + "{" + str(iteration) + "} = ["
 
         print("TORCS Experiment Start.")
         for i in range(episode_count):
@@ -248,8 +248,8 @@ def playGame(train_indicator=1):    #1 means Train, 0 means simply Run
             jsonThing = send_message_to_monitor("reset", 16384).replace('\\n', '').replace('\\', '').replace('\'', '')
             monitorValuesJson = json.loads(jsonThing)
 
-            for i in range(len(monitorValuesJson["values"])) :
-                monitorValues[i] += str(monitorValuesJson["values"][i]) + " "
+            for j in range(len(monitorValuesJson["values"])) :
+                monitorValues[j] += str(monitorValuesJson["values"][j]) + " "
 
             # Results file
             endEpisode = time.time()
@@ -277,9 +277,9 @@ def playGame(train_indicator=1):    #1 means Train, 0 means simply Run
         steps += "];\n"
         rewardsPerEpisode += "];\n"
         monitorValuesStr = ""
-        for i in range(len(monitorValuesJson["values"])) : 
-            monitorValues[i] += "]\n"
-            monitorValuesStr += monitorValues[i]
+        for j in range(len(monitorValuesJson["values"])) : 
+            monitorValues[j] += "];\n"
+            monitorValuesStr += monitorValues[j]
 
         # PRINT IN MATLAB (each iteration rewrite the whole file)
         file = open("results/" + filename + "/results.m", "w")
