@@ -22,8 +22,8 @@ def reward(obs, obs_pre, action):
 
 	reward = send_message_to_monitor(message, 1024).replace('n', '').replace('\\', '').replace('\'', '')
 
-	if isinstance(reward, basestring):
-		return reward
-	else :
+	try:
 		return float(reward)
+	except ValueError:
+		return reward
 

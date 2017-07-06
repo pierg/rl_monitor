@@ -22,50 +22,31 @@ import time
 import json
 from reward import reward
 from larva import *
+from utils import *
 from array import array
 
 OU = OU()       #Ornstein-Uhlenbeck Process
 
 def playGame(train_indicator=1):    #1 means Train, 0 means simply Run
+    
+    # -n number of episodes
+    # -r name of the reward function
+    # -x time of the simulation (in hour)
+    # -k should we keep the model or not (boolean)
 
-    parser = argparse.ArgumentParser()
-    parser.add_argument("-n", type=int, help="number of episodes")
-    parser.add_argument("-r", type=str, help="name of the monitor")
-    parser.add_argument("-x", type=float, help="time of the simulation (in hour)")
-    args = parser.parse_args()
+    monitor, keepModel, simTime, maxEpisodes = getArgs()
+    isGoalReached, totalTime, episodeCount, subtimes, steps, rewardsPerEpisode, rewardsPerStep = initResultFileValues()
 
     iteration = 1
 
-    if args.r > 0 :
-        monitor = "_" + args.r
-    else :
-        monitor = ""
-
-    if args.x > 0 :
-        simTime = args.x
-    else :
-        simTime = -1
-
-    isGoalReached = "goalReached = ["
-    totalTime = "totalTime = ["
-    episodeCount = "episodeCount = ["
-    subtimes = ""
-    steps = ""
-    rewardsPerEpisode = ""
-    rewardsPerStep = ""
     filename = "results" + monitor + "_" + time.strftime("%d_%m_%Y_%H%M%S")
     os.mkdir( "results/" + filename, 0755 );
     copy("results/src/plot_all_iterations.m", "results/" + filename + "/plot_all_iterations.m")
     copy("results/src/plot_results.m", "results/" + filename + "/plot_results.m")
 
-    jsonMessage = send_message_to_monitor("reset", 8192).replace('\\n', '').replace('\\', '').replace('\'', '')
-    monitorValuesJson = json.loads(jsonMessage)
-    monitorValues = []
+    monitorValues, monitorCountersNames = initMonitorCounterValues()
 
     startSim = time.time()
-
-    for i in range(len(monitorValuesJson["names"])) : 
-        monitorValues.append("")
 
     while True:
 
@@ -85,7 +66,7 @@ def playGame(train_indicator=1):    #1 means Train, 0 means simply Run
 
         EXPLORE = 100000.
         # Check if there's an arg
-        if args.n > 0 :
+        if maxEpisodes > 0 :
             episode_count = args.n
         else :
             episode_count = 2000
@@ -136,9 +117,8 @@ def playGame(train_indicator=1):    #1 means Train, 0 means simply Run
         start = time.time()
         finishSimulation = False
 
-
-        for j in range(len(monitorValuesJson["names"])) : 
-            monitorValues[j] += monitorValuesJson["names"][j] + "{" + str(iteration) + "} = ["
+        for j in range(len(monitorCountersNames)) : 
+            monitorValues[j] += monitorCountersNames[j] + "{" + str(iteration) + "} = ["
 
         print("TORCS Experiment Start.")
         for i in range(episode_count):
@@ -181,6 +161,7 @@ def playGame(train_indicator=1):    #1 means Train, 0 means simply Run
 
                 ob, r_t, done, info, finished = env.step(a_t[0])
 
+                # If it's a string go to the next episode (reset)
                 if isinstance(r_t, basestring) : 
                     done = True
                     r_t = 0
@@ -248,10 +229,10 @@ def playGame(train_indicator=1):    #1 means Train, 0 means simply Run
 
 
             jsonThing = send_message_to_monitor("reset", 16384).replace('\\n', '').replace('\\', '').replace('\'', '')
-            monitorValuesJson = json.loads(jsonThing)
+            monitorCountersNames = json.loads(jsonThing)
 
-            for j in range(len(monitorValuesJson["values"])) :
-                monitorValues[j] += str(monitorValuesJson["values"][j]) + " "
+            for j in range(len(monitorCountersNames["values"])) :
+                monitorValues[j] += str(monitorCountersNames["values"][j]) + " "
 
             # Results file
             endEpisode = time.time()
@@ -279,7 +260,7 @@ def playGame(train_indicator=1):    #1 means Train, 0 means simply Run
         steps += "];\n"
         rewardsPerEpisode += "];\n"
         monitorValuesStr = ""
-        for j in range(len(monitorValuesJson["values"])) : 
+        for j in range(len(monitorCountersNames["values"])) : 
             monitorValues[j] += "];\n"
             monitorValuesStr += monitorValues[j]
 
