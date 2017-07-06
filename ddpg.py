@@ -41,6 +41,7 @@ def playGame(train_indicator=1):    #1 means Train, 0 means simply Run
 
     filename = "results" + monitor + "_" + time.strftime("%d_%m_%Y_%H%M%S")
     os.mkdir( "results/" + filename, 0755 );
+    os.mkdir( "results/" + filename + "/models", 0755 );
     copy("results/src/plot_all_iterations.m", "results/" + filename + "/plot_all_iterations.m")
     copy("results/src/plot_results.m", "results/" + filename + "/plot_results.m")
 
@@ -70,6 +71,7 @@ def playGame(train_indicator=1):    #1 means Train, 0 means simply Run
             episode_count = args.n
         else :
             episode_count = 2000
+
         max_steps = 100000
         #reward = 0
         done = False
@@ -156,8 +158,6 @@ def playGame(train_indicator=1):    #1 means Train, 0 means simply Run
                 a_t[0][1] = a_t_original[0][1] + noise_t[0][1]
                 a_t[0][2] = a_t_original[0][2] + noise_t[0][2]
 
-
-
                 ob, r_t, done, info, finished = env.step(a_t[0])
 
                 # If it's a string go to the next episode (reset)
@@ -217,12 +217,12 @@ def playGame(train_indicator=1):    #1 means Train, 0 means simply Run
             if np.mod(i, 3) == 0:
                 if (train_indicator):
                     print("Now we save model")
-                    actor.model.save_weights("actormodel.h5", overwrite=True)
-                    with open("actormodel.json", "w") as outfile:
+                    actor.model.save_weights("results/"+ filename + "/models/actormodel"+ str(iteration) +".h5", overwrite=True)
+                    with open("results/"+ filename + "/models/actormodel"+ str(iteration) +".json", "w") as outfile:
                         json.dump(actor.model.to_json(), outfile)
 
-                    critic.model.save_weights("criticmodel.h5", overwrite=True)
-                    with open("criticmodel.json", "w") as outfile:
+                    critic.model.save_weights("results/"+ filename + "/models/criticmodel"+ str(iteration) +".h5", overwrite=True)
+                    with open("results/"+ filename + "/models/criticmodel"+ str(iteration) +".json", "w") as outfile:
                         json.dump(critic.model.to_json(), outfile)
          
 

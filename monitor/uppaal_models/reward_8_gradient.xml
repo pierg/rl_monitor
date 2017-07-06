@@ -139,7 +139,7 @@ bool isRightCarDetected(){
             res =  true;
         }
 
-        if(opponents[i] &lt; 3){
+        if(opponents[i] &lt; 300){
             return false;
         }
     }
