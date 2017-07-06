@@ -2,7 +2,7 @@
 echo "Launch TORCS simulation with ddpg.py and LARVA monitoring"
 
 detached=""
-monitor=""
+monitor="-r reward_8"
 fn="reward_8"
 
 while getopts ":dm:" opt; do
@@ -12,7 +12,7 @@ while getopts ":dm:" opt; do
 		;;
 		m)
 			fn=$OPTARG
-			monitor="-monitor $fn"
+			monitor="-r $fn"
 		;;
 		\?)
 			echo "???" >&2
@@ -36,4 +36,4 @@ sudo docker exec -itd $(sudo docker ps -lq) x11vnc -forever -create -display :1.
 sudo docker exec -it $(sudo docker ps -lq) make -C monitor/$fn/ compile
 sudo docker exec -itd $(sudo docker ps -lq) make -C monitor/$fn/ run
 
-sudo docker exec -it $detached -e "DISPLAY=:1.0" $(sudo docker ps -lq) python ddpg.py -r $monitor -x 2
+sudo docker exec -it $detached -e "DISPLAY=:1.0" $(sudo docker ps -lq) python ddpg.py $monitor -x 2
