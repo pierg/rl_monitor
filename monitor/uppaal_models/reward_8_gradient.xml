@@ -1034,27 +1034,27 @@ int errorTrackPos()
 
 
 void rewardLimitRoad(){
-    trackPos_rwd = 0;
+    trackPos_rwd = 0 - errorTrackPos();
 }
 
 void rewardLeftOffRoad(){
     if(steer &lt; 0){
-        trackPos_rwd = -1;
+        trackPos_rwd = -1 - errorTrackPos();
     }else{
-        trackPos_rwd = -2;
+        trackPos_rwd = -2 - errorTrackPos();
     }
 }
 
 void rewardRightOffRoad(){
     if(steer &gt; 0){
-        trackPos_rwd = -1;
+        trackPos_rwd = -1 - errorTrackPos();
     }else{
-        trackPos_rwd = -2;
+        trackPos_rwd = -2 - errorTrackPos();
     }
 }
 
 void rewardCenter(){
-    trackPos_rwd = 2;
+    trackPos_rwd = 2 - errorTrackPos();
 }
 /*end functions*/</declaration>
 		<location id="id20" x="-289" y="-773">
