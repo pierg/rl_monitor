@@ -1,6 +1,6 @@
 from socket import * # Socket library
 
-def send_message_to_monitor(message):
+def send_message_to_monitor(message, bytes):
     host = "127.0.0.1" # Set to IP address of target machine
     port = 8800 # Port in the target machine
     addr = (host, port) # Tuple with the address
@@ -14,7 +14,7 @@ def send_message_to_monitor(message):
     s.shutdown(1)
 
     # We wait for the answer from the monitor (we read 1024 bytes, can be extended if needed)
-    answer = s.recv(1024)
+    answer = s.recv(bytes)
     # Close the socket
     s.close()
 

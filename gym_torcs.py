@@ -41,8 +41,6 @@ class TorcsEnv:
         os.system('sh autostart.sh')
         time.sleep(0.5)
 
-        send_message_to_monitor("reset")
-
         """
         # Modify here if you use multiple tracks in the environment
         self.client = snakeoil3.Client(p=3101, vision=self.vision)  # Open new UDP in vtorcs
@@ -209,8 +207,6 @@ class TorcsEnv:
         client.get_servers_input()  # Get the initial input from torcs
 
         obs = client.S.d  # Get the current full-observation from torcs
-
-        send_message_to_monitor("reset")
 
         self.observation = self.make_observaton(obs)
 

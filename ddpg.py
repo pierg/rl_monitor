@@ -19,7 +19,10 @@ from OU import OU
 from shutil import copy
 import timeit
 import time
+import json
 from reward import reward
+from larva import *
+from array import array
 
 OU = OU()       #Ornstein-Uhlenbeck Process
 
@@ -55,8 +58,14 @@ def playGame(train_indicator=1):    #1 means Train, 0 means simply Run
     copy("results/src/plot_all_iterations.m", "results/" + filename + "/plot_all_iterations.m")
     copy("results/src/plot_results.m", "results/" + filename + "/plot_results.m")
 
+    jsonMessage = send_message_to_monitor("reset", 8192).replace('\\n', '').replace('\\', '').replace('\'', '')
+    monitorValuesJson = json.loads(jsonMessage)
+    monitorValues = []
 
     startSim = time.time()
+
+    for i in range(len(monitorValuesJson["names"])) : 
+        monitorValues.append("")
 
     while True:
 
@@ -126,6 +135,10 @@ def playGame(train_indicator=1):    #1 means Train, 0 means simply Run
 
         start = time.time()
         finishSimulation = False
+
+
+        for i in range(len(monitorValuesJson["names"])) : 
+            monitorValues[i] += monitorValuesJson["names"][i] + "{" + str(iteration) + "} = ["
 
         print("TORCS Experiment Start.")
         for i in range(episode_count):
@@ -230,6 +243,14 @@ def playGame(train_indicator=1):    #1 means Train, 0 means simply Run
                     with open("criticmodel.json", "w") as outfile:
                         json.dump(critic.model.to_json(), outfile)
          
+
+
+            jsonThing = send_message_to_monitor("reset", 16384).replace('\\n', '').replace('\\', '').replace('\'', '')
+            monitorValuesJson = json.loads(jsonThing)
+
+            for i in range(len(monitorValuesJson["values"])) :
+                monitorValues[i] += str(monitorValuesJson["values"][i]) + " "
+
             # Results file
             endEpisode = time.time()
             print("TOTAL REWARD @ " + str(i) +"-th Episode  : Reward " + str(total_reward))
@@ -255,10 +276,14 @@ def playGame(train_indicator=1):    #1 means Train, 0 means simply Run
         subtimes += "];\n"
         steps += "];\n"
         rewardsPerEpisode += "];\n"
+        monitorValuesStr = ""
+        for i in range(len(monitorValuesJson["values"])) : 
+            monitorValues[i] += "]\n"
+            monitorValuesStr += monitorValues[i]
 
         # PRINT IN MATLAB (each iteration rewrite the whole file)
         file = open("results/" + filename + "/results.m", "w")
-        file.write(isGoalReached + "];\n" + episodeCount + "];\n" + totalTime + "];\n" + subtimes + steps + rewardsPerEpisode + rewardsPerStep)
+        file.write(isGoalReached + "];\n" + episodeCount + "];\n" + totalTime + "];\n" + subtimes + monitorValuesStr+ steps + rewardsPerEpisode + rewardsPerStep)
         file.close();
         
         env.end()  # This is for shutting down TORCS

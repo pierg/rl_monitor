@@ -1209,12 +1209,36 @@ void rewardStraight()
 			<name x="-153" y="-340">Turning</name>
 		</location>
 		<location id="id27" x="-127" y="-595">
-			<name x="-110" y="-603">GoingStraight</name>
+			<name x="-229" y="-620">GoingStraight</name>
 		</location>
 		<location id="id28" x="-127" y="-748">
 			<name x="-144" y="-799">start</name>
 		</location>
 		<init ref="id28"/>
+		<transition>
+			<source ref="id25"/>
+			<target ref="id25"/>
+			<label kind="guard" x="-518" y="-374">isStuck()</label>
+			<label kind="assignment" x="-552" y="-357">rewardStuck()</label>
+			<nail x="-450" y="-374"/>
+			<nail x="-450" y="-340"/>
+		</transition>
+		<transition>
+			<source ref="id26"/>
+			<target ref="id26"/>
+			<label kind="guard" x="-76" y="-374">isTurning()</label>
+			<label kind="assignment" x="-76" y="-357">rewardTurning()</label>
+			<nail x="-85" y="-374"/>
+			<nail x="-85" y="-340"/>
+		</transition>
+		<transition>
+			<source ref="id27"/>
+			<target ref="id27"/>
+			<label kind="guard" x="-76" y="-612">isGoingStraight()</label>
+			<label kind="assignment" x="-76" y="-595">rewardStraight()</label>
+			<nail x="-85" y="-612"/>
+			<nail x="-85" y="-578"/>
+		</transition>
 		<transition>
 			<source ref="id27"/>
 			<target ref="id25"/>
