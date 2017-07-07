@@ -1,5 +1,6 @@
 import argparse
 import json
+import time
 from larva import *
 
 def getArgs():
@@ -61,3 +62,30 @@ def str2bool(v):
 		return False
 	else:
 		raise argparse.ArgumentTypeError('Boolean value expected.')
+
+def isSimulationTimeUp(startSim, simTime):
+	statusSim = time.time()
+	simTotalTime = statusSim - startSim 
+
+	if simTime != -1 and simTotalTime >= simTime * 3600 :
+		return True
+
+	return False
+
+def writeMatlabResults(isGoalReached, episodeCount, totalTime, subtimes, steps, rewardsPerEpisode, monitorValues, finished, start, filename, i, rewardsPerStep):
+	# PUT DATAS IN FORM FOR MATLAB DOC
+    end = time.time()
+    isGoalReached += "1 " if finished else "0 "
+    episodeCount += str(i+1) + " "
+    totalTime += str(round(end-start,2)) + " "
+    subtimes += "];\n"
+    steps += "];\n"
+    rewardsPerEpisode += "];\n"
+    monitorValuesStr = ""
+    for j in range(len(monitorValues)) : 
+        monitorValuesStr += monitorValues[j] + "];\n"
+
+    # PRINT IN MATLAB (each iteration rewrite the whole file)
+    file = open("results/" + filename + "/results.m", "w")
+    file.write(isGoalReached + "];\n" + episodeCount + "];\n" + totalTime + "];\n" + subtimes + monitorValuesStr+ steps + rewardsPerEpisode + rewardsPerStep)
+    file.close();

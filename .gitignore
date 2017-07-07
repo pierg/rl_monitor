@@ -1,6 +1,7 @@
 monitor/*.class
 *.pyc
 results/*
+logs.txt
 actormodel.h5
 criticmodel.h5
 _cls_rewardautomaton0.java

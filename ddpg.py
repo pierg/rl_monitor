@@ -118,8 +118,11 @@ def playGame(train_indicator=1):    #1 means Train, 0 means simply Run
         start = time.time()
         finishSimulation = False
 
+        send_message_to_monitor("reset", 1024)
+
         for j in range(len(monitorCountersNames)) : 
-            monitorValues[j] += monitorCountersNames[j] + "{" + str(iteration) + "} = ["
+            name = monitorCountersNames[j]
+            monitorValues[j] += name + "{" + str(iteration) + "} = ["
 
         print("TORCS Experiment Start.")
         for i in range(episode_count):
@@ -197,22 +200,18 @@ def playGame(train_indicator=1):    #1 means Train, 0 means simply Run
                 total_reward += r_t
                 s_t = s_t1
             
-                print("Episode", i, "Step", step, "Action", a_t, "Reward", r_t, "Loss", loss)
-            
                 # MATLAB
                 rewardsPerStep += str(round(r_t, 2)) + " "
 
-                statusSim = time.time()
-                simTotalTime = statusSim - startSim 
+                finishSimulation = isSimulationTimeUp(startSim, simTime)
 
-                if simTime != -1 and simTotalTime >= simTime * 3600 :
-                    finishSimulation = True
+                if np.mod(step,15) == 0:
+                    print("Episode", i, "Step", step, "Action", a_t, "Reward", r_t, "Loss", loss)
+                    writeMatlabResults(isGoalReached, episodeCount, totalTime, subtimes, steps, rewardsPerEpisode, monitorValues, finished, start, filename, i, rewardsPerStep)
 
                 step += 1
                 if done or finished or finishSimulation:
                     break
-
-
 
             if np.mod(i, 3) == 0:
                 if (train_indicator):
@@ -224,8 +223,6 @@ def playGame(train_indicator=1):    #1 means Train, 0 means simply Run
                     critic.model.save_weights("results/"+ filename + "/models/criticmodel"+ str(iteration) +".h5", overwrite=True)
                     with open("results/"+ filename + "/models/criticmodel"+ str(iteration) +".json", "w") as outfile:
                         json.dump(critic.model.to_json(), outfile)
-         
-
 
             jsonThing = send_message_to_monitor("reset", 16384).replace('\\n', '').replace('\\', '').replace('\'', '')
             monitorCountersNames = json.loads(jsonThing)

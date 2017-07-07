@@ -85,4 +85,4 @@ echo ""
 
 echo "Starting the simulation !"
 echo ""
-sudo docker exec -it $detached -e "DISPLAY=:1.0" $(sudo docker ps -lq) python ddpg.py $monitor $duration
+sudo docker exec -it $detached -e "DISPLAY=:1.0" $(sudo docker ps -lq) bash -c "python ddpg.py $monitor $duration > logs.txt"
