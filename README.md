@@ -1,9 +1,22 @@
-# rl_monitor
-Combining Reinforcement Learning with Runtime Monitoring
+# DDPG-Torcs-Tensorflow
+Implementation of Deep Deterministic Policy Gradient Algorithm in Tensorflow to play Torcs 
 
-In the _gym_torcs_ branch, the reinforcement learning agent in TORCS is based on https://github.com/erlerobot/gym-gazebo
+To train or Test 
+Modify: my_config.py
+run: python playGame_tensorflow.py
 
-In the _gym_gazebo_ branch, the reinforcement learning agent in TORCS is based on https://yanpanlau.github.io/2016/10/11/Torcs-Keras.html
+Usually you should observe high rewards for around ~300th or 400th episode. If you are still getting low rewards. Please restart training. 
 
-The monitor is based on LARVA http://www.cs.um.edu.mt/svrg/Tools/LARVA/
+For faster training avoid the complete rendering of the graphics. This can be done by replacing the practice.xml to practice_results_only.xml
+
+There is a configuration file "practice.xml" that exists in one of the 2 folders which can be found by running the command
+
+sudo find / -name practice.xml
+
+One of the folders is "~/.torcs/config/raceman"
+Other can be found as specified.
+
+Torcs can run in 2 modes either the complete race simulation or results only <10X faster>
+For training I replace practice.xml by practice_results_mode.xml
+For visualization again replace practice.xml by practice_normal_mode.xml
 

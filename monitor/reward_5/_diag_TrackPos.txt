@@ -1,0 +1,30 @@
+digraph _logic_TrackPos {
+rankdir=LR;
+node [shape = circle]; leftOffRoad limitRoad centerRoad rightOffRoad default start;
+node [shape = point]; _s_s;
+_s_s -> start;
+default -> start [ label = "(1) reset\\\\EchoServer . tot_reward = 0 ; EchoServer . resetAgent ( ) ; "];
+default -> default [ label = "(2) rlevent\\\\EchoServer . tot_reward = 0 ; EchoServer . resetAgent ( ) ; "];
+centerRoad -> start [ label = "(1) reset\\\\EchoServer . tot_reward = 0 ; EchoServer . resetAgent ( ) ; "];
+centerRoad -> centerRoad [ label = "(2) rlevent\\EchoServer . isCenter ( ) \\EchoServer . rewardCenter ( ) ; EchoServer . propertyChecked ( ) ; EchoServer . c_TrackPos_centerRoad ++ ; "];
+centerRoad -> limitRoad [ label = "(3) rlevent\\EchoServer . isLimitRoad ( ) \\EchoServer . rewardLimitRoad ( ) ; EchoServer . propertyChecked ( ) ; EchoServer . c_TrackPos_limitRoad ++ ; "];
+centerRoad -> default [ label = "(4) rlevent\\\\EchoServer . tot_reward = 0 ; EchoServer . resetAgent ( ) ; "];
+start -> start [ label = "(1) reset\\\\EchoServer . tot_reward = 0 ; EchoServer . resetAgent ( ) ; "];
+start -> start [ label = "(2) reset\\\\EchoServer . tot_reward = 0 ; EchoServer . resetAgent ( ) ; "];
+start -> centerRoad [ label = "(3) rlevent\\\\EchoServer . propertyChecked ( ) ; EchoServer . c_TrackPos_centerRoad ++ ; "];
+start -> default [ label = "(4) rlevent\\\\EchoServer . tot_reward = 0 ; EchoServer . resetAgent ( ) ; "];
+leftOffRoad -> start [ label = "(1) reset\\\\EchoServer . tot_reward = 0 ; EchoServer . resetAgent ( ) ; "];
+leftOffRoad -> leftOffRoad [ label = "(2) rlevent\\EchoServer . isLeftOffRoad ( ) \\EchoServer . rewardLeftOffRoad ( ) ; EchoServer . propertyChecked ( ) ; EchoServer . c_TrackPos_leftOffRoad ++ ; "];
+leftOffRoad -> limitRoad [ label = "(3) rlevent\\EchoServer . isLimitRoad ( ) \\EchoServer . rewardLimitRoad ( ) ; EchoServer . propertyChecked ( ) ; EchoServer . c_TrackPos_limitRoad ++ ; "];
+leftOffRoad -> default [ label = "(4) rlevent\\\\EchoServer . tot_reward = 0 ; EchoServer . resetAgent ( ) ; "];
+rightOffRoad -> start [ label = "(1) reset\\\\EchoServer . tot_reward = 0 ; EchoServer . resetAgent ( ) ; "];
+rightOffRoad -> limitRoad [ label = "(2) rlevent\\EchoServer . isLimitRoad ( ) \\EchoServer . rewardLimitRoad ( ) ; EchoServer . propertyChecked ( ) ; EchoServer . c_TrackPos_limitRoad ++ ; "];
+rightOffRoad -> rightOffRoad [ label = "(3) rlevent\\EchoServer . isRightOffRoad ( ) \\EchoServer . rewardRightOffRoad ( ) ; EchoServer . propertyChecked ( ) ; EchoServer . c_TrackPos_rightOffRoad ++ ; "];
+rightOffRoad -> default [ label = "(4) rlevent\\\\EchoServer . tot_reward = 0 ; EchoServer . resetAgent ( ) ; "];
+limitRoad -> start [ label = "(1) reset\\\\EchoServer . tot_reward = 0 ; EchoServer . resetAgent ( ) ; "];
+limitRoad -> rightOffRoad [ label = "(2) rlevent\\EchoServer . isRightOffRoad ( ) \\EchoServer . rewardRightOffRoad ( ) ; EchoServer . propertyChecked ( ) ; EchoServer . c_TrackPos_rightOffRoad ++ ; "];
+limitRoad -> leftOffRoad [ label = "(3) rlevent\\EchoServer . isLeftOffRoad ( ) \\EchoServer . rewardLeftOffRoad ( ) ; EchoServer . propertyChecked ( ) ; EchoServer . c_TrackPos_leftOffRoad ++ ; "];
+limitRoad -> limitRoad [ label = "(4) rlevent\\EchoServer . isLimitRoad ( ) \\EchoServer . rewardLimitRoad ( ) ; EchoServer . propertyChecked ( ) ; EchoServer . c_TrackPos_limitRoad ++ ; "];
+limitRoad -> centerRoad [ label = "(5) rlevent\\EchoServer . isCenter ( ) \\EchoServer . rewardCenter ( ) ; EchoServer . propertyChecked ( ) ; EchoServer . c_TrackPos_centerRoad ++ ; "];
+limitRoad -> default [ label = "(6) rlevent\\\\EchoServer . tot_reward = 0 ; EchoServer . resetAgent ( ) ; "];
+}
