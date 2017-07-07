@@ -12,6 +12,7 @@ while getopts ":dom:t:" opt; do
 	case $opt in
 		d)
 			detached="-d"
+			logs_output="> logs.txt"
 		;;
 		m)
 			fn=$OPTARG
@@ -22,7 +23,6 @@ while getopts ":dom:t:" opt; do
 		;;
 		o)
 			original=true
-			logs_output="> logs.txt"
 		;;
 		\?)
 			echo "???" >&2
