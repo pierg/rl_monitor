@@ -5,6 +5,7 @@ detached=""
 monitor="-r reward_8"
 fn="reward_8"
 duration=""
+logs_output=""
 original=false
 
 while getopts ":dom:t:" opt; do
@@ -21,6 +22,7 @@ while getopts ":dom:t:" opt; do
 		;;
 		o)
 			original=true
+			logs_output="> logs.txt"
 		;;
 		\?)
 			echo "???" >&2
@@ -85,4 +87,4 @@ echo ""
 
 echo "Starting the simulation !"
 echo ""
-sudo docker exec -it $detached -e "DISPLAY=:1.0" $(sudo docker ps -lq) bash -c "python ddpg.py $monitor $duration > logs.txt"
+sudo docker exec -it $detached -e "DISPLAY=:1.0" $(sudo docker ps -lq) bash -c "python ddpg.py $monitor $duration $logs_output"
