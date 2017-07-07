@@ -33,8 +33,8 @@ def playGame(train_indicator=1):    #1 means Train, 0 means simply Run
     # -r name of the reward function
     # -x time of the simulation (in hour)
     # -k should we keep the model or not (boolean)
-
     monitor, keepModel, simTime, maxEpisodes = getArgs()
+
     isGoalReached, totalTime, episodeCount, subtimes, steps, rewardsPerEpisode, rewardsPerStep = initResultFileValues()
 
     iteration = 1
@@ -225,10 +225,10 @@ def playGame(train_indicator=1):    #1 means Train, 0 means simply Run
                         json.dump(critic.model.to_json(), outfile)
 
             jsonThing = send_message_to_monitor("reset", 16384).replace('\\n', '').replace('\\', '').replace('\'', '')
-            monitorCountersNames = json.loads(jsonThing)
+            monitorCounters = json.loads(jsonThing)
 
-            for j in range(len(monitorCountersNames["values"])) :
-                monitorValues[j] += str(monitorCountersNames["values"][j]) + " "
+            for j in range(len(monitorCounters["values"])) :
+                monitorValues[j] += str(monitorCounters["values"][j]) + " "
 
             # Results file
             endEpisode = time.time()
@@ -256,7 +256,7 @@ def playGame(train_indicator=1):    #1 means Train, 0 means simply Run
         steps += "];\n"
         rewardsPerEpisode += "];\n"
         monitorValuesStr = ""
-        for j in range(len(monitorCountersNames["values"])) : 
+        for j in range(len(monitorCounters["values"])) : 
             monitorValues[j] += "];\n"
             monitorValuesStr += monitorValues[j]
 
