@@ -51,8 +51,8 @@ echo ""
 
 # update the repo
 echo "Update the repo..."
+sudo docker exec -it $(sudo docker ps -lq) git fetch
 sudo docker exec -it $(sudo docker ps -lq) git checkout tf_torcs
-sudo docker exec -it $(sudo docker ps -lq) git pull origin tf_torcs
 echo "...done"
 echo ""
 
