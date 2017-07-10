@@ -55,6 +55,8 @@ sudo docker exec -it $(sudo docker ps -lq) git remote update
 echo "...?"
 sudo docker exec -it $(sudo docker ps -lq) git fetch origin
 echo "...??"
+sudo docker exec -it $(sudo docker ps -lq) git branch -a
+echo "...???"
 sudo docker exec -it $(sudo docker ps -lq) git checkout --track origin/tf_torcs
 echo "...done"
 echo ""
