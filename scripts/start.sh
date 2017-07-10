@@ -51,14 +51,14 @@ echo ""
 
 # update the repo
 echo "Update the repo..."
-sudo docker exec -it $(sudo docker ps -lq) git pull origin gym_torcs
+sudo docker exec -it $(sudo docker ps -lq) git remote show origin
 sudo docker exec -it $(sudo docker ps -lq) git remote update
 echo "...?"
 sudo docker exec -it $(sudo docker ps -lq) git fetch origin
 echo "...??"
 sudo docker exec -it $(sudo docker ps -lq) git branch -a
 echo "...???"
-sudo docker exec -it $(sudo docker ps -lq) git checkout --track origin/tf_torcs
+sudo docker exec -it $(sudo docker ps -lq) git checkout -b local-name origin/tf_torcs
 echo "...done"
 echo ""
 
