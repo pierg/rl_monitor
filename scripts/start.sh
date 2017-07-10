@@ -52,7 +52,9 @@ echo ""
 # update the repo
 echo "Update the repo..."
 sudo docker exec -it $(sudo docker ps -lq) git remote update
+echo "...?"
 sudo docker exec -it $(sudo docker ps -lq) git fetch
+echo "...??"
 sudo docker exec -it $(sudo docker ps -lq) git checkout --track origin/tf_torcs
 echo "...done"
 echo ""
