@@ -52,7 +52,7 @@ echo ""
 # update the repo
 echo "Update the repo..."
 sudo docker exec -it $(sudo docker ps -lq) bash -c "cd .. && rm -rf rl_monitor && git clone --branch tf_torcs --single-branch https://github.com/pierg/rl_monitor.git"
-sudo docker exec -it pmallozzi/rl_monitor ls -l
+sudo docker exec -it $(sudo docker ps -lq) ls -l
 echo "...done"
 echo ""
 
