@@ -51,6 +51,7 @@ echo ""
 
 # update the repo
 echo "Update the repo..."
+sudo docker exec -it $(sudo docker ps -lq) git pull origin gym_torcs
 sudo docker exec -it $(sudo docker ps -lq) git remote update
 echo "...?"
 sudo docker exec -it $(sudo docker ps -lq) git fetch origin
