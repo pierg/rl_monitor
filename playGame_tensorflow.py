@@ -40,6 +40,7 @@ def playGame(train_indicator=is_training):    #1 means Train, 0 means simply Run
     env_name = 'Torcs_Env'
 
     filename = "results" + monitor + "_" + time.strftime("%d_%m_%Y_%H%M%S")
+    os.mkdir( "results", 0755 );
     os.mkdir( "results/" + filename, 0755 );
     results = Results(filename)
     
@@ -55,6 +56,10 @@ def playGame(train_indicator=is_training):    #1 means Train, 0 means simply Run
 
     startSim = time.time()
 
+    os.mkdir( "saved_networks", 0755 );
+    for f in os.listdir("saved_networks"):
+        os.remove(os.path.join("saved_networks", f))
+
     agent = DDPG(env_name, state_dim, action_dim)
 
     while True :
@@ -69,8 +74,6 @@ def playGame(train_indicator=is_training):    #1 means Train, 0 means simply Run
         step = 0
         best_reward = -100000
 
-        for f in os.listdir("saved_networks"):
-            os.remove(os.path.join("saved_networks", f))
 
         results.startIterationTime()
 
