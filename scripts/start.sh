@@ -7,6 +7,7 @@ fn="reward_8"
 duration=""
 logs_output=""
 original=false
+opponents=false
 
 while getopts ":doem:t:" opt; do
 	case $opt in
@@ -28,9 +29,7 @@ while getopts ":doem:t:" opt; do
 			monitor="-r original"
 		;;
 		e)
-			rm ~/.torcs/config/raceman/pratice.xml
-			mv sources/quickrace.xml ~/.torcs/config/raceman/pratice.xml
-			echo "Using opponents"
+			opponents=true
 		;;
 		\?)
 			echo "???" >&2
@@ -65,6 +64,14 @@ if [ "$original" = true ] ; then
 	echo "Switch to original function..."
     sudo docker exec -it $(sudo docker ps -lq) mv reward.py reward_1.py
     sudo docker exec -it $(sudo docker ps -lq) mv reward_0.py reward.py
+    echo "...done"
+    echo ""
+fi
+
+if [ "$opponents" = true ] ; then
+	echo "Using opponents..."
+	sudo docker exec -it $(sudo docker ps -lq) rm ~/.torcs/config/raceman/pratice.xml
+	sudo docker exec -it $(sudo docker ps -lq) mv sources/quickrace.xml ~/.torcs/config/raceman/pratice.xml
     echo "...done"
     echo ""
 fi
