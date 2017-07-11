@@ -6,6 +6,10 @@ def reward(obs, obs_pre, action):
 
 
 	try:
+		action['steer'] = float(action['steer'])
+		action['accel'] = float(action['accel'])
+		action['brake'] = float(action['brake'])
+
 		message = json.dumps({"obs": obs, "obs_pre": obs_pre, "action": action}) 
 		reward = send_message_to_monitor(message, 1024).replace('n', '').replace('\\', '').replace('\'', '')
 		
