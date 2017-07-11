@@ -27,30 +27,12 @@ def getArgs():
 	else :
 		simTime = -1
 
-	return monitor, keepModel, simTime, args.n
+	if args.n > 0 :
+		episode_count = args.n
+	else :
+		episode_count = 2000
 
-def initResultFileValues():
-	isGoalReached = "goalReached = ["
-	totalTime = "totalTime = ["
-	episodeCount = "episodeCount = ["
-	subtimes = ""
-	steps = ""
-	rewardsPerEpisode = ""
-	rewardsPerStep = ""
-
-	return isGoalReached, totalTime, episodeCount, subtimes, steps, rewardsPerEpisode, rewardsPerStep
-
-# init the array which will contains all the state counters
-def initMonitorCounterValues():
-	# we get a first json because we need the array size
-	jsonMessage = send_message_to_monitor("reset", 8192).replace('\\n', '').replace('\\', '').replace('\'', '')
-	monitorValuesJson = json.loads(jsonMessage)
-	monitorValues = []
-
-	for i in range(len(monitorValuesJson["names"])) : 
-		monitorValues.append("")
-
-	return monitorValues, monitorValuesJson["names"]
+	return monitor, keepModel, simTime, episode_count
 
 
 def str2bool(v):
@@ -71,21 +53,3 @@ def isSimulationTimeUp(startSim, simTime):
 		return True
 
 	return False
-
-def writeMatlabResults(isGoalReached, episodeCount, totalTime, subtimes, steps, rewardsPerEpisode, monitorValues, finished, start, filename, i, rewardsPerStep):
-	# PUT DATAS IN FORM FOR MATLAB DOC
-    end = time.time()
-    isGoalReached += "1 " if finished else "0 "
-    episodeCount += str(i+1) + " "
-    totalTime += str(round(end-start,2)) + " "
-    subtimes += "];\n"
-    steps += "];\n"
-    rewardsPerEpisode += "];\n"
-    monitorValuesStr = ""
-    for j in range(len(monitorValues)) : 
-        monitorValuesStr += monitorValues[j] + "];\n"
-
-    # PRINT IN MATLAB (each iteration rewrite the whole file)
-    file = open("results/" + filename + "/results.m", "w")
-    file.write(isGoalReached + "];\n" + episodeCount + "];\n" + totalTime + "];\n" + subtimes + monitorValuesStr+ steps + rewardsPerEpisode + rewardsPerStep)
-    file.close();

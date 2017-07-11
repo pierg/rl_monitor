@@ -8,7 +8,7 @@ duration=""
 logs_output=""
 original=false
 
-while getopts ":dom:t:" opt; do
+while getopts ":doem:t:" opt; do
 	case $opt in
 		d)
 			detached="-d"
@@ -16,13 +16,21 @@ while getopts ":dom:t:" opt; do
 		;;
 		m)
 			fn=$OPTARG
-			monitor="-r $fn"
+			if [ "$original" = false ] ; then
+				monitor="-r $fn"
+			fi
 		;;
 		t)
 			duration="-x $OPTARG"
 		;;
 		o)
 			original=true
+			monitor="-r original"
+		;;
+		e)
+			rm ~/.torcs/config/raceman/pratice.xml
+			mv sources/quickrace.xml ~/.torcs/config/raceman/pratice.xml
+			echo "Using opponents"
 		;;
 		\?)
 			echo "???" >&2

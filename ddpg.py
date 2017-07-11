@@ -22,6 +22,7 @@ import time
 import json
 from reward import reward
 from larva import *
+from results import Results
 from utils import *
 from array import array
 
@@ -33,11 +34,7 @@ def playGame(train_indicator=1):    #1 means Train, 0 means simply Run
     # -r name of the reward function
     # -x time of the simulation (in hour)
     # -k should we keep the model or not (boolean)
-    monitor, keepModel, simTime, maxEpisodes = getArgs()
-
-    isGoalReached, totalTime, episodeCount, subtimes, steps, rewardsPerEpisode, rewardsPerStep = initResultFileValues()
-
-    iteration = 1
+    monitor, keepModel, simTime, episode_count = getArgs()
 
     filename = "results" + monitor + "_" + time.strftime("%d_%m_%Y_%H%M%S")
     os.mkdir( "results/" + filename, 0755 );
@@ -45,9 +42,11 @@ def playGame(train_indicator=1):    #1 means Train, 0 means simply Run
     copy("results/src/plot_all_iterations.m", "results/" + filename + "/plot_all_iterations.m")
     copy("results/src/plot_results.m", "results/" + filename + "/plot_results.m")
 
-    monitorValues, monitorCountersNames = initMonitorCounterValues()
+    results = Results(filename)
 
     startSim = time.time()
+
+    iteration = 1
 
     while True:
 
@@ -67,10 +66,6 @@ def playGame(train_indicator=1):    #1 means Train, 0 means simply Run
 
         EXPLORE = 100000.
         # Check if there's an arg
-        if maxEpisodes > 0 :
-            episode_count = args.n
-        else :
-            episode_count = 2000
 
         max_steps = 100000
         #reward = 0
@@ -93,11 +88,6 @@ def playGame(train_indicator=1):    #1 means Train, 0 means simply Run
         # Generate a Torcs environment
         env = TorcsEnv(reward, vision=vision, throttle=True,gear_change=False)
 
-        # Get the results in a matlab format
-        subtimes += "subtimes{" + str(iteration) + "} = ["
-        steps += "step{" + str(iteration) + "} = ["
-        rewardsPerEpisode += "rewardsPerEpisode{" + str(iteration) + "} = ["
-        lastEpisodeStep = 0
 
         #copy("originalmodel/actormodel.h5", "actormodel.h5")
         #copy("originalmodel/criticmodel.h5", "criticmodel.h5")
@@ -115,23 +105,17 @@ def playGame(train_indicator=1):    #1 means Train, 0 means simply Run
         except:
             print("Cannot find the weight")
 
-        start = time.time()
+        results.startIterationTime()
         finishSimulation = False
 
         send_message_to_monitor("reset", 1024)
-
-        for j in range(len(monitorCountersNames)) : 
-            name = monitorCountersNames[j]
-            monitorValues[j] += name + "{" + str(iteration) + "} = ["
 
         print("TORCS Experiment Start.")
         for i in range(episode_count):
 
             print("Episode : " + str(i) + " Replay Buffer " + str(buff.count()))
 
-            # Set episode timer and initialize for Matlab
-            startEpisode = time.time()
-            rewardsPerStep += "rewardsPerStep{" + str(iteration) + "}{" + str(i+1) + "} = ["
+            results.startEpisodeTime()
 
             if np.mod(i, 3) == 0:
                 ob = env.reset(relaunch=True)   #relaunch TORCS every 3 episode because of the memory leak error
@@ -161,7 +145,7 @@ def playGame(train_indicator=1):    #1 means Train, 0 means simply Run
                 a_t[0][1] = a_t_original[0][1] + noise_t[0][1]
                 a_t[0][2] = a_t_original[0][2] + noise_t[0][2]
 
-                ob, r_t, done, info, finished = env.step(a_t[0])
+                ob, r_t, done, info, finished, obs = env.step(a_t[0])
 
                 # If it's a string go to the next episode (reset)
                 if isinstance(r_t, basestring) : 
@@ -199,15 +183,14 @@ def playGame(train_indicator=1):    #1 means Train, 0 means simply Run
 
                 total_reward += r_t
                 s_t = s_t1
-            
-                # MATLAB
-                rewardsPerStep += str(round(r_t, 2)) + " "
 
                 finishSimulation = isSimulationTimeUp(startSim, simTime)
 
+                results.stepUpdate(r_t, obs, a_t[0])
+
                 if np.mod(step,15) == 0:
                     print("Episode", i, "Step", step, "Action", a_t, "Reward", r_t, "Loss", loss)
-                    writeMatlabResults(isGoalReached, episodeCount, totalTime, subtimes, steps, rewardsPerEpisode, monitorValues, finished, start, filename, i, rewardsPerStep)
+                    results.writeInFileUnfinishedIteration()
 
                 step += 1
                 if done or finished or finishSimulation:
@@ -224,49 +207,20 @@ def playGame(train_indicator=1):    #1 means Train, 0 means simply Run
                     with open("results/"+ filename + "/models/criticmodel"+ str(iteration) +".json", "w") as outfile:
                         json.dump(critic.model.to_json(), outfile)
 
-            jsonThing = send_message_to_monitor("reset", 16384).replace('\\n', '').replace('\\', '').replace('\'', '')
-            monitorCounters = json.loads(jsonThing)
-
-            for j in range(len(monitorCounters["values"])) :
-                monitorValues[j] += str(monitorCounters["values"][j]) + " "
-
-            # Results file
-            endEpisode = time.time()
             print("TOTAL REWARD @ " + str(i) +"-th Episode  : Reward " + str(total_reward))
             print("Total Step: " + str(step))
             print("")
 
-            # Matlab strings
-            subtimes += str(round(endEpisode - startEpisode)) + " "
-            steps += str(step - lastEpisodeStep) + " "
-            rewardsPerEpisode += str(round(total_reward, 2)) + " "
-            rewardsPerStep += "];\n"
-
-            lastEpisodeStep = step
+            results.endEpisode(step, total_reward)
 
             if finished or finishSimulation:
                 break
 
-        # PUT DATAS IN FORM FOR MATLAB DOC
-        end = time.time()
-        isGoalReached += "1 " if finished else "0 "
-        episodeCount += str(i+1) + " "
-        totalTime += str(round(end-start,2)) + " "
-        subtimes += "];\n"
-        steps += "];\n"
-        rewardsPerEpisode += "];\n"
-        monitorValuesStr = ""
-        for j in range(len(monitorCounters["values"])) : 
-            monitorValues[j] += "];\n"
-            monitorValuesStr += monitorValues[j]
+        results.writeInFile(finished);
 
-        # PRINT IN MATLAB (each iteration rewrite the whole file)
-        file = open("results/" + filename + "/results.m", "w")
-        file.write(isGoalReached + "];\n" + episodeCount + "];\n" + totalTime + "];\n" + subtimes + monitorValuesStr+ steps + rewardsPerEpisode + rewardsPerStep)
-        file.close();
-        
         env.end()  # This is for shutting down TORCS
         print("Finish.")
+
         iteration += 1
 
         if finishSimulation:
