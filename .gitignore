@@ -1,5 +1,4 @@
 monitor/*.class
 *.pyc
-results/*
 saved_networks/*
 _cls_rewardautomaton0.java
