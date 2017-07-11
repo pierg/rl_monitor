@@ -12,7 +12,7 @@ while getopts ":dom:t:" opt; do
 	case $opt in
 		d)
 			detached="-d"
-			logs_output="> logs.txt"
+			logs_output="&> logs.txt"
 		;;
 		m)
 			fn=$OPTARG
