@@ -70,11 +70,11 @@ fi
 
 if [ "$opponents" = true ] ; then
 	echo "Using opponents..."
-	sudo docker exec -it $(sudo docker ps -lq) rm ~/.torcs/config/raceman/pratice.xml
-	sudo docker exec -it $(sudo docker ps -lq) mv sources/quickrace.xml ~/.torcs/config/raceman/pratice.xml
-	sudo docker exec -it $(sudo docker ps -lq) mv sources/quickrace.xml ~/.torcs/config/raceman/quickrace.xml
+	sudo docker exec -it $(sudo docker ps -lq) rm /root/.torcs/config/raceman/pratice.xml
+	sudo docker exec -it $(sudo docker ps -lq) mv scripts/sources/quickrace.xml ~/.torcs/config/raceman/pratice.xml
+	sudo docker exec -it $(sudo docker ps -lq) mv scripts/sources/quickrace.xml ~/.torcs/config/raceman/quickrace.xml
     sudo docker exec -it $(sudo docker ps -lq) mv autostart.sh autostart_1.sh
-    sudo docker exec -it $(sudo docker ps -lq) mv autostart_opponent.sh autostart.sh
+    sudo docker exec -it $(sudo docker ps -lq) mv autostart_opponents.sh autostart.sh
     echo "...done"
     echo ""
 fi
