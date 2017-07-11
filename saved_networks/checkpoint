@@ -1,2 +1,6 @@
-model_checkpoint_path: "Torcs_Envnetwork-ddpg-205"
-all_model_checkpoint_paths: "Torcs_Envnetwork-ddpg-205"
+model_checkpoint_path: "Torcs_Envnetwork-ddpg-24134"
+all_model_checkpoint_paths: "Torcs_Envnetwork-ddpg-7950"
+all_model_checkpoint_paths: "Torcs_Envnetwork-ddpg-7983"
+all_model_checkpoint_paths: "Torcs_Envnetwork-ddpg-10902"
+all_model_checkpoint_paths: "Torcs_Envnetwork-ddpg-10985"
+all_model_checkpoint_paths: "Torcs_Envnetwork-ddpg-24134"
