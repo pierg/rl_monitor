@@ -146,13 +146,18 @@ class Results:
 		for i in range(len(self.action_values_names)) : 
 			resultString += self.actionValues[self.action_values_names[i]] + "];\n"
 
+		rewardsString = ""
 		for i in range(len(self.monitorRewards)) : 
-			resultString += self.monitorRewards[i] + "];\n"
+			rewardsString += self.monitorRewards[i] + "];\n"
 
 
 		# PRINT IN MATLAB (each iteration rewrite the whole file)
 		file = open("results/" + self.filename + "/results.m", "w")
 		file.write(resultString)
+		file.close();
+
+		file = open("results/" + self.filename + "/rewards.m", "w")
+		file.write(rewardsString)
 		file.close();
 
 
@@ -185,10 +190,15 @@ class Results:
 		for i in range(len(self.action_values_names)) : 
 			resultString += self.actionValues[self.action_values_names[i]]
 
+		rewardsString = ""
 		for i in range(len(self.monitorRewards)) : 
-			resultString += self.monitorRewards[i]
+			rewardsString += self.monitorRewards[i]
 
 		# PRINT IN MATLAB (each iteration rewrite the whole file)
 		file = open("results/" + self.filename + "/results.m", "w")
 		file.write(resultString)
+		file.close();
+
+		file = open("results/" + self.filename + "/rewards.m", "w")
+		file.write(rewardsString)
 		file.close();

@@ -216,7 +216,30 @@ void rewardRightCarClose(){
 		<init ref="id4"/>
 		<transition>
 			<source ref="id1"/>
+			<target ref="id3"/>
+			<label kind="guard" x="85" y="-85">isRightCarDetectedFar()</label>
+			<label kind="assignment" x="85" y="-68">rewardRightCarFar()</label>
+			<nail x="357" y="-51"/>
+			<nail x="25" y="-51"/>
+			<nail x="25" y="-59"/>
+			<nail x="8" y="-59"/>
+			<nail x="8" y="-51"/>
+			<nail x="-238" y="-51"/>
+		</transition>
+		<transition>
+			<source ref="id3"/>
+			<target ref="id1"/>
+			<label kind="guard" x="85" y="127">isRightCarDetectedNearby()</label>
+			<label kind="assignment" x="85" y="144">rewardRightCarClose()</label>
+			<nail x="-178" y="127"/>
+			<nail x="314" y="127"/>
+			<nail x="357" y="127"/>
+		</transition>
+		<transition>
+			<source ref="id1"/>
 			<target ref="id2"/>
+			<label kind="guard" x="-518" y="-187">isRightFree()</label>
+			<label kind="assignment" x="-518" y="-170">rewardRightFree()</label>
 			<nail x="357" y="-153"/>
 			<nail x="-603" y="-153"/>
 		</transition>
@@ -255,22 +278,6 @@ void rewardRightCarClose(){
 			<nail x="-229" y="161"/>
 			<nail x="-229" y="170"/>
 			<nail x="17" y="170"/>
-		</transition>
-		<transition>
-			<source ref="id3"/>
-			<target ref="id2"/>
-			<label kind="guard" x="-518" y="-93">isRightFree()</label>
-			<label kind="assignment" x="-518" y="-76">rewardRightFree()</label>
-			<nail x="-238" y="-59"/>
-			<nail x="-603" y="-59"/>
-		</transition>
-		<transition>
-			<source ref="id2"/>
-			<target ref="id3"/>
-			<label kind="guard" x="-518" y="119">isRightCarDetectedFar()</label>
-			<label kind="assignment" x="-518" y="136">rewardRightCarFar()</label>
-			<nail x="-586" y="119"/>
-			<nail x="-238" y="119"/>
 		</transition>
 		<transition>
 			<source ref="id1"/>
@@ -482,8 +489,8 @@ void rewardBehindCarClose(){
 		<location id="id6" x="383" y="-170">
 			<name x="323" y="-204">carCloseBehind</name>
 		</location>
-		<location id="id7" x="43" y="-170">
-			<name x="60" y="-178">carBehind</name>
+		<location id="id7" x="40" y="-176">
+			<name x="57" y="-184">carBehind</name>
 		</location>
 		<location id="id8" x="-212" y="-170">
 			<name x="-195" y="-178">carFarbehind</name>
@@ -493,31 +500,79 @@ void rewardBehindCarClose(){
 		</location>
 		<init ref="id5"/>
 		<transition>
+			<source ref="id6"/>
+			<target ref="id8"/>
+			<label kind="guard" x="85" y="-331">isCarDetectedFarBehind()</label>
+			<label kind="assignment" x="85" y="-314">rewardBehindCarFar()</label>
+			<nail x="264" y="-296"/>
+			<nail x="-80" y="-296"/>
+		</transition>
+		<transition>
+			<source ref="id8"/>
+			<target ref="id6"/>
+			<label kind="guard" x="72" y="-72">isCarDetectedNearbyBehind()</label>
+			<label kind="assignment" x="72" y="-56">rewardBehindCarClose()</label>
+			<nail x="-128" y="-72"/>
+			<nail x="264" y="-72"/>
+		</transition>
+		<transition>
+			<source ref="id9"/>
+			<target ref="id6"/>
+			<label kind="guard" x="-425" y="25">isCarDetectedNearbyBehind()</label>
+			<label kind="assignment" x="-425" y="42">rewardBehindCarClose()</label>
+			<nail x="-432" y="24"/>
+			<nail x="288" y="24"/>
+		</transition>
+		<transition>
+			<source ref="id9"/>
+			<target ref="id7"/>
+			<label kind="guard" x="-440" y="-40">isCarDetectedBehind()</label>
+			<label kind="assignment" x="-440" y="-24">rewardBehindCar()</label>
+			<nail x="-480" y="-40"/>
+			<nail x="-48" y="-40"/>
+		</transition>
+		<transition>
+			<source ref="id6"/>
+			<target ref="id9"/>
+			<label kind="guard" x="-560" y="-448">isFreeBehind()</label>
+			<label kind="assignment" x="-560" y="-432">rewardBehindFree()</label>
+			<nail x="384" y="-416"/>
+			<nail x="-576" y="-416"/>
+		</transition>
+		<transition>
+			<source ref="id7"/>
+			<target ref="id9"/>
+			<label kind="guard" x="-561" y="-371">isFreeBehind()</label>
+			<label kind="assignment" x="-561" y="-355">rewardBehindFree()</label>
+			<nail x="40" y="-336"/>
+			<nail x="-576" y="-336"/>
+		</transition>
+		<transition>
 			<source ref="id5"/>
 			<target ref="id6"/>
 			<label kind="guard" x="399" y="25">isCarDetectedNearbyBehind()</label>
 			<label kind="assignment" x="399" y="42">rewardBehindCarClose()</label>
-			<nail x="391" y="238"/>
+			<nail x="382" y="238"/>
 		</transition>
 		<transition>
 			<source ref="id5"/>
 			<target ref="id7"/>
-			<label kind="guard" x="51" y="25">isCarDetectedBehind()</label>
-			<label kind="assignment" x="51" y="42">rewardBehindCar()</label>
+			<label kind="guard" x="48" y="152">isCarDetectedBehind()</label>
+			<label kind="assignment" x="48" y="168">rewardBehindCar()</label>
 			<nail x="42" y="238"/>
 		</transition>
 		<transition>
 			<source ref="id5"/>
 			<target ref="id8"/>
-			<label kind="guard" x="-204" y="25">isCarDetectedFarBehind()</label>
-			<label kind="assignment" x="-204" y="42">rewardBehindCarFar()</label>
+			<label kind="guard" x="-208" y="152">isCarDetectedFarBehind()</label>
+			<label kind="assignment" x="-208" y="168">rewardBehindCarFar()</label>
 			<nail x="-212" y="238"/>
 		</transition>
 		<transition>
 			<source ref="id5"/>
 			<target ref="id9"/>
-			<label kind="guard" x="-569" y="25">isFreeBehind()</label>
-			<label kind="assignment" x="-569" y="42">rewardBehindFree()</label>
+			<label kind="guard" x="-568" y="152">isFreeBehind()</label>
+			<label kind="assignment" x="-576" y="168">rewardBehindFree()</label>
 			<nail x="-578" y="238"/>
 		</transition>
 		<transition>
@@ -533,12 +588,12 @@ void rewardBehindCarClose(){
 		<transition>
 			<source ref="id7"/>
 			<target ref="id7"/>
-			<label kind="guard" x="-34" y="-272">isCarDetectedBehind()</label>
-			<label kind="assignment" x="-17" y="-255">rewardBehindCar()</label>
-			<nail x="60" y="-195"/>
-			<nail x="60" y="-238"/>
-			<nail x="26" y="-238"/>
-			<nail x="26" y="-195"/>
+			<label kind="guard" x="-37" y="-278">isCarDetectedBehind()</label>
+			<label kind="assignment" x="-20" y="-261">rewardBehindCar()</label>
+			<nail x="57" y="-201"/>
+			<nail x="57" y="-244"/>
+			<nail x="23" y="-244"/>
+			<nail x="23" y="-201"/>
 		</transition>
 		<transition>
 			<source ref="id6"/>
@@ -603,8 +658,6 @@ void rewardBehindCarClose(){
 		<transition>
 			<source ref="id9"/>
 			<target ref="id8"/>
-			<label kind="guard" x="-484" y="-221">isCarDetectedFarBehind()</label>
-			<label kind="assignment" x="-484" y="-204">rewardBehindCarFar()</label>
 			<nail x="-552" y="-187"/>
 			<nail x="-238" y="-187"/>
 		</transition>
@@ -728,6 +781,54 @@ void rewardLeftCarClose(){
 		<init ref="id12"/>
 		<transition>
 			<source ref="id10"/>
+			<target ref="id13"/>
+			<label kind="guard" x="0" y="-400">isLeftCarDetectedFar()</label>
+			<label kind="assignment" x="0" y="-384">rewardLeftCarFar()</label>
+			<nail x="212" y="-364"/>
+			<nail x="-204" y="-364"/>
+		</transition>
+		<transition>
+			<source ref="id13"/>
+			<target ref="id10"/>
+			<label kind="guard" x="-40" y="-160">isLeftCarDetectedNearby()</label>
+			<label kind="assignment" x="-40" y="-144">rewardLeftCarClose()</label>
+			<nail x="-240" y="-160"/>
+			<nail x="216" y="-160"/>
+		</transition>
+		<transition>
+			<source ref="id14"/>
+			<target ref="id10"/>
+			<label kind="guard" x="-512" y="-48">isLeftCarDetectedNearby()</label>
+			<label kind="assignment" x="-512" y="-32">rewardLeftCarClose()</label>
+			<nail x="-520" y="-48"/>
+			<nail x="128" y="-48"/>
+		</transition>
+		<transition>
+			<source ref="id14"/>
+			<target ref="id11"/>
+			<label kind="guard" x="-528" y="-120">isLeftCarDetected()</label>
+			<label kind="assignment" x="-528" y="-104">rewardLeftCar()</label>
+			<nail x="-576" y="-120"/>
+			<nail x="-160" y="-120"/>
+		</transition>
+		<transition>
+			<source ref="id10"/>
+			<target ref="id14"/>
+			<label kind="guard" x="-664" y="-544">isLeftFree()</label>
+			<label kind="assignment" x="-664" y="-528">rewardLeftFree()</label>
+			<nail x="280" y="-512"/>
+			<nail x="-680" y="-512"/>
+		</transition>
+		<transition>
+			<source ref="id11"/>
+			<target ref="id14"/>
+			<label kind="guard" x="-664" y="-464">isLeftFree()</label>
+			<label kind="assignment" x="-664" y="-448">rewardLeftFree()</label>
+			<nail x="-56" y="-432"/>
+			<nail x="-680" y="-432"/>
+		</transition>
+		<transition>
+			<source ref="id10"/>
 			<target ref="id10"/>
 			<label kind="guard" x="348" y="-263">isLeftCarDetectedNearby()</label>
 			<label kind="assignment" x="348" y="-246">rewardLeftCarClose()</label>
@@ -757,8 +858,8 @@ void rewardLeftCarClose(){
 		<transition>
 			<source ref="id12"/>
 			<target ref="id10"/>
-			<label kind="guard" x="289" y="-93">isLeftCarDetectedNearby()</label>
-			<label kind="assignment" x="289" y="-76">rewardLeftCarClose()</label>
+			<label kind="guard" x="288" y="8">isLeftCarDetectedNearby()</label>
+			<label kind="assignment" x="288" y="24">rewardLeftCarClose()</label>
 			<nail x="-186" y="60"/>
 			<nail x="281" y="60"/>
 		</transition>
@@ -773,8 +874,8 @@ void rewardLeftCarClose(){
 		<transition>
 			<source ref="id12"/>
 			<target ref="id11"/>
-			<label kind="guard" x="-51" y="-93">isLeftCarDetected()</label>
-			<label kind="assignment" x="-51" y="-76">rewardLeftCar()</label>
+			<label kind="guard" x="-56" y="8">isLeftCarDetected()</label>
+			<label kind="assignment" x="-56" y="24">rewardLeftCar()</label>
 			<nail x="-186" y="60"/>
 			<nail x="-59" y="60"/>
 		</transition>
@@ -790,7 +891,7 @@ void rewardLeftCarClose(){
 			<source ref="id13"/>
 			<target ref="id11"/>
 			<label kind="guard" x="-263" y="-297">isLeftCarDetected()</label>
-			<label kind="assignment" x="-263" y="-280">rewardLeftCar()</label>
+			<label kind="assignment" x="-264" y="-280">rewardLeftCar()</label>
 			<nail x="-289" y="-263"/>
 			<nail x="-85" y="-263"/>
 		</transition>
@@ -825,8 +926,8 @@ void rewardLeftCarClose(){
 		<transition>
 			<source ref="id12"/>
 			<target ref="id13"/>
-			<label kind="guard" x="-305" y="-93">isLeftCarDetectedFar()</label>
-			<label kind="assignment" x="-306" y="-76">rewardLeftCarFar()</label>
+			<label kind="guard" x="-312" y="8">isLeftCarDetectedFar()</label>
+			<label kind="assignment" x="-312" y="24">rewardLeftCarFar()</label>
 			<nail x="-186" y="60"/>
 			<nail x="-314" y="60"/>
 		</transition>
@@ -841,8 +942,8 @@ void rewardLeftCarClose(){
 		<transition>
 			<source ref="id12"/>
 			<target ref="id14"/>
-			<label kind="guard" x="-671" y="-93">isLeftFree()</label>
-			<label kind="assignment" x="-671" y="-76">rewardLeftFree()</label>
+			<label kind="guard" x="-672" y="0">isLeftFree()</label>
+			<label kind="assignment" x="-672" y="16">rewardLeftFree()</label>
 			<nail x="-186" y="60"/>
 			<nail x="-680" y="60"/>
 		</transition>
@@ -947,31 +1048,77 @@ void rewardFrontCarClose(){
 		</location>
 		<init ref="id15"/>
 		<transition>
+			<source ref="id18"/>
+			<target ref="id16"/>
+			<nail x="-120" y="-80"/>
+			<nail x="328" y="-80"/>
+		</transition>
+		<transition>
+			<source ref="id16"/>
+			<target ref="id18"/>
+			<label kind="guard" x="96" y="-352">isFrontCarDetectedFar()</label>
+			<label kind="assignment" x="96" y="-336">rewardFrontCarFar()</label>
+			<nail x="264" y="-320"/>
+			<nail x="-88" y="-320"/>
+		</transition>
+		<transition>
+			<source ref="id19"/>
+			<target ref="id16"/>
+			<label kind="guard" x="-416" y="0">isFrontCarDetectedNearby()</label>
+			<label kind="assignment" x="-416" y="16">rewardFrontCarClose()</label>
+			<nail x="-416" y="0"/>
+			<nail x="280" y="0"/>
+		</transition>
+		<transition>
+			<source ref="id19"/>
+			<target ref="id17"/>
+			<label kind="guard" x="-416" y="-48">isFrontCarDetected()</label>
+			<label kind="assignment" x="-416" y="-32">rewardFrontCar()</label>
+			<nail x="-464" y="-48"/>
+			<nail x="-64" y="-48"/>
+		</transition>
+		<transition>
+			<source ref="id16"/>
+			<target ref="id19"/>
+			<label kind="guard" x="-568" y="-496">isFrontFree()</label>
+			<label kind="assignment" x="-568" y="-480">rewardFrontFree()</label>
+			<nail x="384" y="-464"/>
+			<nail x="-576" y="-464"/>
+		</transition>
+		<transition>
+			<source ref="id17"/>
+			<target ref="id19"/>
+			<label kind="guard" x="-568" y="-416">isFrontFree()</label>
+			<label kind="assignment" x="-568" y="-400">rewardFrontFree()</label>
+			<nail x="40" y="-384"/>
+			<nail x="-576" y="-384"/>
+		</transition>
+		<transition>
 			<source ref="id15"/>
 			<target ref="id16"/>
-			<label kind="guard" x="399" y="25">isFrontCarDetectedNearby()</label>
-			<label kind="assignment" x="399" y="42">rewardFrontCarClose()</label>
+			<label kind="guard" x="392" y="160">isFrontCarDetectedNearby()</label>
+			<label kind="assignment" x="392" y="176">rewardFrontCarClose()</label>
 			<nail x="391" y="238"/>
 		</transition>
 		<transition>
 			<source ref="id15"/>
 			<target ref="id17"/>
-			<label kind="guard" x="51" y="25">isFrontCarDetected()</label>
-			<label kind="assignment" x="51" y="42">rewardFrontCar()</label>
+			<label kind="guard" x="48" y="152">isFrontCarDetected()</label>
+			<label kind="assignment" x="48" y="168">rewardFrontCar()</label>
 			<nail x="42" y="238"/>
 		</transition>
 		<transition>
 			<source ref="id15"/>
 			<target ref="id18"/>
-			<label kind="guard" x="-204" y="25">isFrontCarDetectedFar()</label>
-			<label kind="assignment" x="-204" y="42">rewardFrontCarFar()</label>
+			<label kind="guard" x="-208" y="160">isFrontCarDetectedFar()</label>
+			<label kind="assignment" x="-208" y="176">rewardFrontCarFar()</label>
 			<nail x="-212" y="238"/>
 		</transition>
 		<transition>
 			<source ref="id15"/>
 			<target ref="id19"/>
-			<label kind="guard" x="-569" y="25">isFrontFree()</label>
-			<label kind="assignment" x="-569" y="42">rewardFrontFree()</label>
+			<label kind="guard" x="-576" y="176">isFrontFree()</label>
+			<label kind="assignment" x="-576" y="192">rewardFrontFree()</label>
 			<nail x="-578" y="238"/>
 		</transition>
 		<transition>
@@ -1022,7 +1169,7 @@ void rewardFrontCarClose(){
 			<source ref="id18"/>
 			<target ref="id17"/>
 			<label kind="guard" x="-161" y="-221">isFrontCarDetected()</label>
-			<label kind="assignment" x="-161" y="-204">rewardFrontCar()</label>
+			<label kind="assignment" x="-160" y="-208">rewardFrontCar()</label>
 			<nail x="-187" y="-187"/>
 			<nail x="17" y="-187"/>
 		</transition>
@@ -1634,17 +1781,5 @@ void rewardNormal(){
 // List one or more processes to be composed into a system.
 system TrackPos, Speed, Damage, Sim_trackPos, Sim_angle, Sim_speedX;</system>
 	<queries>
-		<query>
-			<formula>A[] not deadlock
-			</formula>
-			<comment>
-			</comment>
-		</query>
-		<query>
-			<formula>A[] (TrackPos.centerRoad and Speed.GoingStraight and Damage.normal) imply (speedX_rwd+damage_rwd+trackPos_rwd+opponents_ahead_rwd+opponents_left_rwd+opponents_right_rwd+opponents_back_rwd) &gt;= 0
-			</formula>
-			<comment>
-			</comment>
-		</query>
 	</queries>
 </nta>

@@ -4,4 +4,5 @@ results/*
 logs.txt
 actormodel.h5
 criticmodel.h5
+output_rewardautomaton.txt
 _cls_rewardautomaton0.java
