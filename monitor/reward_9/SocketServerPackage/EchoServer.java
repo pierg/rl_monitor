@@ -136,6 +136,8 @@ public static double nearestOpponentLeft;
 
 public static double nearestOpponentAhead;
 
+public static double stuckCounter = 0;
+
 
 public static boolean isDamaged(){
     return damage > damage_pre;
@@ -555,11 +557,9 @@ public static void rewardCenter(){
 /*end functions*//*start functions*/
 public static boolean isStuck()
 {
-    return (trackPos >= 1.0 || trackPos <= -1.0) && speedX < 10.0;
+    return stuckCounter >= 0.1 && speedX < 10.0;
 }
 
-
-// 
 public static boolean isTurning()
 {
     return (angle > 0.6 || angle < -0.6) && !isStuck();
@@ -571,6 +571,37 @@ public static boolean isGoingStraight()
     return !isStuck() && !isTurning();
 }
 
+public static void updateStuckCounter(){
+    if (speedX < 10.0){
+        stuckCounter = stuckCounter + 1;
+    }
+    else{
+        stuckCounter = 0;
+    }
+}
+
+public static double errorStraight(){
+    if (goalSpeed >= speedX)
+    {
+        return goalSpeed - speedX;
+    }
+    else
+    {
+        return speedX - goalSpeed;
+    }
+}
+
+public static double errorTurning(){
+    if (goalSpeedTurning >= speedX)
+    {
+        return goalSpeedTurning - speedX;
+    }
+    else
+    {
+        return speedX - goalSpeedTurning;
+    }
+}
+
 public static void rewardStuck()
 {
     speedX_rwd = -2 ;
@@ -578,30 +609,12 @@ public static void rewardStuck()
 
 public static void rewardTurning()
 {
-    if (goalSpeedTurning >= speedX)
-    {
-        speedX_rwd = goalSpeedTurning - speedX;
-    }
-    else
-    {
-        speedX_rwd = speedX - goalSpeedTurning;
-    }
-
-    speedX_rwd /= 10;
+    speedX_rwd = (-errorTurning() / 10) + 1;
 }
 
 public static void rewardStraight()
 {
-    if (goalSpeed >= speedX)
-    {
-        speedX_rwd = goalSpeed - speedX;
-    }
-    else
-    {
-        speedX_rwd = speedX - goalSpeed;
-    }
-    
-    speedX_rwd /= 10;
+    speedX_rwd = (-errorStraight() / 10) + 1;
 }
 /*end functions*/
 public static String getJSONCounters(){

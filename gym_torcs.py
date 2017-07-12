@@ -165,9 +165,9 @@ class TorcsEnv:
             episode_terminate = True
             client.R.d['meta'] = True
 
-        if (obs['trackPos'] >= 1 or obs['trackPos'] <= -1) and obs['speedX'] < 10 :
+        if obs['speedX'] < 10 :
             self.stuckCounter += 1
-            if self.stuckCounter == 100:
+            if self.stuckCounter == 60:
                 episode_terminate = True
                 client.R.d['meta'] = True
         else :
