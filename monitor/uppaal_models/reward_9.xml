@@ -5,7 +5,7 @@
 int FACTOR = 100;
 
 // Set the goals to achieve
-int goalSpeed = 90;        // Kmh
+int goalSpeed = 150;        // Kmh
 int goalSpeedTurning = 60; // Kmh
 int goalTrackPos = 0;      // middle of the lane
 
