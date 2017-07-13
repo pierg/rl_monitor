@@ -93,10 +93,10 @@ class Results:
 		self.rewardsPerStep += str(round(reward, self.reward_rounding_value)) + " "
 
 		for i in range(len(self.obs_values_names)) : 
-			self.obsValues[self.obs_values_names[i]] += str(obs[self.obs_values_names[i]]) + " " 
+			self.obsValues[self.obs_values_names[i]] += str(round(obs[self.obs_values_names[i]],2)) + " " 
 
-		for i in range(len(self.action_values_names)) : 
-			self.actionValues[self.action_values_names[i]] += str(action[i]) + " " 
+		for i in range(len(self.action_values_names)): 
+			self.actionValues[self.action_values_names[i]] += str(round(action[i], 2)) + " " 
 
 
 	def endEpisode(self, step, total_reward):
@@ -132,33 +132,48 @@ class Results:
 		for j in range(len(self.monitorCounters)) : 
 			monitorCountersStr += self.monitorCounters[j] + "];\n"
 		
+		signalsString = ""
+
 		resultString =  self.isGoalReached + "0 ];\n" 
 		resultString += self.episodeCount + str(self.episode) + " ];\n" 
 		resultString += self.totalTime + str(round(end-self.start, self.time_rounding_value)) + " ];\n" 
 		resultString += self.subtimes  + "];\n"
-		resultString += monitorCountersStr
-		resultString += self.steps + "];\n"
-		resultString += self.rewardsPerEpisode + "];\n"
-		resultString += self.rewardsPerStep + "];\n"
+
 		for i in range(len(self.obs_values_names)) : 
-			resultString += self.obsValues[self.obs_values_names[i]] + "];\n"
+			signalsString += self.obsValues[self.obs_values_names[i]] + "];\n"
 
 		for i in range(len(self.action_values_names)) : 
-			resultString += self.actionValues[self.action_values_names[i]] + "];\n"
-
-		rewardsString = ""
-		for i in range(len(self.monitorRewards)) : 
-			rewardsString += self.monitorRewards[i] + "];\n"
-
+			signalsString += self.actionValues[self.action_values_names[i]] + "];\n"
 
 		# PRINT IN MATLAB (each iteration rewrite the whole file)
 		file = open("results/" + self.filename + "/results.m", "w")
 		file.write(resultString)
 		file.close();
 
-		file = open("results/" + self.filename + "/rewards.m", "w")
-		file.write(rewardsString)
+		# PRINT IN MATLAB (each iteration rewrite the whole file)
+		file = open("results/" + self.filename + "/monitorValues.m", "w")
+		file.write(monitorCountersStr)
 		file.close();
+
+		file = open("results/" + self.filename + "/steps.m", "w")
+		file.write(self.steps + "];\n")
+		file.close();
+
+		file = open("results/" + self.filename + "/rewards.m", "w")
+		file.write(self.rewardsPerEpisode + "];\n" + self.rewardsPerStep + "];\n")
+		file.close();
+
+		file = open("results/" + self.filename + "/signals.m", "w")
+		file.write(signalsString)
+		file.close();
+
+		rewardsString = ""
+		for i in range(len(self.monitorRewards)) : 
+			rewardsString += self.monitorRewards[i] + "];\n"
+			file = open("results/" + self.filename + "/" + self.monitorRewardsNames[i] + ".m", "w")
+			file.write(rewardsString)
+			file.close()
+			rewardsString = ""
 
 
 	def writeInFile(self, finished):
@@ -180,25 +195,40 @@ class Results:
 		resultString += self.episodeCount + "];\n" 
 		resultString += self.totalTime + "];\n" 
 		resultString += self.subtimes 
-		resultString += monitorCountersStr
-		resultString += self.steps 
-		resultString += self.rewardsPerEpisode 
-		resultString += self.rewardsPerStep
+		
 		for i in range(len(self.obs_values_names)) : 
 			resultString += self.obsValues[self.obs_values_names[i]]
 
 		for i in range(len(self.action_values_names)) : 
 			resultString += self.actionValues[self.action_values_names[i]]
 
-		rewardsString = ""
-		for i in range(len(self.monitorRewards)) : 
-			rewardsString += self.monitorRewards[i]
-
+			
 		# PRINT IN MATLAB (each iteration rewrite the whole file)
 		file = open("results/" + self.filename + "/results.m", "w")
 		file.write(resultString)
 		file.close();
 
-		file = open("results/" + self.filename + "/rewards.m", "w")
-		file.write(rewardsString)
+		# PRINT IN MATLAB (each iteration rewrite the whole file)
+		file = open("results/" + self.filename + "/monitorValues.m", "w")
+		file.write(monitorCountersStr)
 		file.close();
+
+		file = open("results/" + self.filename + "/steps.m", "w")
+		file.write(self.steps)
+		file.close();
+
+		file = open("results/" + self.filename + "/rewards.m", "w")
+		file.write(self.rewardsPerEpisode + self.rewardsPerStep)
+		file.close();
+
+		file = open("results/" + self.filename + "/signals.m", "w")
+		file.write(signalsString)
+		file.close();
+
+		rewardsString = ""
+		for i in range(len(self.monitorRewards)) : 
+			rewardsString += self.monitorRewards[i]
+			file = open("results/" + self.filename + "/" + self.monitorRewardsNames[i] + ".m", "w")
+			file.write(rewardsString)
+			file.close()
+			rewardsString = ""

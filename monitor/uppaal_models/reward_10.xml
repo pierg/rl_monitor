@@ -124,7 +124,7 @@ typedef int[1000, 10000]     damage_Increment;
 bool isRightCarDetectedNearby(){
     int i;
     for(i = 13; i &lt; 24; i++){
-        if(opponents[i] &lt; 300){
+        if(opponents[i] &lt; 400){
             return true;
         }
     }
@@ -135,11 +135,11 @@ bool isRightCarDetected(){
     int i;
     bool res = false;
     for(i = 13; i &lt; 24; i++){
-        if(opponents[i] &lt; 600 &amp;&amp; opponents[i] &gt;= 300){
+        if(opponents[i] &lt; 600 &amp;&amp; opponents[i] &gt;= 400){
             res =  true;
         }
 
-        if(opponents[i] &lt; 300){
+        if(opponents[i] &lt; 400){
             return false;
         }
     }
@@ -187,15 +187,15 @@ void rewardRightFree(){
 }
 
 void rewardRightCarFar(){
-    opponents_right_rwd = -10 + getNearestOpponentRightValue();
+    opponents_right_rwd = (-10 + getNearestOpponentRightValue())/4;
 }
 
 void rewardRightCar(){
-    opponents_right_rwd = (-10 + getNearestOpponentRightValue())*2;
+    opponents_right_rwd = (-10 + getNearestOpponentRightValue())/2;
 }
 
 void rewardRightCarClose(){
-    opponents_right_rwd = (-10 + getNearestOpponentRightValue())*4;
+    opponents_right_rwd = (-10 + getNearestOpponentRightValue());
 }
 /*end functions*/</declaration>
 		<location id="id0" x="17" y="60">
@@ -408,7 +408,7 @@ void rewardRightCarClose(){
 bool isCarDetectedNearbyBehind(){
     int i;
     for(i = 22; i &lt; 33; i++){
-        if(opponents[i] &lt; 300){
+        if(opponents[i] &lt; 400){
             return true;
         }
     }
@@ -419,11 +419,11 @@ bool isCarDetectedBehind(){
     int i;
     bool res = false;
     for(i = 22; i &lt; 33; i++){
-        if(opponents[i] &lt; 600 &amp;&amp; opponents[i] &gt;= 300){
+        if(opponents[i] &lt; 600 &amp;&amp; opponents[i] &gt;= 400){
             res = true;
         }
 
-        if(opponents[i] &lt; 300){
+        if(opponents[i] &lt; 400){
             return false;
         }
     }
@@ -472,15 +472,15 @@ void rewardBehindFree(){
 }
 
 void rewardBehindCarFar(){
-    opponents_back_rwd = -15 + getNearestOpponentBehindValue();
+    opponents_back_rwd = (-15 + getNearestOpponentBehindValue())/4;
 }
 
 void rewardBehindCar(){
-    opponents_back_rwd = (-15 + getNearestOpponentBehindValue())*2;
+    opponents_back_rwd = (-15 + getNearestOpponentBehindValue())/2;
 }
 
 void rewardBehindCarClose(){
-    opponents_back_rwd = (-15 + getNearestOpponentBehindValue())*4;
+    opponents_back_rwd = (-15 + getNearestOpponentBehindValue());
 }
 /*end functions*/</declaration>
 		<location id="id5" x="-68" y="238">
@@ -670,7 +670,7 @@ void rewardBehindCarClose(){
 bool isLeftCarDetectedNearby(){
     int i;
     for(i = 0; i &lt; 36; i++){
-        if(opponents[i] &lt; 300){
+        if(opponents[i] &lt; 400){
             return true;
         }
         if(i == 5){
@@ -684,11 +684,11 @@ bool isLeftCarDetected(){
     int i;
     bool res = false;
     for(i = 0; i &lt; 36; i++){
-        if(opponents[i] &lt; 600 &amp;&amp; opponents[i] &gt;= 300){
+        if(opponents[i] &lt; 600 &amp;&amp; opponents[i] &gt;= 400){
             res =  true;
         }
 
-        if(opponents[i] &lt; 300){
+        if(opponents[i] &lt; 400){
             return false;
         }
 
@@ -752,15 +752,15 @@ void rewardLeftFree(){
 }
 
 void rewardLeftCarFar(){
-    opponents_left_rwd = -10 + getNearestOpponentLeftValue();
+    opponents_left_rwd = (-10 + getNearestOpponentLeftValue())/4;
 }
 
 void rewardLeftCar(){
-    opponents_left_rwd = (-10 + getNearestOpponentLeftValue())*2;
+    opponents_left_rwd = (-10 + getNearestOpponentLeftValue())/2;
 }
 
 void rewardLeftCarClose(){
-    opponents_left_rwd = (-10 + getNearestOpponentLeftValue())*4;
+    opponents_left_rwd = (-10 + getNearestOpponentLeftValue());
 }
 /*end functions*/</declaration>
 		<location id="id10" x="281" y="-246">
@@ -956,7 +956,7 @@ void rewardLeftCarClose(){
 bool isFrontCarDetectedNearby(){
     int i;
     for(i = 4; i &lt; 15; i++){
-        if(opponents[i] &lt; 300){
+        if(opponents[i] &lt; 400){
             return true;
         }
     }
@@ -967,11 +967,11 @@ bool isFrontCarDetected(){
     int i;
     bool res = false;
     for(i = 4; i &lt; 15; i++){
-        if(opponents[i] &lt; 600 &amp;&amp; opponents[i] &gt;= 300){
+        if(opponents[i] &lt; 600 &amp;&amp; opponents[i] &gt;= 400){
             res =  true;
         }
 
-        if(opponents[i] &lt; 300){
+        if(opponents[i] &lt; 400){
             return false;
         }
     }
@@ -1019,15 +1019,15 @@ void rewardFrontFree(){
 }
 
 void rewardFrontCarFar(){
-    opponents_ahead_rwd = -15 + getNearestOpponentAheadValue();
+    opponents_ahead_rwd = (-15 + getNearestOpponentAheadValue())/4;
 }
 
 void rewardFrontCar(){
-    opponents_ahead_rwd = (-15 + getNearestOpponentAheadValue())*2;
+    opponents_ahead_rwd = (-15 + getNearestOpponentAheadValue())/2;
 }
 
 void rewardFrontCarClose(){
-    opponents_ahead_rwd = (-15 + getNearestOpponentAheadValue())*4;
+    opponents_ahead_rwd = (-15 + getNearestOpponentAheadValue());
 }
 
 /*end functions*/</declaration>
@@ -1387,7 +1387,6 @@ bool isStuck()
 bool isTurning()
 {
     return (angle &gt; 60 || angle &lt; -60) &amp;&amp; !isStuck();
-    //return (track[9] &lt; 10000) &amp;&amp; angle &lt; 20 &amp;&amp; angle &gt; -20 &amp;&amp; !isLeftOffRoad() &amp;&amp; !isRightOffRoad() &amp;&amp; !isStuck();
 }
 
 bool isGoingStraight()
@@ -1433,12 +1432,12 @@ void rewardStuck()
 
 void rewardTurning()
 {
-    speedX_rwd = (-errorTurning() / 10) + 1;
+    speedX_rwd = (-errorTurning() / 10) + 7;
 }
 
 void rewardStraight()
 {
-    speedX_rwd = (-errorStraight() / 10) + 1;
+    speedX_rwd = (-errorStraight() / 10) + 7;
 }
 /*end functions*/
 </declaration>
@@ -1551,7 +1550,7 @@ bool isNormal(){
 }
 
 void rewardDamaged(){
-    damage_rwd = -40;
+    damage_rwd = -10;
 }
 
 void rewardNormal(){
