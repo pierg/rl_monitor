@@ -4,7 +4,7 @@ fn="reward_8"
 duration="1"
 filename=""
 opponents=""
-suffix='m'
+suffix='h'
 
 while getopts ":det:f:" opt; do
 	case $opt in
