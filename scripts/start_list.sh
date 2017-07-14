@@ -3,7 +3,7 @@ detached=""
 fn="reward_8"
 duration="1h"
 filename=""
-opponents=false
+opponents=""
 
 while getopts ":det:f:" opt; do
 	case $opt in
@@ -11,14 +11,14 @@ while getopts ":det:f:" opt; do
 			detached="-d"
 		;;
 		t)
-			suffix='h'
+			suffix=''
 			duration=$OPTARG$suffix
 		;;
 		f)
 			filename="$OPTARG"
 		;;
 		e)
-			opponents=true
+			opponents="-e"
 		;;
 		\?)
 			echo "???" >&2
@@ -34,5 +34,10 @@ while read -r line
 do
     name="$line"
     echo "Name read from file - $name"
-    ./start.sh $detached -m $name
+    ./start.sh $detached -m $name -t $duration $opponents
+    if [$detached = ""] ; 
+    then 
+	sleep $duration
+    fi
+    ./result.sh
 done < "$filename"
