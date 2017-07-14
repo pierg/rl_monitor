@@ -38,6 +38,7 @@ def playGame(train_indicator=1):    #1 means Train, 0 means simply Run
 
     filename = "results" + monitor + "_" + time.strftime("%d_%m_%Y_%H%M%S")
     os.mkdir( "results/" + filename, 0755 );
+    os.mkdir( "models/" + filename, 0755 );
     copy("results/src/SCRIPT_plot_all_iterations.m", "results/" + filename + "/SCRIPT_plot_all_iterations.m")
     copy("results/src/SCRIPT_plot_results.m", "results/" + filename + "/SCRIPT_plot_results.m")
     copy("results/src/SCRIPT_counters.m", "results/" + filename + "/SCRIPT_counters.m")
