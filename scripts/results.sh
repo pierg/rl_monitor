@@ -1,2 +1,2 @@
 #!/bin/bash
-sudo docker cp $(sudo docker ps -q):rl_monitor/results ~
+sudo docker cp $(sudo docker ps -lq):rl_monitor/results ~

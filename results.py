@@ -190,6 +190,8 @@ class Results:
 		for j in range(len(self.monitorCounters)) : 
 			self.monitorCounters[j] += "];\n"
 			monitorCountersStr += self.monitorCounters[j]
+
+		signalsString = ""
 		
 		resultString =  self.isGoalReached + "];\n" 
 		resultString += self.episodeCount + "];\n" 

@@ -27,7 +27,7 @@
   </section>
 
   <section name="Quick Race">
-    <attnum name="laps" val="3"/>
+    <attnum name="laps" val="20"/>
     <attnum name="distance" unit="km" val="0"/>
     <attstr name="type" val="race"/>
     <attstr name="starting order" val="drivers list"/>

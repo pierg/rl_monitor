@@ -76,6 +76,12 @@ if [ "$opponents" = true ] ; then
     sudo docker exec -it $(sudo docker ps -lq) mv autostart_opponents.sh autostart.sh
     echo "...done"
     echo ""
+else
+	echo "Practice mode..."
+	sudo docker exec -it $(sudo docker ps -lq) mv scripts/sources/practice.xml /root/.torcs/config/raceman/practice.xml
+	sudo docker exec -it $(sudo docker ps -lq) mv scripts/sources/practice.xml /usr/local/share/games/torcs/config/raceman/practice.xml
+    echo "...done"
+    echo ""
 fi
 
 # retrieve the uppaal -> larva converter
