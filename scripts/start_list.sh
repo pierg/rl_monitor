@@ -4,7 +4,7 @@ fn="reward_8"
 duration="1"
 filename=""
 opponents=""
-suffix='h'
+suffix='m'
 
 while getopts ":det:f:" opt; do
 	case $opt in
@@ -35,9 +35,9 @@ do
     name="$line"
     echo "Name read from file - $name"
     ./start.sh $detached -m $name -t $duration $opponents
-    if [$detached == ""] ; 
+    if [ $detached == "-d" ] ; 
     then 
-	sleep $duration$suffix
+		sleep $duration$suffix
     fi
-    ./result.sh
+    ./results.sh
 done < "$filename"
