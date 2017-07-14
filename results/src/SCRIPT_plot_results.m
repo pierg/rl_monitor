@@ -12,6 +12,7 @@ hold on;
 i=1;
 % Sum of all cumulative rewards of all iterations
 sumRewards = 0;
+maxReward = 0;
 while i <= iterations
     
     TOT_rewardsPerEpisode = rewardsPerEpisode{i};
@@ -65,6 +66,44 @@ saveas(fig_tot_time_to_goal, file_name, 'png');
 
 % NUMBER OF EPISODES
 fig_count = figure;
+set(fig_count,'visible','off');
+grid('on');
+scatter(1:iterations, episodeCount);
+hold on;
+for k = 1:iterations
+    text(k+0.7,episodeCount(k), num2str(k));
+end
+xlabel('Iteration #');
+ylabel('Number of episodes to reach the goal');
+y_avr = max(episodeCount)/2;
+x_avr = iterations + 2;
+text(x_avr,y_avr, ['AVR: ' num2str(round(mean(episodeCount))) 'eps']);
+hold off;
+file_name = ['A_eps=' num2str(round(mean(episodeCount))) ' N_ite=' num2str(iterations) ];
+saveas(fig_count, file_name, 'png'); 
+
+
+
+% NUMBER OF EPISODES
+fig_count = figure;
+set(fig_count,'visible','off');
+grid('on');
+scatter(1:iterations, episodeCount);
+hold on;
+for k = 1:iterations
+    text(k+0.7,episodeCount(k), num2str(k));
+end
+xlabel('Iteration #');
+ylabel('Number of episodes to reach the goal');
+y_avr = max(episodeCount)/2;
+x_avr = iterations + 2;
+text(x_avr,y_avr, ['AVR: ' num2str(round(mean(episodeCount))) 'eps']);
+hold off;
+file_name = ['A_eps=' num2str(round(mean(episodeCount))) ' N_ite=' num2str(iterations) ];
+saveas(fig_count, file_name, 'png'); 
+
+% PLOT TRACKPOS
+fig_trackpos = figure;
 set(fig_count,'visible','off');
 grid('on');
 scatter(1:iterations, episodeCount);

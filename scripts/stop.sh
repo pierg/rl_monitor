@@ -1,5 +1,8 @@
 #!/bin/bash
-sudo docker exec $(sudo docker ps -q) pkill -9 python
-sudo docker cp $(sudo docker ps -q):rl_monitor/results ~
+for pid in `sudo docker ps -q`; do
+	sudo docker exec $pid pkill -9 python
+	sudo docker cp $pid:rl_monitor/results ~
+	sudo docker cp $pid:rl_monitor/models ~
+done
 sudo docker stop $(sudo docker ps -q)
 sudo docker rm $(sudo docker ps -a -q)

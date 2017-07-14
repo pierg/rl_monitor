@@ -38,9 +38,10 @@ def playGame(train_indicator=1):    #1 means Train, 0 means simply Run
 
     filename = "results" + monitor + "_" + time.strftime("%d_%m_%Y_%H%M%S")
     os.mkdir( "results/" + filename, 0755 );
-    os.mkdir( "results/" + filename + "/models", 0755 );
-    copy("results/src/plot_all_iterations.m", "results/" + filename + "/plot_all_iterations.m")
-    copy("results/src/plot_results.m", "results/" + filename + "/plot_results.m")
+    copy("results/src/SCRIPT_plot_all_iterations.m", "results/" + filename + "/SCRIPT_plot_all_iterations.m")
+    copy("results/src/SCRIPT_plot_results.m", "results/" + filename + "/SCRIPT_plot_results.m")
+    copy("results/src/SCRIPT_counters.m", "results/" + filename + "/SCRIPT_counters.m")
+    copy("results/src/SCRIPT_plot_torcs_values.m", "results/" + filename + "/SCRIPT_plot_torcs_values.m")
 
     results = Results(filename)
 
@@ -199,12 +200,12 @@ def playGame(train_indicator=1):    #1 means Train, 0 means simply Run
             if np.mod(i, 3) == 0:
                 if (train_indicator):
                     print("Now we save model")
-                    actor.model.save_weights("results/"+ filename + "/models/actormodel"+ str(iteration) +".h5", overwrite=True)
-                    with open("results/"+ filename + "/models/actormodel"+ str(iteration) +".json", "w") as outfile:
+                    actor.model.save_weights("models/"+ filename + "/actormodel"+ str(iteration) +".h5", overwrite=True)
+                    with open("models/"+ filename + "/actormodel"+ str(iteration) +".json", "w") as outfile:
                         json.dump(actor.model.to_json(), outfile)
 
-                    critic.model.save_weights("results/"+ filename + "/models/criticmodel"+ str(iteration) +".h5", overwrite=True)
-                    with open("results/"+ filename + "/models/criticmodel"+ str(iteration) +".json", "w") as outfile:
+                    critic.model.save_weights("models/"+ filename + "/criticmodel"+ str(iteration) +".h5", overwrite=True)
+                    with open("models/"+ filename + "/criticmodel"+ str(iteration) +".json", "w") as outfile:
                         json.dump(critic.model.to_json(), outfile)
 
             print("TOTAL REWARD @ " + str(i) +"-th Episode  : Reward " + str(total_reward))

@@ -146,31 +146,31 @@ class Results:
 			signalsString += self.actionValues[self.action_values_names[i]] + "];\n"
 
 		# PRINT IN MATLAB (each iteration rewrite the whole file)
-		file = open("results/" + self.filename + "/results.m", "w")
+		file = open("results/" + self.filename + "/DATA_results.m", "w")
 		file.write(resultString)
 		file.close();
 
 		# PRINT IN MATLAB (each iteration rewrite the whole file)
-		file = open("results/" + self.filename + "/monitorValues.m", "w")
+		file = open("results/" + self.filename + "/DATA_monitorValues.m", "w")
 		file.write(monitorCountersStr)
 		file.close();
 
-		file = open("results/" + self.filename + "/steps.m", "w")
+		file = open("results/" + self.filename + "/DATA_steps.m", "w")
 		file.write(self.steps + "];\n")
 		file.close();
 
-		file = open("results/" + self.filename + "/rewards.m", "w")
+		file = open("results/" + self.filename + "/DATA_rewards.m", "w")
 		file.write(self.rewardsPerEpisode + "];\n" + self.rewardsPerStep + "];\n")
 		file.close();
 
-		file = open("results/" + self.filename + "/signals.m", "w")
+		file = open("results/" + self.filename + "/DATA_signals.m", "w")
 		file.write(signalsString)
 		file.close();
 
 		rewardsString = ""
 		for i in range(len(self.monitorRewards)) : 
 			rewardsString += self.monitorRewards[i] + "];\n"
-			file = open("results/" + self.filename + "/" + self.monitorRewardsNames[i] + ".m", "w")
+			file = open("results/" + self.filename + "/DATA_" + self.monitorRewardsNames[i] + ".m", "w")
 			file.write(rewardsString)
 			file.close()
 			rewardsString = ""
@@ -206,31 +206,31 @@ class Results:
 
 			
 		# PRINT IN MATLAB (each iteration rewrite the whole file)
-		file = open("results/" + self.filename + "/results.m", "w")
+		file = open("results/" + self.filename + "/DATA_results.m", "w")
 		file.write(resultString)
 		file.close();
 
 		# PRINT IN MATLAB (each iteration rewrite the whole file)
-		file = open("results/" + self.filename + "/monitorValues.m", "w")
+		file = open("results/" + self.filename + "/DATA_monitorValues.m", "w")
 		file.write(monitorCountersStr)
 		file.close();
 
-		file = open("results/" + self.filename + "/steps.m", "w")
+		file = open("results/" + self.filename + "/DATA_steps.m", "w")
 		file.write(self.steps)
 		file.close();
 
-		file = open("results/" + self.filename + "/rewards.m", "w")
+		file = open("results/" + self.filename + "/DATA_rewards.m", "w")
 		file.write(self.rewardsPerEpisode + self.rewardsPerStep)
 		file.close();
 
-		file = open("results/" + self.filename + "/signals.m", "w")
+		file = open("results/" + self.filename + "/DATA_signals.m", "w")
 		file.write(signalsString)
 		file.close();
 
 		rewardsString = ""
 		for i in range(len(self.monitorRewards)) : 
 			rewardsString += self.monitorRewards[i]
-			file = open("results/" + self.filename + "/" + self.monitorRewardsNames[i] + ".m", "w")
+			file = open("results/" + self.filename + "/DATA_" + self.monitorRewardsNames[i] + ".m", "w")
 			file.write(rewardsString)
 			file.close()
 			rewardsString = ""
