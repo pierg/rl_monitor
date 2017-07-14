@@ -22,6 +22,16 @@ int opponents_back_rwd = 0;
 int tot_reward;
 
 /*start environment values*/
+
+// weights
+int speedX_weight = 100;
+int damage_weight = 100;
+int trackPos_weight = 100;
+int opponents_ahead_weight = 100;
+int opponents_left_weight = 100;
+int opponents_right_weight = 100;
+int opponents_back_weight = 100;
+
 // Observation values
 int speedX;
 int angle;
@@ -58,13 +68,13 @@ bool isLeftOffRoad()
 
 void computeTotalReward(){
     tot_reward =  0;
-	tot_reward += speedX_rwd;
-	tot_reward += damage_rwd;
-	tot_reward += trackPos_rwd;
-	tot_reward += opponents_ahead_rwd;
-	tot_reward += opponents_left_rwd;
-	tot_reward += opponents_right_rwd;
-	tot_reward += opponents_back_rwd;
+	tot_reward += speedX_rwd * speedX_weight;
+	tot_reward += damage_rwd * damage_weight;
+	tot_reward += trackPos_rwd * trackPos_weight;
+	tot_reward += opponents_ahead_rwd * opponents_ahead_weight;
+	tot_reward += opponents_left_rwd * opponents_left_weight;
+	tot_reward += opponents_right_rwd * opponents_right_weight;
+	tot_reward += opponents_back_rwd * opponents_back_weight;
 }
 /*end functions*/
 
