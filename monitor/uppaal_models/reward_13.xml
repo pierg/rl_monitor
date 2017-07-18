@@ -70,7 +70,7 @@ bool isLeftOffRoad()
 {
     return (trackPos &gt;= 100);
 }
-
+/*
 void getNearestOpponentAheadValue(){
     int i;
     nearestOpponentAhead = 20000;
@@ -90,7 +90,7 @@ void adaptGoalSpeed(){
         goalSpeed = 150;
         goalSpeedCurve = 80;
     }
-}
+}*/
 
 void computeTotalReward(){
     tot_reward =  0;
@@ -221,15 +221,15 @@ void rewardRightFree(){
 }
 
 void rewardRightCarFar(){
-    opponents_right_rwd = (-10 + getNearestOpponentRightValue())/8;
+    opponents_right_rwd = 0;
 }
 
 void rewardRightCar(){
-    opponents_right_rwd = (-10 + getNearestOpponentRightValue())/4;
+    opponents_right_rwd = 0;
 }
 
 void rewardRightCarClose(){
-    opponents_right_rwd = (-10 + getNearestOpponentRightValue());
+    opponents_right_rwd = 0;
 }
 /*end functions*/</declaration>
 		<location id="id0" x="17" y="60">
@@ -504,15 +504,15 @@ void rewardBehindFree(){
 }
 
 void rewardBehindCarFar(){
-    opponents_back_rwd = (-15 + getNearestOpponentBehindValue())/8;
+    opponents_back_rwd = 0;
 }
 
 void rewardBehindCar(){
-    opponents_back_rwd = (-15 + getNearestOpponentBehindValue())/4;
+    opponents_back_rwd = 0;
 }
 
 void rewardBehindCarClose(){
-    opponents_back_rwd = (-15 + getNearestOpponentBehindValue());
+    opponents_back_rwd = 0;
 }
 /*end functions*/</declaration>
 		<location id="id5" x="-68" y="238">
@@ -782,15 +782,15 @@ void rewardLeftFree(){
 }
 
 void rewardLeftCarFar(){
-    opponents_left_rwd = (-10 + getNearestOpponentLeftValue())/8;
+    opponents_left_rwd = 0;
 }
 
 void rewardLeftCar(){
-    opponents_left_rwd = (-10 + getNearestOpponentLeftValue())/4;
+    opponents_left_rwd = 0;
 }
 
 void rewardLeftCarClose(){
-    opponents_left_rwd = (-10 + getNearestOpponentLeftValue());
+    opponents_left_rwd = 0;
 }
 /*end functions*/</declaration>
 		<location id="id10" x="281" y="-246">
@@ -1031,31 +1031,20 @@ bool isFrontFree(){
     return true;
 }
 
-int getNearestOpponentAheadValue(){
-    int i;
-    nearestOpponentAhead = 200;
-    for(i = 4; i &lt; 15; i++){
-        if(opponents[i] &lt; nearestOpponentAhead){
-            nearestOpponentAhead = opponents[i];
-        }
-    }
-    return nearestOpponentAhead;
-}
-
 void rewardFrontFree(){
     opponents_ahead_rwd = 0;
 }
 
 void rewardFrontCarFar(){
-    opponents_ahead_rwd = (-15 + getNearestOpponentAheadValue())/8;
+    opponents_ahead_rwd = 0;
 }
 
 void rewardFrontCar(){
-    opponents_ahead_rwd = (-15 + getNearestOpponentAheadValue())/4;
+    opponents_ahead_rwd = 0;
 }
 
 void rewardFrontCarClose(){
-    opponents_ahead_rwd = (-15 + getNearestOpponentAheadValue());
+    opponents_ahead_rwd = 0;
 }
 
 /*end functions*/</declaration>
