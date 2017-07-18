@@ -1403,7 +1403,7 @@ bool isStuck()
 
 bool curveIsComing()
 {
-    int index;
+    int index = 0;
     if(isStuck()){
         return false;
     }
