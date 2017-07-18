@@ -1450,7 +1450,7 @@ bool isStuck()
 
 bool curveIsComing()
 {
-    int index;
+    int index = 0;
 
     if(isStuck()){
         return false;
@@ -1546,7 +1546,7 @@ void rewardStuck()
 
 void rewardTurning()
 {    
-    int index;
+    int index = 0;
 
     if(angle &lt; -157 &amp;&amp; angle &gt; -141){
         index = 18;        
