@@ -1,4 +1,7 @@
-iterations = size(goalReached, 2);
+if goalReached(end) == 0
+  iterations = size(goalReached, 2)-1;
+else
+  iterations = size(goalReached, 2);
 
 mkdir plots;
 
@@ -36,12 +39,14 @@ while i <= iterations
     hold on;
     
 %   for each episode, draw lines on the plot
+    x_value = 0;
     for j = 1:episodeCount(i)
 %       number of steps in the selected episode
         steps = step{1, i};
         n_steps = steps(1, j);
-        y_value = ALL_rewards(n_steps);
-        plot([n_steps n_steps], [y_value y_value], '-.r*');
+        x_value = x_value + n_steps;
+        y_value = ALL_rewards(x_value);
+        plot([x_value x_value], [y_value y_value], '-.r*');
     end
     file_name = ['plots/' num2str(i) '_REWARDS_ALL_STEPS'];
     saveas(fig_steps, file_name, 'png');
@@ -76,12 +81,14 @@ while i <= iterations
     plot(TOT_rewardsPerSteps);
     hold on;
 %   for each episode, draw dots on the plot
+    x_value = 0;
     for j = 1:episodeCount(i)
 %       number of steps in the selected episode
         steps = step{1, i};
         n_steps = steps(1, j);
-        y_value = TOT_rewardsPerSteps(n_steps);
-        plot([n_steps n_steps], [y_value y_value], '-.r*');
+        x_value = x_value + n_steps;
+        y_value = TOT_rewardsPerSteps(x_value);
+        plot([x_value x_value], [y_value y_value], '-.r*');
     end
     xlabel('Step #');
     ylabel('Cumulative Reward');

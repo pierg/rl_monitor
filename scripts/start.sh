@@ -8,6 +8,7 @@ duration=""
 logs_output=""
 original=false
 opponents=false
+adParameter=""
 
 while getopts ":doem:t:" opt; do
 	case $opt in
@@ -30,6 +31,7 @@ while getopts ":doem:t:" opt; do
 		;;
 		e)
 			opponents=true
+			adParameter="-a"
 		;;
 		\?)
 			echo "???" >&2
@@ -110,4 +112,4 @@ echo ""
 
 echo "Starting the simulation !"
 echo ""
-sudo docker exec -t $detached -e "DISPLAY=:1.0" $(sudo docker ps -lq) bash -c "python ddpg.py $monitor $duration $logs_output"
+sudo docker exec -t $detached -e "DISPLAY=:1.0" $(sudo docker ps -lq) bash -c "python ddpg.py $monitor $adParameter $duration $logs_output"

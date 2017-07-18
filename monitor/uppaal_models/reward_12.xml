@@ -5,8 +5,6 @@
 int FACTOR = 100;
 
 // Set the goals to achieve
-int goalSpeed = 150;        // Kmh
-int goalSpeedTurning = 80; // Kmh
 int goalTrackPos = 0;      // middle of the lane
 
 // Sub-rewards
@@ -22,6 +20,9 @@ int opponents_back_rwd = 0;
 int tot_reward;
 
 /*start environment values*/
+
+int goalSpeed = 15000;        // Kmh
+int goalSpeedTurning = 8000; // Kmh
 
 int nearestOpponentAhead;
 int nearestOpponentRight;
@@ -84,11 +85,11 @@ void getNearestOpponentAheadValue(){
 void adaptGoalSpeed(){
     getNearestOpponentAheadValue();
     if(nearestOpponentAhead &lt;= 15){
-        goalSpeed = 150 * (nearestOpponentAhead/15);
-        goalSpeedTurning = 80 * (nearestOpponentAhead/15);
+        goalSpeed = 15000 * (nearestOpponentAhead/1500);
+        goalSpeedTurning = 8000 * (nearestOpponentAhead/1500);
     }else{
-        goalSpeed = 150;
-        goalSpeedTurning = 80;
+        goalSpeed = 15000;
+        goalSpeedTurning = 8000;
     }
 }
 

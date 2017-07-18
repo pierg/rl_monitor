@@ -34,16 +34,10 @@ def playGame(train_indicator=1):    #1 means Train, 0 means simply Run
     # -r name of the reward function
     # -x time of the simulation (in hour)
     # -k should we keep the model or not (boolean)
-    monitor, keepModel, simTime, episode_count = getArgs()
+    monitor, keepModel, simTime, episode_count, opponents = getArgs()
 
     filename = "results" + monitor + "_" + time.strftime("%d_%m_%Y_%H%M%S")
-    os.mkdir( "results/" + filename, 0755 );
     os.mkdir( "models/" + filename, 0755 );
-    copy("results/src/SCRIPT_plot_all_iterations.m", "results/" + filename + "/SCRIPT_plot_all_iterations.m")
-    copy("results/src/SCRIPT_plot_results.m", "results/" + filename + "/SCRIPT_plot_results.m")
-    copy("results/src/SCRIPT_counters.m", "results/" + filename + "/SCRIPT_counters.m")
-    copy("results/src/SCRIPT_plot_torcs_values.m", "results/" + filename + "/SCRIPT_plot_torcs_values.m")
-
     results = Results(filename)
 
     startSim = time.time()
@@ -60,7 +54,10 @@ def playGame(train_indicator=1):    #1 means Train, 0 means simply Run
         LRC = 0.001     #Lerning rate for Critic
 
         action_dim = 3  #Steering/Acceleration/Brake
-        state_dim = 29  #of sensors input
+        state_dim = 29  #of sensors input = states + action
+
+        if opponents:
+            state_dim = state_dim + 36
 
         np.random.seed(1337)
 
@@ -124,7 +121,10 @@ def playGame(train_indicator=1):    #1 means Train, 0 means simply Run
             else:
                 ob = env.reset()
 
-            s_t = np.hstack((ob.angle, ob.track, ob.trackPos, ob.speedX, ob.speedY,  ob.speedZ, ob.wheelSpinVel/100.0, ob.rpm))
+            if opponents:
+                s_t = np.hstack((ob.angle, ob.track, ob.trackPos, ob.speedX, ob.speedY,  ob.speedZ, ob.wheelSpinVel/100.0, ob.rpm, ob.opponents))
+            else:
+                s_t = np.hstack((ob.angle, ob.track, ob.trackPos, ob.speedX, ob.speedY,  ob.speedZ, ob.wheelSpinVel/100.0, ob.rpm))
          
             total_reward = 0.
             for j in range(max_steps):
@@ -153,8 +153,10 @@ def playGame(train_indicator=1):    #1 means Train, 0 means simply Run
                 if isinstance(r_t, basestring) : 
                     done = True
                     r_t = 0
-
-                s_t1 = np.hstack((ob.angle, ob.track, ob.trackPos, ob.speedX, ob.speedY, ob.speedZ, ob.wheelSpinVel/100.0, ob.rpm))
+                if opponents:
+                    s_t1 = np.hstack((ob.angle, ob.track, ob.trackPos, ob.speedX, ob.speedY,  ob.speedZ, ob.wheelSpinVel/100.0, ob.rpm, ob.opponents))
+                else:
+                    s_t1 = np.hstack((ob.angle, ob.track, ob.trackPos, ob.speedX, ob.speedY,  ob.speedZ, ob.wheelSpinVel/100.0, ob.rpm))
             
                 buff.add(s_t, a_t[0], r_t, s_t1, done)      #Add replay buffer
                 

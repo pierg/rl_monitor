@@ -1,4 +1,8 @@
-iterations = size(goalReached, 2);
+if goalReached(end) == 0
+  iterations = size(goalReached, 2)-1;
+else
+  iterations = size(goalReached, 2);
+
 
 % STEP = round(iterations/10);
 STEP = 1;

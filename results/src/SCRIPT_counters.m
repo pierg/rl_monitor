@@ -1,4 +1,7 @@
-iterations = size(goalReached, 2)-1;
+if goalReached(end) == 0
+  iterations = size(goalReached, 2)-1;
+else
+  iterations = size(goalReached, 2);
 
 i=1;
 
@@ -247,8 +250,8 @@ time_sum = 0;
 for j = 1:iterations
   if goalReached(j) == 1
     number_goalReached = number_goalReached + 1;
-    episodes_sum = episodes_sum + episodeCount(i);
-    time_sum = time_sum + totalTime(i);    
+    episodes_sum = episodes_sum + episodeCount(j);
+    time_sum = time_sum + totalTime(j); 
   end
 end
 

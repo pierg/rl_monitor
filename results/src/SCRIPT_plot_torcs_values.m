@@ -1,7 +1,11 @@
-iterations = size(goalReached,2);
+if goalReached(end) == 0
+  iterations = size(goalReached, 2)-1;
+else
+  iterations = size(goalReached, 2);
+
 
 % Set for which iteration you want to see the plots
-i=3;
+i=1;
 
 fig_torcs = figure;
 set(fig_torcs,'visible','off');
@@ -9,8 +13,6 @@ set(fig_torcs, 'PaperPositionMode', 'manual');
 set(fig_torcs, 'PaperPosition', [0 0 200 100]);
 
 
-
-% while i<=iterations
   grid('on');
   ALL_trackPos = cell2mat(trackPos{1, i});
   subplot(6,1,1);
@@ -18,17 +20,6 @@ set(fig_torcs, 'PaperPosition', [0 0 200 100]);
   hold on;
   xlabel('Step #');
   ylabel('TrackPos');
-  
-  %{
-  hold on;
-  for j = 1:episodeCount(i)
-        steps = step{1, i};
-        n_steps = steps(1, j);
-        y_value = ALL_trackPos(n_steps);
-        plot([n_steps n_steps], [y_value y_value], '-.r*');
-   end
-   hold off;
-   %}
   
   grid('on');
   ALL_steering = cell2mat(steering{1,i});
@@ -69,10 +60,7 @@ set(fig_torcs, 'PaperPosition', [0 0 200 100]);
   hold on;
   xlabel('Step #');
   ylabel('Damage');
-     
-%   i=i+1;
-%   
-% end
+
 
 
   file_name = [num2str(i) '_TORCS_VALUES'];

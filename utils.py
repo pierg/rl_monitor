@@ -9,6 +9,8 @@ def getArgs():
 	parser.add_argument("-r", type=str, help="name of the monitor")
 	parser.add_argument("-x", type=float, help="time of the simulation (in hour)")
 	parser.add_argument("-k", type=str, help="keep the models")
+	parser.add_argument("-a", action='store_true', help="add opponents")
+
 
 	args = parser.parse_args()
 
@@ -32,7 +34,9 @@ def getArgs():
 	else :
 		episode_count = 2000
 
-	return monitor, keepModel, simTime, episode_count
+	opponents = args.a
+
+	return monitor, keepModel, simTime, episode_count, opponents
 
 
 def str2bool(v):
