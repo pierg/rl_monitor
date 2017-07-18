@@ -450,9 +450,7 @@ void rewardRightCarClose(){
 	</template>
 	<template>
 		<name>OpponentsBehind</name>
-		<declaration>int nearestOpponentBehind;
-
-/*start functions*/
+		<declaration>/*start functions*/
 bool isCarDetectedNearbyBehind(){
     int i;
     for(i = 0; i &lt; 36; i++){
@@ -985,9 +983,7 @@ void rewardLeftCarClose(){
 	</template>
 	<template>
 		<name>OpponentsAhead</name>
-		<declaration>int nearestOpponentAhead;
-
-/*start functions*/
+		<declaration>/*start functions*/
 bool isFrontCarDetectedNearby(){
     int i;
     for(i = 13; i &lt; 24; i++){
