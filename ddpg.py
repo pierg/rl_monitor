@@ -87,12 +87,6 @@ def playGame(train_indicator=1):    #1 means Train, 0 means simply Run
         # Generate a Torcs environment
         env = TorcsEnv(reward, vision=vision, throttle=True,gear_change=False)
 
-
-        #copy("originalmodel/actormodel.h5", "actormodel.h5")
-        #copy("originalmodel/criticmodel.h5", "criticmodel.h5")
-        #copy("originalmodel/actormodel.json", "actormodel.json")
-        #copy("originalmodel/criticmodel.json", "criticmodel.json")
-
         #Now load the weight
         print("Now we load the weight")
         try:
@@ -137,11 +131,6 @@ def playGame(train_indicator=1):    #1 means Train, 0 means simply Run
                 noise_t[0][0] = train_indicator * max(epsilon, 0) * OU.function(a_t_original[0][0],  0.0 , 0.60, 0.30)
                 noise_t[0][1] = train_indicator * max(epsilon, 0) * OU.function(a_t_original[0][1],  0.5 , 1.00, 0.10)
                 noise_t[0][2] = train_indicator * max(epsilon, 0) * OU.function(a_t_original[0][2], -0.1 , 1.00, 0.05)
-
-                #The following code do the stochastic brake
-                #if random.random() <= 0.1:
-                #    print("********Now we apply the brake***********")
-                #    noise_t[0][2] = train_indicator * max(epsilon, 0) * OU.function(a_t_original[0][2],  0.2 , 1.00, 0.10)
 
                 a_t[0][0] = a_t_original[0][0] + noise_t[0][0]
                 a_t[0][1] = a_t_original[0][1] + noise_t[0][1]

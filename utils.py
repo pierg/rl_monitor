@@ -3,6 +3,8 @@ import json
 import time
 from larva import *
 
+# Get arguments from command line. If the simulator already use these parameters, you have to change 
+# them or adapt the simulator. (for exemple with TORCS, modify snakeoil3)
 def getArgs():
 	parser = argparse.ArgumentParser()
 	parser.add_argument("-n", type=int, help="number of episodes")
@@ -49,6 +51,7 @@ def str2bool(v):
 	else:
 		raise argparse.ArgumentTypeError('Boolean value expected.')
 
+# Check if the simulation should stop. (work with time limit)
 def isSimulationTimeUp(startSim, simTime):
 	statusSim = time.time()
 	simTotalTime = statusSim - startSim 

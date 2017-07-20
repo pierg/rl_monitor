@@ -2,6 +2,7 @@ if goalReached(end) == 0
   iterations = size(goalReached, 2)-1;
 else
   iterations = size(goalReached, 2);
+end
 
 mkdir plots;
 

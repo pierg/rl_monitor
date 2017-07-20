@@ -2,6 +2,7 @@ if goalReached(end) == 0
   iterations = size(goalReached, 2)-1;
 else
   iterations = size(goalReached, 2);
+end
 
 i=1;
 
@@ -101,7 +102,7 @@ while i <= iterations
     
     for j = 1:size(c_Speed_Stuck{i},2)
       stuck_sum = stuck_sum + c_Speed_Stuck{i}(j);
-      turning_sum = turning_sum + c_Speed_Turning{i}(j);
+      turning_sum = turning_sum + c_Speed_Curve{i}(j);
       goingStraight_sum = goingStraight_sum + c_Speed_GoingStraight{i}(j);
       default_speed_sum = default_speed_sum + c_Speed_default{i}(j);
     end

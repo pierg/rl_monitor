@@ -8,9 +8,10 @@ from keras.layers import Dense, Flatten, Input, merge, Lambda
 from keras.optimizers import Adam
 import tensorflow as tf
 import keras.backend as K
+import model_config as cfg
 
-HIDDEN1_UNITS = 700
-HIDDEN2_UNITS = 1400
+HIDDEN1_UNITS = cfg.layer1_actor
+HIDDEN2_UNITS = cfg.layer2_actor
 
 class ActorNetwork(object):
     def __init__(self, sess, state_size, action_size, BATCH_SIZE, TAU, LEARNING_RATE):
@@ -54,4 +55,3 @@ class ActorNetwork(object):
         V = merge([Steering,Acceleration,Brake],mode='concat')          
         model = Model(input=S,output=V)
         return model, model.trainable_weights, S
-

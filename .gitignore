@@ -1,6 +1,6 @@
 monitor/*.class
 *.pyc
-results/*
+results/results*
 logs.txt
 actormodel.h5
 criticmodel.h5

@@ -143,14 +143,6 @@ public static double brake;
 
 
 
-public static double nearestOpponentRight;
-
-public static double nearestOpponentBehind;
-
-public static double nearestOpponentLeft;
-
-public static double nearestOpponentAhead;
-
 public static double stuckCounter = 0;
 
 
@@ -180,7 +172,7 @@ public static boolean isLeftOffRoad()
 {
     return (trackPos >= 1.0);
 }
-
+/*
 public static void getNearestOpponentAheadValue(){
     int i;
     nearestOpponentAhead = 200.0;
@@ -200,7 +192,7 @@ public static void adaptGoalSpeed(){
         goalSpeed = 150;
         goalSpeedCurve = 80;
     }
-}
+}*/
 
 public static void computeTotalReward(){
     tot_reward =  0;
@@ -279,15 +271,15 @@ public static void rewardRightFree(){
 }
 
 public static void rewardRightCarFar(){
-    opponents_right_rwd = (-10 + getNearestOpponentRightValue())/8;
+    opponents_right_rwd = 0;
 }
 
 public static void rewardRightCar(){
-    opponents_right_rwd = (-10 + getNearestOpponentRightValue())/4;
+    opponents_right_rwd = 0;
 }
 
 public static void rewardRightCarClose(){
-    opponents_right_rwd = (-10 + getNearestOpponentRightValue());
+    opponents_right_rwd = 0;
 }
 /*end functions*//*start functions*/
 public static boolean isCarDetectedNearbyBehind(){
@@ -357,15 +349,15 @@ public static void rewardBehindFree(){
 }
 
 public static void rewardBehindCarFar(){
-    opponents_back_rwd = (-15 + getNearestOpponentBehindValue())/8;
+    opponents_back_rwd = 0;
 }
 
 public static void rewardBehindCar(){
-    opponents_back_rwd = (-15 + getNearestOpponentBehindValue())/4;
+    opponents_back_rwd = 0;
 }
 
 public static void rewardBehindCarClose(){
-    opponents_back_rwd = (-15 + getNearestOpponentBehindValue());
+    opponents_back_rwd = 0;
 }
 /*end functions*//*start functions*/
 public static boolean isLeftCarDetectedNearby(){
@@ -453,15 +445,15 @@ public static void rewardLeftFree(){
 }
 
 public static void rewardLeftCarFar(){
-    opponents_left_rwd = (-10 + getNearestOpponentLeftValue())/8;
+    opponents_left_rwd = 0;
 }
 
 public static void rewardLeftCar(){
-    opponents_left_rwd = (-10 + getNearestOpponentLeftValue())/4;
+    opponents_left_rwd = 0;
 }
 
 public static void rewardLeftCarClose(){
-    opponents_left_rwd = (-10 + getNearestOpponentLeftValue());
+    opponents_left_rwd = 0;
 }
 /*end functions*//*start functions*/
 public static boolean isFrontCarDetectedNearby(){
@@ -514,31 +506,20 @@ public static boolean isFrontFree(){
     return true;
 }
 
-public static double getNearestOpponentAheadValue(){
-    int i;
-    nearestOpponentAhead = 2.0;
-    for(i = 4; i < 15; i++){
-        if(opponents[i] < nearestOpponentAhead){
-            nearestOpponentAhead = opponents[i];
-        }
-    }
-    return nearestOpponentAhead;
-}
-
 public static void rewardFrontFree(){
     opponents_ahead_rwd = 0;
 }
 
 public static void rewardFrontCarFar(){
-    opponents_ahead_rwd = (-15 + getNearestOpponentAheadValue())/8;
+    opponents_ahead_rwd = 0;
 }
 
 public static void rewardFrontCar(){
-    opponents_ahead_rwd = (-15 + getNearestOpponentAheadValue())/4;
+    opponents_ahead_rwd = 0;
 }
 
 public static void rewardFrontCarClose(){
-    opponents_ahead_rwd = (-15 + getNearestOpponentAheadValue());
+    opponents_ahead_rwd = 0;
 }
 
 /*end functions*//*start functions*/
@@ -598,7 +579,7 @@ public static boolean isStuck()
 
 public static boolean curveIsComing()
 {
-    int index;
+    int index = 0;
     if(isStuck()){
         return false;
     }

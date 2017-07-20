@@ -2,7 +2,7 @@ if goalReached(end) == 0
   iterations = size(goalReached, 2)-1;
 else
   iterations = size(goalReached, 2);
-
+end
 
 % STEP = round(iterations/10);
 STEP = 1;
@@ -31,7 +31,11 @@ while i <= iterations
     sumRewards = sumRewards + cumulativeReward;
     x_pos = size(TOT_rewardsPerEpisode, 2);
     y_pos = TOT_rewardsPerEpisode(x_pos);
-    nameLine = ['\leftarrow' num2str(i)];
+    if goalReached(i) == 0
+        nameLine = ['\leftarrow' num2str(i) 'FAIL'];
+    else
+        nameLine = ['\leftarrow' num2str(i)];
+    end
     text(x_pos,y_pos, nameLine);
     hold on;
     
@@ -54,11 +58,17 @@ saveas(fig_tot_rewards, file_name, 'png');
 fig_tot_time_to_goal = figure;
 set(fig_tot_time_to_goal,'visible','off');
 grid('on');
-scatter(1:iterations, totalTime);
+scatter(1:iterations, totalTime(1:iterations));
 hold on;
-for k = 1:iterations
-    text(k+0.7,totalTime(k), num2str(k));
-end
+% for k = 1:iterations
+%     if goalReached(k) == 0
+%         nameLine = [num2str(i) 'FAIL'];
+%         text(k,totalTime(k), nameLine);
+%     else
+%         nameLine = num2str(i);
+%         text(k,totalTime(k), nameLine);
+%     end
+% end
 xlabel('Iteration #');
 ylabel('Total time to reach the goal');
 y_avr = max(totalTime)/2;
@@ -72,11 +82,11 @@ saveas(fig_tot_time_to_goal, file_name, 'png');
 fig_count = figure;
 set(fig_count,'visible','off');
 grid('on');
-scatter(1:iterations, episodeCount);
+scatter(1:iterations, episodeCount(1:iterations));
 hold on;
-for k = 1:iterations
-    text(k+0.7,episodeCount(k), num2str(k));
-end
+% for k = 1:iterations
+%     text(k+0.7,episodeCount(k), num2str(k));
+% end
 xlabel('Iteration #');
 ylabel('Number of episodes to reach the goal');
 y_avr = max(episodeCount)/2;
@@ -92,7 +102,7 @@ saveas(fig_count, file_name, 'png');
 fig_count = figure;
 set(fig_count,'visible','off');
 grid('on');
-scatter(1:iterations, episodeCount);
+scatter(1:iterations, episodeCount(1:iterations));
 hold on;
 for k = 1:iterations
     text(k+0.7,episodeCount(k), num2str(k));
@@ -110,7 +120,7 @@ saveas(fig_count, file_name, 'png');
 fig_trackpos = figure;
 set(fig_count,'visible','off');
 grid('on');
-scatter(1:iterations, episodeCount);
+scatter(1:iterations, episodeCount(1:iterations));
 hold on;
 for k = 1:iterations
     text(k+0.7,episodeCount(k), num2str(k));
