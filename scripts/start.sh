@@ -76,6 +76,8 @@ if [ "$opponents" = true ] ; then
 	sudo docker exec -t $(sudo docker ps -lq) mv scripts/sources/quickrace.xml /usr/local/share/games/torcs/config/raceman/practice.xml
     sudo docker exec -t $(sudo docker ps -lq) mv autostart.sh autostart_1.sh
     sudo docker exec -t $(sudo docker ps -lq) mv autostart_opponents.sh autostart.sh
+    sudo docker exec -t $(sudo docker ps -lq) mv model_config.py model_config_1.py
+    sudo docker exec -t $(sudo docker ps -lq) mv model_config_opponents.py model_config.py
     echo "...done"
     echo ""
 else
