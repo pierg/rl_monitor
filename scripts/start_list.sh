@@ -5,15 +5,19 @@ duration="1"
 filename=""
 opponents=""
 original=""
+episodes=""
 suffix='h'
 
-while getopts ":deot:f:" opt; do
+while getopts ":deon:t:f:" opt; do
 	case $opt in
 		d)
 			detached="-d"
 		;;
 		t)
 			duration=$OPTARG
+		;;
+		n)
+			episodes="-n $OPTARG"
 		;;
 		f)
 			filename="$OPTARG"
@@ -38,7 +42,7 @@ while read -r line
 do
     name="$line"
     echo "Name read from file - $name"
-    ./start.sh $detached -m $name -t $duration $opponents $original
+    ./start.sh $detached -m $name -t $duration $opponents $original $episodes
     if [ "$detached" == "-d" ] ; 
     then 
 		sleep $duration$suffix

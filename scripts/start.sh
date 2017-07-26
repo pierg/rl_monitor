@@ -9,8 +9,9 @@ logs_output=""
 original=false
 opponents=false
 adParameter=""
+episodes=""
 
-while getopts ":doem:t:" opt; do
+while getopts ":doen:m:t:" opt; do
 	case $opt in
 		d)
 			detached="-d"
@@ -21,6 +22,9 @@ while getopts ":doem:t:" opt; do
 			if [ "$original" = false ] ; then
 				monitor="-r $fn"
 			fi
+		;;
+		n)
+			episodes="-n $OPTARG"
 		;;
 		t)
 			duration="-x $OPTARG"
@@ -70,10 +74,12 @@ if [ "$original" = true ] ; then
     echo ""
 fi
 
+# set the configuration for opponents or not
 if [ "$opponents" = true ] ; then
 	echo "Using opponents..."
-	sudo docker exec -t $(sudo docker ps -lq) mv scripts/sources/quickrace.xml /root/.torcs/config/raceman/quickrace.xml
-	sudo docker exec -t $(sudo docker ps -lq) mv scripts/sources/quickrace.xml /usr/local/share/games/torcs/config/raceman/practice.xml
+	#sudo docker cp sources/quickrace.xml $(sudo docker ps -lq):/root/.torcs/config/raceman/quickrace.xml
+	sudo docker cp sources/quickrace.xml $(sudo docker ps -lq):/usr/local/share/games/torcs/config/raceman/quickrace.xml
+	sudo docker cp sources/quickrace.xml $(sudo docker ps -lq):/usr/local/share/games/torcs/config/raceman/practice.xml
     sudo docker exec -t $(sudo docker ps -lq) mv autostart.sh autostart_1.sh
     sudo docker exec -t $(sudo docker ps -lq) mv autostart_opponents.sh autostart.sh
     sudo docker exec -t $(sudo docker ps -lq) mv model_config.py model_config_1.py
@@ -82,8 +88,8 @@ if [ "$opponents" = true ] ; then
     echo ""
 else
 	echo "Practice mode..."
-	sudo docker exec -t $(sudo docker ps -lq) mv scripts/sources/practice.xml /root/.torcs/config/raceman/practice.xml
-	sudo docker exec -t $(sudo docker ps -lq) mv scripts/sources/practice.xml /usr/local/share/games/torcs/config/raceman/practice.xml
+	#sudo docker cp sources/practice.xml $(sudo docker ps -lq):/root/.torcs/config/raceman/practice.xml
+	sudo docker cp sources/practice.xml $(sudo docker ps -lq):/usr/local/share/games/torcs/config/raceman/practice.xml
     echo "...done"
     echo ""
 fi
@@ -101,17 +107,20 @@ sudo docker exec -t $(sudo docker ps -lq) bash -c "cd ../uppaal_to_larva && java
 echo "...done"
 echo ""
 
+# create the fake display to run torcs
 echo "Open fake display..."
 sudo docker exec -td $(sudo docker ps -lq) x11vnc -forever -create -display :1.0
 echo "...done"
 echo ""
 
+# compile the LARVA files and run the monitor
 echo "Compile and run the monitor..."
 sudo docker exec -t $(sudo docker ps -lq) make -C monitor/$fn/ compile
 sudo docker exec -td $(sudo docker ps -lq) make -C monitor/$fn/ run
 echo "...done"
 echo ""
 
+# start the simultation
 echo "Starting the simulation !"
 echo ""
-sudo docker exec -t $detached -e "DISPLAY=:1.0" $(sudo docker ps -lq) bash -c "python ddpg.py $monitor $adParameter $duration $logs_output"
+sudo docker exec -t $detached -e "DISPLAY=:1.0" $(sudo docker ps -lq) bash -c "python ddpg.py $monitor $adParameter $episodes $duration $logs_output"
