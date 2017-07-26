@@ -13,7 +13,9 @@ To start a simulation on docker :
 	  Add -e to add opponents
 	  Add -n to choose the maximum of episodes you want for each iteration
 
-	- If you want to configure the goal (how many laps to do to finish), you have to modify the XML files in scripts/sources. quickrace.xml for runs with opponents, practice.xml for runs without opponents. See TORCS documentation for more informations (https://arxiv.org/pdf/1304.1672.pdf).
+	- If you want to configure the goal (how many laps to do to finish), you have to modify the XML files
+	 in scripts/sources. quickrace.xml for runs with opponents, practice.xml for runs without opponents. 
+	 See TORCS documentation for more informations (https://arxiv.org/pdf/1304.1672.pdf).
 	  
 	- Run script/results.sh to get the results in ~/results
 	
