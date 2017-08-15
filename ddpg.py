@@ -81,6 +81,7 @@ class DDPG:
             else :
                 y_batch.append(reward_batch[i] + GAMMA * q_value_batch[i])
         y_batch = np.resize(y_batch,[BATCH_SIZE,1])
+
         # Update critic by minimizing the loss L
         self.critic_network.train(y_batch,state_batch,action_batch)
 
@@ -156,8 +157,7 @@ class DDPG:
     
     def perceive(self,state,action,reward,next_state,done):
         # Store transition (s_t,a_t,r_t,s_{t+1}) in replay buffer
-        
-        
+
         if ( not (math.isnan( reward ))):
             self.replay_buffer.add(state,action,reward,next_state,done)
         
