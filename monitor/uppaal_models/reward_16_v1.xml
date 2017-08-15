@@ -1272,26 +1272,26 @@ void setTrackPosGoal(){
     getNearestOpponentLeftValue();
     getNearestOpponentRightValue();
     
-    // if surrounded stay there
+    // if we are surrounded stay there
     if(nearestOpponentLeft &lt; 400 &amp;&amp; nearestOpponentRight &lt; 400){
         return;
-    // if car only to the left
+    // if a car only to the left
     } else if (nearestOpponentLeft &lt; 400){
-        // if agent in center or right go or stay right
+        // if agent goal in center or right go or stay right
         if(goalTrackPos == 0 || goalTrackPos == 50){
             goalTrackPos = 50;
         }
-        // if agent already left go back to center
+        // if agent goal is left go back to center
         if(goalTrackPos == -50){
             goalTrackPos = 0;
         }
     // if car only to the right
     } else if (nearestOpponentRight &lt; 400){
-        // if agent in center or left go or stay left
+        // if agent goal is center or left go or stay left
         if(goalTrackPos == 0 || goalTrackPos == -50){
             goalTrackPos = -50;
         }
-        // if agent already right go back to center
+        // if agent goal is right go back to center
         if(goalTrackPos == 50){
             goalTrackPos = 0;
         }
