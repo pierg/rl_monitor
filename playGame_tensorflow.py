@@ -39,7 +39,7 @@ def playGame(train_indicator=is_training):    #1 means Train, 0 means simply Run
     state_dim = 29  #of sensors input
     env_name = 'Torcs_Env'
 
-    filename = "results" + monitor + "_" + time.strftime("%d_%m_%Y_%H%M%S")
+    filename = "tf" + monitor + "_" + time.strftime("%d_%m_%Y_%H%M%S")
     if not os.path.exists("results"):
         os.mkdir( "results", 0755 );
     results = Results(filename)
