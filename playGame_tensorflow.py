@@ -42,7 +42,6 @@ def playGame(train_indicator=is_training):    #1 means Train, 0 means simply Run
     filename = "results" + monitor + "_" + time.strftime("%d_%m_%Y_%H%M%S")
     if not os.path.exists("results"):
         os.mkdir( "results", 0755 );
-    os.mkdir( "results/" + filename, 0755 );
     results = Results(filename)
     
     EXPLORE = total_explore
