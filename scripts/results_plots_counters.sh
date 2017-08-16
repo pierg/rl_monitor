@@ -13,6 +13,7 @@ for D in *; do
         cd "${D}"
         sudo matlab -nojvm -r "run RUN_counters.m"
         cd ..
+        exit
     fi
 done
 
