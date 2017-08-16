@@ -16,4 +16,3 @@ SCRIPT_plot_all_rewards
 SCRIPT_plot_all_torcs_values
 SCRIPT_plot_results
 SCRIPT_plot_torcs_values
-finish
