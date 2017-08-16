@@ -53,12 +53,14 @@ class Results:
 		self.episode = 0
 
 		os.mkdir( "results/" + filename, 0755 );
-		copy("results/src/SCRIPT_plot_all_iterations.m", "results/" + filename + "/SCRIPT_plot_all_iterations.m")
-		copy("results/src/SCRIPT_plot_results.m", "results/" + filename + "/SCRIPT_plot_results.m")
-		copy("results/src/SCRIPT_counters.m", "results/" + filename + "/SCRIPT_counters.m")
-		copy("results/src/SCRIPT_plot_torcs_values.m", "results/" + filename + "/SCRIPT_plot_torcs_values.m")
-		copy("results/src/SCRIPT_plot_all_rewards.m", "results/" + filename + "/SCRIPT_plot_all_rewards.m")
-		copy("results/src/SCRIPT_plot_all_torcs_values.m", "results/" + filename + "/SCRIPT_plot_all_torcs_values.m")
+		copy("matlab_scripts/SCRIPT_plot_all_iterations.m", "results/" + filename + "/SCRIPT_plot_all_iterations.m")
+		copy("matlab_scripts/SCRIPT_plot_results.m", "results/" + filename + "/SCRIPT_plot_results.m")
+		copy("matlab_scripts/SCRIPT_counters.m", "results/" + filename + "/SCRIPT_counters.m")
+		copy("matlab_scripts/SCRIPT_plot_torcs_values.m", "results/" + filename + "/SCRIPT_plot_torcs_values.m")
+		copy("matlab_scripts/SCRIPT_plot_all_rewards.m", "results/" + filename + "/SCRIPT_plot_all_rewards.m")
+		copy("matlab_scripts/SCRIPT_plot_all_torcs_values.m", "results/" + filename + "/SCRIPT_plot_all_torcs_values.m")
+		copy("matlab_scripts/RUN_counters.m", "results/" + filename + "/RUN_counters.m")
+		copy("matlab_scripts/RUN_full.m", "results/" + filename + "/RUN_full.m")
 
 
 	def startIterationTime(self):
