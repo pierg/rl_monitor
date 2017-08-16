@@ -3,5 +3,5 @@
 
 for D in `find ~/results_tf_torcs/* -type d`
 do
-    sudo matlab -nojvm -r "run ${D}/RUN_counters.m"
+    sudo matlab -nojvm -r "run ${D}/RUN_counters.m" &
 done
