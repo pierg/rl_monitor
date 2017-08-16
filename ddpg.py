@@ -40,6 +40,8 @@ def playGame(train_indicator=1):    #1 means Train, 0 means simply Run
     # create the filename, initialize all the results
     filename = "results" + monitor + "_" + time.strftime("%d_%m_%Y_%H%M%S")
     os.mkdir( "models/" + filename, 0755 );
+    if not os.path.exists("results"):
+        os.mkdir( "results", 0755 );
     results = Results(filename)
 
     # get time of the start of the simulation
