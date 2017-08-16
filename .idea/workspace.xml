@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="26241411-0400-4ec7-a144-751903ca45bd" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/scripts/verify.sh" />
+    <list default="true" id="26241411-0400-4ec7-a144-751903ca45bd" name="Default" comment="added verify script">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/scripts/verify.sh" afterPath="$PROJECT_DIR$/scripts/verify.sh" />
     </list>
     <ignored path=".idea/dataSources.local.xml" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -36,7 +36,7 @@
         <entry file="file://$PROJECT_DIR$/scripts/verify.sh">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="135">
-              <caret line="9" column="79" selection-start-line="9" selection-start-column="79" selection-end-line="9" selection-end-column="79" />
+              <caret line="9" column="4" selection-start-line="9" selection-start-column="4" selection-end-line="9" selection-end-column="4" />
               <folding />
             </state>
           </provider>
@@ -964,7 +964,7 @@
       <option name="presentableId" value="Default" />
       <updated>1499776895286</updated>
       <workItem from="1502809141226" duration="2329000" />
-      <workItem from="1502884966132" duration="11286000" />
+      <workItem from="1502884966132" duration="11465000" />
     </task>
     <task id="LOCAL-00001" summary="clean project">
       <created>1502809201142</created>
@@ -1113,11 +1113,18 @@
       <option name="project" value="LOCAL" />
       <updated>1502898531294</updated>
     </task>
-    <option name="localTasksCounter" value="22" />
+    <task id="LOCAL-00022" summary="added verify script">
+      <created>1502902220520</created>
+      <option name="number" value="00022" />
+      <option name="presentableId" value="LOCAL-00022" />
+      <option name="project" value="LOCAL" />
+      <updated>1502902220520</updated>
+    </task>
+    <option name="localTasksCounter" value="23" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="13615000" />
+    <option name="totallyTimeSpent" value="13794000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1920" height="1200" extended-state="6" />
@@ -1205,7 +1212,8 @@
     <MESSAGE value="added results script with matlab plots" />
     <MESSAGE value="fixed results script" />
     <MESSAGE value="refactoring" />
-    <option name="LAST_COMMIT_MESSAGE" value="refactoring" />
+    <MESSAGE value="added verify script" />
+    <option name="LAST_COMMIT_MESSAGE" value="added verify script" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager />
@@ -1638,7 +1646,7 @@
     <entry file="file://$PROJECT_DIR$/scripts/verify.sh">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="135">
-          <caret line="9" column="79" selection-start-line="9" selection-start-column="79" selection-end-line="9" selection-end-column="79" />
+          <caret line="9" column="4" selection-start-line="9" selection-start-column="4" selection-end-line="9" selection-end-column="4" />
           <folding />
         </state>
       </provider>

@@ -7,4 +7,4 @@ if [[ $# -eq 0 ]] ; then
     exit 1
 fi
 
-sh ../monitor/verification/verify_all_properties.sh ../monitor/uppaal_models/$1
+exec ../monitor/verification/verify_all_properties.sh ../monitor/uppaal_models/$1
