@@ -1,4 +1,0 @@
-property_1
-A[] (TrackPos.centerRoad and Speed.GoingStraight) imply trp_reward<0
-property_2
-E<> (TrackPos.centerRoad and Speed.GoingStraight) imply trp_reward>0

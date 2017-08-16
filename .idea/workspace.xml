@@ -1,27 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="4cda79fb-c2e6-48bb-a714-72d01d1d2ead" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gitignore" afterPath="$PROJECT_DIR$/.gitignore" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/monitor/reward_16_v1/_diag_Damage.txt" afterPath="$PROJECT_DIR$/monitor/reward_16_v1/_diag_Damage.txt" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/monitor/reward_16_v1/_diag_OpponentsAhead.txt" afterPath="$PROJECT_DIR$/monitor/reward_16_v1/_diag_OpponentsAhead.txt" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/monitor/reward_16_v1/_diag_OpponentsBehind.txt" afterPath="$PROJECT_DIR$/monitor/reward_16_v1/_diag_OpponentsBehind.txt" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/monitor/reward_16_v1/_diag_OpponentsLeft.txt" afterPath="$PROJECT_DIR$/monitor/reward_16_v1/_diag_OpponentsLeft.txt" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/monitor/reward_16_v1/_diag_OpponentsRight.txt" afterPath="$PROJECT_DIR$/monitor/reward_16_v1/_diag_OpponentsRight.txt" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/monitor/reward_16_v1/_diag_Speed.txt" afterPath="$PROJECT_DIR$/monitor/reward_16_v1/_diag_Speed.txt" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/monitor/reward_16_v1/_diag_TrackPos.txt" afterPath="$PROJECT_DIR$/monitor/reward_16_v1/_diag_TrackPos.txt" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/monitor/reward_16_v1/aspects/_asp_rewardautomaton0.aj" afterPath="$PROJECT_DIR$/monitor/reward_16_v1/aspects/_asp_rewardautomaton0.aj" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/monitor/reward_16_v1/larva/Channel.java" afterPath="$PROJECT_DIR$/monitor/reward_16_v1/larva/Channel.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/monitor/reward_16_v1/larva/Clock.java" afterPath="$PROJECT_DIR$/monitor/reward_16_v1/larva/Clock.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/monitor/reward_16_v1/larva/IterableList.java" afterPath="$PROJECT_DIR$/monitor/reward_16_v1/larva/IterableList.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/monitor/reward_16_v1/larva/RunningClock.java" afterPath="$PROJECT_DIR$/monitor/reward_16_v1/larva/RunningClock.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/monitor/reward_16_v1/larva/SC.java" afterPath="$PROJECT_DIR$/monitor/reward_16_v1/larva/SC.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/monitor/reward_16_v1/larva/_BadStateExceptionrewardautomaton.java" afterPath="$PROJECT_DIR$/monitor/reward_16_v1/larva/_BadStateExceptionrewardautomaton.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/monitor/reward_16_v1/larva/_callable.java" afterPath="$PROJECT_DIR$/monitor/reward_16_v1/larva/_callable.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/monitor/reward_16_v1/larva/_larva.java" afterPath="$PROJECT_DIR$/monitor/reward_16_v1/larva/_larva.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/monitor/uppaal_models/reward_13_v1.xml" afterPath="$PROJECT_DIR$/monitor/uppaal_models/reward_13_v1.xml" />
-    </list>
+    <list default="true" id="4cda79fb-c2e6-48bb-a714-72d01d1d2ead" name="Default" comment="" />
     <ignored path="rl_monitor.iws" />
     <ignored path=".idea/workspace.xml" />
     <ignored path=".idea/dataSources.local.xml" />
@@ -83,7 +63,7 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name=".gitignore" pinned="false" current-in-tab="true">
+      <file leaf-file-name=".gitignore" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/.gitignore">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="120">
@@ -116,17 +96,17 @@
       <file leaf-file-name="start.sh" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/scripts/start.sh">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="817">
-              <caret line="88" column="4" selection-start-line="88" selection-start-column="4" selection-end-line="88" selection-end-column="4" />
+            <state relative-caret-position="330">
+              <caret line="22" column="23" selection-start-line="22" selection-start-column="23" selection-end-line="22" selection-end-column="23" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="test.txt" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/scripts/test.txt">
+      <file leaf-file-name="start_list.sh" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/scripts/start_list.sh">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="0">
+            <state relative-caret-position="-143">
               <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
               <folding />
             </state>
@@ -272,24 +252,6 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="originalmodel" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="rl_monitor-(gym_torcs)" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="rl_monitor-(gym_torcs)" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="monitor" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="uppaal_models" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -985,7 +947,7 @@
       <workItem from="1499952347868" duration="403000" />
       <workItem from="1502721571531" duration="3997000" />
       <workItem from="1502804447707" duration="4791000" />
-      <workItem from="1502884933172" duration="6572000" />
+      <workItem from="1502884933172" duration="8492000" />
     </task>
     <task id="LOCAL-00001" summary="Updated uppaal model">
       <created>1496949153152</created>
@@ -1068,11 +1030,11 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="17565000" />
+    <option name="totallyTimeSpent" value="19485000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1920" height="1200" extended-state="0" />
-    <editor active="true" />
+    <editor active="false" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
@@ -1085,7 +1047,7 @@
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32971016" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.21299255" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.21299255" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
@@ -1148,7 +1110,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/monitor/policy-backup.lrv" />
     <entry file="file://$PROJECT_DIR$/monitor/output_rewardautomaton.txt" />
     <entry file="file://$PROJECT_DIR$/monitor/rewardautomaton.lrv" />
     <entry file="file://$PROJECT_DIR$/reward.py">
@@ -1387,14 +1348,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/scripts/start.sh">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="817">
-          <caret line="88" column="4" selection-start-line="88" selection-start-column="4" selection-end-line="88" selection-end-column="4" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/scripts/counters.sh">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="45">
@@ -1415,6 +1368,22 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="120">
           <caret line="8" column="9" selection-start-line="8" selection-start-column="9" selection-end-line="8" selection-end-column="9" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/scripts/start.sh">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="330">
+          <caret line="22" column="23" selection-start-line="22" selection-start-column="23" selection-end-line="22" selection-end-column="23" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/scripts/start_list.sh">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-143">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding />
         </state>
       </provider>
