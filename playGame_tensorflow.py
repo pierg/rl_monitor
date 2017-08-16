@@ -12,7 +12,7 @@ from ddpg import *
 from reward import reward
 from larva import *
 from utils import *
-from results import Results
+from results_bak import Results
 import gc
 gc.enable()
 
@@ -104,7 +104,7 @@ def playGame(train_indicator=is_training):    #1 means Train, 0 means simply Run
             print("Episode : " + str(i) + " Replay Buffer " + str(agent.replay_buffer.count()) + ' Early Stopping: ' + str(early_stop) +  ' Epsilon: ' + str(eps_early) +  ' RN: ' + str(random_number)  )
 
             #Initializing the first state
-            s_t = np.hstack((ob.angle, ob.track, ob.trackPos, ob.speedX, ob.speedY,  ob.speedZ, ob.wheelSpinVel/100.0, ob.rpm))
+            s_t = np.hstack((ob.angle, ob.track, ob.trackPos, ob.speedX, ob.speedY, ob.speedZ, ob.wheelSpinVel/100.0, ob.rpm))
             
             #Counting the total reward and total steps in the current episode
             total_reward = 0.
