@@ -2,41 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="26241411-0400-4ec7-a144-751903ca45bd" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/monitor/uppaal_models/reward_15.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/monitor/uppaal_models/reward_16.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/monitor/uppaal_models/reward_16_v1.xml" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/monitor/uppaal_models/:Users:pier:Dropbox:Projects:rl_monitor-(gym_torcs):monitor:reward_2_stucked:uppaal_TEST4.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/monitor/uppaal_models/reward_1.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/monitor/uppaal_models/reward_2_stuck_speed.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/monitor/uppaal_models/reward_3.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/monitor/uppaal_models/reward_3_NEW.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/monitor/uppaal_models/reward_4_valuesAdjusted.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/monitor/uppaal_models/reward_5.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/monitor/uppaal_models/reward_5.xml_NOT_properties.txt.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/monitor/uppaal_models/reward_5.xml_NOT_properties.txt_verification_output.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/monitor/uppaal_models/reward_5.xml_NOT_property_1.q.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/monitor/uppaal_models/reward_5.xml_NOT_property_1.q_verification_output.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/monitor/uppaal_models/reward_5.xml_NOT_property_2.q.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/monitor/uppaal_models/reward_5.xml_NOT_property_2.q_verification_output.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/monitor/uppaal_models/reward_5_NOT_properties.txt_verification_output.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/monitor/uppaal_models/reward_7.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/monitor/uppaal_models/verification/properties.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/monitor/uppaal_models/verification/propertiesToVerify/property_1.q" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/monitor/uppaal_models/verification/propertiesToVerify/property_2.q" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/monitor/uppaal_models/verification/reward_8.xml_NOT_line_verification_output.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/monitor/uppaal_models/verification/reward_8.xml_NOT_propertiesToVerify+property_1.q_verification_output.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/monitor/uppaal_models/verification/reward_8.xml_NOT_propertiesToVerify+property_2.q_verification_output.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/monitor/uppaal_models/verification/reward_8.xml_NOT_property_2.q_verification_output.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/monitor/uppaal_models/verification/reward_8.xml_NOT_test.q.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/monitor/uppaal_models/verification/reward_8.xml_NOT_test.q_verification_output.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/monitor/uppaal_models/verification/test.q" afterPath="" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/monitor/uppaal_models/verification/nodeadlock.q" afterPath="$PROJECT_DIR$/monitor/uppaal_models/verification/properties/nodeadlock.q" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/monitor/uppaal_models/verification/reward_8.xml_NOT_line.xml" afterPath="$PROJECT_DIR$/monitor/uppaal_models/reward_15_v1.xml" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/monitor/uppaal_models/verification/reward_8.xml_NOT_propertiesToVerify+property_1.q.xml" afterPath="$PROJECT_DIR$/monitor/uppaal_models/reward_14_v1.xml" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/monitor/uppaal_models/verification/reward_8.xml_NOT_propertiesToVerify+property_2.q.xml" afterPath="$PROJECT_DIR$/monitor/uppaal_models/reward_14_v2.xml" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/monitor/uppaal_models/verification/reward_8.xml_NOT_property_2.q.xml" afterPath="$PROJECT_DIR$/monitor/uppaal_models/reward_14.xml" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/monitor/uppaal_models/verification/straight_center.q" afterPath="$PROJECT_DIR$/monitor/uppaal_models/verification/properties/straight_center.q" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/monitor/uppaal_models/verification/verify_all_properties.sh" afterPath="$PROJECT_DIR$/monitor/uppaal_models/verification/verify_all_properties.sh" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/scripts/verify.sh" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path=".idea/dataSources.local.xml" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -58,8 +25,18 @@
       <file leaf-file-name="start.sh" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/scripts/start.sh">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="825">
-              <caret line="55" column="48" selection-start-line="55" selection-start-column="48" selection-end-line="55" selection-end-column="48" />
+            <state relative-caret-position="243">
+              <caret line="54" column="165" selection-start-line="54" selection-start-column="82" selection-end-line="54" selection-end-column="165" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="verify.sh" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/scripts/verify.sh">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="135">
+              <caret line="9" column="79" selection-start-line="9" selection-start-column="79" selection-end-line="9" selection-end-column="79" />
               <folding />
             </state>
           </provider>
@@ -85,7 +62,7 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="reward_14.xml" pinned="false" current-in-tab="true">
+      <file leaf-file-name="reward_14.xml" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/monitor/uppaal_models/reward_14.xml">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="0">
@@ -98,8 +75,8 @@
       <file leaf-file-name="verify.sh" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/monitor/uppaal_models/verification/verify.sh">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="0">
-              <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+            <state relative-caret-position="225">
+              <caret line="15" column="32" selection-start-line="15" selection-start-column="32" selection-end-line="15" selection-end-column="32" />
               <folding />
             </state>
           </provider>
@@ -164,6 +141,7 @@
         <option value="$PROJECT_DIR$/scripts/plot_all.sh" />
         <option value="$PROJECT_DIR$/scripts/counters.sh" />
         <option value="$PROJECT_DIR$/monitor/uppaal_models/verification/verify_all_properties.sh" />
+        <option value="$PROJECT_DIR$/scripts/verify.sh" />
       </list>
     </option>
   </component>
@@ -290,32 +268,6 @@
               <option name="myItemId" value="monitor" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="uppaal_models" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="verification" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="properties" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="rl_monitor-(tf_torcs)" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="rl_monitor-(tf_torcs)" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="monitor" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
           </PATH>
           <PATH>
             <PATH_ELEMENT>
@@ -344,9 +296,9 @@
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/scripts" />
       <recent name="$PROJECT_DIR$/monitor" />
       <recent name="$PROJECT_DIR$/monitor/uppaal_models" />
-      <recent name="$PROJECT_DIR$/scripts" />
       <recent name="$PROJECT_DIR$/matlab_scripts" />
       <recent name="$PROJECT_DIR$" />
     </key>
@@ -1012,7 +964,7 @@
       <option name="presentableId" value="Default" />
       <updated>1499776895286</updated>
       <workItem from="1502809141226" duration="2329000" />
-      <workItem from="1502884966132" duration="10447000" />
+      <workItem from="1502884966132" duration="11286000" />
     </task>
     <task id="LOCAL-00001" summary="clean project">
       <created>1502809201142</created>
@@ -1165,11 +1117,11 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="12776000" />
+    <option name="totallyTimeSpent" value="13615000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1920" height="1200" extended-state="6" />
-    <editor active="false" />
+    <editor active="true" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
@@ -1180,12 +1132,12 @@
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32971016" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32971016" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32971016" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.25079873" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.25079873" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32971016" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32971016" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
@@ -1264,14 +1216,6 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/scripts/stop.sh">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/results_bak.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
@@ -1284,7 +1228,7 @@
         <state relative-caret-position="0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
-            <element signature="e#0#10#0" expanded="true" />
+            <element signature="e#0#10#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -1294,7 +1238,7 @@
         <state relative-caret-position="165">
           <caret line="13" column="27" selection-start-line="13" selection-start-column="27" selection-end-line="13" selection-end-column="27" />
           <folding>
-            <element signature="e#0#11#0" expanded="true" />
+            <element signature="e#0#11#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -1342,7 +1286,7 @@
         <state relative-caret-position="0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
-            <element signature="e#0#10#0" expanded="true" />
+            <element signature="e#0#10#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -1352,7 +1296,7 @@
         <state relative-caret-position="165">
           <caret line="13" column="27" selection-start-line="13" selection-start-column="27" selection-end-line="13" selection-end-column="27" />
           <folding>
-            <element signature="e#0#11#0" expanded="true" />
+            <element signature="e#0#11#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -1400,7 +1344,7 @@
         <state relative-caret-position="0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
-            <element signature="e#0#10#0" expanded="true" />
+            <element signature="e#0#10#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -1410,7 +1354,7 @@
         <state relative-caret-position="165">
           <caret line="13" column="27" selection-start-line="13" selection-start-column="27" selection-end-line="13" selection-end-column="27" />
           <folding>
-            <element signature="e#0#11#0" expanded="true" />
+            <element signature="e#0#11#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -1450,7 +1394,7 @@
         <state relative-caret-position="0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
-            <element signature="e#0#10#0" expanded="true" />
+            <element signature="e#0#10#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -1460,7 +1404,7 @@
         <state relative-caret-position="60">
           <caret line="4" column="7" selection-start-line="4" selection-start-column="7" selection-end-line="4" selection-end-column="7" />
           <folding>
-            <element signature="e#0#11#0" expanded="true" />
+            <element signature="e#0#11#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -1494,7 +1438,7 @@
         <state relative-caret-position="627">
           <caret line="171" column="41" selection-start-line="171" selection-start-column="41" selection-end-line="171" selection-end-column="41" />
           <folding>
-            <element signature="e#0#10#0" expanded="true" />
+            <element signature="e#0#10#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -1504,7 +1448,7 @@
         <state relative-caret-position="0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
-            <element signature="e#0#23#0" expanded="true" />
+            <element signature="e#0#23#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -1514,7 +1458,7 @@
         <state relative-caret-position="285">
           <caret line="29" column="0" selection-start-line="29" selection-start-column="0" selection-end-line="29" selection-end-column="0" />
           <folding>
-            <element signature="e#0#15#0" expanded="true" />
+            <element signature="e#0#15#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -1548,7 +1492,7 @@
         <state relative-caret-position="405">
           <caret line="54" column="36" selection-start-line="54" selection-start-column="36" selection-end-line="54" selection-end-column="36" />
           <folding>
-            <element signature="e#0#15#0" expanded="true" />
+            <element signature="e#0#15#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -1599,14 +1543,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="45">
           <caret line="3" column="24" selection-start-line="3" selection-start-column="24" selection-end-line="3" selection-end-column="24" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/scripts/start.sh">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="825">
-          <caret line="55" column="48" selection-start-line="55" selection-start-column="48" selection-end-line="55" selection-end-column="48" />
           <folding />
         </state>
       </provider>
@@ -1667,10 +1603,26 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/monitor/uppaal_models/verification/verify.sh">
+    <entry file="file://$PROJECT_DIR$/scripts/start.sh">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="243">
+          <caret line="54" column="165" selection-start-line="54" selection-start-column="82" selection-end-line="54" selection-end-column="165" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/monitor/uppaal_models/reward_14.xml">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/monitor/uppaal_models/verification/verify.sh">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="225">
+          <caret line="15" column="32" selection-start-line="15" selection-start-column="32" selection-end-line="15" selection-end-column="32" />
           <folding />
         </state>
       </provider>
@@ -1683,10 +1635,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/monitor/uppaal_models/reward_14.xml">
+    <entry file="file://$PROJECT_DIR$/scripts/verify.sh">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        <state relative-caret-position="135">
+          <caret line="9" column="79" selection-start-line="9" selection-start-column="79" selection-end-line="9" selection-end-column="79" />
           <folding />
         </state>
       </provider>
