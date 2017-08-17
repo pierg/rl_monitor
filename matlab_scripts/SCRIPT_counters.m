@@ -37,6 +37,7 @@ rf_tab = zeros(iterations+1,1);
 cfttr_tab = zeros(iterations+1,1);
 default_opponentsRight_tab = zeros(iterations+1,1);
 
+
 % cttr_tab = [];
 % ccttr_tab = [];
 % rf_tab = [];
