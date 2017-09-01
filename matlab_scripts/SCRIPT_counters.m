@@ -12,24 +12,11 @@ stuck_tab = zeros(iterations+1,1);
 goingStraight_tab = zeros(iterations+1,1);
 default_speed_tab = zeros(iterations+1,1);
 
-% turning_tab = [];
-% stuck_tab = [];
-% goingStraight_tab = [];
-% default_speed_tab = [];
-
-
 lor_tab = zeros(iterations+1,1);
 lr_tab = zeros(iterations+1,1);
 cr_tab = zeros(iterations+1,1);
 ror_tab = zeros(iterations+1,1);
 default_trackPos_tab = zeros(iterations+1,1);
-
-
-% lor_tab = [];
-% lr_tab = [];
-% cr_tab = [];
-% ror_tab = [];
-% default_trackPos_tab = [];
 
 cttr_tab = zeros(iterations+1,1);
 ccttr_tab = zeros(iterations+1,1);
@@ -37,24 +24,11 @@ rf_tab = zeros(iterations+1,1);
 cfttr_tab = zeros(iterations+1,1);
 default_opponentsRight_tab = zeros(iterations+1,1);
 
-
-% cttr_tab = [];
-% ccttr_tab = [];
-% rf_tab = [];
-% cfttr_tab = [];
-% default_opponentsRight_tab = [];
-
 ccb_tab = zeros(iterations+1,1);
 cb_tab = zeros(iterations+1,1);
 cfb_tab = zeros(iterations+1,1);
 bf_tab = zeros(iterations+1,1);
 default_opponentsBehind_tab = zeros(iterations+1,1);
-
-% ccb_tab = [];
-% cb_tab = [];
-% cfb_tab = [];
-% bf_tab = [];
-% default_opponentsBehind_tab = [];
 
 
 ccttl_tab = zeros(iterations+1,1);
@@ -63,12 +37,6 @@ cfttl_tab = zeros(iterations+1,1);
 lf_tab = zeros(iterations+1,1);
 default_opponentsLeft_tab = zeros(iterations+1,1);
 
-% ccttl_tab = [];
-% cttl_tab = [];
-% cfttl_tab = [];
-% lf_tab = [];
-% default_opponentsLeft_tab = [];
-
 
 cca_tab = zeros(iterations+1,1);
 ca_tab = zeros(iterations+1,1);
@@ -76,22 +44,9 @@ cfa_tab = zeros(iterations+1,1);
 ff_tab = zeros(iterations+1,1);
 default_opponentsAhead_tab = zeros(iterations+1,1);
 
-
-% cca_tab = [];
-% ca_tab = [];
-% cfa_tab = [];
-% ff_tab = [];
-% default_opponentsAhead_tab = [];
-
-
 dam_tab = zeros(iterations+1,1);
 norm_tab = zeros(iterations+1,1);
 default_damage_tab = zeros(iterations+1,1);
-
-
-% dam_tab = [];
-% norm_tab = [];
-% default_damage_tab = [];
 
 while i <= iterations
   
@@ -110,10 +65,10 @@ while i <= iterations
     
     total_speed = stuck_sum + turning_sum + goingStraight_sum + default_speed_sum;
     
-    turning_tab(i) = turning_sum/total_speed*100;
-    stuck_tab(i) = stuck_sum/total_speed*100;
-    goingStraight_tab(i) = goingStraight_sum/total_speed*100;
-    default_speed_tab(i) = default_speed_sum/total_speed*100;
+    turning_tab(i) = round(turning_sum/total_speed*100, 1);
+    stuck_tab(i) = round(stuck_sum/total_speed*100, 1);
+    goingStraight_tab(i) = round(goingStraight_sum/total_speed*100, 1);
+    default_speed_tab(i) = round(default_speed_sum/total_speed*100, 1);
    
     lor_sum = 0;
     lr_sum = 0;
@@ -131,11 +86,11 @@ while i <= iterations
     
     total_trackPos = lor_sum + lr_sum + cr_sum + ror_sum + default_trackPos_sum;
     
-    lor_tab(i) = lor_sum/total_trackPos*100;
-    lr_tab(i) = lr_sum/total_trackPos*100;
-    cr_tab(i) = cr_sum/total_trackPos*100;
-    ror_tab(i) = ror_sum/total_trackPos*100;
-    default_trackPos_tab(i) = default_trackPos_sum/total_trackPos*100;
+    lor_tab(i) = round(lor_sum/total_trackPos*100, 1);
+    lr_tab(i) = round(lr_sum/total_trackPos*100, 1);
+    cr_tab(i) = round(cr_sum/total_trackPos*100, 1);
+    ror_tab(i) = round(ror_sum/total_trackPos*100, 1);
+    default_trackPos_tab(i) = round(default_trackPos_sum/total_trackPos*100, 1);
      
      cttr_sum = 0;
      ccttr_sum = 0;
@@ -153,11 +108,11 @@ while i <= iterations
 
       total_opponentsRight = cttr_sum + ccttr_sum + rf_sum + cfttr_sum + default_opponentsRight_sum;
       
-      cttr_tab(i) = cttr_sum/total_opponentsRight*100;
-      ccttr_tab(i) = ccttr_sum/total_opponentsRight*100;
-      rf_tab(i) = rf_sum/total_opponentsRight*100;
-      cfttr_tab(i) = cfttr_sum/total_opponentsRight*100;
-      default_opponentsRight_tab(i) = default_opponentsRight_sum/total_opponentsRight*100;
+      cttr_tab(i) = round(cttr_sum/total_opponentsRight*100, 1);
+      ccttr_tab(i) = round(ccttr_sum/total_opponentsRight*100, 1);
+      rf_tab(i) = round(rf_sum/total_opponentsRight*100, 1);
+      cfttr_tab(i) = round(cfttr_sum/total_opponentsRight*100, 1);
+      default_opponentsRight_tab(i) = round(default_opponentsRight_sum/total_opponentsRight*100, 1);
       
       ccb_sum = 0;
       cb_sum = 0;
@@ -175,11 +130,11 @@ while i <= iterations
       
       total_opponentsBehind = ccb_sum + cb_sum + cfb_sum + bf_sum + default_opponentsBehind_sum;
       
-      ccb_tab(i) = ccb_sum/total_opponentsBehind*100;
-      cb_tab(i) = cb_sum/total_opponentsBehind*100;
-      cfb_tab(i) = cfb_sum/total_opponentsBehind*100;
-      bf_tab(i) = bf_sum/total_opponentsBehind*100;
-      default_opponentsBehind_tab(i) = default_opponentsBehind_sum/total_opponentsBehind*100;
+      ccb_tab(i) = round(ccb_sum/total_opponentsBehind*100, 1);
+      cb_tab(i) = round(cb_sum/total_opponentsBehind*100, 1);
+      cfb_tab(i) = round(cfb_sum/total_opponentsBehind*100, 1);
+      bf_tab(i) = round(bf_sum/total_opponentsBehind*100, 1);
+      default_opponentsBehind_tab(i) = round(default_opponentsBehind_sum/total_opponentsBehind*100, 1);
       
       ccttl_sum = 0;
       cttl_sum = 0;
@@ -197,11 +152,11 @@ while i <= iterations
       
       total_opponentsLeft = ccttl_sum + cttl_sum + cfttl_sum + lf_sum + default_opponentsLeft_sum;
       
-      ccttl_tab(i) = ccttl_sum/total_opponentsLeft*100;
-      cttl_tab(i) = cttl_sum/total_opponentsLeft*100;
-      cfttl_tab(i) = cfttl_sum/total_opponentsLeft*100;
-      lf_tab(i) = lf_sum/total_opponentsLeft*100;
-      default_opponentsLeft_tab(i) = default_opponentsLeft_sum/total_opponentsLeft*100;
+      ccttl_tab(i) = round(ccttl_sum/total_opponentsLeft*100, 1);
+      cttl_tab(i) = round(cttl_sum/total_opponentsLeft*100, 1);
+      cfttl_tab(i) = round(cfttl_sum/total_opponentsLeft*100, 1);
+      lf_tab(i) = round(lf_sum/total_opponentsLeft*100, 1);
+      default_opponentsLeft_tab(i) = round(default_opponentsLeft_sum/total_opponentsLeft*100, 1);
       
       cca_sum = 0;
       ca_sum = 0;
@@ -219,11 +174,11 @@ while i <= iterations
       
       total_opponentsAhead = cca_sum + ca_sum + cfa_sum + ff_sum + default_opponentsAhead_sum;
       
-      cca_tab(i) = cca_sum/total_opponentsAhead*100;
-      ca_tab(i) = ca_sum/total_opponentsAhead*100;
-      cfa_tab(i) = cfa_sum/total_opponentsAhead*100;
-      ff_tab(i) = ff_sum/total_opponentsAhead*100;
-      default_opponentsAhead_tab(i) = default_opponentsAhead_sum/total_opponentsAhead*100;
+      cca_tab(i) = round(cca_sum/total_opponentsAhead*100, 1);
+      ca_tab(i) = round(ca_sum/total_opponentsAhead*100, 1);
+      cfa_tab(i) = round(cfa_sum/total_opponentsAhead*100, 1);
+      ff_tab(i) = round(ff_sum/total_opponentsAhead*100, 1);
+      default_opponentsAhead_tab(i) = round(default_opponentsAhead_sum/total_opponentsAhead*100, 1);
       
       dam_sum = 0;
       norm_sum = 0;
@@ -237,9 +192,9 @@ while i <= iterations
       
       total_damage = dam_sum + norm_sum + default_damage_sum;
       
-      dam_tab(i) = dam_sum/total_damage*100;
-      norm_tab(i) = norm_sum/total_damage*100;
-      default_damage_tab(i) = default_damage_sum/total_damage*100;
+      dam_tab(i) = round(dam_sum/total_damage*100, 1);
+      norm_tab(i) = round(norm_sum/total_damage*100, 1);
+      default_damage_tab(i) = round(default_damage_sum/total_damage*100, 1);
   end
     
   i = i+1;
@@ -257,44 +212,44 @@ for j = 1:iterations
   end
 end
 
-turning_tab(iterations+1) = round(sum(turning_tab(1:iterations)/number_goalReached));
-stuck_tab(iterations+1) = round(sum(stuck_tab(1:iterations)/number_goalReached));
-goingStraight_tab(iterations+1) = round(sum(goingStraight_tab(1:iterations)/number_goalReached));
-default_speed_tab(iterations+1) = round(sum(default_speed_tab(1:iterations)/number_goalReached));
+turning_tab(iterations+1) = round(sum(turning_tab(1:iterations)/number_goalReached),1);
+stuck_tab(iterations+1) = round(sum(stuck_tab(1:iterations)/number_goalReached),1);
+goingStraight_tab(iterations+1) = round(sum(goingStraight_tab(1:iterations)/number_goalReached),1);
+default_speed_tab(iterations+1) = round(sum(default_speed_tab(1:iterations)/number_goalReached),1);
 
-lor_tab(iterations+1) = round(sum(lor_tab(1:iterations)/number_goalReached));
-lr_tab(iterations+1) = round(sum(lr_tab(1:iterations)/number_goalReached));
-cr_tab(iterations+1) = round(sum(cr_tab(1:iterations)/number_goalReached));
-ror_tab(iterations+1) = round(sum(ror_tab(1:iterations)/number_goalReached));
-default_trackPos_tab(iterations+1) = round(sum(default_trackPos_tab(1:iterations)/number_goalReached));
+lor_tab(iterations+1) = round(sum(lor_tab(1:iterations)/number_goalReached),1);
+lr_tab(iterations+1) = round(sum(lr_tab(1:iterations)/number_goalReached),1);
+cr_tab(iterations+1) = round(sum(cr_tab(1:iterations)/number_goalReached),1);
+ror_tab(iterations+1) = round(sum(ror_tab(1:iterations)/number_goalReached),1);
+default_trackPos_tab(iterations+1) = round(sum(default_trackPos_tab(1:iterations)/number_goalReached),1);
 
-cttr_tab(iterations+1) = round(sum(cttr_tab(1:iterations)/number_goalReached));
-ccttr_tab(iterations+1) = round(sum(ccttr_tab(1:iterations)/number_goalReached));
-rf_tab(iterations+1) = round(sum(rf_tab(1:iterations)/number_goalReached));
-cfttr_tab(iterations+1) = round(sum(cfttr_tab(1:iterations)/number_goalReached));
-default_opponentsRight_tab(iterations+1) = round(sum(default_opponentsRight_tab(1:iterations)/number_goalReached));
+cttr_tab(iterations+1) = round(sum(cttr_tab(1:iterations)/number_goalReached),1);
+ccttr_tab(iterations+1) = round(sum(ccttr_tab(1:iterations)/number_goalReached),1);
+rf_tab(iterations+1) = round(sum(rf_tab(1:iterations)/number_goalReached),1);
+cfttr_tab(iterations+1) = round(sum(cfttr_tab(1:iterations)/number_goalReached),1);
+default_opponentsRight_tab(iterations+1) = round(sum(default_opponentsRight_tab(1:iterations)/number_goalReached),1);
 
-ccb_tab(iterations+1) = round(sum(ccb_tab(1:iterations)/number_goalReached));
-cb_tab(iterations+1) = round(sum(cb_tab(1:iterations)/number_goalReached));
-cfb_tab(iterations+1) = round(sum(cfb_tab(1:iterations)/number_goalReached));
-bf_tab(iterations+1) = round(sum(bf_tab(1:iterations)/number_goalReached));
-default_opponentsBehind_tab(iterations+1) = round(sum(default_opponentsBehind_tab(1:iterations)/number_goalReached));
+ccb_tab(iterations+1) = round(sum(ccb_tab(1:iterations)/number_goalReached),1);
+cb_tab(iterations+1) = round(sum(cb_tab(1:iterations)/number_goalReached),1);
+cfb_tab(iterations+1) = round(sum(cfb_tab(1:iterations)/number_goalReached),1);
+bf_tab(iterations+1) = round(sum(bf_tab(1:iterations)/number_goalReached),1);
+default_opponentsBehind_tab(iterations+1) = round(sum(default_opponentsBehind_tab(1:iterations)/number_goalReached),1);
 
-ccttl_tab(iterations+1) = round(sum(ccttl_tab(1:iterations)/number_goalReached));
-cttl_tab(iterations+1) = round(sum(cttl_tab(1:iterations)/number_goalReached));
-cfttl_tab(iterations+1) = round(sum(cfttl_tab(1:iterations)/number_goalReached));
-lf_tab(iterations+1) = round(sum(lf_tab(1:iterations)/number_goalReached));
-default_opponentsLeft_tab(iterations+1) = round(sum(default_opponentsLeft_tab(1:iterations)/number_goalReached));
+ccttl_tab(iterations+1) = round(sum(ccttl_tab(1:iterations)/number_goalReached),1);
+cttl_tab(iterations+1) = round(sum(cttl_tab(1:iterations)/number_goalReached),1);
+cfttl_tab(iterations+1) = round(sum(cfttl_tab(1:iterations)/number_goalReached),1);
+lf_tab(iterations+1) = round(sum(lf_tab(1:iterations)/number_goalReached),1);
+default_opponentsLeft_tab(iterations+1) = round(sum(default_opponentsLeft_tab(1:iterations)/number_goalReached),1);
 
-cca_tab(iterations+1) = round(sum(cca_tab(1:iterations)/number_goalReached));
-ca_tab(iterations+1) = round(sum(ca_tab(1:iterations)/number_goalReached));
-cfa_tab(iterations+1) = round(sum(cfa_tab(1:iterations)/number_goalReached));
-ff_tab(iterations+1) = round(sum(ff_tab(1:iterations)/number_goalReached));
-default_opponentsAhead_tab(iterations+1) = round(sum(default_opponentsAhead_tab(1:iterations)/number_goalReached));
+cca_tab(iterations+1) = round(sum(cca_tab(1:iterations)/number_goalReached),1);
+ca_tab(iterations+1) = round(sum(ca_tab(1:iterations)/number_goalReached),1);
+cfa_tab(iterations+1) = round(sum(cfa_tab(1:iterations)/number_goalReached),1);
+ff_tab(iterations+1) = round(sum(ff_tab(1:iterations)/number_goalReached),1);
+default_opponentsAhead_tab(iterations+1) = round(sum(default_opponentsAhead_tab(1:iterations)/number_goalReached),1);
 
-dam_tab(iterations+1) = round(sum(dam_tab(1:iterations)/number_goalReached));
-norm_tab(iterations+1) = round(sum(norm_tab(1:iterations)/number_goalReached));
-default_damage_tab(iterations+1) = round(sum(default_damage_tab(1:iterations)/number_goalReached));
+dam_tab(iterations+1) = round(sum(dam_tab(1:iterations)/number_goalReached),1);
+norm_tab(iterations+1) = round(sum(norm_tab(1:iterations)/number_goalReached),1);
+default_damage_tab(iterations+1) = round(sum(default_damage_tab(1:iterations)/number_goalReached),1);
 
 % ALL ITERATIONS
 file = fopen('counters_all_iterations.txt','w');
@@ -384,8 +339,8 @@ fclose(file);
 
 file = fopen('counters_all_iterations_numbers.txt','w');
 
-fprintf(file,'%i\n', episodes_sum/number_goalReached);
-fprintf(file,'%i\n', number_goalReached/iterations*100);
+fprintf(file,'%i\n', round(episodes_sum/number_goalReached,1));
+fprintf(file,'%i\n', round(number_goalReached/iterations*100,1));
 fprintf(file,'%i\n\n\n', time_sum/number_goalReached);
 
 fprintf(file,'%i\t',cr_tab);
@@ -465,8 +420,8 @@ file = fopen('counters_avarage.txt','w');
 % fprintf(file,'\t');
 % fprintf(file,'average\n');
 
-fprintf(file,'%i\n', episodes_sum/number_goalReached);
-fprintf(file,'%i\n', number_goalReached/iterations*100);
+fprintf(file,'%i\n', round(episodes_sum/number_goalReached,1));
+fprintf(file,'%i\n', round(number_goalReached/iterations*100,1));
 fprintf(file,'%i\n\n\n', round(time_sum/number_goalReached));
 
 fprintf(file,'\n%s\t',"TrackPos_centerRoad");
@@ -545,8 +500,8 @@ fclose(file);
 % AVARAGE NUMBERS
 file = fopen('counters_avarage_numbers.txt','w');
 
-fprintf(file,'%i\n', episodes_sum/number_goalReached);
-fprintf(file,'%i\n', number_goalReached/iterations*100);
+fprintf(file,'%i\n', round(episodes_sum/number_goalReached,1));
+fprintf(file,'%i\n', round(number_goalReached/iterations*100,1));
 fprintf(file,'%i\n\n\n', round(time_sum/number_goalReached));
 
 fprintf(file,'%i\t',cr_tab(iterations+1));
