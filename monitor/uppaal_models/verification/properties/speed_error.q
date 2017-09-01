@@ -1,1 +1,0 @@
-A[] (Speed.GoingStraight) and (goalSpeed - speedX > 1000) and speedX_rwd != 0 imply speedX_rwd < 0
