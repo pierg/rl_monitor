@@ -27,8 +27,8 @@
       <file leaf-file-name="SCRIPT_plot_all_iterations.m" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/matlab_scripts/SCRIPT_plot_all_iterations.m">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="270">
-              <caret line="18" column="24" selection-start-line="18" selection-start-column="24" selection-end-line="18" selection-end-column="24" />
+            <state relative-caret-position="1890">
+              <caret line="126" column="43" selection-start-line="126" selection-start-column="43" selection-end-line="126" selection-end-column="43" />
               <folding />
             </state>
           </provider>
@@ -1048,7 +1048,7 @@
       <workItem from="1503067716424" duration="763000" />
       <workItem from="1503072708012" duration="786000" />
       <workItem from="1504164432891" duration="6598000" />
-      <workItem from="1504514351147" duration="5808000" />
+      <workItem from="1504514351147" duration="6148000" />
     </task>
     <task id="LOCAL-00001" summary="Updated uppaal model">
       <created>1496949153152</created>
@@ -1176,11 +1176,18 @@
       <option name="project" value="LOCAL" />
       <updated>1504529318577</updated>
     </task>
-    <option name="localTasksCounter" value="19" />
+    <task id="LOCAL-00019" summary="added avr_n to script">
+      <created>1504530309641</created>
+      <option name="number" value="00019" />
+      <option name="presentableId" value="LOCAL-00019" />
+      <option name="project" value="LOCAL" />
+      <updated>1504530309641</updated>
+    </task>
+    <option name="localTasksCounter" value="20" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="39169000" />
+    <option name="totallyTimeSpent" value="39509000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1920" height="1200" extended-state="0" />
@@ -1257,7 +1264,8 @@
     <MESSAGE value="added uppal models to verify" />
     <MESSAGE value="rounded the SCRIPT_counters file" />
     <MESSAGE value="fixed all matlab scripts" />
-    <option name="LAST_COMMIT_MESSAGE" value="fixed all matlab scripts" />
+    <MESSAGE value="added avr_n to script" />
+    <option name="LAST_COMMIT_MESSAGE" value="added avr_n to script" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager />
@@ -1798,8 +1806,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/matlab_scripts/SCRIPT_plot_all_iterations.m">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="270">
-          <caret line="18" column="24" selection-start-line="18" selection-start-column="24" selection-end-line="18" selection-end-column="24" />
+        <state relative-caret-position="1890">
+          <caret line="126" column="43" selection-start-line="126" selection-start-column="43" selection-end-line="126" selection-end-column="43" />
           <folding />
         </state>
       </provider>

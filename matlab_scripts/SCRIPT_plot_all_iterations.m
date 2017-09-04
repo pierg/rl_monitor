@@ -28,7 +28,7 @@ fig_episodes_avg = figure;
 set(fig_episodes_avg,'visible','off');
 grid('on');
 file_name = ['plots/' num2str(i) '_REWARDS_EPISODES_AVR_100'];
-avr_vector = arrayfun(@(l) mean(rewardsPerEpisode{i}(l:l+avr_n-1)),1:avr_n:length(a)-avr_n+1)';
+avr_vector = arrayfun(@(l) mean(rewardsPerEpisode{i}(l:l+avr_n-1)),1:avr_n:length(rewardsPerEpisode{i})-avr_n+1)';
 plot(avr_vector);
 xlabel('Episode #');
 ylabel('Average Reward per Episode (each 100 Ep.)');
@@ -51,7 +51,7 @@ hold on;
 set(fig_steps,'visible','off');
 grid('on');
 ALL_rewards = cell2mat(rewardsPerStep{1, i});
-avr_vector = arrayfun(@(l) mean(ALL_rewards(l:l+avr_n-1)),1:avr_n:length(a)-avr_n+1)';
+avr_vector = arrayfun(@(l) mean(ALL_rewards(l:l+avr_n-1)),1:avr_n:length(ALL_rewards)-avr_n+1)';
 plot(avr_vector);
 xlabel('Step # (/100)');
 ylabel('Average Reward per Step (each 100 St.)');
@@ -116,7 +116,7 @@ TOT_rewardsPerEpisode = rewardsPerEpisode{i};
 for p = 2:size(TOT_rewardsPerEpisode, 2)
 TOT_rewardsPerEpisode(p) = TOT_rewardsPerEpisode(p) + TOT_rewardsPerEpisode(p-1);
 end
-avr_vector = arrayfun(@(l) mean(TOT_rewardsPerEpisode(l:l+avr_n-1)),1:avr_n:length(a)-avr_n+1)';
+avr_vector = arrayfun(@(l) mean(TOT_rewardsPerEpisode(l:l+avr_n-1)),1:avr_n:length(TOT_rewardsPerEpisode)-avr_n+1)';
 plot(avr_vector);
 xlabel('Episode # (/100)');
 ylabel('Cumulative Reward Averaged each 100 Episodes');
@@ -130,7 +130,7 @@ set(fig_tot_steps,'visible','off');
 grid('on');
 hold on;
 TOT_rewardsPerSteps = cell2mat(rewardsPerStep{1, i});
-avr_vector = arrayfun(@(l) mean(TOT_rewardsPerSteps(l:l+avr_n-1)),1:avr_n:length(a)-avr_n+1)';
+avr_vector = arrayfun(@(l) mean(TOT_rewardsPerSteps(l:l+avr_n-1)),1:avr_n:length(TOT_rewardsPerSteps)-avr_n+1)';
 for p = 2:size(avr_vector, 2)
 TOT_rewardsPerSteps(p) = TOT_rewardsPerSteps(p) + TOT_rewardsPerSteps(p-1);
 end
