@@ -7,6 +7,33 @@ end
 i=1;
 
 while i<=iterations
+
+
+%   ALL TOTAL REWARDS ALL STEPS <<<<<<<<<<<<<
+    fig_steps = figure;
+hold on;
+set(fig_steps,'visible','off');
+grid('on');
+%     pic_size = num2str(round(size(ALL_rewards, 2)));
+set(fig_steps, 'PaperPositionMode', 'manual');
+set(fig_steps, 'PaperPosition', [0 0 200 5]);
+ALL_rewards = cell2mat(rewardsPerStep{1, i});
+plot(ALL_rewards);
+xlabel('Step #');
+ylabel('Reward');
+y_avr = max(ALL_rewards)/2;
+x_avr = size(ALL_rewards, 2)*1.01;
+max_value = num2str(max(ALL_rewards));
+min_value = num2str(min(ALL_rewards));
+text(x_avr,y_avr, ['MAX: ' num2str(max(ALL_rewards))]);
+text(x_avr,y_avr/2, ['MIN: ' num2str(min(ALL_rewards))]);
+hold on;
+file_name = ['plots/' num2str(i) '_TOT_REWARDS_ALL_STEPS_max_' max_value '_min_' min_value '.png'];
+saveas(fig_steps, file_name, 'png');
+hold off;
+
+
+
   fig_torcs = figure;
   set(fig_torcs,'visible','off');
   set(fig_torcs, 'PaperPositionMode', 'manual');

@@ -61,6 +61,7 @@ class Results:
 		copy("matlab_scripts/SCRIPT_plot_all_torcs_values.m", "results/" + filename + "/SCRIPT_plot_all_torcs_values.m")
 		copy("matlab_scripts/RUN_counters.m", "results/" + filename + "/RUN_counters.m")
 		copy("matlab_scripts/RUN_full.m", "results/" + filename + "/RUN_full.m")
+		copy("matlab_scripts/RUN_fast.m", "results/" + filename + "/RUN_fast.m")
 
 
 	def startIterationTime(self):

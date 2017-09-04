@@ -7,46 +7,46 @@ end
 i=1;
 
 
-turning_tab = zeros(iterations+1);
-stuck_tab = zeros(iterations+1);
-goingStraight_tab = zeros(iterations+1);
-default_speed_tab = zeros(iterations+1);
+turning_tab = zeros(iterations+1,1);
+stuck_tab = zeros(iterations+1,1);
+goingStraight_tab = zeros(iterations+1,1);
+default_speed_tab = zeros(iterations+1,1);
 
-lor_tab = zeros(iterations+1);
-lr_tab = zeros(iterations+1);
-cr_tab = zeros(iterations+1);
-ror_tab = zeros(iterations+1);
-default_trackPos_tab = zeros(iterations+1);
+lor_tab = zeros(iterations+1,1);
+lr_tab = zeros(iterations+1,1);
+cr_tab = zeros(iterations+1,1);
+ror_tab = zeros(iterations+1,1);
+default_trackPos_tab = zeros(iterations+1,1);
 
-cttr_tab = zeros(iterations+1);
-ccttr_tab = zeros(iterations+1);
-rf_tab = zeros(iterations+1);
-cfttr_tab = zeros(iterations+1);
-default_opponentsRight_tab = zeros(iterations+1);
+cttr_tab = zeros(iterations+1,1);
+ccttr_tab = zeros(iterations+1,1);
+rf_tab = zeros(iterations+1,1);
+cfttr_tab = zeros(iterations+1,1);
+default_opponentsRight_tab = zeros(iterations+1,1);
 
-ccb_tab = zeros(iterations+1);
-cb_tab = zeros(iterations+1);
-cfb_tab = zeros(iterations+1);
-bf_tab = zeros(iterations+1);
-default_opponentsBehind_tab = zeros(iterations+1);
-
-
-ccttl_tab = zeros(iterations+1);
-cttl_tab = zeros(iterations+1);
-cfttl_tab = zeros(iterations+1);
-lf_tab = zeros(iterations+1);
-default_opponentsLeft_tab = zeros(iterations+1);
+ccb_tab = zeros(iterations+1,1);
+cb_tab = zeros(iterations+1,1);
+cfb_tab = zeros(iterations+1,1);
+bf_tab = zeros(iterations+1,1);
+default_opponentsBehind_tab = zeros(iterations+1,1);
 
 
-cca_tab = zeros(iterations+1);
-ca_tab = zeros(iterations+1);
-cfa_tab = zeros(iterations+1);
-ff_tab = zeros(iterations+1);
-default_opponentsAhead_tab = zeros(iterations+1);
+ccttl_tab = zeros(iterations+1,1);
+cttl_tab = zeros(iterations+1,1);
+cfttl_tab = zeros(iterations+1,1);
+lf_tab = zeros(iterations+1,1);
+default_opponentsLeft_tab = zeros(iterations+1,1);
 
-dam_tab = zeros(iterations+1);
-norm_tab = zeros(iterations+1);
-default_damage_tab = zeros(iterations+1);
+
+cca_tab = zeros(iterations+1,1);
+ca_tab = zeros(iterations+1,1);
+cfa_tab = zeros(iterations+1,1);
+ff_tab = zeros(iterations+1,1);
+default_opponentsAhead_tab = zeros(iterations+1,1);
+
+dam_tab = zeros(iterations+1,1);
+norm_tab = zeros(iterations+1,1);
+default_damage_tab = zeros(iterations+1,1);
 
 while i <= iterations
 
@@ -252,7 +252,7 @@ norm_tab(iterations+1) = sum(norm_tab(1:iterations)/number_goalReached);
 default_damage_tab(iterations+1) = sum(default_damage_tab(1:iterations)/number_goalReached);
 
 % ALL ITERATIONS
-file = fopen('counters_all_iterations.txt','w');
+file = fopen('stats.txt','w');
 fprintf(file,'\t');
 for j = 1:iterations
 label = num2str(j);
@@ -260,6 +260,43 @@ fprintf(file,'%s\t',label);
 end
 fprintf(file,'average\n');
 
+% Stats:
+
+    fprintf(file,'# episodes\t');
+for j = 1:iterations
+fprintf(file,'%d \t',  episodeCount(j));
+end
+% average column
+fprintf(file,'%.1f \n', mean(episodeCount(j)));
+
+fprintf(file,'Total time (h)\t');
+for j = 1:iterations
+fprintf(file,'%.1f \t', totalTime(j)*0.000277778);
+end
+% average column
+fprintf(file,'%.1f \n', mean(totalTime(j)*0.000277778));
+
+fprintf(file,'Total reward\t');
+for j = 1:iterations
+fprintf(file,'%d \t', round(sum(cell2mat(rewardsPerStep{1, j}))));
+end
+% average column
+fprintf(file,'%.1f \n', mean(round(sum(cell2mat(rewardsPerStep{1, j})))));
+
+fprintf(file,'Max reward value\t');
+for j = 1:iterations
+fprintf(file,'%.1f \t', max(cell2mat(rewardsPerStep{1, j})));
+end
+% average column
+fprintf(file,'%.1f \n', mean(max(cell2mat(rewardsPerStep{1, j}))));
+
+fprintf(file,'Min reward value\t');
+for j = 1:iterations
+fprintf(file,'%.1f \t', min(cell2mat(rewardsPerStep{1, j})));
+end
+% average column
+fprintf(file,'%.1f \n', mean(min(cell2mat(rewardsPerStep{1, j}))));
+
 
 fprintf(file,'\n%s\t','TrackPos_centerRoad');
 fprintf(file,'%.1f \t',cr_tab);
@@ -335,245 +372,245 @@ fprintf(file,'%.1f \t',default_opponentsAhead_tab);
 
 fclose(file);
 
-% Just numbers
-
-file = fopen('counters_all_iterations_numbers.txt','w');
-
-fprintf(file,'%.1f\n', episodes_sum/number_goalReached);
-fprintf(file,'%.1f\n', number_goalReached/iterations*100);
-fprintf(file,'%.1f\n\n\n', time_sum/number_goalReached);
-
-fprintf(file,'%.1f \t',cr_tab);
-fprintf(file,'\n');
-fprintf(file,'%.1f \t',lor_tab);
-fprintf(file,'\n');
-fprintf(file,'%.1f \t',lr_tab);
-fprintf(file,'\n');
-fprintf(file,'%.1f \t',ror_tab);
-fprintf(file,'\n');
-fprintf(file,'%.1f \t',default_trackPos_tab);
-fprintf(file,'\n');
-
-fprintf(file,'%.1f \t',goingStraight_tab);
-fprintf(file,'\n');
-fprintf(file,'%.1f \t',turning_tab);
-fprintf(file,'\n');
-fprintf(file,'%.1f \t',stuck_tab);
-fprintf(file,'\n');
-fprintf(file,'%.1f \t',default_speed_tab);
-fprintf(file,'\n');
-
-fprintf(file,'%.1f \t',norm_tab);
-fprintf(file,'\n');
-fprintf(file,'%.1f \t',dam_tab);
-fprintf(file,'\n');
-fprintf(file,'%.1f \t',default_damage_tab);
-fprintf(file,'\n');
-
-fprintf(file,'%.1f \t',cttr_tab);
-fprintf(file,'\n');
-fprintf(file,'%.1f \t',ccttr_tab);
-fprintf(file,'\n');
-fprintf(file,'%.1f \t',rf_tab);
-fprintf(file,'\n');
-fprintf(file,'%.1f \t',cfttr_tab);
-fprintf(file,'\n');
-fprintf(file,'%.1f \t',default_opponentsRight_tab);
-fprintf(file,'\n');
-
-fprintf(file,'%.1f \t',ccb_tab);
-fprintf(file,'\n');
-fprintf(file,'%.1f \t',cb_tab);
-fprintf(file,'\n');
-fprintf(file,'%.1f \t',cfb_tab);
-fprintf(file,'\n');
-fprintf(file,'%.1f \t',bf_tab);
-fprintf(file,'\n');
-fprintf(file,'%.1f \t',default_opponentsBehind_tab);
-fprintf(file,'\n');
-
-fprintf(file,'%.1f \t',ccttl_tab);
-fprintf(file,'\n');
-fprintf(file,'%.1f \t',cttl_tab);
-fprintf(file,'\n');
-fprintf(file,'%.1f \t',cfttl_tab);
-fprintf(file,'\n');
-fprintf(file,'%.1f \t',lf_tab);
-fprintf(file,'\n');
-fprintf(file,'%.1f \t',default_opponentsLeft_tab);
-fprintf(file,'\n');
-
-fprintf(file,'%.1f \t',cca_tab);
-fprintf(file,'\n');
-fprintf(file,'%.1f \t',ca_tab);
-fprintf(file,'\n');
-fprintf(file,'%.1f \t',cfa_tab);
-fprintf(file,'\n');
-fprintf(file,'%.1f \t',ff_tab);
-fprintf(file,'\n');
-fprintf(file,'%.1f \t',default_opponentsAhead_tab);
-
-fclose(file);
-
-% AVERAGE
-file = fopen('counters_avarage.txt','w');
-% fprintf(file,'\t');
-% fprintf(file,'average\n');
-
-fprintf(file,'%.1f\n', episodes_sum/number_goalReached);
-fprintf(file,'%.1f\n', number_goalReached/iterations*100);
-fprintf(file,'%.1f\n\n\n', time_sum/number_goalReached);
-
-fprintf(file,'\n%s\t','TrackPos_centerRoad');
-fprintf(file,'%.1f \t',cr_tab(iterations+1));
-fprintf(file,'\n%s\t','TrackPos_leftOffRoad');
-fprintf(file,'%.1f \t',lor_tab(iterations+1));
-fprintf(file,'\n%s\t','TrackPos_limitRoad');
-fprintf(file,'%.1f \t',lr_tab(iterations+1));
-fprintf(file,'\n%s\t','TrackPos_rightOffRoad');
-fprintf(file,'%.1f \t',ror_tab(iterations+1));
-fprintf(file,'\n%s\t','TrackPos_default');
-fprintf(file,'%.1f \t',default_trackPos_tab(iterations+1));
-
-fprintf(file,'\n%s\t','Speed goingStraight');
-fprintf(file,'%.1f \t',goingStraight_tab(iterations+1));
-fprintf(file,'\n%s\t','Speed Turning');
-fprintf(file,'%.1f \t',turning_tab(iterations+1));
-fprintf(file,'\n%s\t','Speed Stuck');
-fprintf(file,'%.1f \t',stuck_tab(iterations+1));
-fprintf(file,'\n%s\t','Speed_default');
-fprintf(file,'%.1f \t',default_speed_tab(iterations+1));
-
-fprintf(file,'\n%s\t','Damage_normal');
-fprintf(file,'%.1f \t',norm_tab(iterations+1));
-fprintf(file,'\n%s\t','Damage_damaged');
-fprintf(file,'%.1f \t',dam_tab(iterations+1));
-fprintf(file,'\n%s\t','Damage_default');
-fprintf(file,'%.1f \t',default_damage_tab(iterations+1));
-
-fprintf(file,'\n%s\t','OpponentsRight_carToTheRight');
-fprintf(file,'%.1f \t',cttr_tab(iterations+1));
-fprintf(file,'\n%s\t','OpponentsRight_carCloseToTheRight');
-fprintf(file,'%.1f \t',ccttr_tab(iterations+1));
-fprintf(file,'\n%s\t','OpponentsRight_rightFree');
-fprintf(file,'%.1f \t',rf_tab(iterations+1));
-fprintf(file,'\n%s\t','OpponentsRight_carFarToTheRight');
-fprintf(file,'%.1f \t',cfttr_tab(iterations+1));
-fprintf(file,'\n%s\t','OpponentsRight_default');
-fprintf(file,'%.1f \t',default_opponentsRight_tab(iterations+1));
-
-fprintf(file,'\n%s\t','OpponentsBehind_carCloseBehind');
-fprintf(file,'%.1f \t',ccb_tab(iterations+1));
-fprintf(file,'\n%s\t','OpponentsBehind_carBehind');
-fprintf(file,'%.1f \t',cb_tab(iterations+1));
-fprintf(file,'\n%s\t','OpponentsBehind_carFarbehind');
-fprintf(file,'%.1f \t',cfb_tab(iterations+1));
-fprintf(file,'\n%s\t','OpponentsBehind_behindFree');
-fprintf(file,'%.1f \t',bf_tab(iterations+1));
-fprintf(file,'\n%s\t','OpponentsBehind_default');
-fprintf(file,'%.1f \t',default_opponentsBehind_tab(iterations+1));
-
-fprintf(file,'\n%s\t','OpponentsLeft_carCloseToTheLeft');
-fprintf(file,'%.1f \t',ccttl_tab(iterations+1));
-fprintf(file,'\n%s\t','OpponentsLeft_carToTheLeft');
-fprintf(file,'%.1f \t',cttl_tab(iterations+1));
-fprintf(file,'\n%s\t','OpponentsLeft_carFarToTheLeft');
-fprintf(file,'%.1f \t',cfttl_tab(iterations+1));
-fprintf(file,'\n%s\t','OpponentsLeft_leftFree');
-fprintf(file,'%.1f \t',lf_tab(iterations+1));
-fprintf(file,'\n%s\t','OpponentsLeft_default');
-fprintf(file,'%.1f \t',default_opponentsLeft_tab(iterations+1));
-
-fprintf(file,'\n%s\t','OpponentsAhead_carCloseAhead');
-fprintf(file,'%.1f \t',cca_tab(iterations+1));
-fprintf(file,'\n%s\t','OpponentsAhead_carAhead');
-fprintf(file,'%.1f \t',ca_tab(iterations+1));
-fprintf(file,'\n%s\t','OpponentsAhead_carFarAhead');
-fprintf(file,'%.1f \t',cfa_tab(iterations+1));
-fprintf(file,'\n%s\t','OpponentsAhead_frontFree');
-fprintf(file,'%.1f \t',ff_tab(iterations+1));
-fprintf(file,'\n%s\t','OpponentsAhead_default');
-fprintf(file,'%.1f \t',default_opponentsAhead_tab(iterations+1));
-
-fclose(file);
-
-% AVARAGE NUMBERS
-file = fopen('counters_avarage_numbers.txt','w');
-
-fprintf(file,'%.1f\n', episodes_sum/number_goalReached);
-fprintf(file,'%.1f\n', number_goalReached/iterations*100);
-fprintf(file,'%.1f\n\n\n', time_sum/number_goalReached);
-
-fprintf(file,'%.1f \t',cr_tab(iterations+1));
-fprintf(file,'\n');
-fprintf(file,'%.1f \t',lor_tab(iterations+1));
-fprintf(file,'\n');
-fprintf(file,'%.1f \t',lr_tab(iterations+1));
-fprintf(file,'\n');
-fprintf(file,'%.1f \t',ror_tab(iterations+1));
-fprintf(file,'\n');
-fprintf(file,'%.1f \t',default_trackPos_tab(iterations+1));
-fprintf(file,'\n');
-
-fprintf(file,'%.1f \t',goingStraight_tab(iterations+1));
-fprintf(file,'\n');
-fprintf(file,'%.1f \t',turning_tab(iterations+1));
-fprintf(file,'\n');
-fprintf(file,'%.1f \t',stuck_tab(iterations+1));
-fprintf(file,'\n');
-fprintf(file,'%.1f \t',default_speed_tab(iterations+1));
-fprintf(file,'\n');
-
-fprintf(file,'%.1f \t',norm_tab(iterations+1));
-fprintf(file,'\n');
-fprintf(file,'%.1f \t',dam_tab(iterations+1));
-fprintf(file,'\n');
-fprintf(file,'%.1f \t',default_damage_tab(iterations+1));
-fprintf(file,'\n');
-
-fprintf(file,'%.1f \t',cttr_tab(iterations+1));
-fprintf(file,'\n');
-fprintf(file,'%.1f \t',ccttr_tab(iterations+1));
-fprintf(file,'\n');
-fprintf(file,'%.1f \t',rf_tab(iterations+1));
-fprintf(file,'\n');
-fprintf(file,'%.1f \t',cfttr_tab(iterations+1));
-fprintf(file,'\n');
-fprintf(file,'%.1f \t',default_opponentsRight_tab(iterations+1));
-fprintf(file,'\n');
-
-
-fprintf(file,'%.1f \t',ccb_tab(iterations+1));
-fprintf(file,'\n');
-fprintf(file,'%.1f \t',cb_tab(iterations+1));
-fprintf(file,'\n');
-fprintf(file,'%.1f \t',cfb_tab(iterations+1));
-fprintf(file,'\n');
-fprintf(file,'%.1f \t',bf_tab(iterations+1));
-fprintf(file,'\n');
-fprintf(file,'%.1f \t',default_opponentsBehind_tab(iterations+1));
-fprintf(file,'\n');
-
-fprintf(file,'%.1f \t',ccttl_tab(iterations+1));
-fprintf(file,'\n');
-fprintf(file,'%.1f \t',cttl_tab(iterations+1));
-fprintf(file,'\n');
-fprintf(file,'%.1f \t',cfttl_tab(iterations+1));
-fprintf(file,'\n');
-fprintf(file,'%.1f \t',lf_tab(iterations+1));
-fprintf(file,'\n');
-fprintf(file,'%.1f \t',default_opponentsLeft_tab(iterations+1));
-fprintf(file,'\n');
-
-fprintf(file,'%.1f \t',cca_tab(iterations+1));
-fprintf(file,'\n');
-fprintf(file,'%.1f \t',ca_tab(iterations+1));
-fprintf(file,'\n');
-fprintf(file,'%.1f \t',cfa_tab(iterations+1));
-fprintf(file,'\n');
-fprintf(file,'%.1f \t',ff_tab(iterations+1));
-fprintf(file,'\n');
-fprintf(file,'%.1f \t',default_opponentsAhead_tab(iterations+1));
-
-fclose(file); 
-   
+% % Just numbers
+%
+% file = fopen('counters_all_iterations_numbers.txt','w');
+%
+% fprintf(file,'%.1f\n', episodes_sum/number_goalReached);
+% fprintf(file,'%.1f\n', number_goalReached/iterations*100);
+% fprintf(file,'%.1f\n\n\n', time_sum/number_goalReached);
+%
+% fprintf(file,'%.1f \t',cr_tab);
+% fprintf(file,'\n');
+% fprintf(file,'%.1f \t',lor_tab);
+% fprintf(file,'\n');
+% fprintf(file,'%.1f \t',lr_tab);
+% fprintf(file,'\n');
+% fprintf(file,'%.1f \t',ror_tab);
+% fprintf(file,'\n');
+% fprintf(file,'%.1f \t',default_trackPos_tab);
+% fprintf(file,'\n');
+%
+% fprintf(file,'%.1f \t',goingStraight_tab);
+% fprintf(file,'\n');
+% fprintf(file,'%.1f \t',turning_tab);
+% fprintf(file,'\n');
+% fprintf(file,'%.1f \t',stuck_tab);
+% fprintf(file,'\n');
+% fprintf(file,'%.1f \t',default_speed_tab);
+% fprintf(file,'\n');
+%
+% fprintf(file,'%.1f \t',norm_tab);
+% fprintf(file,'\n');
+% fprintf(file,'%.1f \t',dam_tab);
+% fprintf(file,'\n');
+% fprintf(file,'%.1f \t',default_damage_tab);
+% fprintf(file,'\n');
+%
+% fprintf(file,'%.1f \t',cttr_tab);
+% fprintf(file,'\n');
+% fprintf(file,'%.1f \t',ccttr_tab);
+% fprintf(file,'\n');
+% fprintf(file,'%.1f \t',rf_tab);
+% fprintf(file,'\n');
+% fprintf(file,'%.1f \t',cfttr_tab);
+% fprintf(file,'\n');
+% fprintf(file,'%.1f \t',default_opponentsRight_tab);
+% fprintf(file,'\n');
+%
+% fprintf(file,'%.1f \t',ccb_tab);
+% fprintf(file,'\n');
+% fprintf(file,'%.1f \t',cb_tab);
+% fprintf(file,'\n');
+% fprintf(file,'%.1f \t',cfb_tab);
+% fprintf(file,'\n');
+% fprintf(file,'%.1f \t',bf_tab);
+% fprintf(file,'\n');
+% fprintf(file,'%.1f \t',default_opponentsBehind_tab);
+% fprintf(file,'\n');
+%
+% fprintf(file,'%.1f \t',ccttl_tab);
+% fprintf(file,'\n');
+% fprintf(file,'%.1f \t',cttl_tab);
+% fprintf(file,'\n');
+% fprintf(file,'%.1f \t',cfttl_tab);
+% fprintf(file,'\n');
+% fprintf(file,'%.1f \t',lf_tab);
+% fprintf(file,'\n');
+% fprintf(file,'%.1f \t',default_opponentsLeft_tab);
+% fprintf(file,'\n');
+%
+% fprintf(file,'%.1f \t',cca_tab);
+% fprintf(file,'\n');
+% fprintf(file,'%.1f \t',ca_tab);
+% fprintf(file,'\n');
+% fprintf(file,'%.1f \t',cfa_tab);
+% fprintf(file,'\n');
+% fprintf(file,'%.1f \t',ff_tab);
+% fprintf(file,'\n');
+% fprintf(file,'%.1f \t',default_opponentsAhead_tab);
+%
+% fclose(file);
+%
+% % AVERAGE
+% file = fopen('counters_avarage.txt','w');
+% % fprintf(file,'\t');
+% % fprintf(file,'average\n');
+%
+% fprintf(file,'%.1f\n', episodes_sum/number_goalReached);
+% fprintf(file,'%.1f\n', number_goalReached/iterations*100);
+% fprintf(file,'%.1f\n\n\n', time_sum/number_goalReached);
+%
+% fprintf(file,'\n%s\t','TrackPos_centerRoad');
+% fprintf(file,'%.1f \t',cr_tab(iterations+1));
+% fprintf(file,'\n%s\t','TrackPos_leftOffRoad');
+% fprintf(file,'%.1f \t',lor_tab(iterations+1));
+% fprintf(file,'\n%s\t','TrackPos_limitRoad');
+% fprintf(file,'%.1f \t',lr_tab(iterations+1));
+% fprintf(file,'\n%s\t','TrackPos_rightOffRoad');
+% fprintf(file,'%.1f \t',ror_tab(iterations+1));
+% fprintf(file,'\n%s\t','TrackPos_default');
+% fprintf(file,'%.1f \t',default_trackPos_tab(iterations+1));
+%
+% fprintf(file,'\n%s\t','Speed goingStraight');
+% fprintf(file,'%.1f \t',goingStraight_tab(iterations+1));
+% fprintf(file,'\n%s\t','Speed Turning');
+% fprintf(file,'%.1f \t',turning_tab(iterations+1));
+% fprintf(file,'\n%s\t','Speed Stuck');
+% fprintf(file,'%.1f \t',stuck_tab(iterations+1));
+% fprintf(file,'\n%s\t','Speed_default');
+% fprintf(file,'%.1f \t',default_speed_tab(iterations+1));
+%
+% fprintf(file,'\n%s\t','Damage_normal');
+% fprintf(file,'%.1f \t',norm_tab(iterations+1));
+% fprintf(file,'\n%s\t','Damage_damaged');
+% fprintf(file,'%.1f \t',dam_tab(iterations+1));
+% fprintf(file,'\n%s\t','Damage_default');
+% fprintf(file,'%.1f \t',default_damage_tab(iterations+1));
+%
+% fprintf(file,'\n%s\t','OpponentsRight_carToTheRight');
+% fprintf(file,'%.1f \t',cttr_tab(iterations+1));
+% fprintf(file,'\n%s\t','OpponentsRight_carCloseToTheRight');
+% fprintf(file,'%.1f \t',ccttr_tab(iterations+1));
+% fprintf(file,'\n%s\t','OpponentsRight_rightFree');
+% fprintf(file,'%.1f \t',rf_tab(iterations+1));
+% fprintf(file,'\n%s\t','OpponentsRight_carFarToTheRight');
+% fprintf(file,'%.1f \t',cfttr_tab(iterations+1));
+% fprintf(file,'\n%s\t','OpponentsRight_default');
+% fprintf(file,'%.1f \t',default_opponentsRight_tab(iterations+1));
+%
+% fprintf(file,'\n%s\t','OpponentsBehind_carCloseBehind');
+% fprintf(file,'%.1f \t',ccb_tab(iterations+1));
+% fprintf(file,'\n%s\t','OpponentsBehind_carBehind');
+% fprintf(file,'%.1f \t',cb_tab(iterations+1));
+% fprintf(file,'\n%s\t','OpponentsBehind_carFarbehind');
+% fprintf(file,'%.1f \t',cfb_tab(iterations+1));
+% fprintf(file,'\n%s\t','OpponentsBehind_behindFree');
+% fprintf(file,'%.1f \t',bf_tab(iterations+1));
+% fprintf(file,'\n%s\t','OpponentsBehind_default');
+% fprintf(file,'%.1f \t',default_opponentsBehind_tab(iterations+1));
+%
+% fprintf(file,'\n%s\t','OpponentsLeft_carCloseToTheLeft');
+% fprintf(file,'%.1f \t',ccttl_tab(iterations+1));
+% fprintf(file,'\n%s\t','OpponentsLeft_carToTheLeft');
+% fprintf(file,'%.1f \t',cttl_tab(iterations+1));
+% fprintf(file,'\n%s\t','OpponentsLeft_carFarToTheLeft');
+% fprintf(file,'%.1f \t',cfttl_tab(iterations+1));
+% fprintf(file,'\n%s\t','OpponentsLeft_leftFree');
+% fprintf(file,'%.1f \t',lf_tab(iterations+1));
+% fprintf(file,'\n%s\t','OpponentsLeft_default');
+% fprintf(file,'%.1f \t',default_opponentsLeft_tab(iterations+1));
+%
+% fprintf(file,'\n%s\t','OpponentsAhead_carCloseAhead');
+% fprintf(file,'%.1f \t',cca_tab(iterations+1));
+% fprintf(file,'\n%s\t','OpponentsAhead_carAhead');
+% fprintf(file,'%.1f \t',ca_tab(iterations+1));
+% fprintf(file,'\n%s\t','OpponentsAhead_carFarAhead');
+% fprintf(file,'%.1f \t',cfa_tab(iterations+1));
+% fprintf(file,'\n%s\t','OpponentsAhead_frontFree');
+% fprintf(file,'%.1f \t',ff_tab(iterations+1));
+% fprintf(file,'\n%s\t','OpponentsAhead_default');
+% fprintf(file,'%.1f \t',default_opponentsAhead_tab(iterations+1));
+%
+% fclose(file);
+%
+% % AVARAGE NUMBERS
+% file = fopen('counters_avarage_numbers.txt','w');
+%
+% fprintf(file,'%.1f\n', episodes_sum/number_goalReached);
+% fprintf(file,'%.1f\n', number_goalReached/iterations*100);
+% fprintf(file,'%.1f\n\n\n', time_sum/number_goalReached);
+%
+% fprintf(file,'%.1f \t',cr_tab(iterations+1));
+% fprintf(file,'\n');
+% fprintf(file,'%.1f \t',lor_tab(iterations+1));
+% fprintf(file,'\n');
+% fprintf(file,'%.1f \t',lr_tab(iterations+1));
+% fprintf(file,'\n');
+% fprintf(file,'%.1f \t',ror_tab(iterations+1));
+% fprintf(file,'\n');
+% fprintf(file,'%.1f \t',default_trackPos_tab(iterations+1));
+% fprintf(file,'\n');
+%
+% fprintf(file,'%.1f \t',goingStraight_tab(iterations+1));
+% fprintf(file,'\n');
+% fprintf(file,'%.1f \t',turning_tab(iterations+1));
+% fprintf(file,'\n');
+% fprintf(file,'%.1f \t',stuck_tab(iterations+1));
+% fprintf(file,'\n');
+% fprintf(file,'%.1f \t',default_speed_tab(iterations+1));
+% fprintf(file,'\n');
+%
+% fprintf(file,'%.1f \t',norm_tab(iterations+1));
+% fprintf(file,'\n');
+% fprintf(file,'%.1f \t',dam_tab(iterations+1));
+% fprintf(file,'\n');
+% fprintf(file,'%.1f \t',default_damage_tab(iterations+1));
+% fprintf(file,'\n');
+%
+% fprintf(file,'%.1f \t',cttr_tab(iterations+1));
+% fprintf(file,'\n');
+% fprintf(file,'%.1f \t',ccttr_tab(iterations+1));
+% fprintf(file,'\n');
+% fprintf(file,'%.1f \t',rf_tab(iterations+1));
+% fprintf(file,'\n');
+% fprintf(file,'%.1f \t',cfttr_tab(iterations+1));
+% fprintf(file,'\n');
+% fprintf(file,'%.1f \t',default_opponentsRight_tab(iterations+1));
+% fprintf(file,'\n');
+%
+%
+% fprintf(file,'%.1f \t',ccb_tab(iterations+1));
+% fprintf(file,'\n');
+% fprintf(file,'%.1f \t',cb_tab(iterations+1));
+% fprintf(file,'\n');
+% fprintf(file,'%.1f \t',cfb_tab(iterations+1));
+% fprintf(file,'\n');
+% fprintf(file,'%.1f \t',bf_tab(iterations+1));
+% fprintf(file,'\n');
+% fprintf(file,'%.1f \t',default_opponentsBehind_tab(iterations+1));
+% fprintf(file,'\n');
+%
+% fprintf(file,'%.1f \t',ccttl_tab(iterations+1));
+% fprintf(file,'\n');
+% fprintf(file,'%.1f \t',cttl_tab(iterations+1));
+% fprintf(file,'\n');
+% fprintf(file,'%.1f \t',cfttl_tab(iterations+1));
+% fprintf(file,'\n');
+% fprintf(file,'%.1f \t',lf_tab(iterations+1));
+% fprintf(file,'\n');
+% fprintf(file,'%.1f \t',default_opponentsLeft_tab(iterations+1));
+% fprintf(file,'\n');
+%
+% fprintf(file,'%.1f \t',cca_tab(iterations+1));
+% fprintf(file,'\n');
+% fprintf(file,'%.1f \t',ca_tab(iterations+1));
+% fprintf(file,'\n');
+% fprintf(file,'%.1f \t',cfa_tab(iterations+1));
+% fprintf(file,'\n');
+% fprintf(file,'%.1f \t',ff_tab(iterations+1));
+% fprintf(file,'\n');
+% fprintf(file,'%.1f \t',default_opponentsAhead_tab(iterations+1));
+%
+% fclose(file);
+%
