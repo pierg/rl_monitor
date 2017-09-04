@@ -2,13 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="4cda79fb-c2e6-48bb-a714-72d01d1d2ead" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/matlab_scripts/RUN_fast.m" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/matlab_scripts/SCRIPT_stats.m" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/matlab_scripts/SCRIPT_counters.m" afterPath="$PROJECT_DIR$/matlab_scripts/SCRIPT_counters.m" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/matlab_scripts/SCRIPT_plot_all_iterations.m" afterPath="$PROJECT_DIR$/matlab_scripts/SCRIPT_plot_all_iterations.m" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/matlab_scripts/SCRIPT_plot_all_rewards.m" afterPath="$PROJECT_DIR$/matlab_scripts/SCRIPT_plot_all_rewards.m" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/results.py" afterPath="$PROJECT_DIR$/results.py" />
     </list>
     <ignored path="rl_monitor.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -29,11 +24,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="SCRIPT_plot_all_iterations.m" pinned="false" current-in-tab="false">
+      <file leaf-file-name="SCRIPT_plot_all_iterations.m" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/matlab_scripts/SCRIPT_plot_all_iterations.m">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1114">
-              <caret line="93" column="17" selection-start-line="93" selection-start-column="12" selection-end-line="93" selection-end-column="17" />
+            <state relative-caret-position="270">
+              <caret line="18" column="24" selection-start-line="18" selection-start-column="24" selection-end-line="18" selection-end-column="24" />
               <folding />
             </state>
           </provider>
@@ -42,8 +37,8 @@
       <file leaf-file-name="SCRIPT_plot_all_rewards.m" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/matlab_scripts/SCRIPT_plot_all_rewards.m">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="375">
-              <caret line="25" column="35" selection-start-line="25" selection-start-column="24" selection-end-line="25" selection-end-column="35" />
+            <state relative-caret-position="183">
+              <caret line="14" column="31" selection-start-line="14" selection-start-column="31" selection-end-line="14" selection-end-column="31" />
               <folding />
             </state>
           </provider>
@@ -59,11 +54,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="RUN_fast.m" pinned="false" current-in-tab="true">
+      <file leaf-file-name="RUN_fast.m" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/matlab_scripts/RUN_fast.m">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="90">
-              <caret line="6" column="14" selection-start-line="6" selection-start-column="14" selection-end-line="6" selection-end-column="14" />
+              <caret line="6" column="26" selection-start-line="6" selection-start-column="26" selection-end-line="6" selection-end-column="26" />
               <folding />
             </state>
           </provider>
@@ -172,12 +167,12 @@
         <option value="$PROJECT_DIR$/.gitignore" />
         <option value="$PROJECT_DIR$/reward.py" />
         <option value="$PROJECT_DIR$/matlab_scripts/SCRIPT_plot_all_rewards.m" />
-        <option value="$PROJECT_DIR$/matlab_scripts/SCRIPT_plot_all_iterations.m" />
         <option value="$PROJECT_DIR$/matlab_scripts/RUN_full.m" />
         <option value="$PROJECT_DIR$/matlab_scripts/RUN_fast.m" />
         <option value="$PROJECT_DIR$/matlab_scripts/SCRIPT_stats.m" />
         <option value="$PROJECT_DIR$/matlab_scripts/SCRIPT_counters.m" />
         <option value="$PROJECT_DIR$/results.py" />
+        <option value="$PROJECT_DIR$/matlab_scripts/SCRIPT_plot_all_iterations.m" />
       </list>
     </option>
   </component>
@@ -1053,7 +1048,7 @@
       <workItem from="1503067716424" duration="763000" />
       <workItem from="1503072708012" duration="786000" />
       <workItem from="1504164432891" duration="6598000" />
-      <workItem from="1504514351147" duration="4965000" />
+      <workItem from="1504514351147" duration="5808000" />
     </task>
     <task id="LOCAL-00001" summary="Updated uppaal model">
       <created>1496949153152</created>
@@ -1174,11 +1169,18 @@
       <option name="project" value="LOCAL" />
       <updated>1504281469479</updated>
     </task>
-    <option name="localTasksCounter" value="18" />
+    <task id="LOCAL-00018" summary="fixed all matlab scripts">
+      <created>1504529318576</created>
+      <option name="number" value="00018" />
+      <option name="presentableId" value="LOCAL-00018" />
+      <option name="project" value="LOCAL" />
+      <updated>1504529318577</updated>
+    </task>
+    <option name="localTasksCounter" value="19" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="38326000" />
+    <option name="totallyTimeSpent" value="39169000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1920" height="1200" extended-state="0" />
@@ -1254,7 +1256,8 @@
     <MESSAGE value="added model to verity" />
     <MESSAGE value="added uppal models to verify" />
     <MESSAGE value="rounded the SCRIPT_counters file" />
-    <option name="LAST_COMMIT_MESSAGE" value="rounded the SCRIPT_counters file" />
+    <MESSAGE value="fixed all matlab scripts" />
+    <option name="LAST_COMMIT_MESSAGE" value="fixed all matlab scripts" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager />
@@ -1745,22 +1748,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/matlab_scripts/SCRIPT_plot_all_rewards.m">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="375">
-          <caret line="25" column="35" selection-start-line="25" selection-start-column="24" selection-end-line="25" selection-end-column="35" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/matlab_scripts/SCRIPT_plot_all_iterations.m">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1114">
-          <caret line="93" column="17" selection-start-line="93" selection-start-column="12" selection-end-line="93" selection-end-column="17" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/matlab_scripts/SCRIPT_plot_results.m">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="240">
@@ -1793,10 +1780,26 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/matlab_scripts/SCRIPT_plot_all_rewards.m">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="183">
+          <caret line="14" column="31" selection-start-line="14" selection-start-column="31" selection-end-line="14" selection-end-column="31" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/matlab_scripts/RUN_fast.m">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="90">
-          <caret line="6" column="14" selection-start-line="6" selection-start-column="14" selection-end-line="6" selection-end-column="14" />
+          <caret line="6" column="26" selection-start-line="6" selection-start-column="26" selection-end-line="6" selection-end-column="26" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/matlab_scripts/SCRIPT_plot_all_iterations.m">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="270">
+          <caret line="18" column="24" selection-start-line="18" selection-start-column="24" selection-end-line="18" selection-end-column="24" />
           <folding />
         </state>
       </provider>

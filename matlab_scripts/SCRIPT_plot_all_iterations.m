@@ -6,6 +6,8 @@ end
 
 mkdir plots;
 
+avr_n = 100;
+
 i=1;
 % STEP = round(iterations/10);
 STEP = 1;
