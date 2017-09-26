@@ -5,7 +5,7 @@ iterations = size(goalReached, 2);
 end
 
 if exist('c_Speed_Curve') == 0
-    c_Speed_Curve = c_Speed_Turning
+    c_Speed_Curve = c_Speed_Turning;
 end
 
 
