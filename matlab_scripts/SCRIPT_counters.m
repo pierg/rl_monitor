@@ -454,7 +454,7 @@ fclose(file);
 % % AVERAGE
 % file = fopen('counters_avarage.txt','w');
 % % fprintf(file,'\t');
-a%
+%
 % fprintf(file,'%.1f\n', episodes_sum/number_goalReached);
 % fprintf(file,'%.1f\n', number_goalReached/iterations*100);
 % fprintf(file,'%.1f\n\n\n', time_sum/number_goalReached);
