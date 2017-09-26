@@ -258,7 +258,7 @@ for j = 1:iterations
 label = num2str(j);
 fprintf(file,'%s\t',label);
 end
-(*fprintf(file,'average\n');*)
+% (*fprintf(file,'average\n');*)
 
 % Stats:
     fprintf(file,'# episodes\t');
