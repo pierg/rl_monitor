@@ -1,8 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="4cda79fb-c2e6-48bb-a714-72d01d1d2ead" name="Default" comment="">
+    <list default="true" id="4cda79fb-c2e6-48bb-a714-72d01d1d2ead" name="Default" comment="average removed from the script">
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/larva-system/larva.jar" afterPath="$PROJECT_DIR$/larva-system/larva.jar" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/monitor/reward_16_v1/Makefile" afterPath="$PROJECT_DIR$/monitor/reward_16_v1/Makefile" />
     </list>
     <ignored path="rl_monitor.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -23,24 +25,7 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="SCRIPT_counters.m" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/matlab_scripts/SCRIPT_counters.m">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="4320">
-              <caret line="288" column="8" selection-start-line="288" selection-start-column="4" selection-end-line="288" selection-end-column="8" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="fast.gif" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/fast.gif">
-          <provider selected="true" editor-type-id="images">
-            <state />
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="ddpg.py" pinned="false" current-in-tab="true">
+      <file leaf-file-name="ddpg.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/ddpg.py">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="15">
@@ -48,6 +33,56 @@
               <folding>
                 <element signature="e#0#30#0" expanded="true" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="start.sh" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/scripts/start.sh">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="582">
+              <caret line="125" column="148" selection-start-line="125" selection-start-column="137" selection-end-line="125" selection-end-column="148" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Makefile" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/monitor/uppaal_models/uppaal_to_larva/Makefile">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="120">
+              <caret line="8" column="7" selection-start-line="8" selection-start-column="7" selection-end-line="8" selection-end-column="7" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Makefile" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/monitor/reward_16_v1/Makefile">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="150">
+              <caret line="10" column="16" selection-start-line="10" selection-start-column="16" selection-end-line="10" selection-end-column="16" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="png.h" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/vtorcs-RL-color/src/windows/include/png.h">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="1513">
+              <caret line="1730" column="61" selection-start-line="1730" selection-start-column="61" selection-end-line="1730" selection-end-column="61" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name=".gitignore" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/.gitignore">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="90">
+              <caret line="6" column="22" selection-start-line="6" selection-start-column="0" selection-end-line="6" selection-end-column="22" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -87,37 +122,73 @@
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="5595">
               <caret line="435" column="32" selection-start-line="435" selection-start-column="22" selection-end-line="435" selection-end-column="32" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="SCRIPT_stats.m" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/matlab_scripts/SCRIPT_stats.m">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="0">
-              <caret line="0" column="14" selection-start-line="0" selection-start-column="14" selection-end-line="0" selection-end-column="14" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="SCRIPT_plot_results.m" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/matlab_scripts/SCRIPT_plot_results.m">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="360">
-              <caret line="24" column="7" selection-start-line="24" selection-start-column="7" selection-end-line="24" selection-end-column="7" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="SCRIPT_plot_torcs_values.m" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/matlab_scripts/SCRIPT_plot_torcs_values.m">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="405">
-              <caret line="27" column="10" selection-start-line="27" selection-start-column="10" selection-end-line="27" selection-end-column="10" />
-              <folding />
+              <folding>
+                <element signature="e#0#25676#0" expanded="false" />
+                <element signature="imports" expanded="false" />
+                <element signature="e#5580#5581#0" expanded="false" />
+                <element signature="e#5614#5615#0" expanded="false" />
+                <element signature="e#5649#5650#0" expanded="false" />
+                <element signature="e#5676#5677#0" expanded="false" />
+                <element signature="e#5713#5714#0" expanded="false" />
+                <element signature="e#5737#5738#0" expanded="false" />
+                <element signature="e#5773#5774#0" expanded="false" />
+                <element signature="e#5795#5796#0" expanded="false" />
+                <element signature="e#5876#5877#0" expanded="false" />
+                <element signature="e#5909#5910#0" expanded="false" />
+                <element signature="e#5950#5951#0" expanded="false" />
+                <element signature="e#5982#5983#0" expanded="false" />
+                <element signature="e#8536#8537#0" expanded="false" />
+                <element signature="e#8567#8568#0" expanded="false" />
+                <element signature="e#8608#8609#0" expanded="false" />
+                <element signature="e#8639#8640#0" expanded="false" />
+                <element signature="e#8677#8678#0" expanded="false" />
+                <element signature="e#8708#8709#0" expanded="false" />
+                <element signature="e#8751#8752#0" expanded="false" />
+                <element signature="e#8783#8784#0" expanded="false" />
+                <element signature="e#10341#10342#0" expanded="false" />
+                <element signature="e#10371#10372#0" expanded="false" />
+                <element signature="e#10413#10414#0" expanded="false" />
+                <element signature="e#10443#10444#0" expanded="false" />
+                <element signature="e#10482#10483#0" expanded="false" />
+                <element signature="e#10512#10513#0" expanded="false" />
+                <element signature="e#10556#10557#0" expanded="false" />
+                <element signature="e#10587#10588#0" expanded="false" />
+                <element signature="e#11656#11657#0" expanded="false" />
+                <element signature="e#11686#11687#0" expanded="false" />
+                <element signature="e#11726#11727#0" expanded="false" />
+                <element signature="e#11756#11757#0" expanded="false" />
+                <element signature="e#11793#11794#0" expanded="false" />
+                <element signature="e#11823#11824#0" expanded="false" />
+                <element signature="e#11865#11866#0" expanded="false" />
+                <element signature="e#11896#11897#0" expanded="false" />
+                <element signature="e#13199#13200#0" expanded="false" />
+                <element signature="e#13230#13231#0" expanded="false" />
+                <element signature="e#13271#13272#0" expanded="false" />
+                <element signature="e#13302#13303#0" expanded="false" />
+                <element signature="e#13340#13341#0" expanded="false" />
+                <element signature="e#13371#13372#0" expanded="false" />
+                <element signature="e#13414#13415#0" expanded="false" />
+                <element signature="e#13446#13447#0" expanded="false" />
+                <element signature="e#13553#13554#0" expanded="false" />
+                <element signature="e#13605#13606#0" expanded="false" />
+                <element signature="e#15104#15105#0" expanded="false" />
+                <element signature="e#15146#15147#0" expanded="false" />
+                <element signature="e#15525#15526#0" expanded="false" />
+                <element signature="e#15567#15568#0" expanded="false" />
+                <element signature="e#15638#15639#0" expanded="false" />
+                <element signature="e#15690#15691#0" expanded="false" />
+                <element signature="e#17366#17367#0" expanded="false" />
+                <element signature="e#17411#17412#0" expanded="false" />
+                <element signature="e#17962#17963#0" expanded="false" />
+                <element signature="e#17986#17987#0" expanded="false" />
+                <element signature="e#18024#18025#0" expanded="false" />
+                <element signature="e#18069#18070#0" expanded="false" />
+                <element signature="e#18108#18109#0" expanded="false" />
+                <element signature="e#18156#18157#0" expanded="false" />
+                <element signature="e#22902#22910#0" expanded="false" />
+                <element signature="e#25486#25487#0" expanded="false" />
+                <element signature="e#25519#25520#0" expanded="false" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -171,6 +242,7 @@
         <option value="$PROJECT_DIR$/results.py" />
         <option value="$PROJECT_DIR$/matlab_scripts/SCRIPT_plot_all_iterations.m" />
         <option value="$PROJECT_DIR$/matlab_scripts/SCRIPT_counters.m" />
+        <option value="$PROJECT_DIR$/monitor/reward_16_v1/Makefile" />
       </list>
     </option>
   </component>
@@ -217,7 +289,6 @@
     </navigator>
     <panes>
       <pane id="PackagesPane" />
-      <pane id="Scope" />
       <pane id="Scratches" />
       <pane id="ProjectPane">
         <subPane>
@@ -363,6 +434,7 @@
           </PATH>
         </subPane>
       </pane>
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -375,6 +447,9 @@
     <property name="FullScreen" value="true" />
   </component>
   <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/larva-system" />
+    </key>
     <key name="CopyFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/matlab_scripts" />
       <recent name="$PROJECT_DIR$/monitor/uppaal_models/verification" />
@@ -1023,6 +1098,7 @@
       <workItem from="1504514351147" duration="8488000" />
       <workItem from="1504544120325" duration="2215000" />
       <workItem from="1505917413402" duration="4000" />
+      <workItem from="1506596161304" duration="2670000" />
     </task>
     <task id="LOCAL-00001" summary="Updated uppaal model">
       <created>1496949153152</created>
@@ -1175,11 +1251,11 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="44068000" />
+    <option name="totallyTimeSpent" value="46738000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1920" height="1200" extended-state="0" />
-    <editor active="false" />
+    <editor active="true" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
@@ -1188,12 +1264,13 @@
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.1548913" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.1548913" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.12771739" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.22736955" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32789856" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
@@ -1205,7 +1282,6 @@
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Python Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32789856" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
     </layout>
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -1262,27 +1338,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/snakeoil3_gym.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="194">
-          <caret line="321" column="73" selection-start-line="321" selection-start-column="73" selection-end-line="321" selection-end-column="73" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/README.md">
-      <provider editor-type-id="text-editor">
-        <state relative-caret-position="420">
-          <caret line="28" column="287" selection-start-line="28" selection-start-column="287" selection-end-line="28" selection-end-column="287" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/ActorNetwork.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="585">
-          <caret line="49" column="55" selection-start-line="49" selection-start-column="55" selection-end-line="49" selection-end-column="55" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/CriticNetwork.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="75">
@@ -1343,14 +1398,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/.gitignore">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="120">
-          <caret line="8" column="9" selection-start-line="8" selection-start-column="9" selection-end-line="8" selection-end-column="9" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/scripts/start_list.sh">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="555">
@@ -1369,13 +1416,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/scripts/start.sh">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1875">
-          <caret line="125" column="44" selection-start-line="125" selection-start-column="43" selection-end-line="125" selection-end-column="44" />
         </state>
       </provider>
     </entry>
@@ -1522,8 +1562,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/matlab_scripts/SCRIPT_counters.m">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="4320">
-          <caret line="288" column="8" selection-start-line="288" selection-start-column="4" selection-end-line="288" selection-end-column="8" />
+        <state relative-caret-position="4395">
+          <caret line="293" column="8" selection-start-line="293" selection-start-column="8" selection-end-line="293" selection-end-column="8" />
           <folding />
         </state>
       </provider>
@@ -1565,19 +1605,77 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/monitor/reward_16_v1/rewardautomaton.lrv">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="225">
-          <caret line="15" column="18" selection-start-line="15" selection-start-column="12" selection-end-line="15" selection-end-column="18" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/monitor/reward_16_v1/SocketServerPackage/EchoServer.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="5595">
           <caret line="435" column="32" selection-start-line="435" selection-start-column="22" selection-end-line="435" selection-end-column="32" />
-          <folding />
+          <folding>
+            <element signature="e#0#25676#0" expanded="false" />
+            <element signature="imports" expanded="false" />
+            <element signature="e#5580#5581#0" expanded="false" />
+            <element signature="e#5614#5615#0" expanded="false" />
+            <element signature="e#5649#5650#0" expanded="false" />
+            <element signature="e#5676#5677#0" expanded="false" />
+            <element signature="e#5713#5714#0" expanded="false" />
+            <element signature="e#5737#5738#0" expanded="false" />
+            <element signature="e#5773#5774#0" expanded="false" />
+            <element signature="e#5795#5796#0" expanded="false" />
+            <element signature="e#5876#5877#0" expanded="false" />
+            <element signature="e#5909#5910#0" expanded="false" />
+            <element signature="e#5950#5951#0" expanded="false" />
+            <element signature="e#5982#5983#0" expanded="false" />
+            <element signature="e#8536#8537#0" expanded="false" />
+            <element signature="e#8567#8568#0" expanded="false" />
+            <element signature="e#8608#8609#0" expanded="false" />
+            <element signature="e#8639#8640#0" expanded="false" />
+            <element signature="e#8677#8678#0" expanded="false" />
+            <element signature="e#8708#8709#0" expanded="false" />
+            <element signature="e#8751#8752#0" expanded="false" />
+            <element signature="e#8783#8784#0" expanded="false" />
+            <element signature="e#10341#10342#0" expanded="false" />
+            <element signature="e#10371#10372#0" expanded="false" />
+            <element signature="e#10413#10414#0" expanded="false" />
+            <element signature="e#10443#10444#0" expanded="false" />
+            <element signature="e#10482#10483#0" expanded="false" />
+            <element signature="e#10512#10513#0" expanded="false" />
+            <element signature="e#10556#10557#0" expanded="false" />
+            <element signature="e#10587#10588#0" expanded="false" />
+            <element signature="e#11656#11657#0" expanded="false" />
+            <element signature="e#11686#11687#0" expanded="false" />
+            <element signature="e#11726#11727#0" expanded="false" />
+            <element signature="e#11756#11757#0" expanded="false" />
+            <element signature="e#11793#11794#0" expanded="false" />
+            <element signature="e#11823#11824#0" expanded="false" />
+            <element signature="e#11865#11866#0" expanded="false" />
+            <element signature="e#11896#11897#0" expanded="false" />
+            <element signature="e#13199#13200#0" expanded="false" />
+            <element signature="e#13230#13231#0" expanded="false" />
+            <element signature="e#13271#13272#0" expanded="false" />
+            <element signature="e#13302#13303#0" expanded="false" />
+            <element signature="e#13340#13341#0" expanded="false" />
+            <element signature="e#13371#13372#0" expanded="false" />
+            <element signature="e#13414#13415#0" expanded="false" />
+            <element signature="e#13446#13447#0" expanded="false" />
+            <element signature="e#13553#13554#0" expanded="false" />
+            <element signature="e#13605#13606#0" expanded="false" />
+            <element signature="e#15104#15105#0" expanded="false" />
+            <element signature="e#15146#15147#0" expanded="false" />
+            <element signature="e#15525#15526#0" expanded="false" />
+            <element signature="e#15567#15568#0" expanded="false" />
+            <element signature="e#15638#15639#0" expanded="false" />
+            <element signature="e#15690#15691#0" expanded="false" />
+            <element signature="e#17366#17367#0" expanded="false" />
+            <element signature="e#17411#17412#0" expanded="false" />
+            <element signature="e#17962#17963#0" expanded="false" />
+            <element signature="e#17986#17987#0" expanded="false" />
+            <element signature="e#18024#18025#0" expanded="false" />
+            <element signature="e#18069#18070#0" expanded="false" />
+            <element signature="e#18108#18109#0" expanded="false" />
+            <element signature="e#18156#18157#0" expanded="false" />
+            <element signature="e#22902#22910#0" expanded="false" />
+            <element signature="e#25486#25487#0" expanded="false" />
+            <element signature="e#25519#25520#0" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -1596,6 +1694,54 @@
           <folding>
             <element signature="e#0#30#0" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/.gitignore">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="90">
+          <caret line="6" column="22" selection-start-line="6" selection-start-column="0" selection-end-line="6" selection-end-column="22" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/scripts/start.sh">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="582">
+          <caret line="125" column="148" selection-start-line="125" selection-start-column="137" selection-end-line="125" selection-end-column="148" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/monitor/uppaal_models/uppaal_to_larva/Makefile">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="120">
+          <caret line="8" column="7" selection-start-line="8" selection-start-column="7" selection-end-line="8" selection-end-column="7" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/vtorcs-RL-color/src/windows/include/png.h">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1513">
+          <caret line="1730" column="61" selection-start-line="1730" selection-start-column="61" selection-end-line="1730" selection-end-column="61" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/monitor/reward_16_v1/rewardautomaton.lrv">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="225">
+          <caret line="15" column="18" selection-start-line="15" selection-start-column="12" selection-end-line="15" selection-end-column="18" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/monitor/reward_16_v1/Makefile">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="150">
+          <caret line="10" column="16" selection-start-line="10" selection-start-column="16" selection-end-line="10" selection-end-column="16" />
+          <folding />
         </state>
       </provider>
     </entry>
