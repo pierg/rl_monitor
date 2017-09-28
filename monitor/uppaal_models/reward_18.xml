@@ -1455,7 +1455,7 @@ bool curveIsComing()
         return false;
     }
 
-    if(trackPos &lt;= -1 || trackPos &gt;= 1){
+    if(trackPos &lt;= -100 || trackPos &gt;= 100){
         return false;
     }
 
@@ -1540,17 +1540,17 @@ int errorCurve(){
 
 void rewardStuck()
 {
-    speedX_rwd = -100 - stuckCounter;
+    speedX_rwd = -1000 - stuckCounter;
 }
 
 void rewardTurning()
 {
-    speedX_rwd = 100 - errorCurve();
+    speedX_rwd = 2000 - errorCurve();
 }
 
 void rewardStraight()
 {
-    speedX_rwd = 100 - errorStraight();
+    speedX_rwd = 2000 - errorStraight();
 }
 /*end functions*/
 </declaration>
