@@ -263,7 +263,7 @@ for j = 1:iterations
 label = num2str(j);
 fprintf(file,'%s\t',label);
 end
-% (*fprintf(file,'average\n');*)
+fprintf(file,'average\n');
 
 % Stats:
     fprintf(file,'# episodes\t');
@@ -271,35 +271,35 @@ for j = 1:iterations
 fprintf(file,'%d \t',  episodeCount(j));
 end
 % (*% average column*)
-% (*fprintf(file,'%.1f \n', mean(episodeCount(j)));*)
+fprintf(file,'%.1f \n', mean(episodeCount(j)));
 
 fprintf(file,'Total time (h)\t');
 for j = 1:iterations
 fprintf(file,'%.1f \t', totalTime(j)*0.000277778);
 end
 % (*% average column*)
-% (*fprintf(file,'%.1f \n', mean(totalTime(j)*0.000277778));*)
+fprintf(file,'%.1f \n', mean(totalTime(j)*0.000277778));
 
 fprintf(file,'Total reward\t');
 for j = 1:iterations
 fprintf(file,'%d \t', round(sum(cell2mat(rewardsPerStep{1, j}))));
 end
 % (*% average column*)
-% (*fprintf(file,'%.1f \n', mean(round(sum(cell2mat(rewardsPerStep{1, j})))));*)
+fprintf(file,'%.1f \n', mean(round(sum(cell2mat(rewardsPerStep{1, j})))));
 
 fprintf(file,'Max reward value\t');
 for j = 1:iterations
 fprintf(file,'%.1f \t', max(cell2mat(rewardsPerStep{1, j})));
 end
 % (*% average column*)
-% (*fprintf(file,'%.1f \n', mean(max(cell2mat(rewardsPerStep{1, j}))));*)
+fprintf(file,'%.1f \n', mean(max(cell2mat(rewardsPerStep{1, j}))));
 
 fprintf(file,'Min reward value\t');
 for j = 1:iterations
 fprintf(file,'%.1f \t', min(cell2mat(rewardsPerStep{1, j})));
 end
 % (*% average column*)
-% (*fprintf(file,'%.1f \n', mean(min(cell2mat(rewardsPerStep{1, j}))));*)
+fprintf(file,'%.1f \n', mean(min(cell2mat(rewardsPerStep{1, j}))));
 
 
 fprintf(file,'\n%s\t','TrackPos_centerRoad');
