@@ -2,8 +2,8 @@
 echo "Launch TORCS simulation with ddpg.py and LARVA monitoring"
 
 detached=""
-monitor="-r reward_8"
-fn="reward_8"
+monitor="-r reward_18_v3"
+fn="reward_18_v3"
 duration=""
 logs_output=""
 original=false
