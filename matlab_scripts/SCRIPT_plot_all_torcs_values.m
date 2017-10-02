@@ -73,7 +73,7 @@ mkdir plots;
   ylabel('Damage');
   
   file_name = ['plots/' num2str(i) '_TORCS_VALUES'];
-  saveas(fig_torcs, file_name, 'png');
+  saveas(fig_torcs, file_name, 'jpeg');
   
   hold off;
   
