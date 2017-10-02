@@ -12,7 +12,7 @@ mkdir plots;
   fig_torcs = figure;
   set(fig_torcs,'visible','off');
   set(fig_torcs, 'PaperPositionMode', 'manual');
-  set(fig_torcs, 'PaperPosition', [0 0 200 100]);
+  set(fig_torcs, 'PaperPosition', [0 0 100 50]);
   grid('on');
   ALL_trackPos = cell2mat(trackPos{1, i});
   subplot(6,1,1);
@@ -73,7 +73,7 @@ mkdir plots;
   ylabel('Damage');
   
   file_name = ['plots/' num2str(i) '_TORCS_VALUES'];
-  saveas(fig_torcs, file_name, 'jpeg');
+  saveas(fig_torcs, file_name, 'png');
   
   hold off;
   
