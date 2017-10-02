@@ -1,0 +1,39 @@
+	1	2	3	4	5	6	average
+# episodes	178 	395 	784 	250 	117 	126 	126.0 
+Total time (h)	1.2 	4.4 	7.8 	2.8 	1.5 	1.4 	1.4 
+Total reward	-3181962 	-3436581 	-113724083 	-3677363 	-1306894 	-3892680 	-3892680.0 
+Max reward value	6.5 	6.5 	6.5 	6.5 	6.4 	6.5 	6.5 
+Min reward value	-151.3 	-167.1 	-14710.9 	-320.2 	-142.0 	-147.0 	-147.0 
+
+TrackPos_centerRoad	42.5 	51.0 	31.5 	30.2 	36.5 	27.2 	36.5 	
+TrackPos_leftOffRoad	7.3 	9.6 	22.6 	9.0 	4.9 	47.0 	16.7 	
+TrackPos_limitRoad	40.0 	36.8 	29.6 	26.0 	30.2 	18.5 	30.2 	
+TrackPos_rightOffRoad	10.1 	2.7 	16.2 	34.8 	28.5 	7.3 	16.6 	
+TrackPos_default	0.0 	0.0 	0.0 	0.0 	0.0 	0.0 	0.0 	
+Speed goingStraight	95.6 	94.9 	89.6 	90.4 	96.7 	91.9 	93.2 	
+Speed Turning	1.4 	1.6 	1.6 	1.1 	1.3 	1.7 	1.4 	
+Speed Stuck	3.0 	3.5 	8.9 	8.6 	2.1 	6.3 	5.4 	
+Speed_default	0.0 	0.0 	0.0 	0.0 	0.0 	0.0 	0.0 	
+Damage_normal	99.3 	99.7 	98.6 	99.2 	99.2 	99.1 	99.2 	
+Damage_damaged	0.7 	0.3 	1.4 	0.8 	0.8 	0.9 	0.8 	
+Damage_default	0.0 	0.0 	0.0 	0.0 	0.0 	0.0 	0.0 	
+OpponentsRight_carToTheRight	0.0 	0.0 	0.0 	0.0 	0.0 	0.0 	0.0 	
+OpponentsRight_carCloseToTheRight	0.0 	0.0 	0.0 	0.0 	0.0 	0.0 	0.0 	
+OpponentsRight_rightFree	100.0 	100.0 	100.0 	100.0 	100.0 	100.0 	100.0 	
+OpponentsRight_carFarToTheRight	0.0 	0.0 	0.0 	0.0 	0.0 	0.0 	0.0 	
+OpponentsRight_default	0.0 	0.0 	0.0 	0.0 	0.0 	0.0 	0.0 	
+OpponentsBehind_carCloseBehind	0.0 	0.0 	0.0 	0.0 	0.0 	0.0 	0.0 	
+OpponentsBehind_carBehind	0.0 	0.0 	0.0 	0.0 	0.0 	0.0 	0.0 	
+OpponentsBehind_carFarbehind	0.0 	0.0 	0.0 	0.0 	0.0 	0.0 	0.0 	
+OpponentsBehind_behindFree	100.0 	100.0 	100.0 	100.0 	100.0 	100.0 	100.0 	
+OpponentsBehind_default	0.0 	0.0 	0.0 	0.0 	0.0 	0.0 	0.0 	
+OpponentsLeft_carCloseToTheLeft	0.0 	0.0 	0.0 	0.0 	0.0 	0.0 	0.0 	
+OpponentsLeft_carToTheLeft	0.0 	0.0 	0.0 	0.0 	0.0 	0.0 	0.0 	
+OpponentsLeft_carFarToTheLeft	0.0 	0.0 	0.0 	0.0 	0.0 	0.0 	0.0 	
+OpponentsLeft_leftFree	100.0 	100.0 	100.0 	100.0 	100.0 	100.0 	100.0 	
+OpponentsLeft_default	0.0 	0.0 	0.0 	0.0 	0.0 	0.0 	0.0 	
+OpponentsAhead_carCloseAhead	0.0 	0.0 	0.0 	0.0 	0.0 	0.0 	0.0 	
+OpponentsAhead_carAhead	0.0 	0.0 	0.0 	0.0 	0.0 	0.0 	0.0 	
+OpponentsAhead_carFarAhead	0.0 	0.0 	0.0 	0.0 	0.0 	0.0 	0.0 	
+OpponentsAhead_frontFree	100.0 	100.0 	100.0 	100.0 	100.0 	100.0 	100.0 	
+OpponentsAhead_default	0.0 	0.0 	0.0 	0.0 	0.0 	0.0 	0.0 	

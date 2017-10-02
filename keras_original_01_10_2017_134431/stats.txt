@@ -1,0 +1,39 @@
+	1	average
+# episodes	748 	748.0 
+Total time (h)	6.5 	6.5 
+Total reward	685511 	685511.0 
+Max reward value	120.4 	120.4 
+Min reward value	-131.5 	-131.5 
+
+TrackPos_centerRoad	38.9 	38.9 	
+TrackPos_leftOffRoad	13.9 	13.9 	
+TrackPos_limitRoad	16.4 	16.4 	
+TrackPos_rightOffRoad	30.8 	30.8 	
+TrackPos_default	0.0 	0.0 	
+Speed goingStraight	16.0 	16.0 	
+Speed Turning	42.6 	42.6 	
+Speed Stuck	41.5 	41.5 	
+Speed_default	0.0 	0.0 	
+Damage_normal	93.1 	93.1 	
+Damage_damaged	6.9 	6.9 	
+Damage_default	0.0 	0.0 	
+OpponentsRight_carToTheRight	2.6 	2.6 	
+OpponentsRight_carCloseToTheRight	1.4 	1.4 	
+OpponentsRight_rightFree	94.1 	94.1 	
+OpponentsRight_carFarToTheRight	1.8 	1.8 	
+OpponentsRight_default	0.0 	0.0 	
+OpponentsBehind_carCloseBehind	1.1 	1.1 	
+OpponentsBehind_carBehind	7.2 	7.2 	
+OpponentsBehind_carFarbehind	37.2 	37.2 	
+OpponentsBehind_behindFree	54.4 	54.4 	
+OpponentsBehind_default	0.0 	0.0 	
+OpponentsLeft_carCloseToTheLeft	0.4 	0.4 	
+OpponentsLeft_carToTheLeft	5.8 	5.8 	
+OpponentsLeft_carFarToTheLeft	0.1 	0.1 	
+OpponentsLeft_leftFree	93.7 	93.7 	
+OpponentsLeft_default	0.0 	0.0 	
+OpponentsAhead_carCloseAhead	12.1 	12.1 	
+OpponentsAhead_carAhead	5.8 	5.8 	
+OpponentsAhead_carFarAhead	11.5 	11.5 	
+OpponentsAhead_frontFree	70.6 	70.6 	
+OpponentsAhead_default	0.0 	0.0 	

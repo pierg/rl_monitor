@@ -1,0 +1,4 @@
+	average
+# episodes	NaN 
+Total time (h)	NaN 
+Total reward	

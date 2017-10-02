@@ -1,0 +1,33 @@
+	1	2	# episodes	1147 	2000 	Total time (h)	9.2 	5.8 	Total reward	-205132426 	NaN 	Max reward value	65.0 	65.0 	Min reward value	-20649.5 	-6145.1 	
+TrackPos_centerRoad	20.1 	0.0 	20.1 	
+TrackPos_leftOffRoad	49.9 	0.0 	49.9 	
+TrackPos_limitRoad	25.8 	0.0 	25.8 	
+TrackPos_rightOffRoad	4.1 	0.0 	4.1 	
+TrackPos_default	0.0 	0.0 	0.0 	
+Speed goingStraight	82.9 	0.0 	82.9 	
+Speed Turning	0.8 	0.0 	0.8 	
+Speed Stuck	16.4 	0.0 	16.4 	
+Speed_default	0.0 	0.0 	0.0 	
+Damage_normal	98.9 	0.0 	98.9 	
+Damage_damaged	1.1 	0.0 	1.1 	
+Damage_default	0.0 	0.0 	0.0 	
+OpponentsRight_carToTheRight	0.0 	0.0 	0.0 	
+OpponentsRight_carCloseToTheRight	0.0 	0.0 	0.0 	
+OpponentsRight_rightFree	100.0 	0.0 	100.0 	
+OpponentsRight_carFarToTheRight	0.0 	0.0 	0.0 	
+OpponentsRight_default	0.0 	0.0 	0.0 	
+OpponentsBehind_carCloseBehind	0.0 	0.0 	0.0 	
+OpponentsBehind_carBehind	0.0 	0.0 	0.0 	
+OpponentsBehind_carFarbehind	0.0 	0.0 	0.0 	
+OpponentsBehind_behindFree	100.0 	0.0 	100.0 	
+OpponentsBehind_default	0.0 	0.0 	0.0 	
+OpponentsLeft_carCloseToTheLeft	0.0 	0.0 	0.0 	
+OpponentsLeft_carToTheLeft	0.0 	0.0 	0.0 	
+OpponentsLeft_carFarToTheLeft	0.0 	0.0 	0.0 	
+OpponentsLeft_leftFree	100.0 	0.0 	100.0 	
+OpponentsLeft_default	0.0 	0.0 	0.0 	
+OpponentsAhead_carCloseAhead	0.0 	0.0 	0.0 	
+OpponentsAhead_carAhead	0.0 	0.0 	0.0 	
+OpponentsAhead_carFarAhead	0.0 	0.0 	0.0 	
+OpponentsAhead_frontFree	100.0 	0.0 	100.0 	
+OpponentsAhead_default	0.0 	0.0 	0.0 	
