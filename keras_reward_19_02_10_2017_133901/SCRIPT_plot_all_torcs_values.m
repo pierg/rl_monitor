@@ -1,4 +1,6 @@
 
+iterations = size(trackPos, 2);
+
 i=1;
 
 mkdir torcs_values;
