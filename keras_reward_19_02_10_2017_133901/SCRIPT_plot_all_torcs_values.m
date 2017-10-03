@@ -27,7 +27,7 @@ mkdir torcs_values;
   xlabel('Step #');
   ylabel('SpeedX');
     
-  file_name = ['plots/' num2str(i) '_TORCS_VALUES'];
+  file_name = ['torcs_values/' num2str(i) '_TORCS_VALUES'];
   saveas(fig_torcs, file_name, 'png');
   
   hold off;
