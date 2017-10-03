@@ -1,0 +1,39 @@
+	1	2	3	4	5	6	7	8	9	10	11	average
+# episodes	219 	123 	78 	273 	225 	353 	94 	149 	196 	151 	158 	158.0 
+Total time (h)	2.2 	0.7 	0.7 	5.1 	1.7 	1.5 	1.0 	1.1 	1.6 	1.7 	1.5 	1.5 
+Total reward	-1631990 	-230292 	-369611 	-1650168 	-551915 	-1171387 	-315435 	-368456 	-566803 	-430329 	-655933 	-655933.0 
+Max reward value	25.5 	25.3 	25.4 	25.5 	25.4 	25.4 	25.3 	25.4 	25.3 	25.5 	25.3 	25.3 
+Min reward value	-1545.1 	-106.2 	-106.5 	-1633.7 	-111.6 	-108.0 	-103.7 	-103.3 	-109.3 	-113.8 	-110.0 	-110.0 
+
+TrackPos_centerRoad	27.4 	20.8 	35.8 	33.5 	22.4 	36.8 	75.0 	30.7 	23.2 	36.7 	24.2 	33.3 	
+TrackPos_leftOffRoad	7.2 	55.5 	14.1 	20.7 	38.2 	12.8 	5.2 	8.2 	34.3 	16.6 	47.7 	23.7 	
+TrackPos_limitRoad	41.1 	20.2 	37.3 	34.0 	31.4 	24.6 	13.2 	53.3 	29.3 	41.9 	22.5 	31.7 	
+TrackPos_rightOffRoad	24.4 	3.5 	12.8 	11.7 	8.0 	25.8 	6.6 	7.9 	13.3 	4.7 	5.7 	11.3 	
+TrackPos_default	0.0 	0.0 	0.0 	0.0 	0.0 	0.0 	0.0 	0.0 	0.0 	0.0 	0.0 	0.0 	
+Speed goingStraight	30.1 	56.4 	29.3 	22.1 	43.7 	30.4 	9.7 	19.1 	41.1 	22.0 	56.0 	32.7 	
+Speed Turning	62.7 	39.4 	68.6 	63.9 	51.0 	53.7 	86.8 	75.1 	48.9 	76.6 	41.9 	60.8 	
+Speed Stuck	7.1 	4.3 	2.1 	14.0 	5.3 	15.9 	3.5 	5.7 	10.0 	1.4 	2.2 	6.5 	
+Speed_default	0.0 	0.0 	0.0 	0.0 	0.0 	0.0 	0.0 	0.0 	0.0 	0.0 	0.0 	0.0 	
+Damage_normal	99.7 	99.1 	99.4 	99.6 	99.1 	99.2 	99.6 	99.3 	99.3 	99.6 	99.3 	99.4 	
+Damage_damaged	0.3 	0.9 	0.6 	0.4 	0.9 	0.8 	0.4 	0.7 	0.7 	0.4 	0.7 	0.6 	
+Damage_default	0.0 	0.0 	0.0 	0.0 	0.0 	0.0 	0.0 	0.0 	0.0 	0.0 	0.0 	0.0 	
+OpponentsRight_carToTheRight	0.0 	0.0 	0.0 	0.0 	0.0 	0.0 	0.0 	0.0 	0.0 	0.0 	0.0 	0.0 	
+OpponentsRight_carCloseToTheRight	0.0 	0.0 	0.0 	0.0 	0.0 	0.0 	0.0 	0.0 	0.0 	0.0 	0.0 	0.0 	
+OpponentsRight_rightFree	100.0 	100.0 	100.0 	100.0 	100.0 	100.0 	100.0 	100.0 	100.0 	100.0 	100.0 	100.0 	
+OpponentsRight_carFarToTheRight	0.0 	0.0 	0.0 	0.0 	0.0 	0.0 	0.0 	0.0 	0.0 	0.0 	0.0 	0.0 	
+OpponentsRight_default	0.0 	0.0 	0.0 	0.0 	0.0 	0.0 	0.0 	0.0 	0.0 	0.0 	0.0 	0.0 	
+OpponentsBehind_carCloseBehind	0.0 	0.0 	0.0 	0.0 	0.0 	0.0 	0.0 	0.0 	0.0 	0.0 	0.0 	0.0 	
+OpponentsBehind_carBehind	0.0 	0.0 	0.0 	0.0 	0.0 	0.0 	0.0 	0.0 	0.0 	0.0 	0.0 	0.0 	
+OpponentsBehind_carFarbehind	0.0 	0.0 	0.0 	0.0 	0.0 	0.0 	0.0 	0.0 	0.0 	0.0 	0.0 	0.0 	
+OpponentsBehind_behindFree	100.0 	100.0 	100.0 	100.0 	100.0 	100.0 	100.0 	100.0 	100.0 	100.0 	100.0 	100.0 	
+OpponentsBehind_default	0.0 	0.0 	0.0 	0.0 	0.0 	0.0 	0.0 	0.0 	0.0 	0.0 	0.0 	0.0 	
+OpponentsLeft_carCloseToTheLeft	0.0 	0.0 	0.0 	0.0 	0.0 	0.0 	0.0 	0.0 	0.0 	0.0 	0.0 	0.0 	
+OpponentsLeft_carToTheLeft	0.0 	0.0 	0.0 	0.0 	0.0 	0.0 	0.0 	0.0 	0.0 	0.0 	0.0 	0.0 	
+OpponentsLeft_carFarToTheLeft	0.0 	0.0 	0.0 	0.0 	0.0 	0.0 	0.0 	0.0 	0.0 	0.0 	0.0 	0.0 	
+OpponentsLeft_leftFree	100.0 	100.0 	100.0 	100.0 	100.0 	100.0 	100.0 	100.0 	100.0 	100.0 	100.0 	100.0 	
+OpponentsLeft_default	0.0 	0.0 	0.0 	0.0 	0.0 	0.0 	0.0 	0.0 	0.0 	0.0 	0.0 	0.0 	
+OpponentsAhead_carCloseAhead	0.0 	0.0 	0.0 	0.0 	0.0 	0.0 	0.0 	0.0 	0.0 	0.0 	0.0 	0.0 	
+OpponentsAhead_carAhead	0.0 	0.0 	0.0 	0.0 	0.0 	0.0 	0.0 	0.0 	0.0 	0.0 	0.0 	0.0 	
+OpponentsAhead_carFarAhead	0.0 	0.0 	0.0 	0.0 	0.0 	0.0 	0.0 	0.0 	0.0 	0.0 	0.0 	0.0 	
+OpponentsAhead_frontFree	100.0 	100.0 	100.0 	100.0 	100.0 	100.0 	100.0 	100.0 	100.0 	100.0 	100.0 	100.0 	
+OpponentsAhead_default	0.0 	0.0 	0.0 	0.0 	0.0 	0.0 	0.0 	0.0 	0.0 	0.0 	0.0 	0.0 	

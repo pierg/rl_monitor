@@ -64,7 +64,7 @@ set(fig_torcs, 'PaperPosition', [0 0 200 100]);
 
 
   file_name = [num2str(i) '_TORCS_VALUES'];
-  saveas(fig_torcs, file_name, 'png');
+  saveas(fig_torcs, file_name, 'jpeg');
 
 
 % set(fig_torcs,'Units','Inches');
