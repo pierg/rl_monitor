@@ -33,7 +33,7 @@ int nearestOpponentLeft;
 // weights
 int speedX_weight = 100;
 int damage_weight = 100;
-int trackPos_weight = 100;
+int trackPos_weight = 1000;
 int opponents_ahead_weight = 100;
 int opponents_left_weight = 100;
 int opponents_right_weight = 100;
@@ -1302,14 +1302,14 @@ void setTrackPosGoal(){
 
 
 void rewardLimitRoad(){
-    trackPos_rwd = 50 - errorTrackPos() + 100;
+    trackPos_rwd = 50 - errorTrackPos();
 }
 
 void rewardLeftOffRoad(){
     if(steer &lt; 0){
         trackPos_rwd = 50 - errorTrackPos();
     }else{
-        trackPos_rwd = 50 - errorTrackPos() - 50;
+        trackPos_rwd = 50 - errorTrackPos() + 50;
     }
 }
 
@@ -1317,12 +1317,12 @@ void rewardRightOffRoad(){
     if(steer &gt; 0){
         trackPos_rwd = 50 - errorTrackPos();
     }else{
-        trackPos_rwd = 50 - errorTrackPos() - 50;
+        trackPos_rwd = 50 - errorTrackPos() + 50;
     }
 }
 
 void rewardCenter(){
-    trackPos_rwd = 50 - errorTrackPos() + 500;
+    trackPos_rwd = 50 - errorTrackPos() + 50;
 }
 /*end functions*/</declaration>
 		<location id="id20" x="-289" y="-773">
@@ -1545,12 +1545,12 @@ void rewardStuck()
     // is trying to steer
     if (steer &gt;= 50 || steer &lt;= -50)
     {
-        speedX_rwd = 3000 - errorCurve() + 3000;
+        speedX_rwd = 500 - errorCurve() + 500;
 
     }
     else
     {
-        speedX_rwd = 3000 - errorCurve() - stuckCounter;
+        speedX_rwd = 500 - errorCurve();
     }
 }
 
@@ -1674,7 +1674,7 @@ bool isNormal(){
 }
 
 void rewardDamaged(){
-    damage_rwd = -500;
+    damage_rwd = -5000;
 }
 
 void rewardNormal(){
