@@ -1,4 +1,0 @@
-DATA_results
-DATA_monitorValues
-DATA_rewards
-SCRIPT_counters

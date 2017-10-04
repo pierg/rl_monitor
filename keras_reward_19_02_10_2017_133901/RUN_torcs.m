@@ -1,2 +1,0 @@
-DATA_signals
-SCRIPT_plot_all_torcs_values
