@@ -143,16 +143,16 @@ broadcast chan               synch;
 typedef int[-500, +500]      trackPos_T;
 const int                    trackPos_Right_Limit = 500;
 const int                    trackPos_Left_Limit = -500;
-typedef int [100, 100]         trackPos_Increment;
+typedef int [100, 100]       trackPos_Increment;
 
 
 
 // Speed of the car along the longitudinal axis of the car.
 // We assume a limit between 0 and 100 ( *FACTOR)
-typedef int[0, 10000]      speedX_T;
+typedef int[0, 10000]       speedX_T;
 const int                   speedX_Right_Limit = 10000;
 const int                   speedX_Left_Limit = 0;
-typedef int[1000, 1000]       speedX_Increment;
+typedef int[800, 800]       speedX_Increment;
 
 
 // Angle between the car direction and the direction of the track axis (-pi, pi)
@@ -160,15 +160,15 @@ typedef int[1000, 1000]       speedX_Increment;
 typedef int[-400, 400]  	 angle_T;
 const int                    angle_Right_Limit = 400;
 const int                    angle_Left_Limit = -400;
-typedef int[100, 100]          angle_Increment;
+typedef int[100, 100]        angle_Increment;
 
 
 // Current damage of the car (the higher is the value the higher is the damage).
 // We assume a limit between 0 and 3000 ( *FACTOR)
-typedef int[0, 300000]  damage_T;
+typedef int[0, 300000]       damage_T;
 const int                    damage_Right_Limit = 300000;
 const int                    damage_Left_Limit = 0;
-typedef int[100000, 100000]     damage_Increment;
+typedef int[100000, 100000]  damage_Increment;
 
 
 
@@ -1508,8 +1508,10 @@ bool isGoingStraight()
 }
 
 void updateStuckCounter(){
-    if (speedX &lt; 1000){
-        stuckCounter = stuckCounter + 1;
+    if (speedX &lt; 300){
+        if(stuckCounter &lt;= 100){
+            stuckCounter = stuckCounter + 1;
+        }
     }
     else{
         stuckCounter = 0;
@@ -1929,6 +1931,12 @@ system TrackPos, Speed, Damage, Sim_trackPos, Sim_angle, Sim_speedX;</system>
 		</query>
 		<query>
 			<formula>A[] (TrackPos.centerRoad and Speed.GoingStraight and Damage.normal and speedX &gt;= 7500 and speedX &lt;= 8500) imply (speedX_rwd+damage_rwd+trackPos_rwd) &gt;= 0
+			</formula>
+			<comment>
+			</comment>
+		</query>
+		<query>
+			<formula>A[] (Speed.GoingStraight) and (goalSpeed - speedX &gt; 2000) and speedX_rwd != 0 imply speedX_rwd &lt; 0
 			</formula>
 			<comment>
 			</comment>
