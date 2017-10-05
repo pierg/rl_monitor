@@ -4,6 +4,11 @@ else
 iterations = size(goalReached, 2);
 end
 
+if exist('c_Speed_Curve', 'var') == 0
+    c_Speed_Curve = c_Speed_Turning;
+end
+
+
 i=1;
 
 
@@ -261,40 +266,39 @@ end
 fprintf(file,'average\n');
 
 % Stats:
-
     fprintf(file,'# episodes\t');
 for j = 1:iterations
 fprintf(file,'%d \t',  episodeCount(j));
 end
-% average column
+% (*% average column*)
 fprintf(file,'%.1f \n', mean(episodeCount(j)));
 
 fprintf(file,'Total time (h)\t');
 for j = 1:iterations
 fprintf(file,'%.1f \t', totalTime(j)*0.000277778);
 end
-% average column
+% (*% average column*)
 fprintf(file,'%.1f \n', mean(totalTime(j)*0.000277778));
 
 fprintf(file,'Total reward\t');
 for j = 1:iterations
 fprintf(file,'%d \t', round(sum(cell2mat(rewardsPerStep{1, j}))));
 end
-% average column
+% (*% average column*)
 fprintf(file,'%.1f \n', mean(round(sum(cell2mat(rewardsPerStep{1, j})))));
 
 fprintf(file,'Max reward value\t');
 for j = 1:iterations
 fprintf(file,'%.1f \t', max(cell2mat(rewardsPerStep{1, j})));
 end
-% average column
+% (*% average column*)
 fprintf(file,'%.1f \n', mean(max(cell2mat(rewardsPerStep{1, j}))));
 
 fprintf(file,'Min reward value\t');
 for j = 1:iterations
 fprintf(file,'%.1f \t', min(cell2mat(rewardsPerStep{1, j})));
 end
-% average column
+% (*% average column*)
 fprintf(file,'%.1f \n', mean(min(cell2mat(rewardsPerStep{1, j}))));
 
 
@@ -455,7 +459,6 @@ fclose(file);
 % % AVERAGE
 % file = fopen('counters_avarage.txt','w');
 % % fprintf(file,'\t');
-% % fprintf(file,'average\n');
 %
 % fprintf(file,'%.1f\n', episodes_sum/number_goalReached);
 % fprintf(file,'%.1f\n', number_goalReached/iterations*100);

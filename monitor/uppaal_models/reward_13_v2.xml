@@ -119,16 +119,16 @@ broadcast chan               synch;
 typedef int[-500, +500]      trackPos_T;
 const int                    trackPos_Right_Limit = 500;
 const int                    trackPos_Left_Limit = -500;
-typedef int [10, 10]         trackPos_Increment;
+typedef int [100, 100]         trackPos_Increment;
 
 
 
 // Speed of the car along the longitudinal axis of the car.
 // We assume a limit between 0 and 100 ( *FACTOR)
 typedef int[0, 10000]  speedX_T;
-const int                   speedX_Right_Limit = 10000;
-const int                   speedX_Left_Limit = 0;
-typedef int[100, 100]       speedX_Increment;
+const int                    speedX_Right_Limit = 10000;
+const int                    speedX_Left_Limit = 0;
+typedef int[2000, 2000]      speedX_Increment;
 
 
 // Angle between the car direction and the direction of the track axis (-pi, pi)
@@ -136,15 +136,15 @@ typedef int[100, 100]       speedX_Increment;
 typedef int[-400, 400]  	 angle_T;
 const int                    angle_Right_Limit = 400;
 const int                    angle_Left_Limit = -400;
-typedef int[10, 10]          angle_Increment;
+typedef int[100, 100]        angle_Increment;
 
 
 // Current damage of the car (the higher is the value the higher is the damage).
 // We assume a limit between 0 and 3000 ( *FACTOR)
-typedef int[0, 300000]  damage_T;
+typedef int[0, 300000]       damage_T;
 const int                    damage_Right_Limit = 300000;
 const int                    damage_Left_Limit = 0;
-typedef int[1000, 10000]     damage_Increment;
+typedef int[10000, 10000]    damage_Increment;
 
 
 
@@ -1511,7 +1511,11 @@ void rewardStraight()
 			<name x="-425" y="-340">Stuck</name>
 		</location>
 		<location id="id26" x="-127" y="-357">
+<<<<<<< HEAD:monitor/uppaal_models/reward_13_v2.xml
 			<name x="-136" y="-340">Turning</name>
+=======
+			<name x="-136" y="-340">Curve</name>
+>>>>>>> c9ee0a99f77eea3106cdc215efd21058bd34ace2:monitor/uppaal_models/reward_13_v1.xml
 		</location>
 		<location id="id27" x="-127" y="-595">
 			<name x="-246" y="-620">GoingStraight</name>
@@ -1519,6 +1523,21 @@ void rewardStraight()
 		<location id="id28" x="-127" y="-748">
 			<name x="-144" y="-799">start</name>
 		</location>
+<<<<<<< HEAD:monitor/uppaal_models/reward_13_v2.xml
+=======
+		<location id="id29" x="524" y="-357">
+			<name x="506" y="-340">Stuck</name>
+		</location>
+		<location id="id30" x="804" y="-357">
+			<name x="795" y="-340">Curve</name>
+		</location>
+		<location id="id31" x="804" y="-595">
+			<name x="685" y="-620">GoingStraight</name>
+		</location>
+		<location id="id32" x="804" y="-748">
+			<name x="787" y="-799">start</name>
+		</location>
+>>>>>>> c9ee0a99f77eea3106cdc215efd21058bd34ace2:monitor/uppaal_models/reward_13_v1.xml
 		<init ref="id28"/>
 		<transition>
 			<source ref="id25"/>
@@ -1604,6 +1623,93 @@ void rewardStraight()
 			<target ref="id27"/>
 			<label kind="synchronisation" x="-127" y="-688">synch?</label>
 		</transition>
+<<<<<<< HEAD:monitor/uppaal_models/reward_13_v2.xml
+=======
+		<transition>
+			<source ref="id29"/>
+			<target ref="id29"/>
+			<label kind="guard" x="404" y="-382">isStuck()</label>
+			<label kind="synchronisation" x="413" y="-348">synch?</label>
+			<label kind="assignment" x="209" y="-365">rewardStuck(),updateStuckCounter()</label>
+			<nail x="472" y="-365"/>
+			<nail x="472" y="-340"/>
+		</transition>
+		<transition>
+			<source ref="id30"/>
+			<target ref="id30"/>
+			<label kind="guard" x="872" y="-374">curveIsComing()</label>
+			<label kind="synchronisation" x="872" y="-357">synch?</label>
+			<label kind="assignment" x="872" y="-340">rewardTurning(),updateStuckCounter()</label>
+			<nail x="863" y="-365"/>
+			<nail x="863" y="-340"/>
+		</transition>
+		<transition>
+			<source ref="id31"/>
+			<target ref="id31"/>
+			<label kind="guard" x="872" y="-663">isGoingStraight()</label>
+			<label kind="synchronisation" x="872" y="-646">synch?</label>
+			<label kind="assignment" x="872" y="-629">rewardStraight(),updateStuckCounter()</label>
+			<nail x="863" y="-663"/>
+			<nail x="863" y="-612"/>
+		</transition>
+		<transition>
+			<source ref="id31"/>
+			<target ref="id29"/>
+			<label kind="guard" x="430" y="-561">isStuck()</label>
+			<label kind="synchronisation" x="430" y="-527">synch?</label>
+			<label kind="assignment" x="430" y="-544">rewardStuck(),updateStuckCounter()</label>
+			<nail x="778" y="-595"/>
+			<nail x="523" y="-382"/>
+		</transition>
+		<transition>
+			<source ref="id29"/>
+			<target ref="id31"/>
+			<label kind="guard" x="634" y="-484">isGoingStraight()</label>
+			<label kind="synchronisation" x="651" y="-450">synch?</label>
+			<label kind="assignment" x="481" y="-467">rewardStraight(),updateStuckCounter()</label>
+		</transition>
+		<transition>
+			<source ref="id29"/>
+			<target ref="id30"/>
+			<label kind="guard" x="583" y="-331">curveIsComing()</label>
+			<label kind="synchronisation" x="583" y="-297">synch?</label>
+			<label kind="assignment" x="583" y="-314">rewardTurning(),updateStuckCounter()</label>
+			<nail x="540" y="-340"/>
+			<nail x="787" y="-340"/>
+		</transition>
+		<transition>
+			<source ref="id30"/>
+			<target ref="id29"/>
+			<label kind="guard" x="583" y="-408">isStuck()</label>
+			<label kind="synchronisation" x="583" y="-374">synch?</label>
+			<label kind="assignment" x="583" y="-391">rewardStuck(),updateStuckCounter()</label>
+			<nail x="795" y="-357"/>
+			<nail x="540" y="-357"/>
+		</transition>
+		<transition>
+			<source ref="id30"/>
+			<target ref="id31"/>
+			<label kind="guard" x="838" y="-561">isGoingStraight()</label>
+			<label kind="synchronisation" x="838" y="-527">synch?</label>
+			<label kind="assignment" x="838" y="-544">rewardStraight(),updateStuckCounter()</label>
+			<nail x="821" y="-374"/>
+			<nail x="821" y="-578"/>
+		</transition>
+		<transition>
+			<source ref="id31"/>
+			<target ref="id30"/>
+			<label kind="guard" x="753" y="-442">curveIsComing()</label>
+			<label kind="synchronisation" x="753" y="-459">synch?</label>
+			<label kind="assignment" x="753" y="-425">rewardTurning(),updateStuckCounter()</label>
+			<nail x="804" y="-561"/>
+			<nail x="804" y="-382"/>
+		</transition>
+		<transition>
+			<source ref="id32"/>
+			<target ref="id31"/>
+			<label kind="synchronisation" x="804" y="-688">synch?</label>
+		</transition>
+>>>>>>> c9ee0a99f77eea3106cdc215efd21058bd34ace2:monitor/uppaal_models/reward_13_v1.xml
 	</template>
 	<template>
 		<name>Damage</name>
@@ -1622,6 +1728,7 @@ void rewardDamaged(){
 void rewardNormal(){
     damage_rwd = 0;
 }</declaration>
+<<<<<<< HEAD:monitor/uppaal_models/reward_13_v2.xml
 		<location id="id29" x="-289" y="-51">
 			<name x="-272" y="-59">damaged</name>
 		</location>
@@ -1635,42 +1742,78 @@ void rewardNormal(){
 		<transition>
 			<source ref="id29"/>
 			<target ref="id29"/>
+=======
+		<location id="id33" x="-289" y="-51">
+			<name x="-272" y="-59">damaged</name>
+		</location>
+		<location id="id34" x="-289" y="-195">
+			<name x="-281" y="-220">normal</name>
+		</location>
+		<location id="id35" x="-289" y="-314">
+			<name x="-299" y="-348">start</name>
+		</location>
+		<init ref="id35"/>
+		<transition>
+			<source ref="id33"/>
+			<target ref="id33"/>
+>>>>>>> c9ee0a99f77eea3106cdc215efd21058bd34ace2:monitor/uppaal_models/reward_13_v1.xml
 			<label kind="guard" x="-331" y="0">isDamaged()</label>
 			<label kind="assignment" x="-348" y="17">rewardDamaged()</label>
 			<nail x="-306" y="0"/>
 			<nail x="-272" y="0"/>
 		</transition>
 		<transition>
+<<<<<<< HEAD:monitor/uppaal_models/reward_13_v2.xml
 			<source ref="id30"/>
 			<target ref="id30"/>
+=======
+			<source ref="id34"/>
+			<target ref="id34"/>
+>>>>>>> c9ee0a99f77eea3106cdc215efd21058bd34ace2:monitor/uppaal_models/reward_13_v1.xml
 			<label kind="guard" x="-416" y="-229">isNormal()</label>
 			<label kind="assignment" x="-451" y="-212">rewardNormal()</label>
 			<nail x="-340" y="-229"/>
 			<nail x="-340" y="-195"/>
 		</transition>
 		<transition>
+<<<<<<< HEAD:monitor/uppaal_models/reward_13_v2.xml
 			<source ref="id29"/>
 			<target ref="id30"/>
+=======
+			<source ref="id33"/>
+			<target ref="id34"/>
+>>>>>>> c9ee0a99f77eea3106cdc215efd21058bd34ace2:monitor/uppaal_models/reward_13_v1.xml
 			<label kind="guard" x="-255" y="-144">isNormal()</label>
 			<label kind="assignment" x="-255" y="-127">rewardNormal()</label>
 			<nail x="-264" y="-68"/>
 			<nail x="-264" y="-178"/>
 		</transition>
 		<transition>
+<<<<<<< HEAD:monitor/uppaal_models/reward_13_v2.xml
 			<source ref="id30"/>
 			<target ref="id29"/>
+=======
+			<source ref="id34"/>
+			<target ref="id33"/>
+>>>>>>> c9ee0a99f77eea3106cdc215efd21058bd34ace2:monitor/uppaal_models/reward_13_v1.xml
 			<label kind="guard" x="-408" y="-144">isDamaged()</label>
 			<label kind="assignment" x="-442" y="-127">rewardDamaged()</label>
 			<nail x="-315" y="-178"/>
 			<nail x="-315" y="-68"/>
 		</transition>
 		<transition>
+<<<<<<< HEAD:monitor/uppaal_models/reward_13_v2.xml
 			<source ref="id31"/>
 			<target ref="id30"/>
+=======
+			<source ref="id35"/>
+			<target ref="id34"/>
+>>>>>>> c9ee0a99f77eea3106cdc215efd21058bd34ace2:monitor/uppaal_models/reward_13_v1.xml
 		</transition>
 	</template>
 	<template>
 		<name>Sim_trackPos</name>
+<<<<<<< HEAD:monitor/uppaal_models/reward_13_v2.xml
 		<location id="id32" x="-297" y="68">
 		</location>
 		<location id="id33" x="-187" y="-161">
@@ -1693,6 +1836,30 @@ void rewardNormal(){
 		<transition>
 			<source ref="id33"/>
 			<target ref="id33"/>
+=======
+		<location id="id36" x="-297" y="68">
+		</location>
+		<location id="id37" x="-187" y="-161">
+			<name x="-170" y="-170">goingRight</name>
+		</location>
+		<location id="id38" x="-425" y="-170">
+			<name x="-518" y="-178">goingLeft</name>
+		</location>
+		<init ref="id36"/>
+		<transition>
+			<source ref="id36"/>
+			<target ref="id37"/>
+			<nail x="-161" y="17"/>
+		</transition>
+		<transition>
+			<source ref="id36"/>
+			<target ref="id38"/>
+			<nail x="-450" y="17"/>
+		</transition>
+		<transition>
+			<source ref="id37"/>
+			<target ref="id37"/>
+>>>>>>> c9ee0a99f77eea3106cdc215efd21058bd34ace2:monitor/uppaal_models/reward_13_v1.xml
 			<label kind="select" x="-76" y="-178">i:trackPos_Increment</label>
 			<label kind="guard" x="-76" y="-204">trackPos &lt;= trackPos_Right_Limit</label>
 			<label kind="synchronisation" x="-76" y="-153">synch!</label>
@@ -1701,8 +1868,13 @@ void rewardNormal(){
 			<nail x="-85" y="-68"/>
 		</transition>
 		<transition>
+<<<<<<< HEAD:monitor/uppaal_models/reward_13_v2.xml
 			<source ref="id33"/>
 			<target ref="id34"/>
+=======
+			<source ref="id37"/>
+			<target ref="id38"/>
+>>>>>>> c9ee0a99f77eea3106cdc215efd21058bd34ace2:monitor/uppaal_models/reward_13_v1.xml
 			<label kind="select" x="-374" y="-110">i : trackPos_Increment</label>
 			<label kind="guard" x="-399" y="-34">trackPos &gt;= trackPos_Left_Limit</label>
 			<label kind="synchronisation" x="-374" y="-85">synch!</label>
@@ -1711,8 +1883,13 @@ void rewardNormal(){
 			<nail x="-391" y="-119"/>
 		</transition>
 		<transition>
+<<<<<<< HEAD:monitor/uppaal_models/reward_13_v2.xml
 			<source ref="id34"/>
 			<target ref="id33"/>
+=======
+			<source ref="id38"/>
+			<target ref="id37"/>
+>>>>>>> c9ee0a99f77eea3106cdc215efd21058bd34ace2:monitor/uppaal_models/reward_13_v1.xml
 			<label kind="select" x="-357" y="-289">i : trackPos_Increment</label>
 			<label kind="guard" x="-357" y="-314">trackPos &lt;= trackPos_Right_Limit</label>
 			<label kind="synchronisation" x="-357" y="-264">synch!</label>
@@ -1721,8 +1898,13 @@ void rewardNormal(){
 			<nail x="-264" y="-213"/>
 		</transition>
 		<transition>
+<<<<<<< HEAD:monitor/uppaal_models/reward_13_v2.xml
 			<source ref="id34"/>
 			<target ref="id34"/>
+=======
+			<source ref="id38"/>
+			<target ref="id38"/>
+>>>>>>> c9ee0a99f77eea3106cdc215efd21058bd34ace2:monitor/uppaal_models/reward_13_v1.xml
 			<label kind="select" x="-722" y="-161">i : trackPos_Increment</label>
 			<label kind="guard" x="-790" y="-187">trackPos &gt;= trackPos_Left_Limit</label>
 			<label kind="synchronisation" x="-654" y="-110">synch!</label>
@@ -1733,6 +1915,7 @@ void rewardNormal(){
 	</template>
 	<template>
 		<name>Sim_angle</name>
+<<<<<<< HEAD:monitor/uppaal_models/reward_13_v2.xml
 		<location id="id35" x="-289" y="76">
 		</location>
 		<location id="id36" x="-187" y="-161">
@@ -1755,6 +1938,30 @@ void rewardNormal(){
 		<transition>
 			<source ref="id36"/>
 			<target ref="id36"/>
+=======
+		<location id="id39" x="-289" y="76">
+		</location>
+		<location id="id40" x="-187" y="-161">
+			<name x="-170" y="-170">turningRight</name>
+		</location>
+		<location id="id41" x="-425" y="-170">
+			<name x="-518" y="-178">turningLeft</name>
+		</location>
+		<init ref="id39"/>
+		<transition>
+			<source ref="id39"/>
+			<target ref="id40"/>
+			<nail x="-161" y="17"/>
+		</transition>
+		<transition>
+			<source ref="id39"/>
+			<target ref="id41"/>
+			<nail x="-450" y="17"/>
+		</transition>
+		<transition>
+			<source ref="id40"/>
+			<target ref="id40"/>
+>>>>>>> c9ee0a99f77eea3106cdc215efd21058bd34ace2:monitor/uppaal_models/reward_13_v1.xml
 			<label kind="select" x="-76" y="-178">i:angle_Increment</label>
 			<label kind="guard" x="-76" y="-204">angle &lt;= angle_Right_Limit</label>
 			<label kind="synchronisation" x="-76" y="-153">synch!</label>
@@ -1763,8 +1970,13 @@ void rewardNormal(){
 			<nail x="-85" y="-68"/>
 		</transition>
 		<transition>
+<<<<<<< HEAD:monitor/uppaal_models/reward_13_v2.xml
 			<source ref="id36"/>
 			<target ref="id37"/>
+=======
+			<source ref="id40"/>
+			<target ref="id41"/>
+>>>>>>> c9ee0a99f77eea3106cdc215efd21058bd34ace2:monitor/uppaal_models/reward_13_v1.xml
 			<label kind="select" x="-374" y="-110">i : angle_Increment</label>
 			<label kind="guard" x="-399" y="-34">angle &gt;= angle_Left_Limit</label>
 			<label kind="synchronisation" x="-374" y="-85">synch!</label>
@@ -1773,8 +1985,13 @@ void rewardNormal(){
 			<nail x="-391" y="-119"/>
 		</transition>
 		<transition>
+<<<<<<< HEAD:monitor/uppaal_models/reward_13_v2.xml
 			<source ref="id37"/>
 			<target ref="id36"/>
+=======
+			<source ref="id41"/>
+			<target ref="id40"/>
+>>>>>>> c9ee0a99f77eea3106cdc215efd21058bd34ace2:monitor/uppaal_models/reward_13_v1.xml
 			<label kind="select" x="-357" y="-289">i : angle_Increment</label>
 			<label kind="guard" x="-357" y="-314">angle &lt;= angle_Right_Limit</label>
 			<label kind="synchronisation" x="-357" y="-264">synch!</label>
@@ -1783,8 +2000,13 @@ void rewardNormal(){
 			<nail x="-264" y="-213"/>
 		</transition>
 		<transition>
+<<<<<<< HEAD:monitor/uppaal_models/reward_13_v2.xml
 			<source ref="id37"/>
 			<target ref="id37"/>
+=======
+			<source ref="id41"/>
+			<target ref="id41"/>
+>>>>>>> c9ee0a99f77eea3106cdc215efd21058bd34ace2:monitor/uppaal_models/reward_13_v1.xml
 			<label kind="select" x="-722" y="-161">i : angle_Increment</label>
 			<label kind="guard" x="-765" y="-187">angle &gt;= angle_Left_Limit</label>
 			<label kind="synchronisation" x="-654" y="-110">synch!</label>
@@ -1795,6 +2017,7 @@ void rewardNormal(){
 	</template>
 	<template>
 		<name>Sim_speedX</name>
+<<<<<<< HEAD:monitor/uppaal_models/reward_13_v2.xml
 		<location id="id38" x="-289" y="76">
 		</location>
 		<location id="id39" x="-187" y="-161">
@@ -1817,6 +2040,30 @@ void rewardNormal(){
 		<transition>
 			<source ref="id39"/>
 			<target ref="id39"/>
+=======
+		<location id="id42" x="-289" y="76">
+		</location>
+		<location id="id43" x="-187" y="-161">
+			<name x="-170" y="-170">accelerate</name>
+		</location>
+		<location id="id44" x="-425" y="-170">
+			<name x="-518" y="-178">decellerate</name>
+		</location>
+		<init ref="id42"/>
+		<transition>
+			<source ref="id42"/>
+			<target ref="id43"/>
+			<nail x="-161" y="17"/>
+		</transition>
+		<transition>
+			<source ref="id42"/>
+			<target ref="id44"/>
+			<nail x="-450" y="17"/>
+		</transition>
+		<transition>
+			<source ref="id43"/>
+			<target ref="id43"/>
+>>>>>>> c9ee0a99f77eea3106cdc215efd21058bd34ace2:monitor/uppaal_models/reward_13_v1.xml
 			<label kind="select" x="-76" y="-178">i:speedX_Increment</label>
 			<label kind="guard" x="-76" y="-204">speedX &lt;= speedX_Right_Limit</label>
 			<label kind="synchronisation" x="-76" y="-153">synch!</label>
@@ -1825,8 +2072,13 @@ void rewardNormal(){
 			<nail x="-85" y="-68"/>
 		</transition>
 		<transition>
+<<<<<<< HEAD:monitor/uppaal_models/reward_13_v2.xml
 			<source ref="id39"/>
 			<target ref="id40"/>
+=======
+			<source ref="id43"/>
+			<target ref="id44"/>
+>>>>>>> c9ee0a99f77eea3106cdc215efd21058bd34ace2:monitor/uppaal_models/reward_13_v1.xml
 			<label kind="select" x="-374" y="-110">i : speedX_Increment</label>
 			<label kind="guard" x="-399" y="-34">speedX &gt;= speedX_Left_Limit</label>
 			<label kind="synchronisation" x="-374" y="-85">synch!</label>
@@ -1835,8 +2087,13 @@ void rewardNormal(){
 			<nail x="-391" y="-119"/>
 		</transition>
 		<transition>
+<<<<<<< HEAD:monitor/uppaal_models/reward_13_v2.xml
 			<source ref="id40"/>
 			<target ref="id39"/>
+=======
+			<source ref="id44"/>
+			<target ref="id43"/>
+>>>>>>> c9ee0a99f77eea3106cdc215efd21058bd34ace2:monitor/uppaal_models/reward_13_v1.xml
 			<label kind="select" x="-357" y="-289">i : speedX_Increment</label>
 			<label kind="guard" x="-357" y="-314">speedX &lt;= speedX_Right_Limit</label>
 			<label kind="synchronisation" x="-357" y="-264">synch!</label>
@@ -1845,8 +2102,13 @@ void rewardNormal(){
 			<nail x="-264" y="-213"/>
 		</transition>
 		<transition>
+<<<<<<< HEAD:monitor/uppaal_models/reward_13_v2.xml
 			<source ref="id40"/>
 			<target ref="id40"/>
+=======
+			<source ref="id44"/>
+			<target ref="id44"/>
+>>>>>>> c9ee0a99f77eea3106cdc215efd21058bd34ace2:monitor/uppaal_models/reward_13_v1.xml
 			<label kind="select" x="-722" y="-161">i : speedX_Increment</label>
 			<label kind="guard" x="-782" y="-187">speedX &gt;= speedX_Left_Limit</label>
 			<label kind="synchronisation" x="-654" y="-110">synch!</label>
@@ -1860,7 +2122,23 @@ void rewardNormal(){
 system TrackPos, Speed, Damage, Sim_trackPos, Sim_angle, Sim_speedX;</system>
 	<queries>
 		<query>
+<<<<<<< HEAD:monitor/uppaal_models/reward_13_v2.xml
 			<formula>A[] (TrackPos.centerRoad and Speed.GoingStraight and Damage.normal) imply (speedX_rwd+damage_rwd+trackPos_rwd+opponents_ahead_rwd+opponents_left_rwd+opponents_right_rwd+opponents_back_rwd) &gt;= -10
+=======
+			<formula>A[] (Speed.GoingStraight) and (goalSpeed - speedX &gt; 1000) and speedX_rwd != 0 imply speedX_rwd &lt;0 
+			</formula>
+			<comment>
+			</comment>
+		</query>
+		<query>
+			<formula>A[] not deadlock
+			</formula>
+			<comment>
+			</comment>
+		</query>
+		<query>
+			<formula>A[] (TrackPos.centerRoad and Speed.GoingStraight and Damage.normal) imply (speedX_rwd+damage_rwd+trackPos_rwd) &gt;= 0
+>>>>>>> c9ee0a99f77eea3106cdc215efd21058bd34ace2:monitor/uppaal_models/reward_13_v1.xml
 			</formula>
 			<comment>
 			</comment>
