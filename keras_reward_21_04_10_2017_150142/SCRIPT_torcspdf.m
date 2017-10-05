@@ -60,9 +60,9 @@ mkdir torcs;
   
   file_name = ['torcs/' num2str(i) '_TORCS_VALUES'];
   
-  %saveas(fig_torcs, file_name, 'pdf');
+  saveas(fig_torcs, file_name, 'pdf');
   
-  print(fig_torcs,file_name,'-dpdf','-r0')
+  %print(fig_torcs,file_name,'-dpdf','-r0')
   
   hold off;
   
