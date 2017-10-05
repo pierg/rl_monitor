@@ -19,6 +19,15 @@ mkdir torcs;
   ylabel('TrackPos');
   
   grid('on');
+  ALL_speedX = cell2mat(speedX{1,i});
+  subplot(6,1,3);
+  plot(ALL_speedX);
+  hold on;
+  xlabel('Step #');
+  ylabel('SpeedX');
+  
+  
+  grid('on');
   ALL_steering = cell2mat(steering{1,i});
   subplot(6,1,2);
   plot(ALL_steering);
@@ -26,13 +35,6 @@ mkdir torcs;
   xlabel('Step #');
   ylabel('Steering');
   
-  grid('on');
-  ALL_speedX = cell2mat(speedX{1,i});
-  subplot(6,1,3);
-  plot(ALL_speedX);
-  hold on;
-  xlabel('Step #');
-  ylabel('SpeedX');
   
   grid('on');
   ALL_accel = cell2mat(accel{1,i});
