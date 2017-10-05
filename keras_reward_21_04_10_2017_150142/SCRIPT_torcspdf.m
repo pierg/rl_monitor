@@ -58,9 +58,9 @@ mkdir torcs;
   xlabel('Step #');
   ylabel('Damage');
   
-  file_name = ['torcs/' num2str(i) '_TORCS_VALUES'];
+  file_name = ['torcs/' num2str(i) '_TORCS_VALUESeps'];
   
-  saveas(fig_torcs, file_name, 'pdf');
+  saveas(fig_torcs, file_name, 'eps');
   
   %print(fig_torcs,file_name,'-dpdf','-r0')
   
