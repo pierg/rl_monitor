@@ -9,7 +9,7 @@ mkdir torcs;
   fig_torcs = figure;
   set(fig_torcs,'visible','off');
   set(fig_torcs, 'PaperPositionMode', 'manual');
-  set(fig_torcs, 'PaperPosition', [0 0 100 50]);
+  set(fig_torcs, 'PaperPosition', [0 0 200 50]);
   grid('on');
   ALL_trackPos = cell2mat(trackPos{1, i});
   subplot(6,1,1);
