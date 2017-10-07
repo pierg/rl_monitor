@@ -1,0 +1,15 @@
+DATA_damage_rwd
+DATA_monitorValues
+DATA_opponents_ahead_rwd
+DATA_opponents_back_rwd
+DATA_opponents_left_rwd
+DATA_opponents_right_rwd
+DATA_results
+DATA_rewards
+DATA_signals
+DATA_speedX_rwd
+DATA_steps
+DATA_trackPos_rwd
+SCRIPT_counters
+SCRIPT_torcsvalues
+SCRIPT_rewardvalues
